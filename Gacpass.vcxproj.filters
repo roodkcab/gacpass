@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{2f798474-ccc4-41a4-a100-85a22a544c43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{b5e4d7b7-8c15-4d3d-b7ae-4d831bbae839}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUIWindows.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Vlpp.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\VlppOS.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\VlppParser.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\VlppReflection.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\VlppRegex.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\VlppWorkflowLibrary.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Skins\DarkSkin\DarkSkin.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Source\CodeBookWindow.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Source\GacPassPartialClasses.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Source\GacPassReflection.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Source\LoginWindow.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Lib\GacUI.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUIWindows.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Vlpp.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\VlppOS.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\VlppParser.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\VlppReflection.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\VlppRegex.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\VlppWorkflowLibrary.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Skins\DarkSkin\DarkSkin.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Source\CodeBookWindow.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Source\GacPass.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Source\GacPassPartialClasses.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Source\GacPassReflection.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Source\LoginWindow.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="UI\Resource.xml">
+      <Filter>资源文件</Filter>
+    </Xml>
+    <Xml Include="UI\RegisterWindow.xml">
+      <Filter>资源文件</Filter>
+    </Xml>
+    <Xml Include="UI\CodeBookWindow.xml">
+      <Filter>资源文件</Filter>
+    </Xml>
+    <Xml Include="UI\LoginWindow.xml">
+      <Filter>资源文件</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

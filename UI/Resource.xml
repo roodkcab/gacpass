@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource>
+	<Folder name="GacGenConfig">
+		<Folder name="Cpp">
+			<Text name="SourceFolder">Source</Text>
+			<Text name="Resource">..\MVVM.bin</Text>
+			<Text name="NormalInclude">GacUI.h</Text>
+			<Text name="Name">GacPass</Text>
+		</Folder>
+	</Folder>
+
+	<Folder name="RegisterWindowResource" content="Link">RegisterWindow.xml</Folder>
+	<Folder name="LoginWindowResource" content="Link">LoginWindow.xml</Folder>
+	<Folder name="CodeBookWindowResource" content="Link">CodeBookWindow.xml</Folder>
+
+	<Script>
+		<Workflow>
+			<![CDATA[
+			module viewmodel;
+			
+			namespace gacpass
+			{
+				interface IViewModel
+				{
+					func GetMainPasswordSet() : bool;
+					prop MainPasswordSet : bool {GetMainPasswordSet}
+
+					func GetLoggedIn() : bool;
+					prop LoggedIn : bool {GetLoggedIn}
+
+					func GetRegisterViewModel() : IRegisterViewModel^ ;
+					prop RegisterViewModel : IRegisterViewModel^ {GetRegisterViewModel}
+				}
+			}
+			]]>
+		</Workflow>
+	</Script>
+
+	<Instance name="MainWindow" >
+		<Instance ref.CodeBehind="false" ref.Class="gacpass::MainWindow" xmlns:gacpass="gacpass::*">
+			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel"/>
+			<Window Text="GacPass" ClientSize="x:480 y:320">
+				<gacpass:RegisterWindow Visible-bind="not ViewModel.MainPasswordSet" ViewModel-eval="ViewModel.RegisterViewModel"></gacpass:RegisterWindow>
+				<gacpass:LoginWindow Visible-bind="ViewModel.MainPasswordSet and not ViewModel.LoggedIn"></gacpass:LoginWindow>
+				<gacpass:CodeBookWindow Visible-bind="ViewModel.MainPasswordSet and ViewModel.LoggedIn"></gacpass:CodeBookWindow>
+			</Window>
+		</Instance>
+	</Instance>
+</Resource>

@@ -1,0 +1,14 @@
+<Folder>
+	<Instance name="CodeBookWindow">
+		<Instance ref.Class="gacpass::CodeBookWindow">
+			<CustomControl>
+				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+				<Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
+					<Cell Site="row:0 column:0">
+						<Label Text="CodeBook"/>
+					</Cell>
+				</Table>
+			</CustomControl>
+		</Instance>
+	</Instance>
+</Folder>
