@@ -149,6 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CodeBookViewModel.cpp" />
     <ClCompile Include="Lib\GacUI.cpp" />
     <ClCompile Include="Lib\GacUIWindows.cpp" />
     <ClCompile Include="Lib\Skins\DarkSkin\DarkSkin.cpp" />
@@ -158,12 +159,16 @@
     <ClCompile Include="Lib\VlppReflection.cpp" />
     <ClCompile Include="Lib\VlppRegex.cpp" />
     <ClCompile Include="Lib\VlppWorkflowLibrary.cpp" />
+    <ClCompile Include="LoginViewModel.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RegisterViewModel.cpp" />
     <ClCompile Include="UI\Source\CodeBookWindow.cpp" />
     <ClCompile Include="UI\Source\GacPassPartialClasses.cpp" />
     <ClCompile Include="UI\Source\GacPassReflection.cpp" />
+    <ClCompile Include="Code.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CodeBookViewModel.h" />
     <ClInclude Include="Lib\GacUI.h" />
     <ClInclude Include="Lib\GacUIWindows.h" />
     <ClInclude Include="Lib\Skins\DarkSkin\DarkSkin.h" />
@@ -173,10 +178,14 @@
     <ClInclude Include="Lib\VlppReflection.h" />
     <ClInclude Include="Lib\VlppRegex.h" />
     <ClInclude Include="Lib\VlppWorkflowLibrary.h" />
+    <ClInclude Include="LoginViewModel.h" />
+    <ClInclude Include="RegisterViewModel.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="UI\Source\CodeBookWindow.h" />
     <ClInclude Include="UI\Source\GacPass.h" />
     <ClInclude Include="UI\Source\GacPassPartialClasses.h" />
     <ClInclude Include="UI\Source\GacPassReflection.h" />
+    <ClInclude Include="Code.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UI\CodeBookWindow.xml" />
@@ -188,6 +197,9 @@
     <ProjectReference Include="..\GacUI\Release\Tutorial\Lib\GacUILite\GacUILite.vcxproj">
       <Project>{96c559ca-9718-4bec-a053-28a0ab6a8ca2}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Gacpass.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

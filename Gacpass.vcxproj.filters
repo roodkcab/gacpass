@@ -60,6 +60,18 @@
     <ClCompile Include="UI\Source\GacPassReflection.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="Code.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeBookViewModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginViewModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterViewModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\GacUI.h">
@@ -101,6 +113,21 @@
     <ClInclude Include="UI\Source\GacPassReflection.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="Code.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeBookViewModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginViewModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterViewModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UI\Resource.xml">
@@ -115,5 +142,10 @@
     <Xml Include="UI\LoginWindow.xml">
       <Filter>资源文件</Filter>
     </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Gacpass.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
