@@ -51,10 +51,10 @@
 	<Instance name="MainWindow" >
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::MainWindow" xmlns:gacpass="gacpass::*">
 			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel"/>
-			<Window Text="GacPass" ClientSize="x:480 y:320">
+			<Window ref.Name="self" Text="GacPass" ClientSize="x:480 y:320">
 				<gacpass:RegisterWindow Visible-bind="not ViewModel.MainPasswordSet" ViewModel-eval="ViewModel"></gacpass:RegisterWindow>
 				<gacpass:LoginWindow Visible-bind="ViewModel.MainPasswordSet and (not ViewModel.LoggedIn)" ViewModel-eval="ViewModel"></gacpass:LoginWindow>
-				<gacpass:CodeBookWindow Visible-bind="ViewModel.MainPasswordSet and ViewModel.LoggedIn" ViewModel-eval="ViewModel"></gacpass:CodeBookWindow>
+				<gacpass:CodeBookWindow Visible-bind="ViewModel.MainPasswordSet and ViewModel.LoggedIn" ViewModel-eval="ViewModel" MainWindow-eval="self"></gacpass:CodeBookWindow>
 			</Window>
 		</Instance>
 	</Instance>

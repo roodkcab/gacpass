@@ -45,6 +45,8 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::LoginWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::MainWindow)
 			DECL_TYPE_INFO(::gacpass::MainWindowConstructor)
+			DECL_TYPE_INFO(::gacpass::NewCodeWindow)
+			DECL_TYPE_INFO(::gacpass::NewCodeWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::RegisterWindow)
 			DECL_TYPE_INFO(::gacpass::RegisterWindowConstructor)
 
@@ -61,16 +63,36 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetWebsite);
 				}
-				void Update(const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
+				void Update(::vl::Ptr<::gacpass::ICodeBookViewModel> viewmodel, const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
 				{
-					INVOKE_INTERFACE_PROXY(Update, website, username, password);
+					INVOKE_INTERFACE_PROXY(Update, viewmodel, website, username, password);
 				}
 			END_INTERFACE_PROXY(::gacpass::ICode)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ICodeBookViewModel)
+				void AddCode(::vl::Ptr<::gacpass::ICode> code) override
+				{
+					INVOKE_INTERFACE_PROXY(AddCode, code);
+				}
+				::vl::Ptr<::gacpass::ICode> CreateCode() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(CreateCode);
+				}
 				::vl::Ptr<::vl::reflection::description::IValueObservableList> GetCodes() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodes);
+				}
+				::vl::Ptr<::gacpass::ICode> GetSelectedCode() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSelectedCode);
+				}
+				void NotifyUpdate(::gacpass::ICode* code) override
+				{
+					INVOKE_INTERFACE_PROXY(NotifyUpdate, code);
+				}
+				void SetSelectedCode(::vl::Ptr<::gacpass::ICode> __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetSelectedCode, __vwsn_value_);
 				}
 			END_INTERFACE_PROXY(::gacpass::ICodeBookViewModel)
 

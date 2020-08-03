@@ -41,11 +41,18 @@ namespace gacpass
 		return this->__vwsn_parameter_ViewModel;
 	}
 
-	CodeBookWindow::CodeBookWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel)
+	::vl::presentation::controls::GuiWindow* CodeBookWindow::GetMainWindow()
+	{
+		return this->__vwsn_parameter_MainWindow;
+	}
+
+	CodeBookWindow::CodeBookWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel, ::vl::presentation::controls::GuiWindow* __vwsn_ctor_parameter_MainWindow)
 		: ::vl::presentation::controls::GuiCustomControl(::vl::presentation::theme::ThemeName::CustomControl)
 		, __vwsn_parameter_ViewModel(::vl::Ptr<::gacpass::IViewModel>())
+		, __vwsn_parameter_MainWindow(static_cast<::vl::presentation::controls::GuiWindow*>(nullptr))
 	{
 		(this->__vwsn_parameter_ViewModel = __vwsn_ctor_parameter_ViewModel);
+		(this->__vwsn_parameter_MainWindow = __vwsn_ctor_parameter_MainWindow);
 		auto __vwsn_resource_ = ::vl::__vwsn::This(::vl::presentation::GetResourceManager())->GetResourceFromClassName(::vl::WString(L"gacpass::CodeBookWindow", false));
 		auto __vwsn_resolver_ = ::vl::Ptr<::vl::presentation::GuiResourcePathResolver>(new ::vl::presentation::GuiResourcePathResolver(__vwsn_resource_, ::vl::__vwsn::This(__vwsn_resource_.Obj())->GetWorkingDirectory()));
 		::vl::__vwsn::This(this)->SetResourceResolver(__vwsn_resolver_);

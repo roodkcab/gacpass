@@ -15,7 +15,14 @@ private:
 
 public:
 	Code()
+		:website(L"https://")
+		, username(L"")
+		, password(L"")
+	{}
+
+	WString GetWebsite()override
 	{
+		return website;
 	}
 
 	WString GetUsername()override
@@ -28,16 +35,22 @@ public:
 		return password;
 	}
 
-	WString GetWebsite()override
+	void Update(Ptr<gacpass::ICodeBookViewModel> _viewmodel, const WString& _website, const WString& _username, const WString& _password)override
 	{
-		return website;
+		website = _website;
+		username = _username;
+		password = _password;
+
+		_viewmodel->NotifyUpdate(this);
 	}
+
 };
 
 class CodeBookViewModel : public Object, public virtual gacpass::ICodeBookViewModel
 {
 private:
 	ObservableList<Ptr<gacpass::ICode>> codes;
+	Ptr<gacpass::ICode> selectedCode;
 
 public:
 	CodeBookViewModel() {}
@@ -45,6 +58,39 @@ public:
 	Ptr<IValueObservableList> GetCodes()override
 	{
 		return codes.GetWrapper();
+	}
+	Ptr<gacpass::ICode> GetSelectedCode()override
+	{
+		return selectedCode;
+	}
+
+	void SetSelectedCode(Ptr<gacpass::ICode> value)override
+	{
+		if (selectedCode != value)
+		{
+			selectedCode = value;
+			SelectedCodeChanged();
+		}
+	}
+
+	Ptr<gacpass::ICode> CreateCode()override
+	{
+		return new Code();
+	}
+
+	void AddCode(Ptr<gacpass::ICode> code)override
+	{
+		codes.Add(code);
+	}
+
+	void NotifyUpdate(gacpass::ICode* code)override
+	{
+		vint index = codes.IndexOf(code);
+		if (index != -1)
+		{
+			codes.NotifyUpdate(index, 1);
+		}
+
 	}
 };
 
