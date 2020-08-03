@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gacpass", "Gacpass.vcxproj", "{F37B6B39-6E30-4BC5-92EA-2249DDED1EFB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GacUILite", "..\GacUI\Release\Tutorial\Lib\GacUILite\GacUILite.vcxproj", "{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,16 @@ Global
 		{F37B6B39-6E30-4BC5-92EA-2249DDED1EFB}.Release|x64.Build.0 = Release|x64
 		{F37B6B39-6E30-4BC5-92EA-2249DDED1EFB}.Release|x86.ActiveCfg = Release|Win32
 		{F37B6B39-6E30-4BC5-92EA-2249DDED1EFB}.Release|x86.Build.0 = Release|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Debug|Win32.Build.0 = Debug|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Debug|x64.ActiveCfg = Debug|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Debug|x86.ActiveCfg = Debug|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Debug|x86.Build.0 = Debug|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Release|Win32.ActiveCfg = Release|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Release|Win32.Build.0 = Release|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Release|x64.ActiveCfg = Release|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Release|x86.ActiveCfg = Release|Win32
+		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

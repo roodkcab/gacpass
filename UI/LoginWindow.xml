@@ -1,11 +1,62 @@
 <Folder>
+	<Script>
+		<Workflow>
+			<![CDATA[
+			module viewmodel;
+			namespace gacpass
+			{
+				interface ILoginViewModel
+				{
+					prop Password : string {}
+				}
+			}
+			]]>
+		</Workflow>
+	</Script>
 	<Instance name="LoginWindow">
-		<Instance ref.Class="gacpass::LoginWindow">
-			<CustomControl>
+		<Instance ref.CodeBehind="false" ref.Class="gacpass::LoginWindow">
+			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel" />
+			<CustomControl ref.Name="self">
+				<att.ViewModel-set>
+					<att.LoginViewModel-set Password-bind="textBoxPassword.Text"/>
+				</att.ViewModel-set>
 				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 				<Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
-					<Cell Site="row:0 column:0">
-						<Label Text="Login"/>
+					<att.Rows>
+						<CellOption>composeType:Absolute absolute:90</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:Percentage percentage:1.0</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+					</att.Rows>
+					<att.Columns>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:Percentage percentage:1.0</CellOption>
+					</att.Columns>
+					<Cell Site="row:0 column:0"></Cell>
+					<Cell Site="row:1 column:0">
+						<SolidLabel Text="Password: " VerticalAlignment="Center">
+							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
+						</SolidLabel>
+					</Cell>
+					<Cell Site="row:1 column:1">
+						<SinglelineTextBox ref.Name="textBoxPassword" PasswordChar="*">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:0 y:24"/>
+						</SinglelineTextBox>
+					</Cell>
+					<Cell Site="row:6 column:0 columnSpan:2">
+						<Button ref.Name="buttonLogin" Text="Login">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:-1 bottom:0" PreferredMinSize="x:100 y:24"/>
+							<ev.Clicked-eval>
+								<![CDATA[
+								{
+									self.ViewModel.LoggedInChanged();
+								}
+								]]>
+							</ev.Clicked-eval>
+						</Button>
 					</Cell>
 				</Table>
 			</CustomControl>

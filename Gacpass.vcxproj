@@ -89,7 +89,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;VCZH_DEBUG_NO_REFLECTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\cy\projects\Gacpass\Lib\Skins;C:\Users\cy\projects\Gacpass\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\buaac\Projects\GacPass\Lib;C:\Users\buaac\Projects\GacPass\Lib\Skins;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -97,7 +97,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalOptions>
       </AdditionalOptions>
-      <AdditionalDependencies>"C:\Users\cy\projects\Release\Tutorial\GacUI_Windows\Debug\GacUILite.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -162,7 +162,6 @@
     <ClCompile Include="UI\Source\CodeBookWindow.cpp" />
     <ClCompile Include="UI\Source\GacPassPartialClasses.cpp" />
     <ClCompile Include="UI\Source\GacPassReflection.cpp" />
-    <ClCompile Include="UI\Source\LoginWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\GacUI.h" />
@@ -178,13 +177,17 @@
     <ClInclude Include="UI\Source\GacPass.h" />
     <ClInclude Include="UI\Source\GacPassPartialClasses.h" />
     <ClInclude Include="UI\Source\GacPassReflection.h" />
-    <ClInclude Include="UI\Source\LoginWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UI\CodeBookWindow.xml" />
     <Xml Include="UI\LoginWindow.xml" />
     <Xml Include="UI\RegisterWindow.xml" />
     <Xml Include="UI\Resource.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GacUI\Release\Tutorial\Lib\GacUILite\GacUILite.vcxproj">
+      <Project>{96c559ca-9718-4bec-a053-28a0ab6a8ca2}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

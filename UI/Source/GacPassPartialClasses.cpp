@@ -57,6 +57,108 @@ Closures
 
 	//-------------------------------------------------------------------
 
+	__vwsnf10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+	}
+
+	void __vwsnf10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	{
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_6.Obj())->GetText();
+		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
+		if ((__vwsn_old_ == __vwsn_new_))
+		{
+			return;
+		}
+		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_6.Obj())->SetText(__vwsn_new_);
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnf11_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf11_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+	}
+
+	void __vwsnf11_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	{
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_12.Obj())->GetText();
+		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
+		if ((__vwsn_old_ == __vwsn_new_))
+		{
+			return;
+		}
+		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_12.Obj())->SetText(__vwsn_new_);
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnf12_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf12_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+	}
+
+	void __vwsnf12_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	{
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->buttonSignUp)->GetEnabled();
+		auto __vwsn_new_ = ::vl::__vwsn::Unbox<bool>(__vwsn_value_);
+		if ((__vwsn_old_ == __vwsn_new_))
+		{
+			return;
+		}
+		::vl::__vwsn::This(__vwsnthis_0->buttonSignUp)->SetEnabled(__vwsn_new_);
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnf13_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf13_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+	}
+
+	void __vwsnf13_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(::vl::presentation::compositions::GuiGraphicsComposition* sender, ::vl::presentation::compositions::GuiEventArgs* arguments) const
+	{
+		::vl::__vwsn::EventInvoke(::vl::__vwsn::This(::vl::__vwsn::This(__vwsnthis_0->self)->GetViewModel().Obj())->MainPasswordSetChanged)();
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnf14_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf14_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+	}
+
+	void __vwsnf14_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	{
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_16.Obj())->GetPassword();
+		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
+		if ((__vwsn_old_ == __vwsn_new_))
+		{
+			return;
+		}
+		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_16.Obj())->SetPassword(__vwsn_new_);
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnf15_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf15_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+	}
+
+	void __vwsnf15_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	{
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_16.Obj())->GetConfirmPassword();
+		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
+		if ((__vwsn_old_ == __vwsn_new_))
+		{
+			return;
+		}
+		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_16.Obj())->SetConfirmPassword(__vwsn_new_);
+	}
+
+	//-------------------------------------------------------------------
+
 	__vwsnf1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize_::__vwsnf1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize_(::gacpass::MainWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
@@ -111,74 +213,150 @@ Closures
 
 	//-------------------------------------------------------------------
 
-	__vwsnf4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+	__vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::__vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
 	}
 
-	void __vwsnf4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	::vl::WString __vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_item_) const
 	{
-		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_6.Obj())->GetText();
-		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
-		if ((__vwsn_old_ == __vwsn_new_))
-		{
-			return;
-		}
-		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_6.Obj())->SetText(__vwsn_new_);
+		auto item = ::vl::__vwsn::Unbox<::vl::Ptr<::gacpass::ICode>>(__vwsn_item_);
+		return ::vl::__vwsn::This(item.Obj())->GetWebsite();
 	}
 
 	//-------------------------------------------------------------------
 
-	__vwsnf5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+	__vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::__vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
 	}
 
-	void __vwsnf5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	::vl::WString __vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_item_) const
 	{
-		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_12.Obj())->GetText();
-		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
-		if ((__vwsn_old_ == __vwsn_new_))
-		{
-			return;
-		}
-		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_12.Obj())->SetText(__vwsn_new_);
+		auto item = ::vl::__vwsn::Unbox<::vl::Ptr<::gacpass::ICode>>(__vwsn_item_);
+		return ::vl::__vwsn::This(item.Obj())->GetUsername();
 	}
 
 	//-------------------------------------------------------------------
 
-	__vwsnf6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+	__vwsnf6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::__vwsnf6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
 	}
 
-	void __vwsnf6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	::vl::WString __vwsnf6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_item_) const
 	{
-		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_13.Obj())->GetPassword();
-		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
-		if ((__vwsn_old_ == __vwsn_new_))
-		{
-			return;
-		}
-		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_13.Obj())->SetPassword(__vwsn_new_);
+		auto item = ::vl::__vwsn::Unbox<::vl::Ptr<::gacpass::ICode>>(__vwsn_item_);
+		return ::vl::__vwsn::This(item.Obj())->GetPassword();
 	}
 
 	//-------------------------------------------------------------------
 
-	__vwsnf7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::__vwsnf7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+	__vwsnf7_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::__vwsnf7_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
 	}
 
-	void __vwsnf7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	void __vwsnf7_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
 	{
-		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_13.Obj())->GetConfirmPassword();
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->listViewCodes)->GetItemSource();
+		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::Ptr<::vl::reflection::description::IValueEnumerable>>(__vwsn_value_);
+		if ((__vwsn_old_.Obj() == __vwsn_new_.Obj()))
+		{
+			return;
+		}
+		::vl::__vwsn::This(__vwsnthis_0->listViewCodes)->SetItemSource(__vwsn_new_);
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnf8_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_::__vwsnf8_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_(::gacpass::LoginWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+	}
+
+	void __vwsnf8_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_::operator()(::vl::presentation::compositions::GuiGraphicsComposition* sender, ::vl::presentation::compositions::GuiEventArgs* arguments) const
+	{
+		::vl::__vwsn::EventInvoke(::vl::__vwsn::This(::vl::__vwsn::This(__vwsnthis_0->self)->GetViewModel().Obj())->LoggedInChanged)();
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnf9_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_::__vwsnf9_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_(::gacpass::LoginWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+	}
+
+	void __vwsnf9_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
+	{
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_9.Obj())->GetPassword();
 		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
 		if ((__vwsn_old_ == __vwsn_new_))
 		{
 			return;
 		}
-		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_13.Obj())->SetConfirmPassword(__vwsn_new_);
+		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_9.Obj())->SetPassword(__vwsn_new_);
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+		this->__vwsn_bind_cache_0 = static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr);
+		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
+		this->__vwsn_bind_opened_ = false;
+		this->__vwsn_bind_closed_ = false;
+	}
+
+	void __vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
+	{
+		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0)->GetText();
+		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
+	}
+
+	void __vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1)
+	{
+		this->__vwsn_bind_activator_();
+	}
+
+	bool __vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
+	{
+		if ((! __vwsn_bind_opened_))
+		{
+			(__vwsn_bind_opened_ = true);
+			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->textBoxConfirmPassword; } catch(...){ return static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, ::vl::Func<void(::vl::presentation::compositions::GuiGraphicsComposition*, ::vl::presentation::compositions::GuiEventArgs*)>(this, &__vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			return true;
+		}
+		return false;
+	}
+
+	bool __vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Update()
+	{
+		if ((__vwsn_bind_opened_ && (! __vwsn_bind_closed_)))
+		{
+			this->__vwsn_bind_activator_();
+			return true;
+		}
+		return false;
+	}
+
+	bool __vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Close()
+	{
+		if ((! __vwsn_bind_closed_))
+		{
+			(__vwsn_bind_closed_ = true);
+			if (static_cast<bool>(__vwsn_bind_handler_0_0))
+			{
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, __vwsn_bind_handler_0_0);
+				(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			}
+			(__vwsn_bind_cache_0 = static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr));
+			(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			return true;
+		}
+		return false;
 	}
 
 	//-------------------------------------------------------------------
@@ -186,14 +364,21 @@ Closures
 	__vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
+		this->__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IViewModel>();
+		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
 		this->__vwsn_bind_opened_ = false;
 		this->__vwsn_bind_closed_ = false;
 	}
 
 	void __vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
 	{
-		auto __vwsn_bind_activator_result_ = (! ::vl::__vwsn::This(__vwsnthis_0->ViewModel.Obj())->GetMainPasswordSet());
+		auto __vwsn_bind_activator_result_ = (! ::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetMainPasswordSet());
 		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
+	}
+
+	void __vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0()
+	{
+		this->__vwsn_bind_activator_();
 	}
 
 	bool __vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
@@ -201,6 +386,8 @@ Closures
 		if ((! __vwsn_bind_opened_))
 		{
 			(__vwsn_bind_opened_ = true);
+			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->ViewModel; } catch(...){ return ::vl::Ptr<::gacpass::IViewModel>(); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->MainPasswordSetChanged, ::vl::Func<void()>(this, &__vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
 			return true;
 		}
 		return false;
@@ -221,6 +408,13 @@ Closures
 		if ((! __vwsn_bind_closed_))
 		{
 			(__vwsn_bind_closed_ = true);
+			if (static_cast<bool>(__vwsn_bind_handler_0_0))
+			{
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->MainPasswordSetChanged, __vwsn_bind_handler_0_0);
+				(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			}
+			(__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IViewModel>());
+			(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
 			return true;
 		}
 		return false;
@@ -231,14 +425,28 @@ Closures
 	__vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
+		this->__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IViewModel>();
+		this->__vwsn_bind_cache_1 = ::vl::Ptr<::gacpass::IViewModel>();
+		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
+		this->__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
 		this->__vwsn_bind_opened_ = false;
 		this->__vwsn_bind_closed_ = false;
 	}
 
 	void __vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
 	{
-		auto __vwsn_bind_activator_result_ = (::vl::__vwsn::This(__vwsnthis_0->ViewModel.Obj())->GetMainPasswordSet() && (! ::vl::__vwsn::This(__vwsnthis_0->ViewModel.Obj())->GetLoggedIn()));
+		auto __vwsn_bind_activator_result_ = (::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetMainPasswordSet() && (! ::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->GetLoggedIn()));
 		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
+	}
+
+	void __vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0()
+	{
+		this->__vwsn_bind_activator_();
+	}
+
+	void __vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_1_0()
+	{
+		this->__vwsn_bind_activator_();
 	}
 
 	bool __vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
@@ -246,6 +454,10 @@ Closures
 		if ((! __vwsn_bind_opened_))
 		{
 			(__vwsn_bind_opened_ = true);
+			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->ViewModel; } catch(...){ return ::vl::Ptr<::gacpass::IViewModel>(); } }());
+			(__vwsn_bind_cache_1 = [&](){ try{ return __vwsnthis_0->ViewModel; } catch(...){ return ::vl::Ptr<::gacpass::IViewModel>(); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->MainPasswordSetChanged, ::vl::Func<void()>(this, &__vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			(__vwsn_bind_handler_1_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->LoggedInChanged, ::vl::Func<void()>(this, &__vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_1_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
 			return true;
 		}
 		return false;
@@ -266,6 +478,20 @@ Closures
 		if ((! __vwsn_bind_closed_))
 		{
 			(__vwsn_bind_closed_ = true);
+			if (static_cast<bool>(__vwsn_bind_handler_0_0))
+			{
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->MainPasswordSetChanged, __vwsn_bind_handler_0_0);
+				(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			}
+			if (static_cast<bool>(__vwsn_bind_handler_1_0))
+			{
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->LoggedInChanged, __vwsn_bind_handler_1_0);
+				(__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			}
+			(__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IViewModel>());
+			(__vwsn_bind_cache_1 = ::vl::Ptr<::gacpass::IViewModel>());
+			(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			(__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
 			return true;
 		}
 		return false;
@@ -276,14 +502,28 @@ Closures
 	__vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
+		this->__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IViewModel>();
+		this->__vwsn_bind_cache_1 = ::vl::Ptr<::gacpass::IViewModel>();
+		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
+		this->__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
 		this->__vwsn_bind_opened_ = false;
 		this->__vwsn_bind_closed_ = false;
 	}
 
 	void __vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
 	{
-		auto __vwsn_bind_activator_result_ = (::vl::__vwsn::This(__vwsnthis_0->ViewModel.Obj())->GetMainPasswordSet() && ::vl::__vwsn::This(__vwsnthis_0->ViewModel.Obj())->GetLoggedIn());
+		auto __vwsn_bind_activator_result_ = (::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetMainPasswordSet() && ::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->GetLoggedIn());
 		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
+	}
+
+	void __vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0()
+	{
+		this->__vwsn_bind_activator_();
+	}
+
+	void __vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_1_0()
+	{
+		this->__vwsn_bind_activator_();
 	}
 
 	bool __vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
@@ -291,6 +531,10 @@ Closures
 		if ((! __vwsn_bind_opened_))
 		{
 			(__vwsn_bind_opened_ = true);
+			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->ViewModel; } catch(...){ return ::vl::Ptr<::gacpass::IViewModel>(); } }());
+			(__vwsn_bind_cache_1 = [&](){ try{ return __vwsnthis_0->ViewModel; } catch(...){ return ::vl::Ptr<::gacpass::IViewModel>(); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->MainPasswordSetChanged, ::vl::Func<void()>(this, &__vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			(__vwsn_bind_handler_1_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->LoggedInChanged, ::vl::Func<void()>(this, &__vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_1_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
 			return true;
 		}
 		return false;
@@ -311,67 +555,20 @@ Closures
 		if ((! __vwsn_bind_closed_))
 		{
 			(__vwsn_bind_closed_ = true);
-			return true;
-		}
-		return false;
-	}
-
-	//-------------------------------------------------------------------
-
-	__vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
-		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
-	{
-		this->__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>();
-		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
-		this->__vwsn_bind_opened_ = false;
-		this->__vwsn_bind_closed_ = false;
-	}
-
-	void __vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
-	{
-		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetPasswordError();
-		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
-	}
-
-	void __vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0()
-	{
-		this->__vwsn_bind_activator_();
-	}
-
-	bool __vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
-	{
-		if ((! __vwsn_bind_opened_))
-		{
-			(__vwsn_bind_opened_ = true);
-			(__vwsn_bind_cache_0 = [&](){ try{ return ::vl::__vwsn::This(__vwsnthis_0->self)->GetViewModel(); } catch(...){ return ::vl::Ptr<::gacpass::IRegisterViewModel>(); } }());
-			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->PasswordErrorChanged, ::vl::Func<void()>(this, &__vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
-			return true;
-		}
-		return false;
-	}
-
-	bool __vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Update()
-	{
-		if ((__vwsn_bind_opened_ && (! __vwsn_bind_closed_)))
-		{
-			this->__vwsn_bind_activator_();
-			return true;
-		}
-		return false;
-	}
-
-	bool __vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Close()
-	{
-		if ((! __vwsn_bind_closed_))
-		{
-			(__vwsn_bind_closed_ = true);
 			if (static_cast<bool>(__vwsn_bind_handler_0_0))
 			{
-				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->PasswordErrorChanged, __vwsn_bind_handler_0_0);
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->MainPasswordSetChanged, __vwsn_bind_handler_0_0);
 				(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
 			}
-			(__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>());
+			if (static_cast<bool>(__vwsn_bind_handler_1_0))
+			{
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->LoggedInChanged, __vwsn_bind_handler_1_0);
+				(__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			}
+			(__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IViewModel>());
+			(__vwsn_bind_cache_1 = ::vl::Ptr<::gacpass::IViewModel>());
 			(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			(__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
 			return true;
 		}
 		return false;
@@ -379,39 +576,30 @@ Closures
 
 	//-------------------------------------------------------------------
 
-	__vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+	__vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
-		this->__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>();
-		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
 		this->__vwsn_bind_opened_ = false;
 		this->__vwsn_bind_closed_ = false;
 	}
 
-	void __vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
+	void __vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
 	{
-		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetConfirmPasswordError();
+		auto __vwsn_bind_activator_result_ = ::vl::Ptr<::vl::reflection::description::IValueEnumerable>([&](){ try{ return ::vl::__vwsn::This(::vl::__vwsn::This(__vwsnthis_0->ViewModel.Obj())->GetCodeBookViewModel().Obj())->GetCodes(); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IValueObservableList>(); } }());
 		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
 	}
 
-	void __vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0()
-	{
-		this->__vwsn_bind_activator_();
-	}
-
-	bool __vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
+	bool __vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
 	{
 		if ((! __vwsn_bind_opened_))
 		{
 			(__vwsn_bind_opened_ = true);
-			(__vwsn_bind_cache_0 = [&](){ try{ return ::vl::__vwsn::This(__vwsnthis_0->self)->GetViewModel(); } catch(...){ return ::vl::Ptr<::gacpass::IRegisterViewModel>(); } }());
-			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->ConfirmPasswordErrorChanged, ::vl::Func<void()>(this, &__vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
 			return true;
 		}
 		return false;
 	}
 
-	bool __vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Update()
+	bool __vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription::Update()
 	{
 		if ((__vwsn_bind_opened_ && (! __vwsn_bind_closed_)))
 		{
@@ -421,17 +609,71 @@ Closures
 		return false;
 	}
 
-	bool __vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Close()
+	bool __vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription::Close()
+	{
+		if ((! __vwsn_bind_closed_))
+		{
+			(__vwsn_bind_closed_ = true);
+			return true;
+		}
+		return false;
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::LoginWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+		this->__vwsn_bind_cache_0 = static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr);
+		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
+		this->__vwsn_bind_opened_ = false;
+		this->__vwsn_bind_closed_ = false;
+	}
+
+	void __vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
+	{
+		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0)->GetText();
+		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
+	}
+
+	void __vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1)
+	{
+		this->__vwsn_bind_activator_();
+	}
+
+	bool __vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
+	{
+		if ((! __vwsn_bind_opened_))
+		{
+			(__vwsn_bind_opened_ = true);
+			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->textBoxPassword; } catch(...){ return static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, ::vl::Func<void(::vl::presentation::compositions::GuiGraphicsComposition*, ::vl::presentation::compositions::GuiEventArgs*)>(this, &__vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			return true;
+		}
+		return false;
+	}
+
+	bool __vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription::Update()
+	{
+		if ((__vwsn_bind_opened_ && (! __vwsn_bind_closed_)))
+		{
+			this->__vwsn_bind_activator_();
+			return true;
+		}
+		return false;
+	}
+
+	bool __vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription::Close()
 	{
 		if ((! __vwsn_bind_closed_))
 		{
 			(__vwsn_bind_closed_ = true);
 			if (static_cast<bool>(__vwsn_bind_handler_0_0))
 			{
-				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->ConfirmPasswordErrorChanged, __vwsn_bind_handler_0_0);
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, __vwsn_bind_handler_0_0);
 				(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
 			}
-			(__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>());
+			(__vwsn_bind_cache_0 = static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr));
 			(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
 			return true;
 		}
@@ -443,7 +685,7 @@ Closures
 	__vwsnc6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
-		this->__vwsn_bind_cache_0 = static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr);
+		this->__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>();
 		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
 		this->__vwsn_bind_opened_ = false;
 		this->__vwsn_bind_closed_ = false;
@@ -451,11 +693,11 @@ Closures
 
 	void __vwsnc6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
 	{
-		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0)->GetText();
+		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetPasswordError();
 		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
 	}
 
-	void __vwsnc6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1)
+	void __vwsnc6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0()
 	{
 		this->__vwsn_bind_activator_();
 	}
@@ -465,8 +707,8 @@ Closures
 		if ((! __vwsn_bind_opened_))
 		{
 			(__vwsn_bind_opened_ = true);
-			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->textBoxPassword; } catch(...){ return static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr); } }());
-			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, ::vl::Func<void(::vl::presentation::compositions::GuiGraphicsComposition*, ::vl::presentation::compositions::GuiEventArgs*)>(this, &__vwsnc6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			(__vwsn_bind_cache_0 = [&](){ try{ return ::vl::__vwsn::This(::vl::__vwsn::This(__vwsnthis_0->self)->GetViewModel().Obj())->GetRegisterViewModel(); } catch(...){ return ::vl::Ptr<::gacpass::IRegisterViewModel>(); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->PasswordErrorChanged, ::vl::Func<void()>(this, &__vwsnc6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
 			return true;
 		}
 		return false;
@@ -489,10 +731,10 @@ Closures
 			(__vwsn_bind_closed_ = true);
 			if (static_cast<bool>(__vwsn_bind_handler_0_0))
 			{
-				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, __vwsn_bind_handler_0_0);
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->PasswordErrorChanged, __vwsn_bind_handler_0_0);
 				(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
 			}
-			(__vwsn_bind_cache_0 = static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr));
+			(__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>());
 			(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
 			return true;
 		}
@@ -504,7 +746,7 @@ Closures
 	__vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
 		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
 	{
-		this->__vwsn_bind_cache_0 = static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr);
+		this->__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>();
 		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
 		this->__vwsn_bind_opened_ = false;
 		this->__vwsn_bind_closed_ = false;
@@ -512,11 +754,11 @@ Closures
 
 	void __vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
 	{
-		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0)->GetText();
+		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetConfirmPasswordError();
 		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
 	}
 
-	void __vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1)
+	void __vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0()
 	{
 		this->__vwsn_bind_activator_();
 	}
@@ -526,8 +768,8 @@ Closures
 		if ((! __vwsn_bind_opened_))
 		{
 			(__vwsn_bind_opened_ = true);
-			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->textBoxConfirmPassword; } catch(...){ return static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr); } }());
-			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, ::vl::Func<void(::vl::presentation::compositions::GuiGraphicsComposition*, ::vl::presentation::compositions::GuiEventArgs*)>(this, &__vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			(__vwsn_bind_cache_0 = [&](){ try{ return ::vl::__vwsn::This(::vl::__vwsn::This(__vwsnthis_0->self)->GetViewModel().Obj())->GetRegisterViewModel(); } catch(...){ return ::vl::Ptr<::gacpass::IRegisterViewModel>(); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->ConfirmPasswordErrorChanged, ::vl::Func<void()>(this, &__vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
 			return true;
 		}
 		return false;
@@ -544,6 +786,144 @@ Closures
 	}
 
 	bool __vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Close()
+	{
+		if ((! __vwsn_bind_closed_))
+		{
+			(__vwsn_bind_closed_ = true);
+			if (static_cast<bool>(__vwsn_bind_handler_0_0))
+			{
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->ConfirmPasswordErrorChanged, __vwsn_bind_handler_0_0);
+				(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			}
+			(__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>());
+			(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			return true;
+		}
+		return false;
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+		this->__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>();
+		this->__vwsn_bind_cache_1 = ::vl::Ptr<::gacpass::IRegisterViewModel>();
+		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
+		this->__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
+		this->__vwsn_bind_opened_ = false;
+		this->__vwsn_bind_closed_ = false;
+	}
+
+	void __vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
+	{
+		auto __vwsn_bind_activator_result_ = ((::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetPasswordError() == ::vl::WString(L"", false)) && (::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->GetConfirmPasswordError() == ::vl::WString(L"", false)));
+		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
+	}
+
+	void __vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0()
+	{
+		this->__vwsn_bind_activator_();
+	}
+
+	void __vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_1_0()
+	{
+		this->__vwsn_bind_activator_();
+	}
+
+	bool __vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
+	{
+		if ((! __vwsn_bind_opened_))
+		{
+			(__vwsn_bind_opened_ = true);
+			(__vwsn_bind_cache_0 = [&](){ try{ return ::vl::__vwsn::This(::vl::__vwsn::This(__vwsnthis_0->self)->GetViewModel().Obj())->GetRegisterViewModel(); } catch(...){ return ::vl::Ptr<::gacpass::IRegisterViewModel>(); } }());
+			(__vwsn_bind_cache_1 = [&](){ try{ return ::vl::__vwsn::This(::vl::__vwsn::This(__vwsnthis_0->self)->GetViewModel().Obj())->GetRegisterViewModel(); } catch(...){ return ::vl::Ptr<::gacpass::IRegisterViewModel>(); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->PasswordErrorChanged, ::vl::Func<void()>(this, &__vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			(__vwsn_bind_handler_1_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->ConfirmPasswordErrorChanged, ::vl::Func<void()>(this, &__vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_1_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			return true;
+		}
+		return false;
+	}
+
+	bool __vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Update()
+	{
+		if ((__vwsn_bind_opened_ && (! __vwsn_bind_closed_)))
+		{
+			this->__vwsn_bind_activator_();
+			return true;
+		}
+		return false;
+	}
+
+	bool __vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Close()
+	{
+		if ((! __vwsn_bind_closed_))
+		{
+			(__vwsn_bind_closed_ = true);
+			if (static_cast<bool>(__vwsn_bind_handler_0_0))
+			{
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->PasswordErrorChanged, __vwsn_bind_handler_0_0);
+				(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			}
+			if (static_cast<bool>(__vwsn_bind_handler_1_0))
+			{
+				::vl::__vwsn::EventDetach(::vl::__vwsn::This(__vwsn_bind_cache_1.Obj())->ConfirmPasswordErrorChanged, __vwsn_bind_handler_1_0);
+				(__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			}
+			(__vwsn_bind_cache_0 = ::vl::Ptr<::gacpass::IRegisterViewModel>());
+			(__vwsn_bind_cache_1 = ::vl::Ptr<::gacpass::IRegisterViewModel>());
+			(__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			(__vwsn_bind_handler_1_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>());
+			return true;
+		}
+		return false;
+	}
+
+	//-------------------------------------------------------------------
+
+	__vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0)
+		:__vwsnthis_0(::vl::__vwsn::This(__vwsnctorthis_0))
+	{
+		this->__vwsn_bind_cache_0 = static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr);
+		this->__vwsn_bind_handler_0_0 = ::vl::Ptr<::vl::reflection::description::IEventHandler>();
+		this->__vwsn_bind_opened_ = false;
+		this->__vwsn_bind_closed_ = false;
+	}
+
+	void __vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
+	{
+		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(__vwsn_bind_cache_0)->GetText();
+		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
+	}
+
+	void __vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1)
+	{
+		this->__vwsn_bind_activator_();
+	}
+
+	bool __vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Open()
+	{
+		if ((! __vwsn_bind_opened_))
+		{
+			(__vwsn_bind_opened_ = true);
+			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->textBoxPassword; } catch(...){ return static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr); } }());
+			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, ::vl::Func<void(::vl::presentation::compositions::GuiGraphicsComposition*, ::vl::presentation::compositions::GuiEventArgs*)>(this, &__vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
+			return true;
+		}
+		return false;
+	}
+
+	bool __vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Update()
+	{
+		if ((__vwsn_bind_opened_ && (! __vwsn_bind_closed_)))
+		{
+			this->__vwsn_bind_activator_();
+			return true;
+		}
+		return false;
+	}
+
+	bool __vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription::Close()
 	{
 		if ((! __vwsn_bind_closed_))
 		{
@@ -570,50 +950,177 @@ namespace gacpass
 {
 	void CodeBookWindowConstructor::__vwsn_gacpass_CodeBookWindow_Initialize(::gacpass::CodeBookWindow* __vwsn_this_)
 	{
-		(this->__vwsn_precompile_0 = __vwsn_this_);
-		(this->__vwsn_precompile_4 = ::vl::__vwsn::This(this->__vwsn_precompile_0)->GetBoundsComposition());
+		(this->self = __vwsn_this_);
+		(this->ViewModel = ::vl::__vwsn::This(__vwsn_this_)->GetViewModel());
+		(this->__vwsn_precompile_10 = ::vl::__vwsn::This(this->self)->GetBoundsComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_10)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+		}
+		(this->commandNewCode = new ::vl::presentation::controls::GuiToolstripCommand());
+		{
+			::vl::__vwsn::This(this->self)->AddComponent(static_cast<::vl::presentation::controls::GuiComponent*>(this->commandNewCode));
+		}
+		(this->__vwsn_precompile_0 = new ::vl::presentation::compositions::GuiTableComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetBorderVisible(false);
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetCellPadding(static_cast<::vl::vint>(5));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowsAndColumns(static_cast<::vl::vint>(2), static_cast<::vl::vint>(1));
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(0), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(1), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Percentage; __vwsn_temp__.percentage = static_cast<double>(1.0); return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetColumnOption(static_cast<::vl::vint>(0), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Percentage; __vwsn_temp__.percentage = static_cast<double>(1.0); return __vwsn_temp__; }());
+		}
+		(this->__vwsn_precompile_1 = new ::vl::presentation::compositions::GuiCellComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_1)->SetSite(static_cast<::vl::vint>(0), static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1));
+		}
+		{
+			(this->__vwsn_precompile_2 = new ::vl::presentation::controls::GuiToolstripToolBar(::vl::presentation::theme::ThemeName::ToolstripToolBar));
+		}
+		(this->__vwsn_precompile_4 = ::vl::__vwsn::This(this->__vwsn_precompile_2)->GetBoundsComposition());
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_4)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
 		}
-		(this->__vwsn_precompile_1 = new ::vl::presentation::compositions::GuiTableComposition());
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_1)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+			(this->__vwsn_precompile_3 = new ::vl::presentation::controls::GuiToolstripButton(::vl::presentation::theme::ThemeName::ToolstripButton));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_1)->SetBorderVisible(false);
+			::vl::__vwsn::This(::vl::__vwsn::UnboxCollection<::vl::reflection::description::IValueList>(::vl::__vwsn::This(this->__vwsn_precompile_2)->GetToolstripItems()).Obj())->Add(::vl::__vwsn::Box(this->__vwsn_precompile_3));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_1)->SetCellPadding(static_cast<::vl::vint>(5));
-		}
-		(this->__vwsn_precompile_2 = new ::vl::presentation::compositions::GuiCellComposition());
-		{
-			::vl::__vwsn::This(this->__vwsn_precompile_2)->SetSite(static_cast<::vl::vint>(0), static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1));
+			::vl::__vwsn::This(this->__vwsn_precompile_1)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->__vwsn_precompile_2)->GetBoundsComposition()));
 		}
 		{
-			(this->__vwsn_precompile_3 = new ::vl::presentation::controls::GuiLabel(::vl::presentation::theme::ThemeName::Label));
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_1));
+		}
+		(this->__vwsn_precompile_5 = new ::vl::presentation::compositions::GuiCellComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_5)->SetSite(static_cast<::vl::vint>(1), static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_3)->SetText(::vl::WString(L"CodeBook", false));
+			(this->listViewCodes = new ::vl::presentation::controls::GuiBindableListView(::vl::presentation::theme::ThemeName::ListView));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_2)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->__vwsn_precompile_3)->GetBoundsComposition()));
+			auto __vwsn_collection_ = ::vl::__vwsn::UnboxCollection<::vl::reflection::description::IValueList>(::vl::__vwsn::This(this->listViewCodes)->GetDataColumns());
+			::vl::__vwsn::This(__vwsn_collection_.Obj())->Add(::vl::__vwsn::Box(static_cast<::vl::vint>(1)));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_1)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_2));
+			auto __vwsn_collection_ = ::vl::__vwsn::UnboxCollection<::vl::reflection::description::IValueList>(::vl::__vwsn::This(this->listViewCodes)->GetDataColumns());
+			::vl::__vwsn::This(__vwsn_collection_.Obj())->Add(::vl::__vwsn::Box(static_cast<::vl::vint>(2)));
 		}
 		{
-			::vl::__vwsn::This(::vl::__vwsn::This(this->__vwsn_precompile_0)->GetContainerComposition())->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_1));
+			::vl::__vwsn::This(this->listViewCodes)->SetVerticalAlwaysVisible(false);
+		}
+		{
+			::vl::__vwsn::This(this->listViewCodes)->SetHorizontalAlwaysVisible(false);
+		}
+		{
+			::vl::__vwsn::This(this->listViewCodes)->SetView(::vl::presentation::controls::ListViewView::Detail);
+		}
+		(this->__vwsn_precompile_9 = ::vl::__vwsn::This(this->listViewCodes)->GetBoundsComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_9)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+		}
+		(this->__vwsn_precompile_6 = ::vl::Ptr<::vl::presentation::controls::list::ListViewColumn>(new ::vl::presentation::controls::list::ListViewColumn()));
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_6.Obj())->SetSize(static_cast<::vl::vint>(120));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_6.Obj())->SetTextProperty(LAMBDA(::vl_workflow_global::__vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(this)));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_6.Obj())->SetText(::vl::WString(L"Website", false));
+		}
+		{
+			auto __vwsn_collection_ = ::vl::__vwsn::UnboxCollection<::vl::reflection::description::IValueList>(::vl::__vwsn::This(this->listViewCodes)->GetColumns());
+			::vl::__vwsn::This(__vwsn_collection_.Obj())->Add(::vl::__vwsn::Box(this->__vwsn_precompile_6));
+		}
+		(this->__vwsn_precompile_7 = ::vl::Ptr<::vl::presentation::controls::list::ListViewColumn>(new ::vl::presentation::controls::list::ListViewColumn()));
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_7.Obj())->SetSize(static_cast<::vl::vint>(120));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_7.Obj())->SetTextProperty(LAMBDA(::vl_workflow_global::__vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(this)));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_7.Obj())->SetText(::vl::WString(L"Username", false));
+		}
+		{
+			auto __vwsn_collection_ = ::vl::__vwsn::UnboxCollection<::vl::reflection::description::IValueList>(::vl::__vwsn::This(this->listViewCodes)->GetColumns());
+			::vl::__vwsn::This(__vwsn_collection_.Obj())->Add(::vl::__vwsn::Box(this->__vwsn_precompile_7));
+		}
+		(this->__vwsn_precompile_8 = ::vl::Ptr<::vl::presentation::controls::list::ListViewColumn>(new ::vl::presentation::controls::list::ListViewColumn()));
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_8.Obj())->SetSize(static_cast<::vl::vint>(120));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_8.Obj())->SetTextProperty(LAMBDA(::vl_workflow_global::__vwsnf6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(this)));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_8.Obj())->SetText(::vl::WString(L"Passowrd", false));
+		}
+		{
+			auto __vwsn_collection_ = ::vl::__vwsn::UnboxCollection<::vl::reflection::description::IValueList>(::vl::__vwsn::This(this->listViewCodes)->GetColumns());
+			::vl::__vwsn::This(__vwsn_collection_.Obj())->Add(::vl::__vwsn::Box(this->__vwsn_precompile_8));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_5)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->listViewCodes)->GetBoundsComposition()));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_5));
+		}
+		{
+			::vl::__vwsn::This(::vl::__vwsn::This(this->self)->GetContainerComposition())->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_0));
+		}
+		{
+			::vl::__vwsn::This(this->commandNewCode)->SetImage(::vl::__vwsn::Ensure(::vl::__vwsn::SharedPtrCast<::vl::presentation::GuiImageData>(::vl::__vwsn::This(__vwsn_this_)->ResolveResource(::vl::WString(L"res", false), ::vl::WString(L"Images/Folder", false), true).Obj())));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_3)->SetCommand(this->commandNewCode);
+		}
+		{
+			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(this));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf7_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(this)));
+			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
 		}
 	}
 
 	CodeBookWindowConstructor::CodeBookWindowConstructor()
-		: __vwsn_precompile_0(static_cast<::gacpass::CodeBookWindow*>(nullptr))
-		, __vwsn_precompile_1(static_cast<::vl::presentation::compositions::GuiTableComposition*>(nullptr))
-		, __vwsn_precompile_2(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
-		, __vwsn_precompile_3(static_cast<::vl::presentation::controls::GuiLabel*>(nullptr))
+		: ViewModel(::vl::Ptr<::gacpass::IViewModel>())
+		, self(static_cast<::gacpass::CodeBookWindow*>(nullptr))
+		, commandNewCode(static_cast<::vl::presentation::controls::GuiToolstripCommand*>(nullptr))
+		, listViewCodes(static_cast<::vl::presentation::controls::GuiBindableListView*>(nullptr))
+		, __vwsn_precompile_0(static_cast<::vl::presentation::compositions::GuiTableComposition*>(nullptr))
+		, __vwsn_precompile_1(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
+		, __vwsn_precompile_2(static_cast<::vl::presentation::controls::GuiToolstripToolBar*>(nullptr))
+		, __vwsn_precompile_3(static_cast<::vl::presentation::controls::GuiToolstripButton*>(nullptr))
 		, __vwsn_precompile_4(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
+		, __vwsn_precompile_5(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
+		, __vwsn_precompile_6(::vl::Ptr<::vl::presentation::controls::list::ListViewColumn>())
+		, __vwsn_precompile_7(::vl::Ptr<::vl::presentation::controls::list::ListViewColumn>())
+		, __vwsn_precompile_8(::vl::Ptr<::vl::presentation::controls::list::ListViewColumn>())
+		, __vwsn_precompile_9(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
+		, __vwsn_precompile_10(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
 	{
 	}
+
+/***********************************************************************
+Class (::gacpass::ICode)
+***********************************************************************/
+
+/***********************************************************************
+Class (::gacpass::ICodeBookViewModel)
+***********************************************************************/
+
+/***********************************************************************
+Class (::gacpass::ILoginViewModel)
+***********************************************************************/
 
 /***********************************************************************
 Class (::gacpass::IRegisterViewModel)
@@ -629,49 +1136,165 @@ Class (::gacpass::LoginWindowConstructor)
 
 	void LoginWindowConstructor::__vwsn_gacpass_LoginWindow_Initialize(::gacpass::LoginWindow* __vwsn_this_)
 	{
-		(this->__vwsn_precompile_0 = __vwsn_this_);
-		(this->__vwsn_precompile_4 = ::vl::__vwsn::This(this->__vwsn_precompile_0)->GetBoundsComposition());
+		(this->self = __vwsn_this_);
+		(this->ViewModel = ::vl::__vwsn::This(__vwsn_this_)->GetViewModel());
+		(this->__vwsn_precompile_10 = ::vl::__vwsn::This(this->self)->GetBoundsComposition());
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_4)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_10)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
 		}
-		(this->__vwsn_precompile_1 = new ::vl::presentation::compositions::GuiTableComposition());
+		(this->__vwsn_precompile_8 = ::vl::__vwsn::This(this->self)->GetViewModel());
+		(this->__vwsn_precompile_9 = ::vl::__vwsn::This(this->__vwsn_precompile_8.Obj())->GetLoginViewModel());
+		(this->__vwsn_precompile_0 = new ::vl::presentation::compositions::GuiTableComposition());
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_1)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_1)->SetBorderVisible(false);
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetBorderVisible(false);
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_1)->SetCellPadding(static_cast<::vl::vint>(5));
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetCellPadding(static_cast<::vl::vint>(5));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowsAndColumns(static_cast<::vl::vint>(7), static_cast<::vl::vint>(2));
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(0), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Absolute; __vwsn_temp__.absolute = static_cast<::vl::vint>(90); return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(1), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(2), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(3), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(4), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(5), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Percentage; __vwsn_temp__.percentage = static_cast<double>(1.0); return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(6), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetColumnOption(static_cast<::vl::vint>(0), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetColumnOption(static_cast<::vl::vint>(1), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Percentage; __vwsn_temp__.percentage = static_cast<double>(1.0); return __vwsn_temp__; }());
+		}
+		(this->__vwsn_precompile_1 = new ::vl::presentation::compositions::GuiCellComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_1)->SetSite(static_cast<::vl::vint>(0), static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_1));
 		}
 		(this->__vwsn_precompile_2 = new ::vl::presentation::compositions::GuiCellComposition());
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_2)->SetSite(static_cast<::vl::vint>(0), static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1));
+			::vl::__vwsn::This(this->__vwsn_precompile_2)->SetSite(static_cast<::vl::vint>(1), static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1));
+		}
+		(this->__vwsn_precompile_3 = ::vl::Ptr<::vl::presentation::elements::GuiSolidLabelElement>(::vl::reflection::description::Element_Constructor<::vl::presentation::elements::GuiSolidLabelElement>()));
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_3.Obj())->SetFont([&](){ ::vl::presentation::FontProperties __vwsn_temp__; __vwsn_temp__.fontFamily = ::vl::WString(L"Segoe UI", false); __vwsn_temp__.size = static_cast<::vl::vint>(12); __vwsn_temp__.antialias = true; return __vwsn_temp__; }());
 		}
 		{
-			(this->__vwsn_precompile_3 = new ::vl::presentation::controls::GuiLabel(::vl::presentation::theme::ThemeName::Label));
+			::vl::__vwsn::This(this->__vwsn_precompile_3.Obj())->SetVerticalAlignment(::vl::presentation::Alignment::Center);
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_3)->SetText(::vl::WString(L"Login", false));
+			::vl::__vwsn::This(this->__vwsn_precompile_3.Obj())->SetText(::vl::WString(L"Password: ", false));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_2)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->__vwsn_precompile_3)->GetBoundsComposition()));
+			::vl::__vwsn::This(this->__vwsn_precompile_2)->SetOwnedElement(::vl::Ptr<::vl::presentation::elements::IGuiGraphicsElement>(this->__vwsn_precompile_3));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_1)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_2));
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_2));
+		}
+		(this->__vwsn_precompile_4 = new ::vl::presentation::compositions::GuiCellComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_4)->SetSite(static_cast<::vl::vint>(1), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1));
 		}
 		{
-			::vl::__vwsn::This(::vl::__vwsn::This(this->__vwsn_precompile_0)->GetContainerComposition())->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_1));
+			(this->textBoxPassword = new ::vl::presentation::controls::GuiSinglelineTextBox(::vl::presentation::theme::ThemeName::SinglelineTextBox));
+		}
+		(this->__vwsn_precompile_5 = ::vl::__vwsn::This(this->textBoxPassword)->GetBoundsComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_5)->SetPreferredMinSize([&](){ ::vl::presentation::Size __vwsn_temp__; __vwsn_temp__.x = static_cast<::vl::vint>(0); __vwsn_temp__.y = static_cast<::vl::vint>(24); return __vwsn_temp__; }());
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_5)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+		}
+		{
+			::vl::__vwsn::This(this->textBoxPassword)->SetPasswordChar(::vl::__vwsn::Parse<wchar_t>(::vl::WString(L"*", false)));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_4)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->textBoxPassword)->GetBoundsComposition()));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_4));
+		}
+		(this->__vwsn_precompile_6 = new ::vl::presentation::compositions::GuiCellComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_6)->SetSite(static_cast<::vl::vint>(6), static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(2));
+		}
+		{
+			(this->buttonLogin = new ::vl::presentation::controls::GuiButton(::vl::presentation::theme::ThemeName::Button));
+		}
+		(this->__vwsn_precompile_7 = ::vl::__vwsn::This(this->buttonLogin)->GetBoundsComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_7)->SetPreferredMinSize([&](){ ::vl::presentation::Size __vwsn_temp__; __vwsn_temp__.x = static_cast<::vl::vint>(100); __vwsn_temp__.y = static_cast<::vl::vint>(24); return __vwsn_temp__; }());
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_7)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = (- static_cast<::vl::vint>(1)); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+		}
+		{
+			::vl::__vwsn::This(this->buttonLogin)->SetText(::vl::WString(L"Login", false));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_6)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->buttonLogin)->GetBoundsComposition()));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_6));
+		}
+		{
+			::vl::__vwsn::This(::vl::__vwsn::This(this->self)->GetContainerComposition())->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_0));
+		}
+		{
+			auto __vwsn_event_handler_ = LAMBDA(::vl_workflow_global::__vwsnf8_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_(this));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(this->buttonLogin)->Clicked, __vwsn_event_handler_);
+		}
+		{
+			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc5_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription(this));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf9_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_(this)));
+			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
 		}
 	}
 
 	LoginWindowConstructor::LoginWindowConstructor()
-		: __vwsn_precompile_0(static_cast<::gacpass::LoginWindow*>(nullptr))
-		, __vwsn_precompile_1(static_cast<::vl::presentation::compositions::GuiTableComposition*>(nullptr))
+		: ViewModel(::vl::Ptr<::gacpass::IViewModel>())
+		, self(static_cast<::gacpass::LoginWindow*>(nullptr))
+		, textBoxPassword(static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr))
+		, buttonLogin(static_cast<::vl::presentation::controls::GuiButton*>(nullptr))
+		, __vwsn_precompile_0(static_cast<::vl::presentation::compositions::GuiTableComposition*>(nullptr))
+		, __vwsn_precompile_1(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
 		, __vwsn_precompile_2(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
-		, __vwsn_precompile_3(static_cast<::vl::presentation::controls::GuiLabel*>(nullptr))
-		, __vwsn_precompile_4(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
+		, __vwsn_precompile_3(::vl::Ptr<::vl::presentation::elements::GuiSolidLabelElement>())
+		, __vwsn_precompile_4(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
+		, __vwsn_precompile_5(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
+		, __vwsn_precompile_6(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
+		, __vwsn_precompile_7(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
+		, __vwsn_precompile_8(::vl::Ptr<::gacpass::IViewModel>())
+		, __vwsn_precompile_9(::vl::Ptr<::gacpass::ILoginViewModel>())
+		, __vwsn_precompile_10(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
 	{
+	}
+
+/***********************************************************************
+Class (::gacpass::LoginWindow)
+***********************************************************************/
+
+	::vl::Ptr<::gacpass::IViewModel> LoginWindow::GetViewModel()
+	{
+		return this->__vwsn_parameter_ViewModel;
+	}
+
+	LoginWindow::LoginWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel)
+		: ::vl::presentation::controls::GuiCustomControl(::vl::presentation::theme::ThemeName::CustomControl)
+		, __vwsn_parameter_ViewModel(::vl::Ptr<::gacpass::IViewModel>())
+	{
+		(this->__vwsn_parameter_ViewModel = __vwsn_ctor_parameter_ViewModel);
+		auto __vwsn_resource_ = ::vl::__vwsn::This(::vl::presentation::GetResourceManager())->GetResourceFromClassName(::vl::WString(L"gacpass::LoginWindow", false));
+		auto __vwsn_resolver_ = ::vl::Ptr<::vl::presentation::GuiResourcePathResolver>(new ::vl::presentation::GuiResourcePathResolver(__vwsn_resource_, ::vl::__vwsn::This(__vwsn_resource_.Obj())->GetWorkingDirectory()));
+		::vl::__vwsn::This(this)->SetResourceResolver(__vwsn_resolver_);
+		::vl::__vwsn::This(this)->__vwsn_gacpass_LoginWindow_Initialize(this);
+	}
+
+	LoginWindow::~LoginWindow()
+	{
+		this->FinalizeInstanceRecursively(static_cast<::vl::presentation::controls::GuiCustomControl*>(this));
 	}
 
 /***********************************************************************
@@ -688,15 +1311,15 @@ Class (::gacpass::MainWindowConstructor)
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetText(::vl::WString(L"GacPass", false));
 		}
-		(this->__vwsn_precompile_1 = new ::gacpass::RegisterWindow(::vl::__vwsn::This(this->ViewModel.Obj())->GetRegisterViewModel()));
+		(this->__vwsn_precompile_1 = new ::gacpass::RegisterWindow(this->ViewModel));
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::controls::GuiControl*>(this->__vwsn_precompile_1));
 		}
-		(this->__vwsn_precompile_2 = new ::gacpass::LoginWindow());
+		(this->__vwsn_precompile_2 = new ::gacpass::LoginWindow(this->ViewModel));
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::controls::GuiControl*>(this->__vwsn_precompile_2));
 		}
-		(this->__vwsn_precompile_3 = new ::gacpass::CodeBookWindow());
+		(this->__vwsn_precompile_3 = new ::gacpass::CodeBookWindow(this->ViewModel));
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::controls::GuiControl*>(this->__vwsn_precompile_3));
 		}
@@ -759,11 +1382,12 @@ Class (::gacpass::RegisterWindowConstructor)
 	{
 		(this->self = __vwsn_this_);
 		(this->ViewModel = ::vl::__vwsn::This(__vwsn_this_)->GetViewModel());
-		(this->__vwsn_precompile_14 = ::vl::__vwsn::This(this->self)->GetBoundsComposition());
+		(this->__vwsn_precompile_17 = ::vl::__vwsn::This(this->self)->GetBoundsComposition());
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_14)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_17)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
 		}
-		(this->__vwsn_precompile_13 = ::vl::__vwsn::This(this->self)->GetViewModel());
+		(this->__vwsn_precompile_15 = ::vl::__vwsn::This(this->self)->GetViewModel());
+		(this->__vwsn_precompile_16 = ::vl::__vwsn::This(this->__vwsn_precompile_15.Obj())->GetRegisterViewModel());
 		(this->__vwsn_precompile_0 = new ::vl::presentation::compositions::GuiTableComposition());
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
@@ -775,15 +1399,14 @@ Class (::gacpass::RegisterWindowConstructor)
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetCellPadding(static_cast<::vl::vint>(5));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowsAndColumns(static_cast<::vl::vint>(8), static_cast<::vl::vint>(2));
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowsAndColumns(static_cast<::vl::vint>(7), static_cast<::vl::vint>(2));
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(0), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Absolute; __vwsn_temp__.absolute = static_cast<::vl::vint>(10); return __vwsn_temp__; }());
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(1), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(2), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(3), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(4), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
-			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(5), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Absolute; __vwsn_temp__.absolute = static_cast<::vl::vint>(12); return __vwsn_temp__; }());
-			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(6), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Percentage; __vwsn_temp__.percentage = static_cast<double>(1.0); return __vwsn_temp__; }());
-			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(7), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(5), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Percentage; __vwsn_temp__.percentage = static_cast<double>(1.0); return __vwsn_temp__; }());
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetRowOption(static_cast<::vl::vint>(6), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetColumnOption(static_cast<::vl::vint>(0), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::MinSize; return __vwsn_temp__; }());
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->SetColumnOption(static_cast<::vl::vint>(1), [&](){ ::vl::presentation::compositions::GuiCellOption __vwsn_temp__; __vwsn_temp__.composeType = ::vl::presentation::compositions::GuiCellOption::ComposeType::Percentage; __vwsn_temp__.percentage = static_cast<double>(1.0); return __vwsn_temp__; }());
 		}
@@ -919,36 +1542,69 @@ Class (::gacpass::RegisterWindowConstructor)
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_11));
 		}
+		(this->__vwsn_precompile_13 = new ::vl::presentation::compositions::GuiCellComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_13)->SetSite(static_cast<::vl::vint>(6), static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(2));
+		}
+		{
+			(this->buttonSignUp = new ::vl::presentation::controls::GuiButton(::vl::presentation::theme::ThemeName::Button));
+		}
+		(this->__vwsn_precompile_14 = ::vl::__vwsn::This(this->buttonSignUp)->GetBoundsComposition());
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_14)->SetPreferredMinSize([&](){ ::vl::presentation::Size __vwsn_temp__; __vwsn_temp__.x = static_cast<::vl::vint>(100); __vwsn_temp__.y = static_cast<::vl::vint>(24); return __vwsn_temp__; }());
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_14)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = (- static_cast<::vl::vint>(1)); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
+		}
+		{
+			::vl::__vwsn::This(this->buttonSignUp)->SetText(::vl::WString(L"Sign Up!", false));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_13)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->buttonSignUp)->GetBoundsComposition()));
+		}
+		{
+			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_13));
+		}
 		{
 			::vl::__vwsn::This(::vl::__vwsn::This(this->self)->GetContainerComposition())->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_0));
 		}
 		{
-			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(this));
-			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf4_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
-			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
-		}
-		{
-			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(this));
-			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf5_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
-			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
-		}
-		{
 			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(this));
-			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf6_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
 			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
 		}
 		{
 			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(this));
-			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf7_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf11_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
+			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
+		}
+		{
+			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc8_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(this));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf12_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
+			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
+		}
+		{
+			auto __vwsn_event_handler_ = LAMBDA(::vl_workflow_global::__vwsnf13_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(this->buttonSignUp)->Clicked, __vwsn_event_handler_);
+		}
+		{
+			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc9_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(this));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf14_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
+			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
+		}
+		{
+			auto __vwsn_created_subscription_ = ::vl::Ptr<::vl::reflection::description::IValueSubscription>(new ::vl_workflow_global::__vwsnc10_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(this));
+			::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_created_subscription_.Obj())->ValueChanged, LAMBDA(::vl_workflow_global::__vwsnf15_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(this)));
 			::vl::__vwsn::This(__vwsn_this_)->AddSubscription(__vwsn_created_subscription_);
 		}
 	}
 
 	RegisterWindowConstructor::RegisterWindowConstructor()
-		: ViewModel(::vl::Ptr<::gacpass::IRegisterViewModel>())
+		: ViewModel(::vl::Ptr<::gacpass::IViewModel>())
 		, self(static_cast<::gacpass::RegisterWindow*>(nullptr))
 		, textBoxPassword(static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr))
 		, textBoxConfirmPassword(static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr))
+		, buttonSignUp(static_cast<::vl::presentation::controls::GuiButton*>(nullptr))
 		, __vwsn_precompile_0(static_cast<::vl::presentation::compositions::GuiTableComposition*>(nullptr))
 		, __vwsn_precompile_1(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
 		, __vwsn_precompile_2(::vl::Ptr<::vl::presentation::elements::GuiSolidLabelElement>())
@@ -962,8 +1618,11 @@ Class (::gacpass::RegisterWindowConstructor)
 		, __vwsn_precompile_10(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
 		, __vwsn_precompile_11(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
 		, __vwsn_precompile_12(::vl::Ptr<::vl::presentation::elements::GuiSolidLabelElement>())
-		, __vwsn_precompile_13(::vl::Ptr<::gacpass::IRegisterViewModel>())
+		, __vwsn_precompile_13(static_cast<::vl::presentation::compositions::GuiCellComposition*>(nullptr))
 		, __vwsn_precompile_14(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
+		, __vwsn_precompile_15(::vl::Ptr<::gacpass::IViewModel>())
+		, __vwsn_precompile_16(::vl::Ptr<::gacpass::IRegisterViewModel>())
+		, __vwsn_precompile_17(static_cast<::vl::presentation::compositions::GuiBoundsComposition*>(nullptr))
 	{
 	}
 
@@ -971,14 +1630,14 @@ Class (::gacpass::RegisterWindowConstructor)
 Class (::gacpass::RegisterWindow)
 ***********************************************************************/
 
-	::vl::Ptr<::gacpass::IRegisterViewModel> RegisterWindow::GetViewModel()
+	::vl::Ptr<::gacpass::IViewModel> RegisterWindow::GetViewModel()
 	{
 		return this->__vwsn_parameter_ViewModel;
 	}
 
-	RegisterWindow::RegisterWindow(::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_ctor_parameter_ViewModel)
+	RegisterWindow::RegisterWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel)
 		: ::vl::presentation::controls::GuiCustomControl(::vl::presentation::theme::ThemeName::CustomControl)
-		, __vwsn_parameter_ViewModel(::vl::Ptr<::gacpass::IRegisterViewModel>())
+		, __vwsn_parameter_ViewModel(::vl::Ptr<::gacpass::IViewModel>())
 	{
 		(this->__vwsn_parameter_ViewModel = __vwsn_ctor_parameter_ViewModel);
 		auto __vwsn_resource_ = ::vl::__vwsn::This(::vl::presentation::GetResourceManager())->GetResourceFromClassName(::vl::WString(L"gacpass::RegisterWindow", false));

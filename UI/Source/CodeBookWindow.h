@@ -28,11 +28,18 @@ namespace gacpass
 	class CodeBookWindow : public ::vl::presentation::controls::GuiCustomControl, public ::gacpass::CodeBookWindowConstructor, public ::vl::reflection::Description<CodeBookWindow>
 	{
 		friend class ::gacpass::CodeBookWindowConstructor;
+		friend class ::vl_workflow_global::__vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend struct ::vl_workflow_global::__vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf7_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<CodeBookWindow>;
 #endif
 	public:
-		CodeBookWindow();
+		::vl::Ptr<::gacpass::IViewModel> __vwsn_parameter_ViewModel;
+		::vl::Ptr<::gacpass::IViewModel> GetViewModel();
+		CodeBookWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel);
 		~CodeBookWindow();
 	};
 

@@ -24,9 +24,11 @@
 	</Script>
 	<Instance name="RegisterWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::RegisterWindow">
-			<ref.Parameter Name="ViewModel" Class="gacpass::IRegisterViewModel" />
+			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel" />
 			<CustomControl ref.Name="self">
-				<att.ViewModel-set Password-bind="textBoxPassword.Text" ConfirmPassword-bind="textBoxConfirmPassword.Text"/>
+				<att.ViewModel-set>
+					<att.RegisterViewModel-set Password-bind="textBoxPassword.Text" ConfirmPassword-bind="textBoxConfirmPassword.Text" />
+				</att.ViewModel-set>
 				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 				<Table CellPadding ="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
 					<att.Rows>
@@ -35,7 +37,6 @@
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:Absolute absolute:12</CellOption>
 						<CellOption>composeType:Percentage percentage:1.0</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 					</att.Rows>
@@ -54,7 +55,7 @@
 						</SinglelineTextBox>
 					</Cell>
 					<Cell Site="row:2 column:1">
-						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.PasswordError">
+						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.RegisterViewModel.PasswordError">
 							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
 						</SolidLabel>
 					</Cell>
@@ -69,9 +70,24 @@
 						</SinglelineTextBox>
 					</Cell>
 					<Cell Site="row:4 column:1">
-						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.ConfirmPasswordError">
+						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.RegisterViewModel.ConfirmPasswordError">
 							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
 						</SolidLabel>
+					</Cell>
+					<Cell Site="row:6 column:0 columnSpan:2">
+						<Button ref.Name="buttonSignUp" Text="Sign Up!">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:-1 bottom:0" PreferredMinSize="x:100 y:24"/>
+							<att.Enabled-bind>
+								self.ViewModel.RegisterViewModel.PasswordError == "" and self.ViewModel.RegisterViewModel.ConfirmPasswordError == ""
+							</att.Enabled-bind>
+							<ev.Clicked-eval>
+								<![CDATA[
+								{
+									self.ViewModel.MainPasswordSetChanged();
+								}
+								]]>
+							</ev.Clicked-eval>
+						</Button>
 					</Cell>
 				</Table>
 			</CustomControl>

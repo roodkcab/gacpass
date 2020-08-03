@@ -1,11 +1,70 @@
 <Folder>
+	<Script>
+		<Workflow>
+			<![CDATA[
+			module viewmodel;
+			using system::*;
+
+			namespace gacpass
+			{
+				interface ICode
+				{
+					prop Website	: string {const, not observe}
+					prop Username	: string {const, not observe}
+					prop Password	: string {const, not observe}
+
+					func Update(website : string, username : string, password: string) : void;
+				}
+
+				interface ICodeBookViewModel
+				{
+					prop Codes : observe ICode^[] {const, not observe}
+				}
+			}
+			]]>
+		</Workflow>
+	</Script>
+
 	<Instance name="CodeBookWindow">
 		<Instance ref.Class="gacpass::CodeBookWindow">
-			<CustomControl>
+			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel" />
+
+			<CustomControl ref.Name="self">
+				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://Images/Folder">
+				</ToolstripCommand>
 				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 				<Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
+					<att.Rows>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:Percentage percentage:1.0</CellOption>
+					</att.Rows>
+					<att.Columns>
+						<CellOption>composeType:Percentage percentage:1.0</CellOption>
+					</att.Columns>
+
 					<Cell Site="row:0 column:0">
-						<Label Text="CodeBook"/>
+						<ToolstripToolBar>
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+							<ToolstripButton Command-ref="commandNewCode"/>
+						</ToolstripToolBar>
+					</Cell>
+
+					<Cell Site="row:1 column:0">
+						<BindableListView ref.Name="listViewCodes" View="Detail" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false" env.ItemType="gacpass::ICode^">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+							<att.ItemSource-bind>ViewModel.CodeBookViewModel.Codes ?? null</att.ItemSource-bind>
+
+							<att.Columns>
+								<ListViewColumn Text="Website" TextProperty="Website" Size="120"/>
+								<ListViewColumn Text="Username" TextProperty="Username" Size="120"/>
+								<ListViewColumn Text="Passowrd" TextProperty="Password" Size="120"/>
+							</att.Columns>
+
+							<att.DataColumns>
+								<_>1</_>
+								<_>2</_>
+							</att.DataColumns>
+						</BindableListView>
 					</Cell>
 				</Table>
 			</CustomControl>

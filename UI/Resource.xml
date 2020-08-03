@@ -13,6 +13,10 @@
 	<Folder name="LoginWindowResource" content="Link">LoginWindow.xml</Folder>
 	<Folder name="CodeBookWindowResource" content="Link">CodeBookWindow.xml</Folder>
 
+	<Folder name="Images">
+		<Image content="File" name="Folder">Folder.png</Image>
+	</Folder>
+
 	<Script>
 		<Workflow>
 			<![CDATA[
@@ -23,13 +27,21 @@
 				interface IViewModel
 				{
 					func GetMainPasswordSet() : bool;
-					prop MainPasswordSet : bool {GetMainPasswordSet}
+					event MainPasswordSetChanged();
+					prop MainPasswordSet : bool {GetMainPasswordSet : MainPasswordSetChanged}
 
 					func GetLoggedIn() : bool;
-					prop LoggedIn : bool {GetLoggedIn}
+					event LoggedInChanged();
+					prop LoggedIn : bool {GetLoggedIn : LoggedInChanged}
 
-					func GetRegisterViewModel() : IRegisterViewModel^ ;
+					func GetRegisterViewModel() : IRegisterViewModel^;
 					prop RegisterViewModel : IRegisterViewModel^ {GetRegisterViewModel}
+
+					func GetLoginViewModel() : ILoginViewModel^;
+					prop LoginViewModel : ILoginViewModel^ {GetLoginViewModel}
+
+					func GetCodeBookViewModel() : ICodeBookViewModel^;
+					prop CodeBookViewModel : ICodeBookViewModel^ {GetCodeBookViewModel}
 				}
 			}
 			]]>
@@ -40,9 +52,9 @@
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::MainWindow" xmlns:gacpass="gacpass::*">
 			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel"/>
 			<Window Text="GacPass" ClientSize="x:480 y:320">
-				<gacpass:RegisterWindow Visible-bind="not ViewModel.MainPasswordSet" ViewModel-eval="ViewModel.RegisterViewModel"></gacpass:RegisterWindow>
-				<gacpass:LoginWindow Visible-bind="ViewModel.MainPasswordSet and not ViewModel.LoggedIn"></gacpass:LoginWindow>
-				<gacpass:CodeBookWindow Visible-bind="ViewModel.MainPasswordSet and ViewModel.LoggedIn"></gacpass:CodeBookWindow>
+				<gacpass:RegisterWindow Visible-bind="not ViewModel.MainPasswordSet" ViewModel-eval="ViewModel"></gacpass:RegisterWindow>
+				<gacpass:LoginWindow Visible-bind="ViewModel.MainPasswordSet and (not ViewModel.LoggedIn)" ViewModel-eval="ViewModel"></gacpass:LoginWindow>
+				<gacpass:CodeBookWindow Visible-bind="ViewModel.MainPasswordSet and ViewModel.LoggedIn" ViewModel-eval="ViewModel"></gacpass:CodeBookWindow>
 			</Window>
 		</Instance>
 	</Instance>

@@ -36,6 +36,9 @@ namespace vl
 #ifndef VCZH_DEBUG_NO_REFLECTION
 			DECL_TYPE_INFO(::gacpass::CodeBookWindow)
 			DECL_TYPE_INFO(::gacpass::CodeBookWindowConstructor)
+			DECL_TYPE_INFO(::gacpass::ICode)
+			DECL_TYPE_INFO(::gacpass::ICodeBookViewModel)
+			DECL_TYPE_INFO(::gacpass::ILoginViewModel)
 			DECL_TYPE_INFO(::gacpass::IRegisterViewModel)
 			DECL_TYPE_INFO(::gacpass::IViewModel)
 			DECL_TYPE_INFO(::gacpass::LoginWindow)
@@ -44,6 +47,43 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::MainWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::RegisterWindow)
 			DECL_TYPE_INFO(::gacpass::RegisterWindowConstructor)
+
+			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ICode)
+				::vl::WString GetPassword() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetPassword);
+				}
+				::vl::WString GetUsername() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetUsername);
+				}
+				::vl::WString GetWebsite() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetWebsite);
+				}
+				void Update(const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
+				{
+					INVOKE_INTERFACE_PROXY(Update, website, username, password);
+				}
+			END_INTERFACE_PROXY(::gacpass::ICode)
+
+			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ICodeBookViewModel)
+				::vl::Ptr<::vl::reflection::description::IValueObservableList> GetCodes() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodes);
+				}
+			END_INTERFACE_PROXY(::gacpass::ICodeBookViewModel)
+
+			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ILoginViewModel)
+				::vl::WString GetPassword() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetPassword);
+				}
+				void SetPassword(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetPassword, __vwsn_value_);
+				}
+			END_INTERFACE_PROXY(::gacpass::ILoginViewModel)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::IRegisterViewModel)
 				::vl::WString GetConfirmPassword() override
@@ -73,9 +113,17 @@ namespace vl
 			END_INTERFACE_PROXY(::gacpass::IRegisterViewModel)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::IViewModel)
+				::vl::Ptr<::gacpass::ICodeBookViewModel> GetCodeBookViewModel() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodeBookViewModel);
+				}
 				bool GetLoggedIn() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetLoggedIn);
+				}
+				::vl::Ptr<::gacpass::ILoginViewModel> GetLoginViewModel() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetLoginViewModel);
 				}
 				bool GetMainPasswordSet() override
 				{

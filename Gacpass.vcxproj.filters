@@ -60,9 +60,6 @@
     <ClCompile Include="UI\Source\GacPassReflection.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="UI\Source\LoginWindow.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\GacUI.h">
@@ -102,9 +99,6 @@
       <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="UI\Source\GacPassReflection.h">
-      <Filter>UI</Filter>
-    </ClInclude>
-    <ClInclude Include="UI\Source\LoginWindow.h">
       <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>

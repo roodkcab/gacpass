@@ -12,6 +12,5 @@ https://github.com/vczh-libraries
 
 #include "GacPassPartialClasses.h"
 #include "CodeBookWindow.h"
-#include "LoginWindow.h"
 
 #endif
