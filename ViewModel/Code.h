@@ -2,6 +2,8 @@
 #include "GacPass.h"
 #include <string>
 #include "cereal/archives/binary.hpp"
+#include "cereal/types/string.hpp"
+#include "cereal/types/vector.hpp"
 
 using namespace vl::collections;
 using namespace vl::stream;
@@ -10,12 +12,12 @@ using namespace vl::reflection::description;
 
 struct RawCode
 {
-	std::string website;
-	std::string username;
-	std::string password;
+	std::wstring website;
+	std::wstring username;
+	std::wstring password;
 
-	template<class Archive>
-	void serialize(Archive& archive)
+	template<class BinaryArchive>
+	void serialize(BinaryArchive& archive)
 	{
 		archive(CEREAL_NVP(website), CEREAL_NVP(username), CEREAL_NVP(password));
 	}

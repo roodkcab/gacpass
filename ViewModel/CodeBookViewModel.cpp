@@ -64,15 +64,12 @@ void CodeBookViewModel::Store()
 	//Serialize all codes to file
 	std::ofstream os("out.cereal", std::ios::binary);
 	cereal::BinaryOutputArchive archive(os);
-	std::vector<int> v;
+	std::vector<RawCode> v;
 	auto ce = codes.CreateEnumerator();
 	while (ce->Next()) 
 	{
 		auto c = ce->Current().Obj();
-		//v.push_back();
-		//std::string(c->GetWebsite().Buffer()), std::string(c->GetUsername().Buffer()), std::string(c->GetPassword().Buffer()) 
-		//RawCode cc = RawCode{ std::string(), std::string(), std::string() };
-		//archive(CEREAL_NVP(cc));
+		v.push_back(RawCode{ std::wstring(c->GetWebsite().Buffer()), std::wstring(c->GetUsername().Buffer()), std::wstring(c->GetPassword().Buffer()) });
 	}
 	archive(CEREAL_NVP(v));
 }
