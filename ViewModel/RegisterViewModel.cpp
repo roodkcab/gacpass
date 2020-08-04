@@ -15,6 +15,7 @@ void RegisterViewModel::SetPassword(const WString& value)
 {
 	password = value;
 	PasswordErrorChanged();
+	ConfirmPasswordErrorChanged();
 }
 
 WString RegisterViewModel::GetPasswordError()

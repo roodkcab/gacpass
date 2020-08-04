@@ -19,37 +19,16 @@
     <Filter Include="Lib">
       <UniqueIdentifier>{b5e4d7b7-8c15-4d3d-b7ae-4d831bbae839}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lib\CacUI">
+      <UniqueIdentifier>{958454d2-c623-4812-9bdc-135564306588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\cereal">
+      <UniqueIdentifier>{0f4e579d-3498-40db-8335-26c4986cd8b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\GacUI.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\GacUIWindows.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\Vlpp.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\VlppOS.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\VlppParser.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\VlppReflection.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\VlppRegex.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\VlppWorkflowLibrary.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\Skins\DarkSkin\DarkSkin.cpp">
-      <Filter>Lib</Filter>
     </ClCompile>
     <ClCompile Include="UI\Source\CodeBookWindow.cpp">
       <Filter>UI</Filter>
@@ -60,47 +39,47 @@
     <ClCompile Include="UI\Source\GacPassReflection.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="Code.cpp">
+    <ClCompile Include="ViewModel\Code.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CodeBookViewModel.cpp">
+    <ClCompile Include="ViewModel\CodeBookViewModel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="LoginViewModel.cpp">
+    <ClCompile Include="ViewModel\LoginViewModel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="RegisterViewModel.cpp">
+    <ClCompile Include="ViewModel\RegisterViewModel.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\GacUI.cpp">
+      <Filter>Lib\CacUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\GacUIWindows.cpp">
+      <Filter>Lib\CacUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\Vlpp.cpp">
+      <Filter>Lib\CacUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\VlppOS.cpp">
+      <Filter>Lib\CacUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\VlppParser.cpp">
+      <Filter>Lib\CacUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\VlppReflection.cpp">
+      <Filter>Lib\CacUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\VlppRegex.cpp">
+      <Filter>Lib\CacUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\VlppWorkflowLibrary.cpp">
+      <Filter>Lib\CacUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.cpp">
+      <Filter>Lib\CacUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Lib\GacUI.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\GacUIWindows.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\Vlpp.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\VlppOS.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\VlppParser.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\VlppReflection.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\VlppRegex.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\VlppWorkflowLibrary.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\Skins\DarkSkin\DarkSkin.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
     <ClInclude Include="UI\Source\CodeBookWindow.h">
       <Filter>UI</Filter>
     </ClInclude>
@@ -113,20 +92,302 @@
     <ClInclude Include="UI\Source\GacPassReflection.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="Code.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CodeBookViewModel.h">
+    <ClInclude Include="ViewModel\Code.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LoginViewModel.h">
+    <ClInclude Include="ViewModel\CodeBookViewModel.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="RegisterViewModel.h">
+    <ClInclude Include="ViewModel\LoginViewModel.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModel\RegisterViewModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\GacUI.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\GacUIWindows.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\Vlpp.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\VlppOS.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\VlppParser.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\VlppReflection.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\VlppRegex.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\VlppWorkflowLibrary.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.h">
+      <Filter>Lib\CacUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\archives\adapters.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\archives\binary.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\archives\json.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\archives\portable_binary.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\archives\xml.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\details\helpers.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\details\polymorphic_impl.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\details\polymorphic_impl_fwd.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\details\static_object.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\details\traits.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\details\util.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\base64.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\allocators.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\cursorstreamwrapper.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\document.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\encodedstream.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\encodings.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\error\en.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\error\error.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\filereadstream.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\filewritestream.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\fwd.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\biginteger.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\diyfp.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\dtoa.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\ieee754.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\itoa.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\meta.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\pow10.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\regex.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\stack.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\strfunc.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\strtod.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\swap.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\istreamwrapper.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\memorybuffer.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\memorystream.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\msinttypes\inttypes.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\msinttypes\stdint.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\ostreamwrapper.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\pointer.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\prettywriter.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\rapidjson.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\reader.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\schema.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\stream.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\stringbuffer.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidjson\writer.h">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_iterators.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_print.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_utils.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\array.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\atomic.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\base_class.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\bitset.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\boost_variant.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\chrono.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\common.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\complex.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\concepts\pair_associative_container.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\deque.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\forward_list.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\functional.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\list.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\map.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\memory.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\optional.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\polymorphic.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\queue.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\set.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\stack.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\string.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\tuple.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\unordered_map.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\unordered_set.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\utility.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\valarray.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\variant.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\types\vector.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\access.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\cereal.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\macros.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\specialize.hpp">
+      <Filter>Lib\cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\cereal\version.hpp">
+      <Filter>Lib\cereal</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -147,5 +408,10 @@
     <ResourceCompile Include="Gacpass.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\cereal\external\rapidxml\manual.html">
+      <Filter>Lib\cereal</Filter>
+    </None>
   </ItemGroup>
 </Project>

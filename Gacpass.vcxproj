@@ -89,7 +89,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;VCZH_DEBUG_NO_REFLECTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\buaac\Projects\GacPass\Lib;C:\Users\buaac\Projects\GacPass\Lib\Skins;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\buaac\Projects\GacPass\Lib;C:\Users\buaac\Projects\GacPass\UI\Source;C:\Users\buaac\Projects\GacPass\Lib\GacUI;C:\Users\buaac\Projects\GacPass\Lib\Skins;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -149,43 +149,128 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CodeBookViewModel.cpp" />
-    <ClCompile Include="Lib\GacUI.cpp" />
-    <ClCompile Include="Lib\GacUIWindows.cpp" />
-    <ClCompile Include="Lib\Skins\DarkSkin\DarkSkin.cpp" />
-    <ClCompile Include="Lib\Vlpp.cpp" />
-    <ClCompile Include="Lib\VlppOS.cpp" />
-    <ClCompile Include="Lib\VlppParser.cpp" />
-    <ClCompile Include="Lib\VlppReflection.cpp" />
-    <ClCompile Include="Lib\VlppRegex.cpp" />
-    <ClCompile Include="Lib\VlppWorkflowLibrary.cpp" />
-    <ClCompile Include="LoginViewModel.cpp" />
+    <ClCompile Include="Lib\GacUI\GacUI.cpp" />
+    <ClCompile Include="Lib\GacUI\GacUIWindows.cpp" />
+    <ClCompile Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.cpp" />
+    <ClCompile Include="Lib\GacUI\Vlpp.cpp" />
+    <ClCompile Include="Lib\GacUI\VlppOS.cpp" />
+    <ClCompile Include="Lib\GacUI\VlppParser.cpp" />
+    <ClCompile Include="Lib\GacUI\VlppReflection.cpp" />
+    <ClCompile Include="Lib\GacUI\VlppRegex.cpp" />
+    <ClCompile Include="Lib\GacUI\VlppWorkflowLibrary.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="RegisterViewModel.cpp" />
     <ClCompile Include="UI\Source\CodeBookWindow.cpp" />
     <ClCompile Include="UI\Source\GacPassPartialClasses.cpp" />
     <ClCompile Include="UI\Source\GacPassReflection.cpp" />
-    <ClCompile Include="Code.cpp" />
+    <ClCompile Include="ViewModel\Code.cpp" />
+    <ClCompile Include="ViewModel\CodeBookViewModel.cpp" />
+    <ClCompile Include="ViewModel\LoginViewModel.cpp" />
+    <ClCompile Include="ViewModel\RegisterViewModel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CodeBookViewModel.h" />
-    <ClInclude Include="Lib\GacUI.h" />
-    <ClInclude Include="Lib\GacUIWindows.h" />
-    <ClInclude Include="Lib\Skins\DarkSkin\DarkSkin.h" />
-    <ClInclude Include="Lib\Vlpp.h" />
-    <ClInclude Include="Lib\VlppOS.h" />
-    <ClInclude Include="Lib\VlppParser.h" />
-    <ClInclude Include="Lib\VlppReflection.h" />
-    <ClInclude Include="Lib\VlppRegex.h" />
-    <ClInclude Include="Lib\VlppWorkflowLibrary.h" />
-    <ClInclude Include="LoginViewModel.h" />
-    <ClInclude Include="RegisterViewModel.h" />
+    <ClInclude Include="Lib\cereal\access.hpp" />
+    <ClInclude Include="Lib\cereal\archives\adapters.hpp" />
+    <ClInclude Include="Lib\cereal\archives\binary.hpp" />
+    <ClInclude Include="Lib\cereal\archives\json.hpp" />
+    <ClInclude Include="Lib\cereal\archives\portable_binary.hpp" />
+    <ClInclude Include="Lib\cereal\archives\xml.hpp" />
+    <ClInclude Include="Lib\cereal\cereal.hpp" />
+    <ClInclude Include="Lib\cereal\details\helpers.hpp" />
+    <ClInclude Include="Lib\cereal\details\polymorphic_impl.hpp" />
+    <ClInclude Include="Lib\cereal\details\polymorphic_impl_fwd.hpp" />
+    <ClInclude Include="Lib\cereal\details\static_object.hpp" />
+    <ClInclude Include="Lib\cereal\details\traits.hpp" />
+    <ClInclude Include="Lib\cereal\details\util.hpp" />
+    <ClInclude Include="Lib\cereal\external\base64.hpp" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\allocators.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\cursorstreamwrapper.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\document.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\encodedstream.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\encodings.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\error\en.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\error\error.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\filereadstream.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\filewritestream.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\fwd.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\itoa.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\meta.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\pow10.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\regex.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\stack.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\strtod.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\internal\swap.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\memorybuffer.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\memorystream.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\pointer.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\prettywriter.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\rapidjson.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\reader.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\schema.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\stream.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\stringbuffer.h" />
+    <ClInclude Include="Lib\cereal\external\rapidjson\writer.h" />
+    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml.hpp" />
+    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="Lib\cereal\macros.hpp" />
+    <ClInclude Include="Lib\cereal\specialize.hpp" />
+    <ClInclude Include="Lib\cereal\types\array.hpp" />
+    <ClInclude Include="Lib\cereal\types\atomic.hpp" />
+    <ClInclude Include="Lib\cereal\types\base_class.hpp" />
+    <ClInclude Include="Lib\cereal\types\bitset.hpp" />
+    <ClInclude Include="Lib\cereal\types\boost_variant.hpp" />
+    <ClInclude Include="Lib\cereal\types\chrono.hpp" />
+    <ClInclude Include="Lib\cereal\types\common.hpp" />
+    <ClInclude Include="Lib\cereal\types\complex.hpp" />
+    <ClInclude Include="Lib\cereal\types\concepts\pair_associative_container.hpp" />
+    <ClInclude Include="Lib\cereal\types\deque.hpp" />
+    <ClInclude Include="Lib\cereal\types\forward_list.hpp" />
+    <ClInclude Include="Lib\cereal\types\functional.hpp" />
+    <ClInclude Include="Lib\cereal\types\list.hpp" />
+    <ClInclude Include="Lib\cereal\types\map.hpp" />
+    <ClInclude Include="Lib\cereal\types\memory.hpp" />
+    <ClInclude Include="Lib\cereal\types\optional.hpp" />
+    <ClInclude Include="Lib\cereal\types\polymorphic.hpp" />
+    <ClInclude Include="Lib\cereal\types\queue.hpp" />
+    <ClInclude Include="Lib\cereal\types\set.hpp" />
+    <ClInclude Include="Lib\cereal\types\stack.hpp" />
+    <ClInclude Include="Lib\cereal\types\string.hpp" />
+    <ClInclude Include="Lib\cereal\types\tuple.hpp" />
+    <ClInclude Include="Lib\cereal\types\unordered_map.hpp" />
+    <ClInclude Include="Lib\cereal\types\unordered_set.hpp" />
+    <ClInclude Include="Lib\cereal\types\utility.hpp" />
+    <ClInclude Include="Lib\cereal\types\valarray.hpp" />
+    <ClInclude Include="Lib\cereal\types\variant.hpp" />
+    <ClInclude Include="Lib\cereal\types\vector.hpp" />
+    <ClInclude Include="Lib\cereal\version.hpp" />
+    <ClInclude Include="Lib\GacUI\GacUI.h" />
+    <ClInclude Include="Lib\GacUI\GacUIWindows.h" />
+    <ClInclude Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.h" />
+    <ClInclude Include="Lib\GacUI\Vlpp.h" />
+    <ClInclude Include="Lib\GacUI\VlppOS.h" />
+    <ClInclude Include="Lib\GacUI\VlppParser.h" />
+    <ClInclude Include="Lib\GacUI\VlppReflection.h" />
+    <ClInclude Include="Lib\GacUI\VlppRegex.h" />
+    <ClInclude Include="Lib\GacUI\VlppWorkflowLibrary.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="UI\Source\CodeBookWindow.h" />
     <ClInclude Include="UI\Source\GacPass.h" />
     <ClInclude Include="UI\Source\GacPassPartialClasses.h" />
     <ClInclude Include="UI\Source\GacPassReflection.h" />
-    <ClInclude Include="Code.h" />
+    <ClInclude Include="ViewModel\Code.h" />
+    <ClInclude Include="ViewModel\CodeBookViewModel.h" />
+    <ClInclude Include="ViewModel\LoginViewModel.h" />
+    <ClInclude Include="ViewModel\RegisterViewModel.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UI\CodeBookWindow.xml" />
@@ -200,6 +285,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Gacpass.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\cereal\external\rapidxml\manual.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

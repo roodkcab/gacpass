@@ -1,9 +1,9 @@
 #define GAC_HEADER_USE_NAMESPACE
-#include "UI/Source/GacPass.h"
-#include "Code.h"
-#include "CodeBookViewModel.h"
-#include "RegisterVIewModel.h"
-#include "LoginViewModel.h"
+#include "GacPass.h"
+#include "ViewModel/Code.h"
+#include "ViewModel/CodeBookViewModel.h"
+#include "ViewModel/RegisterVIewModel.h"
+#include "ViewModel/LoginViewModel.h"
 
 class ViewModel : public Object, public virtual gacpass::IViewModel
 {

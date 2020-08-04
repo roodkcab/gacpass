@@ -11,6 +11,20 @@ Code::Code()
 	, password(L"")
 {}
 
+Code::Code(const WString& _website, const WString& _username, const WString& _password)
+{
+	website = _website;
+	username = _username;
+	password = _password;
+}
+
+Code::Code(RawCode code)
+{
+	/*website = code.website.c_str();
+	username = code.username.c_str();
+	password = code.password.c_str();*/
+}
+
 WString Code::GetWebsite()
 {
 	return website;
