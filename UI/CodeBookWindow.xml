@@ -13,7 +13,7 @@
 					prop Username	: string {const, not observe}
 					prop Password	: string {const, not observe}
 
-					func Update(viewmodel : ICodeBookViewModel^, website : string, username : string, password: string) : void;
+					func Update(website : string, username : string, password: string) : void;
 				}
 
 				interface ICodeBookViewModel
@@ -23,7 +23,8 @@
 					
 					func CreateCode() : ICode^;
 					func AddCode(code : ICode^) : void;
-					func NotifyUpdate(code : ICode*) : void;
+					func UpdateCode(code : ICode^) : void;
+					func RemoveCode(code : ICode^) : void;
 				}
 			}
 			]]>
@@ -63,7 +64,21 @@
                   window.MoveToScreenCenter();
                   window.SetCode(ViewModel.CodeBookViewModel.SelectedCode);
                   $Await window.ShowModalAsync(self.MainWindow);
+				  if (window.Ready)
+                  {
+				    ViewModel.CodeBookViewModel.UpdateCode(ViewModel.CodeBookViewModel.SelectedCode);
+				  }
                   delete window;
+                }
+              ]]>
+					</ev.Executed-eval>
+				</ToolstripCommand>
+				<ToolstripCommand ref.Name="commandRemoveCode" Image-uri="res://Images/Folder">
+					<att.Enabled-bind>ViewModel.CodeBookViewModel.SelectedCode is not null</att.Enabled-bind>
+					<ev.Executed-eval>
+						<![CDATA[
+                $Async{
+				  ViewModel.CodeBookViewModel.RemoveCode(ViewModel.CodeBookViewModel.SelectedCode);
                 }
               ]]>
 					</ev.Executed-eval>
@@ -88,6 +103,7 @@
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 							<ToolstripButton Command-ref="commandNewCode"/>
 							<ToolstripButton Command-ref="commandEditCode"/>
+							<ToolstripButton Command-ref="commandRemoveCode"/>
 						</ToolstripToolBar>
 					</Cell>
 					<Cell Site="row:1 column:0">
@@ -182,7 +198,7 @@
 							<ev.Clicked-eval>
 								<![CDATA[
                     {
-                      self.Code.Update(self.CodeBookViewModel, textBoxWebsite.Text, textBoxUsername.Text, textBoxPassword.Text);
+                      self.Code.Update(textBoxWebsite.Text, textBoxUsername.Text, textBoxPassword.Text);
                       self.Ready = true;
                       self.Close();
                     }

@@ -63,9 +63,9 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetWebsite);
 				}
-				void Update(::vl::Ptr<::gacpass::ICodeBookViewModel> viewmodel, const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
+				void Update(const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
 				{
-					INVOKE_INTERFACE_PROXY(Update, viewmodel, website, username, password);
+					INVOKE_INTERFACE_PROXY(Update, website, username, password);
 				}
 			END_INTERFACE_PROXY(::gacpass::ICode)
 
@@ -86,13 +86,17 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSelectedCode);
 				}
-				void NotifyUpdate(::gacpass::ICode* code) override
+				void RemoveCode(::vl::Ptr<::gacpass::ICode> code) override
 				{
-					INVOKE_INTERFACE_PROXY(NotifyUpdate, code);
+					INVOKE_INTERFACE_PROXY(RemoveCode, code);
 				}
 				void SetSelectedCode(::vl::Ptr<::gacpass::ICode> __vwsn_value_) override
 				{
 					INVOKE_INTERFACE_PROXY(SetSelectedCode, __vwsn_value_);
+				}
+				void UpdateCode(::vl::Ptr<::gacpass::ICode> code) override
+				{
+					INVOKE_INTERFACE_PROXY(UpdateCode, code);
 				}
 			END_INTERFACE_PROXY(::gacpass::ICodeBookViewModel)
 

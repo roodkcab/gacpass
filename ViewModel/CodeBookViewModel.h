@@ -19,9 +19,11 @@ public:
 	void SetSelectedCode(Ptr<gacpass::ICode> value)override;
 	Ptr<gacpass::ICode> CreateCode()override;
 	void AddCode(Ptr<gacpass::ICode> code)override;
-	void NotifyUpdate(gacpass::ICode* code)override;
+	void UpdateCode(Ptr<gacpass::ICode> code)override;
+	void RemoveCode(Ptr<gacpass::ICode> code)override;
 
 private:
+	void NotifyChanged(Ptr<gacpass::ICode> code);
 	void Load();
 	void Store();
 };

@@ -39,5 +39,5 @@ public:
 	WString GetWebsite()override;
 	WString GetUsername()override;
 	WString GetPassword()override;
-	void Update(Ptr<gacpass::ICodeBookViewModel> _viewmodel, const WString& _website, const WString& _username, const WString& _password);
+	void Update(const WString& _website, const WString& _username, const WString& _password);
   };

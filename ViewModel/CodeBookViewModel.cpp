@@ -34,29 +34,46 @@ Ptr<gacpass::ICode> CodeBookViewModel::CreateCode()
 void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 {
 	codes.Add(code);
+	this->NotifyChanged(code);
 }
 
-void CodeBookViewModel::NotifyUpdate(gacpass::ICode* code)
+void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 {
-	this->Store();
-	vint index = codes.IndexOf(code);
+	this->NotifyChanged(code);
+}
+
+void CodeBookViewModel::RemoveCode(Ptr<gacpass::ICode> code)
+{
+	codes.Remove(code.Obj());
+	this->NotifyChanged(code);
+}
+
+void CodeBookViewModel::NotifyChanged(Ptr<gacpass::ICode> code)
+{
+	vint index = codes.IndexOf(code.Obj());
 	if (index != -1)
 	{
 		codes.NotifyUpdate(index, 1);
+	} 
+	else
+	{
+		codes.NotifyUpdate(0, codes.Count());
 	}
+	this->Store();
 }
 
 void CodeBookViewModel::Load()
 {
 	//Deserialize
-	/*std::ifstream os("out.cereal", std::ios::binary);
+	std::ifstream os("out.cereal", std::ios::binary);
 	cereal::BinaryInputArchive archive(os);
 	std::vector<RawCode> v;
     archive((v));
 	for (RawCode i : v)
 	{
 		codes.Add(MakePtr<Code>(i));
-	}*/
+	}
+	codes.NotifyUpdate(0, codes.Count());
 }
 
 void CodeBookViewModel::Store()

@@ -20,9 +20,9 @@ Code::Code(const WString& _website, const WString& _username, const WString& _pa
 
 Code::Code(RawCode code)
 {
-	/*website = code.website.c_str();
+	website = code.website.c_str();
 	username = code.username.c_str();
-	password = code.password.c_str();*/
+	password = code.password.c_str();
 }
 
 WString Code::GetWebsite()
@@ -40,12 +40,9 @@ WString Code::GetPassword()
 	return password;
 }
 
-void Code::Update(Ptr<gacpass::ICodeBookViewModel> _viewmodel, const WString& _website, const WString& _username, const WString& _password)
+void Code::Update(const WString& _website, const WString& _username, const WString& _password)
 {
 	website = _website;
 	username = _username;
 	password = _password;
-
-	//save view model to file;
-	_viewmodel->NotifyUpdate(this);
 }
