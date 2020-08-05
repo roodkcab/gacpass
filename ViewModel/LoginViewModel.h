@@ -15,4 +15,5 @@ public:
 	LoginViewModel();
 	WString GetPassword()override;
 	void SetPassword(const WString& value)override;
+	bool GetLoggedIn()override;
 };

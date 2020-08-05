@@ -91,6 +91,8 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\buaac\Projects\GacPass\Lib;C:\Users\buaac\Projects\GacPass\UI\Source;C:\Users\buaac\Projects\GacPass\Lib\GacUI;C:\Users\buaac\Projects\GacPass\Lib\Skins;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

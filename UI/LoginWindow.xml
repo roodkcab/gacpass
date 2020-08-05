@@ -7,6 +7,10 @@
 			{
 				interface ILoginViewModel
 				{
+					func GetLoggedIn() : bool;
+					event LoggedInChanged();
+					prop LoggedIn : bool {GetLoggedIn : LoggedInChanged}
+
 					prop Password : string {}
 				}
 			}
@@ -15,11 +19,9 @@
 	</Script>
 	<Instance name="LoginWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::LoginWindow">
-			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel" />
+			<ref.Parameter Name="ViewModel" Class="gacpass::ILoginViewModel"/>
 			<CustomControl ref.Name="self">
-				<att.ViewModel-set>
-					<att.LoginViewModel-set Password-bind="textBoxPassword.Text"/>
-				</att.ViewModel-set>
+				<att.ViewModel-set Password-bind="textBoxPassword.Text"/>
 				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 				<Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
 					<att.Rows>

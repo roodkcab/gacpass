@@ -65,22 +65,24 @@ void CodeBookViewModel::NotifyChanged(Ptr<gacpass::ICode> code)
 void CodeBookViewModel::Load()
 {
 	//Deserialize
-	std::ifstream os("out.cereal", std::ios::binary);
-	cereal::BinaryInputArchive archive(os);
-	std::vector<RawCode> v;
-    archive((v));
-	for (RawCode i : v)
+	std::ifstream os("codebook.cereal", std::ios::binary);
+	if (os.is_open())
 	{
-		codes.Add(MakePtr<Code>(i));
+		cereal::BinaryInputArchive archive(os);
+		std::vector<RawCode> v;
+		archive(cereal::make_nvp("code", v));
+		for (RawCode i : v)
+		{
+			codes.Add(MakePtr<Code>(i));
+		}
+		codes.NotifyUpdate(0, codes.Count());
 	}
-	codes.NotifyUpdate(0, codes.Count());
+	os.close();
 }
 
 void CodeBookViewModel::Store()
 {
 	//Serialize all codes to file
-	std::ofstream os("out.cereal", std::ios::binary);
-	cereal::BinaryOutputArchive archive(os);
 	std::vector<RawCode> v;
 	auto ce = codes.CreateEnumerator();
 	while (ce->Next()) 
@@ -88,5 +90,12 @@ void CodeBookViewModel::Store()
 		auto c = ce->Current().Obj();
 		v.push_back(RawCode{ std::wstring(c->GetWebsite().Buffer()), std::wstring(c->GetUsername().Buffer()), std::wstring(c->GetPassword().Buffer()) });
 	}
-	archive(CEREAL_NVP(v));
+
+	std::ofstream os("codebook.cereal", std::ios::binary);
+	cereal::BinaryOutputArchive archive(os);
+	if (os.is_open())
+	{
+		archive(cereal::make_nvp("code", v));
+	}
+	os.close();
 }

@@ -26,14 +26,6 @@
 			{
 				interface IViewModel
 				{
-					func GetMainPasswordSet() : bool;
-					event MainPasswordSetChanged();
-					prop MainPasswordSet : bool {GetMainPasswordSet : MainPasswordSetChanged}
-
-					func GetLoggedIn() : bool;
-					event LoggedInChanged();
-					prop LoggedIn : bool {GetLoggedIn : LoggedInChanged}
-
 					func GetRegisterViewModel() : IRegisterViewModel^;
 					prop RegisterViewModel : IRegisterViewModel^ {GetRegisterViewModel}
 
@@ -52,9 +44,9 @@
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::MainWindow" xmlns:gacpass="gacpass::*">
 			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel"/>
 			<Window ref.Name="self" Text="GacPass" ClientSize="x:480 y:320">
-				<gacpass:RegisterWindow Visible-bind="not ViewModel.MainPasswordSet" ViewModel-eval="ViewModel"></gacpass:RegisterWindow>
-				<gacpass:LoginWindow Visible-bind="ViewModel.MainPasswordSet and (not ViewModel.LoggedIn)" ViewModel-eval="ViewModel"></gacpass:LoginWindow>
-				<gacpass:CodeBookWindow Visible-bind="ViewModel.MainPasswordSet and ViewModel.LoggedIn" ViewModel-eval="ViewModel" MainWindow-eval="self"></gacpass:CodeBookWindow>
+				<gacpass:RegisterWindow Visible-bind="not ViewModel.RegisterViewModel.MainPasswordSet" ViewModel-eval="ViewModel.RegisterViewModel"></gacpass:RegisterWindow>
+				<gacpass:LoginWindow Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet and (not ViewModel.LoginViewModel.LoggedIn)" ViewModel-eval="ViewModel.LoginViewModel"></gacpass:LoginWindow>
+				<gacpass:CodeBookWindow Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet and ViewModel.LoginViewModel.LoggedIn" ViewModel-eval="ViewModel" MainWindow-eval="self"></gacpass:CodeBookWindow>
 			</Window>
 		</Instance>
 	</Instance>

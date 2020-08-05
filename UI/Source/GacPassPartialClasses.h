@@ -176,6 +176,8 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<ILoginViewModel>;
 #endif
 	public:
+		virtual bool GetLoggedIn() = 0;
+		::vl::Event<void()> LoggedInChanged;
 		virtual ::vl::WString GetPassword() = 0;
 		virtual void SetPassword(const ::vl::WString& __vwsn_value_) = 0;
 		::vl::Event<void()> PasswordChanged;
@@ -187,6 +189,8 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<IRegisterViewModel>;
 #endif
 	public:
+		virtual bool GetMainPasswordSet() = 0;
+		::vl::Event<void()> MainPasswordSetChanged;
 		virtual ::vl::WString GetPassword() = 0;
 		virtual void SetPassword(const ::vl::WString& __vwsn_value_) = 0;
 		::vl::Event<void()> PasswordChanged;
@@ -197,6 +201,7 @@ namespace gacpass
 		::vl::Event<void()> PasswordErrorChanged;
 		virtual ::vl::WString GetConfirmPasswordError() = 0;
 		::vl::Event<void()> ConfirmPasswordErrorChanged;
+		virtual void Register() = 0;
 	};
 
 	class IViewModel : public virtual ::vl::reflection::IDescriptable, public ::vl::reflection::Description<IViewModel>
@@ -205,10 +210,6 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<IViewModel>;
 #endif
 	public:
-		virtual bool GetMainPasswordSet() = 0;
-		::vl::Event<void()> MainPasswordSetChanged;
-		virtual bool GetLoggedIn() = 0;
-		::vl::Event<void()> LoggedInChanged;
 		virtual ::vl::Ptr<::gacpass::IRegisterViewModel> GetRegisterViewModel() = 0;
 		virtual ::vl::Ptr<::gacpass::ILoginViewModel> GetLoginViewModel() = 0;
 		virtual ::vl::Ptr<::gacpass::ICodeBookViewModel> GetCodeBookViewModel() = 0;
@@ -223,7 +224,7 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<LoginWindowConstructor>;
 #endif
 	protected:
-		::vl::Ptr<::gacpass::IViewModel> ViewModel;
+		::vl::Ptr<::gacpass::ILoginViewModel> ViewModel;
 		::gacpass::LoginWindow* self;
 		::vl::presentation::controls::GuiSinglelineTextBox* textBoxPassword;
 		::vl::presentation::controls::GuiButton* buttonLogin;
@@ -235,9 +236,8 @@ namespace gacpass
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_5;
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_6;
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_7;
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_precompile_8;
-		::vl::Ptr<::gacpass::ILoginViewModel> __vwsn_precompile_9;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_10;
+		::vl::Ptr<::gacpass::ILoginViewModel> __vwsn_precompile_8;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_9;
 		void __vwsn_gacpass_LoginWindow_Initialize(::gacpass::LoginWindow* __vwsn_this_);
 	public:
 		LoginWindowConstructor();
@@ -253,9 +253,9 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<LoginWindow>;
 #endif
 	public:
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_parameter_ViewModel;
-		::vl::Ptr<::gacpass::IViewModel> GetViewModel();
-		LoginWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel);
+		::vl::Ptr<::gacpass::ILoginViewModel> __vwsn_parameter_ViewModel;
+		::vl::Ptr<::gacpass::ILoginViewModel> GetViewModel();
+		LoginWindow(::vl::Ptr<::gacpass::ILoginViewModel> __vwsn_ctor_parameter_ViewModel);
 		~LoginWindow();
 	};
 
@@ -381,7 +381,7 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<RegisterWindowConstructor>;
 #endif
 	protected:
-		::vl::Ptr<::gacpass::IViewModel> ViewModel;
+		::vl::Ptr<::gacpass::IRegisterViewModel> ViewModel;
 		::gacpass::RegisterWindow* self;
 		::vl::presentation::controls::GuiSinglelineTextBox* textBoxPassword;
 		::vl::presentation::controls::GuiSinglelineTextBox* textBoxConfirmPassword;
@@ -401,9 +401,8 @@ namespace gacpass
 		::vl::Ptr<::vl::presentation::elements::GuiSolidLabelElement> __vwsn_precompile_12;
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_13;
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_14;
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_precompile_15;
-		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_precompile_16;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_17;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_precompile_15;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_16;
 		void __vwsn_gacpass_RegisterWindow_Initialize(::gacpass::RegisterWindow* __vwsn_this_);
 	public:
 		RegisterWindowConstructor();
@@ -427,9 +426,9 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<RegisterWindow>;
 #endif
 	public:
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_parameter_ViewModel;
-		::vl::Ptr<::gacpass::IViewModel> GetViewModel();
-		RegisterWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel);
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_parameter_ViewModel;
+		::vl::Ptr<::gacpass::IRegisterViewModel> GetViewModel();
+		RegisterWindow(::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_ctor_parameter_ViewModel);
 		~RegisterWindow();
 	};
 
@@ -848,7 +847,7 @@ Closures
 
 		__vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
@@ -866,8 +865,8 @@ Closures
 
 		__vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_bind_cache_1;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::ILoginViewModel> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
@@ -887,8 +886,8 @@ Closures
 
 		__vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_bind_cache_1;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::ILoginViewModel> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;

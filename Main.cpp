@@ -8,30 +8,17 @@
 class ViewModel : public Object, public virtual gacpass::IViewModel
 {
 private:
-	bool mainPasswordSet;
-	bool loggedIn;
 	::vl::Ptr<gacpass::IRegisterViewModel> registerViewModel;
 	::vl::Ptr<gacpass::ILoginViewModel> loginViewModel;
 	::vl::Ptr<gacpass::ICodeBookViewModel> codeBookViewModel;
 
 public:
 	ViewModel() 
-		:mainPasswordSet(false)
-		, loggedIn(false)
-		, registerViewModel(MakePtr<RegisterViewModel>())
+		: registerViewModel(MakePtr<RegisterViewModel>())
 		, loginViewModel(MakePtr<LoginViewModel>())
 		, codeBookViewModel(MakePtr<CodeBookViewModel>())
 	{}
 
-	bool GetMainPasswordSet()override
-	{
-		return this->registerViewModel->GetPasswordError() == L"" && this->registerViewModel->GetConfirmPasswordError() == L"";
-	}
-
-	bool GetLoggedIn()override
-	{
-		return this->GetMainPasswordSet() && this->registerViewModel->GetPassword() == this->loginViewModel->GetPassword();
-	}
 
 	Ptr<gacpass::IRegisterViewModel> GetRegisterViewModel()override
 	{

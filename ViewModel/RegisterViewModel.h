@@ -23,4 +23,6 @@ public:
 	WString GetConfirmPassword()override;
 	void SetConfirmPassword(const WString& value)override;
 	WString GetConfirmPasswordError()override;
+	bool GetMainPasswordSet()override;
+	void Register()override;
 };

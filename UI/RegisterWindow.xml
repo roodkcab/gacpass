@@ -7,6 +7,10 @@
 			{
 				interface IRegisterViewModel
 				{
+					func GetMainPasswordSet() : bool;
+					event MainPasswordSetChanged();
+					prop MainPasswordSet : bool {GetMainPasswordSet : MainPasswordSetChanged}
+
 					prop Password : string {}
 					prop ConfirmPassword : string {}
 
@@ -17,6 +21,8 @@
 					func GetConfirmPasswordError() : string;
 					event ConfirmPasswordErrorChanged();
 					prop ConfirmPasswordError : string {GetConfirmPasswordError : ConfirmPasswordErrorChanged}
+
+					func Register() : void;
 				}
 			}
 			]]>
@@ -24,11 +30,9 @@
 	</Script>
 	<Instance name="RegisterWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::RegisterWindow">
-			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel" />
+			<ref.Parameter Name="ViewModel" Class="gacpass::IRegisterViewModel"/>
 			<CustomControl ref.Name="self">
-				<att.ViewModel-set>
-					<att.RegisterViewModel-set Password-bind="textBoxPassword.Text" ConfirmPassword-bind="textBoxConfirmPassword.Text" />
-				</att.ViewModel-set>
+				<att.ViewModel-set Password-bind="textBoxPassword.Text" ConfirmPassword-bind="textBoxConfirmPassword.Text"/>
 				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 				<Table CellPadding ="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
 					<att.Rows>
@@ -55,7 +59,7 @@
 						</SinglelineTextBox>
 					</Cell>
 					<Cell Site="row:2 column:1">
-						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.RegisterViewModel.PasswordError">
+						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.PasswordError">
 							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
 						</SolidLabel>
 					</Cell>
@@ -70,7 +74,7 @@
 						</SinglelineTextBox>
 					</Cell>
 					<Cell Site="row:4 column:1">
-						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.RegisterViewModel.ConfirmPasswordError">
+						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.ConfirmPasswordError">
 							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
 						</SolidLabel>
 					</Cell>
@@ -78,12 +82,12 @@
 						<Button ref.Name="buttonSignUp" Text="Sign Up!">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:-1 bottom:0" PreferredMinSize="x:100 y:24"/>
 							<att.Enabled-bind>
-								self.ViewModel.RegisterViewModel.PasswordError == "" and self.ViewModel.RegisterViewModel.ConfirmPasswordError == ""
+								self.ViewModel.PasswordError == "" and self.ViewModel.ConfirmPasswordError == ""
 							</att.Enabled-bind>
 							<ev.Clicked-eval>
 								<![CDATA[
 								{
-									self.ViewModel.MainPasswordSetChanged();
+									self.ViewModel.Register();
 								}
 								]]>
 							</ev.Clicked-eval>

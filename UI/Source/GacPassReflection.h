@@ -101,6 +101,10 @@ namespace vl
 			END_INTERFACE_PROXY(::gacpass::ICodeBookViewModel)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ILoginViewModel)
+				bool GetLoggedIn() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetLoggedIn);
+				}
 				::vl::WString GetPassword() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetPassword);
@@ -120,6 +124,10 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetConfirmPasswordError);
 				}
+				bool GetMainPasswordSet() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetMainPasswordSet);
+				}
 				::vl::WString GetPassword() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetPassword);
@@ -127,6 +135,10 @@ namespace vl
 				::vl::WString GetPasswordError() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetPasswordError);
+				}
+				void Register() override
+				{
+					INVOKE_INTERFACE_PROXY_NOPARAMS(Register);
 				}
 				void SetConfirmPassword(const ::vl::WString& __vwsn_value_) override
 				{
@@ -143,17 +155,9 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodeBookViewModel);
 				}
-				bool GetLoggedIn() override
-				{
-					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetLoggedIn);
-				}
 				::vl::Ptr<::gacpass::ILoginViewModel> GetLoginViewModel() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetLoginViewModel);
-				}
-				bool GetMainPasswordSet() override
-				{
-					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetMainPasswordSet);
 				}
 				::vl::Ptr<::gacpass::IRegisterViewModel> GetRegisterViewModel() override
 				{
