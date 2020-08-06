@@ -4,6 +4,7 @@
 #include "cereal/archives/binary.hpp"
 #include "cereal/types/string.hpp"
 #include "cereal/types/vector.hpp"
+#include "util.hpp"
 #include <fstream>
 
 LoginViewModel::LoginViewModel() {}
@@ -20,7 +21,7 @@ void LoginViewModel::SetPassword(const WString& value)
 
 bool LoginViewModel::GetLoggedIn()
 {
-	std::ifstream os("password.cereal", std::ios::binary);
+	std::ifstream os(Appdata(L"\\password.cereal"), std::ios::binary);
 	if (os.is_open())
 	{
 		cereal::BinaryInputArchive archive(os);

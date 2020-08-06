@@ -2,6 +2,7 @@
 
 #include "cereal/archives/binary.hpp"
 #include "cereal/types/string.hpp"
+#include "util.hpp"
 #include <string>
 #include <fstream>
 #include <sys/stat.h>
@@ -67,7 +68,7 @@ WString RegisterViewModel::GetConfirmPasswordError()
 
 void RegisterViewModel::Register()
 {
-	std::ofstream os("password.cereal", std::ios::binary);
+	std::ofstream os(Appdata(L"\\password.cereal"), std::ios::binary);
 	cereal::BinaryOutputArchive archive(os);
 	std::wstring password = this->confirmPassword.Buffer();
 	archive(cereal::make_nvp("password", password));
@@ -77,6 +78,5 @@ void RegisterViewModel::Register()
 
 bool RegisterViewModel::GetMainPasswordSet()
 {
-	struct stat buffer;
-	return (stat("password.cereal", &buffer) == 0) || (this->GetPasswordError() == L"" && this->GetConfirmPasswordError() == L"");
+	return vl::filesystem::File(vl::filesystem::FilePath(Appdata(L"\\password.cereal"))).Exists() || (this->GetPasswordError() == L"" && this->GetConfirmPasswordError() == L"");
 }

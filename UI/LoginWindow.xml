@@ -39,7 +39,7 @@
 					</att.Columns>
 					<Cell Site="row:0 column:0"></Cell>
 					<Cell Site="row:1 column:0">
-						<SolidLabel Text="Password: " VerticalAlignment="Center">
+						<SolidLabel Color="#FFFFFF" Text="Password: " VerticalAlignment="Center">
 							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
 						</SolidLabel>
 					</Cell>

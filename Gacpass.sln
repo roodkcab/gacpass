@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gacpass", "Gacpass.vcxproj"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GacUILite", "..\GacUI\Release\Tutorial\Lib\GacUILite\GacUILite.vcxproj", "{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{671734EE-B22D-4F59-AC7B-CDA76109AAD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -39,6 +41,12 @@ Global
 		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Release|x64.ActiveCfg = Release|Win32
 		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Release|x86.ActiveCfg = Release|Win32
 		{96C559CA-9718-4BEC-A053-28A0AB6A8CA2}.Release|x86.Build.0 = Release|Win32
+		{671734EE-B22D-4F59-AC7B-CDA76109AAD7}.Debug|Win32.ActiveCfg = Debug
+		{671734EE-B22D-4F59-AC7B-CDA76109AAD7}.Debug|x64.ActiveCfg = Debug
+		{671734EE-B22D-4F59-AC7B-CDA76109AAD7}.Debug|x86.ActiveCfg = Debug
+		{671734EE-B22D-4F59-AC7B-CDA76109AAD7}.Release|Win32.ActiveCfg = Release
+		{671734EE-B22D-4F59-AC7B-CDA76109AAD7}.Release|x64.ActiveCfg = Release
+		{671734EE-B22D-4F59-AC7B-CDA76109AAD7}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

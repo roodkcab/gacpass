@@ -1,5 +1,6 @@
 #include "Code.h"
 #include "CodeBookViewModel.h"
+#include "util.hpp"
 
 #include <fstream>
 
@@ -84,7 +85,7 @@ void CodeBookViewModel::RemoveCode(Ptr<gacpass::ICode> code)
 void CodeBookViewModel::Load()
 {
 	//Deserialize
-	std::ifstream os("codebook.cereal", std::ios::binary);
+	std::ifstream os(Appdata(L"\\codebook.cereal"), std::ios::binary);
 	if (os.is_open())
 	{
 		cereal::BinaryInputArchive archive(os);
@@ -109,7 +110,7 @@ void CodeBookViewModel::Store()
 		v.push_back(RawCode{ std::wstring(c->GetWebsite().Buffer()), std::wstring(c->GetUsername().Buffer()), std::wstring(c->GetPassword().Buffer()) });
 	}
 
-	std::ofstream os("codebook.cereal", std::ios::binary);
+	std::ofstream os(Appdata(L"\\codebook.cereal"), std::ios::binary);
 	cereal::BinaryOutputArchive archive(os);
 	if (os.is_open())
 	{

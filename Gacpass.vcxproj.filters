@@ -78,6 +78,9 @@
     <ClCompile Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.cpp">
       <Filter>Lib\CacUI</Filter>
     </ClCompile>
+    <ClCompile Include="Lib\util.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI\Source\CodeBookWindow.h">
@@ -389,6 +392,9 @@
     <ClInclude Include="Lib\cereal\version.hpp">
       <Filter>Lib\cereal</Filter>
     </ClInclude>
+    <ClInclude Include="Lib\util.hpp">
+      <Filter>Lib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UI\Resource.xml">
@@ -413,5 +419,19 @@
     <None Include="Lib\cereal\external\rapidxml\manual.html">
       <Filter>Lib\cereal</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="UI\Delete.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="UI\Edit.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="UI\Folder.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="UI\New.png">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

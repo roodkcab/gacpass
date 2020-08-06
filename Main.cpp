@@ -1,5 +1,6 @@
 #define GAC_HEADER_USE_NAMESPACE
 #include "GacPass.h"
+#include "util.hpp"
 #include "ViewModel/Code.h"
 #include "ViewModel/CodeBookViewModel.h"
 #include "ViewModel/RegisterVIewModel.h"
@@ -41,6 +42,11 @@ void GuiMain()
 	{
 		FileStream fileStream(L"MVVM.bin", FileStream::ReadOnly);
 		GetResourceManager()->LoadResourceOrPending(fileStream);
+	}
+
+	auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(Appdata(L"")));
+	if (!folder->Exists()) {
+		folder->Create(true);
 	}
 
 	auto viewModel = MakePtr<ViewModel>();

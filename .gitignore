@@ -1,5 +1,6 @@
 MVVM.bin
 Debug
+Release
 x64
 *.log
 .vs

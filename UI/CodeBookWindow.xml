@@ -1,5 +1,10 @@
 <Folder>
+
 	<Image content="File" name="Folder">Folder.png</Image>
+	<Image content="File" name="New">New.png</Image>
+	<Image content="File" name="Edit">Edit.png</Image>
+	<Image content="File" name="Delete">Delete.png</Image>
+
 	<Script>
 		<Workflow>
 			<![CDATA[
@@ -24,7 +29,6 @@
 					prop Codes : observe ICode^[] {const, not observe}
 					prop SelectedCode : ICode^ {}
 
-					eventSearchChanged();
 					prop Search : string {}
 					
 					func CreateCode() : ICode^;
@@ -48,7 +52,7 @@
 					<att.Search-bind>textBoxSearch.Text</att.Search-bind>
 				</att.ViewModel-set>
 
-				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://CodeBookWindowResource/Folder">
+				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://CodeBookWindowResource/New">
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
@@ -67,7 +71,7 @@
               ]]>
 					</ev.Executed-eval>
 				</ToolstripCommand>
-				<ToolstripCommand ref.Name="commandEditCode" Image-uri="res://CodeBookWindowResource/Folder">
+				<ToolstripCommand ref.Name="commandEditCode" Image-uri="res://CodeBookWindowResource/Edit">
 					<att.Enabled-bind>ViewModel.SelectedCode is not null</att.Enabled-bind>
 					<ev.Executed-eval>
 						<![CDATA[
@@ -86,7 +90,7 @@
               ]]>
 					</ev.Executed-eval>
 				</ToolstripCommand>
-				<ToolstripCommand ref.Name="commandRemoveCode" Image-uri="res://CodeBookWindowResource/Folder">
+				<ToolstripCommand ref.Name="commandRemoveCode" Image-uri="res://CodeBookWindowResource/Delete">
 					<att.Enabled-bind>ViewModel.SelectedCode is not null</att.Enabled-bind>
 					<ev.Executed-eval>
 						<![CDATA[
