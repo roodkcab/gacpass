@@ -1,4 +1,5 @@
 <Folder>
+	<Image content="File" name="Folder">Folder.png</Image>
 	<Script>
 		<Workflow>
 			<![CDATA[
@@ -12,6 +13,8 @@
 					prop Website	: string {const, not observe}
 					prop Username	: string {const, not observe}
 					prop Password	: string {const, not observe}
+					func GetHidePassword() : string;
+					prop HidePassword : string {GetHidePassword}
 
 					func Update(website : string, username : string, password: string) : void;
 				}
@@ -20,6 +23,9 @@
 				{
 					prop Codes : observe ICode^[] {const, not observe}
 					prop SelectedCode : ICode^ {}
+
+					eventSearchChanged();
+					prop Search : string {}
 					
 					func CreateCode() : ICode^;
 					func AddCode(code : ICode^) : void;
@@ -32,64 +38,67 @@
 	</Script>
 	<Instance name="CodeBookWindow">
 		<Instance ref.Class="gacpass::CodeBookWindow">
-			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel" />
+			<ref.Parameter Name="ViewModel" Class="gacpass::ICodeBookViewModel" />
 			<ref.Parameter Name="MainWindow" Class="presentation::controls::GuiWindow"/>
 			<CustomControl ref.Name="self">
-				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://Images/Folder">
+				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+
+				<att.ViewModel-set>
+					<att.SelectedCode-bind>listViewCodes.SelectedItem as (gacpass::ICode^)</att.SelectedCode-bind>
+					<att.Search-bind>textBoxSearch.Text</att.Search-bind>
+				</att.ViewModel-set>
+
+				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://CodeBookWindowResource/Folder">
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-                  var code = ViewModel.CodeBookViewModel.CreateCode();
-                  var window = new gacpass::NewCodeWindow*(ViewModel.CodeBookViewModel);
+                  var code = ViewModel.CreateCode();
+                  var window = new gacpass::NewCodeWindow*(ViewModel);
                   window.MoveToScreenCenter();
                   window.SetCode(code);
                   $Await window.ShowModalAsync(self.MainWindow);
                   
                   if (window.Ready)
                   {
-                    ViewModel.CodeBookViewModel.AddCode(code);
+                    ViewModel.AddCode(code);
                   }
                   delete window;
                 }
               ]]>
 					</ev.Executed-eval>
 				</ToolstripCommand>
-				<ToolstripCommand ref.Name="commandEditCode" Image-uri="res://Images/Folder">
-					<att.Enabled-bind>ViewModel.CodeBookViewModel.SelectedCode is not null</att.Enabled-bind>
+				<ToolstripCommand ref.Name="commandEditCode" Image-uri="res://CodeBookWindowResource/Folder">
+					<att.Enabled-bind>ViewModel.SelectedCode is not null</att.Enabled-bind>
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-                  var window = new gacpass::NewCodeWindow*(ViewModel.CodeBookViewModel);
+                  var window = new gacpass::NewCodeWindow*(ViewModel);
                   window.ForEdit = true;
                   window.MoveToScreenCenter();
-                  window.SetCode(ViewModel.CodeBookViewModel.SelectedCode);
+                  window.SetCode(ViewModel.SelectedCode);
                   $Await window.ShowModalAsync(self.MainWindow);
 				  if (window.Ready)
                   {
-				    ViewModel.CodeBookViewModel.UpdateCode(ViewModel.CodeBookViewModel.SelectedCode);
+				    ViewModel.UpdateCode(ViewModel.SelectedCode);
 				  }
                   delete window;
                 }
               ]]>
 					</ev.Executed-eval>
 				</ToolstripCommand>
-				<ToolstripCommand ref.Name="commandRemoveCode" Image-uri="res://Images/Folder">
-					<att.Enabled-bind>ViewModel.CodeBookViewModel.SelectedCode is not null</att.Enabled-bind>
+				<ToolstripCommand ref.Name="commandRemoveCode" Image-uri="res://CodeBookWindowResource/Folder">
+					<att.Enabled-bind>ViewModel.SelectedCode is not null</att.Enabled-bind>
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-				  ViewModel.CodeBookViewModel.RemoveCode(ViewModel.CodeBookViewModel.SelectedCode);
+				  ViewModel.RemoveCode(ViewModel.SelectedCode);
                 }
               ]]>
 					</ev.Executed-eval>
 				</ToolstripCommand>
-				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-				<att.ViewModel-set>
-					<att.CodeBookViewModel-set>
-						<att.SelectedCode-bind>listViewCodes.SelectedItem as (gacpass::ICode^)</att.SelectedCode-bind>
-					</att.CodeBookViewModel-set>
-				</att.ViewModel-set>
-				<Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
+
+				<Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:28 right:0 bottom:0">
+					
 					<att.Rows>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:Percentage percentage:1.0</CellOption>
@@ -105,16 +114,23 @@
 							<ToolstripButton Command-ref="commandEditCode"/>
 							<ToolstripButton Command-ref="commandRemoveCode"/>
 						</ToolstripToolBar>
+						<SinglelineTextBox ref.Name="textBoxSearch">
+							<att.BoundsComposition-set AlignmentToParent="left:100 top:0 right:0 bottom:0" PreferredMinSize="x:100 y:24"/>
+						</SinglelineTextBox>
 					</Cell>
 					<Cell Site="row:1 column:0">
 						<BindableListView ref.Name="listViewCodes" View="Detail" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false" env.ItemType="gacpass::ICode^">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-							<att.ItemSource-bind>ViewModel.CodeBookViewModel.Codes ?? null</att.ItemSource-bind>
+							<att.ItemSource-bind>
+								<![CDATA[
+									ViewModel.Codes ?? null
+								]]>
+							</att.ItemSource-bind>
 
 							<att.Columns>
 								<ListViewColumn Text="Website" TextProperty="Website" Size="120"/>
 								<ListViewColumn Text="Username" TextProperty="Username" Size="120"/>
-								<ListViewColumn Text="Passowrd" TextProperty="Password" Size="120"/>
+								<ListViewColumn Text="Passowrd" TextProperty="HidePassword" Size="120"/>
 							</att.Columns>
 
 							<att.DataColumns>
@@ -146,7 +162,7 @@
             }
           ]]>
 			</ref.Members>
-			<ref.Parameter Name="CodeBookViewModel" Class="gacpass::ICodeBookViewModel"/>
+			<ref.Parameter Name="ViewModel" Class="gacpass::ICodeBookViewModel"/>
 			<Window ref.Name="self" Text-bind="self.ForEdit ? 'Edit Code' : 'New Code'" ClientSize="x:480 y:400" MaximizedBox="false" MinimizedBox="false" SizeBox="false">
 				<att.BoundsComposition-set PreferredMinSize="x:480 y:400"/>
 				<Table CellPadding="5" AlignmentToParent="left:0 top:0 right:0 bottom:0">
@@ -187,7 +203,7 @@
 						<Label Text="Password:"/>
 					</Cell>
 					<Cell Site="row:2 column:1 columnSpan:3">
-						<SinglelineTextBox ref.Name="textBoxPassword" PasswordChar="*">
+						<SinglelineTextBox ref.Name="textBoxPassword">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 						</SinglelineTextBox>
 					</Cell>

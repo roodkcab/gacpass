@@ -40,6 +40,11 @@ WString Code::GetPassword()
 	return password;
 }
 
+WString Code::GetHidePassword()
+{
+	return L"***";
+}
+
 void Code::Update(const WString& _website, const WString& _username, const WString& _password)
 {
 	website = _website;

@@ -11,19 +11,23 @@ class CodeBookViewModel : public Object, public virtual gacpass::ICodeBookViewMo
 private:
 	ObservableList<Ptr<gacpass::ICode>> codes;
 	Ptr<gacpass::ICode> selectedCode;
+	WString search;
 
 public:
 	CodeBookViewModel();
 	Ptr<IValueObservableList> GetCodes()override;
 	Ptr<gacpass::ICode> GetSelectedCode()override;
 	void SetSelectedCode(Ptr<gacpass::ICode> value)override;
+
+	WString GetSearch()override;
+	void SetSearch(const WString& search)override;
+
 	Ptr<gacpass::ICode> CreateCode()override;
 	void AddCode(Ptr<gacpass::ICode> code)override;
 	void UpdateCode(Ptr<gacpass::ICode> code)override;
 	void RemoveCode(Ptr<gacpass::ICode> code)override;
 
 private:
-	void NotifyChanged(Ptr<gacpass::ICode> code);
 	void Load();
 	void Store();
 };

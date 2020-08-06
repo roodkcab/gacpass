@@ -12,6 +12,7 @@ Ptr<IValueObservableList> CodeBookViewModel::GetCodes()
 {
 	return codes.GetWrapper();
 }
+
 Ptr<gacpass::ICode> CodeBookViewModel::GetSelectedCode()
 {
 	return selectedCode;
@@ -22,8 +23,35 @@ void CodeBookViewModel::SetSelectedCode(Ptr<gacpass::ICode> value)
 	if (selectedCode != value)
 	{
 		selectedCode = value;
+		if (value.Obj()) {
+			auto clipboard = GetCurrentController()->ClipboardService()->WriteClipboard();
+			clipboard->SetText(value.Obj()->GetPassword());
+			clipboard->Submit();
+		}
 		SelectedCodeChanged();
 	}
+}
+
+WString CodeBookViewModel::GetSearch()
+{
+	return search;
+}
+
+void CodeBookViewModel::SetSearch(const WString& value)
+{
+	if (value.Length() < search.Length())
+	{
+		codes.Clear();
+		this->Load();
+	}
+	search = value;
+	List<Ptr<gacpass::ICode>> filteredCodes;
+	CopyFrom(filteredCodes, codes);
+	auto l = From(filteredCodes).Where([=](Ptr<gacpass::ICode> x) { return std::wstring(x.Obj()->GetWebsite().Buffer()).find(search.Buffer()) != std::string::npos; });
+
+	codes.Clear();
+	FOREACH(Ptr<gacpass::ICode>, code, l) codes.Add(code);
+	this->SearchChanged();
 }
 
 Ptr<gacpass::ICode> CodeBookViewModel::CreateCode()
@@ -34,31 +62,22 @@ Ptr<gacpass::ICode> CodeBookViewModel::CreateCode()
 void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 {
 	codes.Add(code);
-	this->NotifyChanged(code);
+	this->Store();
 }
 
 void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
-{
-	this->NotifyChanged(code);
-}
-
-void CodeBookViewModel::RemoveCode(Ptr<gacpass::ICode> code)
-{
-	codes.Remove(code.Obj());
-	this->NotifyChanged(code);
-}
-
-void CodeBookViewModel::NotifyChanged(Ptr<gacpass::ICode> code)
 {
 	vint index = codes.IndexOf(code.Obj());
 	if (index != -1)
 	{
 		codes.NotifyUpdate(index, 1);
-	} 
-	else
-	{
-		codes.NotifyUpdate(0, codes.Count());
 	}
+	this->Store();
+}
+
+void CodeBookViewModel::RemoveCode(Ptr<gacpass::ICode> code)
+{
+	codes.Remove(code.Obj());
 	this->Store();
 }
 
@@ -75,7 +94,6 @@ void CodeBookViewModel::Load()
 		{
 			codes.Add(MakePtr<Code>(i));
 		}
-		codes.NotifyUpdate(0, codes.Count());
 	}
 	os.close();
 }

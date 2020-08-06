@@ -29,6 +29,7 @@ namespace gacpass
 	{
 		friend class ::gacpass::CodeBookWindowConstructor;
 		friend class ::vl_workflow_global::__vwsnc10_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc11_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize____vl_reflection_description_ICoroutine;
 		friend class ::vl_workflow_global::__vwsnc5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize____vl_reflection_description_ICoroutine;
@@ -42,6 +43,7 @@ namespace gacpass
 		friend struct ::vl_workflow_global::__vwsnf14_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__;
 		friend struct ::vl_workflow_global::__vwsnf15_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf16_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf17_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
@@ -52,11 +54,11 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<CodeBookWindow>;
 #endif
 	public:
-		::vl::Ptr<::gacpass::IViewModel> __vwsn_parameter_ViewModel;
-		::vl::Ptr<::gacpass::IViewModel> GetViewModel();
+		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_parameter_ViewModel;
+		::vl::Ptr<::gacpass::ICodeBookViewModel> GetViewModel();
 		::vl::presentation::controls::GuiWindow* __vwsn_parameter_MainWindow;
 		::vl::presentation::controls::GuiWindow* GetMainWindow();
-		CodeBookWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel, ::vl::presentation::controls::GuiWindow* __vwsn_ctor_parameter_MainWindow);
+		CodeBookWindow(::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_ctor_parameter_ViewModel, ::vl::presentation::controls::GuiWindow* __vwsn_ctor_parameter_MainWindow);
 		~CodeBookWindow();
 	};
 

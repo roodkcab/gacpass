@@ -51,6 +51,10 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::RegisterWindowConstructor)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ICode)
+				::vl::WString GetHidePassword() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetHidePassword);
+				}
 				::vl::WString GetPassword() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetPassword);
@@ -82,6 +86,10 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodes);
 				}
+				::vl::WString GetSearch() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSearch);
+				}
 				::vl::Ptr<::gacpass::ICode> GetSelectedCode() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSelectedCode);
@@ -89,6 +97,10 @@ namespace vl
 				void RemoveCode(::vl::Ptr<::gacpass::ICode> code) override
 				{
 					INVOKE_INTERFACE_PROXY(RemoveCode, code);
+				}
+				void SetSearch(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetSearch, __vwsn_value_);
 				}
 				void SetSelectedCode(::vl::Ptr<::gacpass::ICode> __vwsn_value_) override
 				{

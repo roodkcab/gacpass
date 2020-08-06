@@ -36,7 +36,7 @@ Class (::gacpass::CodeBookWindow)
 
 namespace gacpass
 {
-	::vl::Ptr<::gacpass::IViewModel> CodeBookWindow::GetViewModel()
+	::vl::Ptr<::gacpass::ICodeBookViewModel> CodeBookWindow::GetViewModel()
 	{
 		return this->__vwsn_parameter_ViewModel;
 	}
@@ -46,9 +46,9 @@ namespace gacpass
 		return this->__vwsn_parameter_MainWindow;
 	}
 
-	CodeBookWindow::CodeBookWindow(::vl::Ptr<::gacpass::IViewModel> __vwsn_ctor_parameter_ViewModel, ::vl::presentation::controls::GuiWindow* __vwsn_ctor_parameter_MainWindow)
+	CodeBookWindow::CodeBookWindow(::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_ctor_parameter_ViewModel, ::vl::presentation::controls::GuiWindow* __vwsn_ctor_parameter_MainWindow)
 		: ::vl::presentation::controls::GuiCustomControl(::vl::presentation::theme::ThemeName::CustomControl)
-		, __vwsn_parameter_ViewModel(::vl::Ptr<::gacpass::IViewModel>())
+		, __vwsn_parameter_ViewModel(::vl::Ptr<::gacpass::ICodeBookViewModel>())
 		, __vwsn_parameter_MainWindow(static_cast<::vl::presentation::controls::GuiWindow*>(nullptr))
 	{
 		(this->__vwsn_parameter_ViewModel = __vwsn_ctor_parameter_ViewModel);

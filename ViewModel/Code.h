@@ -39,5 +39,6 @@ public:
 	WString GetWebsite()override;
 	WString GetUsername()override;
 	WString GetPassword()override;
+	WString GetHidePassword()override;
 	void Update(const WString& _website, const WString& _username, const WString& _password);
   };
