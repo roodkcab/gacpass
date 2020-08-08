@@ -45,8 +45,9 @@ void GuiMain()
 	}
 
 	auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(Appdata(L"")));
-	if (!folder->Exists()) {
-		folder->Create(true);
+	if (!folder->Exists()) 
+	{
+		folder->Create(false);
 	}
 
 	auto viewModel = MakePtr<ViewModel>();

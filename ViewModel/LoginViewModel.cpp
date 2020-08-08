@@ -21,7 +21,7 @@ void LoginViewModel::SetPassword(const WString& value)
 
 bool LoginViewModel::GetLoggedIn()
 {
-	std::ifstream os(Appdata(L"\\password.cereal"), std::ios::binary);
+	std::ifstream os(Appdata(L"\\password.cereal").Buffer(), std::ios::binary);
 	if (os.is_open())
 	{
 		cereal::BinaryInputArchive archive(os);

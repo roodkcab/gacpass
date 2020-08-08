@@ -68,7 +68,7 @@ WString RegisterViewModel::GetConfirmPasswordError()
 
 void RegisterViewModel::Register()
 {
-	std::ofstream os(Appdata(L"\\password.cereal"), std::ios::binary);
+	std::ofstream os(Appdata(L"\\password.cereal").Buffer(), std::ios::binary);
 	cereal::BinaryOutputArchive archive(os);
 	std::wstring password = this->confirmPassword.Buffer();
 	archive(cereal::make_nvp("password", password));
