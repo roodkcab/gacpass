@@ -17,6 +17,7 @@ WString LoginViewModel::GetPassword()
 void LoginViewModel::SetPassword(const WString& value)
 {
 	password = value;
+	LoggedInChanged();
 }
 
 bool LoginViewModel::GetLoggedIn()

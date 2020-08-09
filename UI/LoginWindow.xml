@@ -20,10 +20,42 @@
 	<Instance name="LoginWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::LoginWindow">
 			<ref.Parameter Name="ViewModel" Class="gacpass::ILoginViewModel"/>
+			<ref.Members>
+			<![CDATA[
+			    @cpp:Private
+				func OutAnimation(container: GuiBoundsComposition*): IGuiAnimation^
+				{
+                  return IGuiAnimation::CreateAnimation(
+                    func (time: UInt64): void
+					{
+					   var ratio = container.Bounds.x1 / 480.0;
+					   var deltaX = 50 * (1 - ratio + 0.01);
+				       var x1 = container.Bounds.x1 + cast int Math::Ceil(deltaX);
+				       container.AlignmentToParent = {left: x1 top: 0 right: 0 bottom: 0};
+					}, cast UInt64 2000);
+				}
+
+				@cpp:Private
+				func FlyoutAnimation(container: GuiBoundsComposition*): IGuiAnimation^
+				${
+				  while (not ViewModel.LoggedIn)
+				  {
+				    $Wait (cast UInt64 10);
+				  }
+				  $PlayAndWait OutAnimation(container);
+				}
+			]]>
+			</ref.Members>
+			<ref.Ctor>
+				<![CDATA[
+					self.AddAnimation(self.FlyoutAnimation(self.Container));
+				]]>
+			</ref.Ctor>
 			<CustomControl ref.Name="self">
 				<att.ViewModel-set Password-bind="textBoxPassword.Text"/>
 				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-				<Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
+				<Table ref.Name="Container" CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0" SizeAffectParent="false">
+					<SolidBackground Color="#434346"/>
 					<att.Rows>
 						<CellOption>composeType:Absolute absolute:90</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
@@ -52,11 +84,11 @@
 						<Button ref.Name="buttonLogin" Text="Login">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:-1 bottom:0" PreferredMinSize="x:100 y:24"/>
 							<ev.Clicked-eval>
-								<![CDATA[
-								{
-									self.ViewModel.LoggedInChanged();
-								}
-								]]>
+							<![CDATA[
+							{
+								self.ViewModel.LoggedInChanged();
+							}	
+							]]>
 							</ev.Clicked-eval>
 						</Button>
 					</Cell>
