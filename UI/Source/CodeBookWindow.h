@@ -44,6 +44,7 @@ namespace gacpass
 		friend struct ::vl_workflow_global::__vwsnf15_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf16_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf17_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf18_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
@@ -72,3 +73,6 @@ namespace gacpass
 #endif
 
 #endif
+// UNUSED_USER_CONTENT:
+//	/* USER_CONTENT_BEGIN(custom members of ::gacpass::CodeBookWindow) */
+//	/* USER_CONTENT_END() */

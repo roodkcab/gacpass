@@ -76,3 +76,12 @@ namespace gacpass
 #elif defined(__clang__)
 #pragma clang diagnostic pop
 #endif
+// UNUSED_USER_CONTENT:
+//	{/* USER_CONTENT_BEGIN(::gacpass::CodeBookWindow) */
+//		throw ::vl::Exception(L"You should implement this function.");
+//	}/* USER_CONTENT_END() */
+//	{/* USER_CONTENT_BEGIN(::gacpass::CodeBookWindow) */
+//		throw ::vl::Exception(L"You should implement this function.");
+//	}/* USER_CONTENT_END() */
+///* USER_CONTENT_BEGIN(custom global declarations) */
+///* USER_CONTENT_END() */

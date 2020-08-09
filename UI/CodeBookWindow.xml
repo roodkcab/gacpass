@@ -27,14 +27,16 @@
 				interface ICodeBookViewModel
 				{
 					prop Codes : observe ICode^[] {const, not observe}
+					prop Search : string {}
 					prop SelectedCode : ICode^ {}
 
-					prop Search : string {}
-					
 					func CreateCode() : ICode^;
 					func AddCode(code : ICode^) : void;
 					func UpdateCode(code : ICode^) : void;
 					func RemoveCode(code : ICode^) : void;
+
+					func OnItemLeftButtonDoubleClick(arguments : presentation::compositions::GuiItemMouseEventArgs*) : void;
+
 				}
 			}
 			]]>
@@ -123,7 +125,7 @@
 						</SinglelineTextBox>
 					</Cell>
 					<Cell Site="row:1 column:0">
-						<BindableListView ref.Name="listViewCodes" View="Detail" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false" env.ItemType="gacpass::ICode^">
+						<BindableListView ref.Name="listViewCodes" View="Detail" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false" env.ItemType="gacpass::ICode^" ev.ItemLeftButtonDoubleClick-eval="ViewModel.OnItemLeftButtonDoubleClick(arguments);">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 							<att.ItemSource-bind>
 								<![CDATA[

@@ -109,6 +109,7 @@ namespace vl
 				CLASS_MEMBER_METHOD(GetCodes, NO_PARAMETER)
 				CLASS_MEMBER_METHOD(GetSearch, NO_PARAMETER)
 				CLASS_MEMBER_METHOD(GetSelectedCode, NO_PARAMETER)
+				CLASS_MEMBER_METHOD(OnItemLeftButtonDoubleClick, { L"arguments" })
 				CLASS_MEMBER_METHOD(RemoveCode, { L"code" })
 				CLASS_MEMBER_METHOD(SetSearch, { L"__vwsn_value_" })
 				CLASS_MEMBER_METHOD(SetSelectedCode, { L"__vwsn_value_" })

@@ -24,11 +24,6 @@ void CodeBookViewModel::SetSelectedCode(Ptr<gacpass::ICode> value)
 	if (selectedCode != value)
 	{
 		selectedCode = value;
-		if (value.Obj()) {
-			auto clipboard = GetCurrentController()->ClipboardService()->WriteClipboard();
-			clipboard->SetText(value.Obj()->GetPassword());
-			clipboard->Submit();
-		}
 		SelectedCodeChanged();
 	}
 }
@@ -117,4 +112,15 @@ void CodeBookViewModel::Store()
 		archive(cereal::make_nvp("code", v));
 	}
 	os.close();
+}
+
+void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* arguments)
+{
+	auto code = codes.Get(arguments->itemIndex);
+	if (code)
+	{
+		auto clipboard = GetCurrentController()->ClipboardService()->WriteClipboard();
+		clipboard->SetText(code.Obj()->GetPassword());
+		clipboard->Submit();
+	}
 }

@@ -94,6 +94,10 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSelectedCode);
 				}
+				void OnItemLeftButtonDoubleClick(::vl::presentation::compositions::GuiItemMouseEventArgs* arguments) override
+				{
+					INVOKE_INTERFACE_PROXY(OnItemLeftButtonDoubleClick, arguments);
+				}
 				void RemoveCode(::vl::Ptr<::gacpass::ICode> code) override
 				{
 					INVOKE_INTERFACE_PROXY(RemoveCode, code);
