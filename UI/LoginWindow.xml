@@ -44,13 +44,7 @@
 			]]>
 			</ref.Members>
 			<CustomControl ref.Name="self">
-				<att.ViewModel-set Password-bind="textBoxPassword.Text">
-					<ev.LoggedInChanged-eval>
-					<![CDATA[
-					  self.AddAnimation(self.FlyoutAnimation(self.Container));
-					]]>
-					</ev.LoggedInChanged-eval>
-				</att.ViewModel-set>
+				<att.ViewModel-set Password-bind="textBoxPassword.Text" ev.LoggedInChanged-eval="self.AddAnimation(self.FlyoutAnimation(self.Container));"/>
 				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 				<Table ref.Name="Container" CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0" SizeAffectParent="false">
 					<SolidBackground Color="#434346"/>
