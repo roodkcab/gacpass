@@ -29,10 +29,10 @@
                     func (time: UInt64): void
 					{
 					   var ratio = container.Bounds.x1 / 480.0;
-					   var deltaX = 50 * (1 - ratio + 0.01);
+					   var deltaX = 100 * (1 - ratio + 0.01);
 				       var x1 = container.Bounds.x1 + cast int Math::Ceil(deltaX);
 				       container.AlignmentToParent = {left: x1 top: 0 right: 0 bottom: 0};
-					}, cast UInt64 2000);
+					}, cast UInt64 1000);
 				}
 
 				@cpp:Private
@@ -43,6 +43,7 @@
 				    $Wait (cast UInt64 10);
 				  }
 				  $PlayAndWait OutAnimation(container);
+				  self.Visible = false;
 				}
 			]]>
 			</ref.Members>
