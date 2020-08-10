@@ -1,0 +1,98 @@
+<Folder>
+	<Instance name="NewCodeWindow">
+		<Instance ref.CodeBehind="false" ref.Class="gacpass::NewCodeWindow">
+			<ref.Members>
+				<![CDATA[
+            prop ForEdit : bool = false {}
+
+            var Ready : bool = false;
+            var Code : ICode^ = null;
+            
+            func SetCode(value : ICode^): void
+            {
+              Code = value;
+              textBoxWebsite.Text = Code.Website;
+              textBoxUsername.Text = Code.Username;
+              textBoxPassword.Text = Code.Password;
+            }
+          ]]>
+			</ref.Members>
+			<ref.Parameter Name="ViewModel" Class="gacpass::ICodeBookViewModel"/>
+			<Window ref.Name="self" Text-bind="self.ForEdit ? 'Edit Code' : 'New Code'" ClientSize="x:480 y:400" MaximizedBox="false" MinimizedBox="false" SizeBox="false">
+				<att.BoundsComposition-set PreferredMinSize="x:480 y:400"/>
+				<Table CellPadding="5" AlignmentToParent="left:0 top:0 right:0 bottom:0">
+					<att.Rows>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:Percentage percentage:1.0</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+					</att.Rows>
+					<att.Columns>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:Percentage percentage:1.0</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+					</att.Columns>
+
+					<Cell Site="row:0 column:0" InternalMargin="top:6">
+						<Label Text="Website:"/>
+					</Cell>
+					<Cell Site="row:0 column:1 columnSpan:3">
+						<DocumentTextBox ref.Name="textBoxWebsite" EditMode="Editable">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+						</DocumentTextBox>
+					</Cell>
+
+					<Cell Site="row:1 column:0" InternalMargin="top:6">
+						<Label Text="Username:"/>
+					</Cell>
+					<Cell Site="row:1 column:1 columnSpan:3">
+						<DocumentTextBox ref.Name="textBoxUsername" EditMode="Editable">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+						</DocumentTextBox>
+					</Cell>
+
+					<Cell Site="row:2 column:0" InternalMargin="top:6">
+						<Label Text="Password:"/>
+					</Cell>
+					<Cell Site="row:2 column:1 columnSpan:3">
+						<SinglelineTextBox ref.Name="textBoxPassword">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+						</SinglelineTextBox>
+					</Cell>
+
+					<Cell Site="row:5 column:2">
+						<Button Text="OK">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:60"/>
+							<ev.Clicked-eval>
+								<![CDATA[
+                    {
+                      self.Code.Update(textBoxWebsite.Text, textBoxUsername.Text, textBoxPassword.Text);
+                      self.Ready = true;
+                      self.Close();
+                    }
+                  ]]>
+							</ev.Clicked-eval>
+						</Button>
+					</Cell>
+					<Cell Site="row:5 column:3">
+						<Button Text="Cancel">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:60"/>
+							<ev.Clicked-eval>
+								<![CDATA[
+                    {
+                      self.Ready = false;
+                      self.Close();
+                    }
+                  ]]>
+							</ev.Clicked-eval>
+						</Button>
+					</Cell>
+				</Table>
+			</Window>
+		</Instance>
+	</Instance>
+
+</Folder>

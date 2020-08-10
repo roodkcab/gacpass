@@ -168,7 +168,6 @@ namespace vl
 				CLASS_MEMBER_BASE(::vl::presentation::controls::GuiCustomControl)
 				CLASS_MEMBER_BASE(::gacpass::LoginWindowConstructor)
 				CLASS_MEMBER_CONSTRUCTOR(::gacpass::LoginWindow*(::vl::Ptr<::gacpass::ILoginViewModel>), { L"__vwsn_ctor_parameter_ViewModel" })
-				CLASS_MEMBER_METHOD(__vwsn_instance_ctor_, NO_PARAMETER)
 				CLASS_MEMBER_METHOD(FlyoutAnimation, { L"container" })
 				CLASS_MEMBER_METHOD(GetViewModel, NO_PARAMETER)
 				CLASS_MEMBER_METHOD(OutAnimation, { L"container" })

@@ -12,7 +12,7 @@
 	<Folder name="RegisterWindowResource" content="Link">RegisterWindow.xml</Folder>
 	<Folder name="LoginWindowResource" content="Link">LoginWindow.xml</Folder>
 	<Folder name="CodeBookWindowResource" content="Link">CodeBookWindow.xml</Folder>
-
+	<Folder name="NewCodeWindowResource" content="Link">NewCodeWindow.xml</Folder>
 
 	<Script>
 		<Workflow>

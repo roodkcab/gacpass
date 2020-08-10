@@ -17,7 +17,7 @@ WString LoginViewModel::GetPassword()
 void LoginViewModel::SetPassword(const WString& value)
 {
 	password = value;
-	LoggedInChanged();
+	GetLoggedIn();
 }
 
 bool LoginViewModel::GetLoggedIn()
@@ -29,7 +29,11 @@ bool LoginViewModel::GetLoggedIn()
 		std::wstring v;
 		archive(cereal::make_nvp("password", v));
 		os.close();
-		return v.c_str() == this->GetPassword();
+		if (v.c_str() == this->GetPassword()) 
+		{
+			LoggedInChanged();
+			return true;
+		}
 	}
 	os.close();
 	return false;

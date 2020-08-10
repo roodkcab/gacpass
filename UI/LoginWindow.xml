@@ -38,22 +38,19 @@
 				@cpp:Private
 				func FlyoutAnimation(container: GuiBoundsComposition*): IGuiAnimation^
 				${
-				  while (not ViewModel.LoggedIn)
-				  {
-				    $Wait (cast UInt64 10);
-				  }
 				  $PlayAndWait OutAnimation(container);
 				  self.Visible = false;
 				}
 			]]>
 			</ref.Members>
-			<ref.Ctor>
-				<![CDATA[
-					self.AddAnimation(self.FlyoutAnimation(self.Container));
-				]]>
-			</ref.Ctor>
 			<CustomControl ref.Name="self">
-				<att.ViewModel-set Password-bind="textBoxPassword.Text"/>
+				<att.ViewModel-set Password-bind="textBoxPassword.Text">
+					<ev.LoggedInChanged-eval>
+					<![CDATA[
+					  self.AddAnimation(self.FlyoutAnimation(self.Container));
+					]]>
+					</ev.LoggedInChanged-eval>
+				</att.ViewModel-set>
 				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 				<Table ref.Name="Container" CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0" SizeAffectParent="false">
 					<SolidBackground Color="#434346"/>
@@ -87,7 +84,7 @@
 							<ev.Clicked-eval>
 							<![CDATA[
 							{
-								self.ViewModel.LoggedInChanged();
+								self.ViewModel.GetLoggedIn();
 							}	
 							]]>
 							</ev.Clicked-eval>

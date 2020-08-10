@@ -409,6 +409,9 @@
     <Xml Include="UI\LoginWindow.xml">
       <Filter>资源文件</Filter>
     </Xml>
+    <Xml Include="UI\NewCodeWindow.xml">
+      <Filter>资源文件</Filter>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Gacpass.rc">

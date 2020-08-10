@@ -286,6 +286,7 @@
   <ItemGroup>
     <Xml Include="UI\CodeBookWindow.xml" />
     <Xml Include="UI\LoginWindow.xml" />
+    <Xml Include="UI\NewCodeWindow.xml" />
     <Xml Include="UI\RegisterWindow.xml" />
     <Xml Include="UI\Resource.xml" />
   </ItemGroup>
