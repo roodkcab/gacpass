@@ -1,10 +1,10 @@
 #include "Code.h"
 #include "CodeBookViewModel.h"
-#include "util.hpp"
 
-#include <fstream>
+using namespace sqlite_orm;
 
 CodeBookViewModel::CodeBookViewModel() 
+	:storage(DBCodes())
 {
 	this->Load();
 }
@@ -37,7 +37,6 @@ void CodeBookViewModel::SetSearch(const WString& value)
 {
 	if (value.Length() < search.Length())
 	{
-		codes.Clear();
 		this->Load();
 	}
 	search = value;
@@ -58,60 +57,18 @@ Ptr<gacpass::ICode> CodeBookViewModel::CreateCode()
 void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 {
 	codes.Add(code);
-	this->Store();
+	storage.insert(code);
 }
 
 void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 {
-	vint index = codes.IndexOf(code.Obj());
-	if (index != -1)
-	{
-		codes.NotifyUpdate(index, 1);
-	}
-	this->Store();
+	storage.update(code);
 }
 
 void CodeBookViewModel::RemoveCode(Ptr<gacpass::ICode> code)
 {
 	codes.Remove(code.Obj());
-	this->Store();
-}
-
-void CodeBookViewModel::Load()
-{
-	//Deserialize
-	std::ifstream os(Appdata(L"\\codebook.cereal").Buffer(), std::ios::binary);
-	if (os.is_open())
-	{
-		cereal::BinaryInputArchive archive(os);
-		std::vector<RawCode> v;
-		archive(cereal::make_nvp("code", v));
-		for (RawCode i : v)
-		{
-			codes.Add(MakePtr<Code>(i));
-		}
-	}
-	os.close();
-}
-
-void CodeBookViewModel::Store()
-{
-	//Serialize all codes to file
-	std::vector<RawCode> v;
-	auto ce = codes.CreateEnumerator();
-	while (ce->Next()) 
-	{
-		auto c = ce->Current().Obj();
-		v.push_back(RawCode{ std::wstring(c->GetWebsite().Buffer()), std::wstring(c->GetUsername().Buffer()), std::wstring(c->GetPassword().Buffer()) });
-	}
-
-	std::ofstream os(Appdata(L"\\codebook.cereal").Buffer(), std::ios::binary);
-	cereal::BinaryOutputArchive archive(os);
-	if (os.is_open())
-	{
-		archive(cereal::make_nvp("code", v));
-	}
-	os.close();
+	storage.remove<Code>(code->GetId());
 }
 
 void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* arguments)
@@ -120,7 +77,19 @@ void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* argum
 	if (code)
 	{
 		auto clipboard = GetCurrentController()->ClipboardService()->WriteClipboard();
-		clipboard->SetText(code.Obj()->GetPassword());
+		clipboard->SetText(code->GetPassword());
 		clipboard->Submit();
+	}
+}
+
+void CodeBookViewModel::Load()
+{
+	codes.Clear();
+	auto allCodes = storage.get_all<Code>();
+	for (auto &i : allCodes)
+	{
+		auto code = MakePtr<Code>();
+		code->Update(i.GetId(), i.GetWebsite(), i.GetUsername(), i.GetPassword());
+		codes.Add(code);
 	}
 }

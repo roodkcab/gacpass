@@ -2,7 +2,8 @@
 #define UTIL_H_
 
 #include "Vlpp.h"
+#include <string>
 
-vl::WString Appdata(vl::WString filename);
+std::string Appdata(vl::WString filename);
 
 #endif

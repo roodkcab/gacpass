@@ -44,11 +44,11 @@ void GuiMain()
 		GetResourceManager()->LoadResourceOrPending(fileStream);
 	}
 
-	auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(Appdata(L"")));
+	/*auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(Appdata(L"")));
 	if (!folder->Exists()) 
 	{
 		folder->Create(false);
-	}
+	}*/
 
 	auto viewModel = MakePtr<ViewModel>();
 	auto window = new gacpass::MainWindow(viewModel);

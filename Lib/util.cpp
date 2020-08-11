@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string>
 
-vl::WString Appdata(vl::WString filename)
+std::string Appdata(vl::WString filename)
 {
 	wchar_t* appdata;
 	size_t appdata_len;
@@ -15,5 +15,6 @@ vl::WString Appdata(vl::WString filename)
 	{
 		path += filename;
 	}
-	return path;
+	std::wstring wpath(path.Buffer());
+	return std::string(wpath.begin(), wpath.end());
 }

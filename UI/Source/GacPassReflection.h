@@ -55,6 +55,10 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetHidePassword);
 				}
+				::vl::vint GetId() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetId);
+				}
 				::vl::WString GetPassword() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetPassword);
@@ -67,9 +71,25 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetWebsite);
 				}
-				void Update(const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
+				void SetId(::vl::vint __vwsn_value_) override
 				{
-					INVOKE_INTERFACE_PROXY(Update, website, username, password);
+					INVOKE_INTERFACE_PROXY(SetId, __vwsn_value_);
+				}
+				void SetPassword(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetPassword, __vwsn_value_);
+				}
+				void SetUsername(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetUsername, __vwsn_value_);
+				}
+				void SetWebsite(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetWebsite, __vwsn_value_);
+				}
+				void Update(::vl::vint id, const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
+				{
+					INVOKE_INTERFACE_PROXY(Update, id, website, username, password);
 				}
 			END_INTERFACE_PROXY(::gacpass::ICode)
 

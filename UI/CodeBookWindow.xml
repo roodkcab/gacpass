@@ -15,13 +15,14 @@
 			{
 				interface ICode
 				{
-					prop Website	: string {const, not observe}
-					prop Username	: string {const, not observe}
-					prop Password	: string {const, not observe}
+				  prop Id : int {not observe}
+					prop Website	: string {not observe}
+					prop Username	: string {not observe}
+					prop Password	: string {not observe}
 					func GetHidePassword() : string;
 					prop HidePassword : string {GetHidePassword}
 
-					func Update(website : string, username : string, password: string) : void;
+					func Update(id : int, website : string, username : string, password: string) : void;
 				}
 
 				interface ICodeBookViewModel
@@ -82,10 +83,10 @@
                   window.MoveToScreenCenter();
                   window.SetCode(ViewModel.SelectedCode);
                   $Await window.ShowModalAsync(self.MainWindow);
-				  if (window.Ready)
+                  if (window.Ready)
                   {
-				    ViewModel.UpdateCode(ViewModel.SelectedCode);
-				  }
+                    ViewModel.UpdateCode(ViewModel.SelectedCode);
+                  }
                   delete window;
                 }
               ]]>
@@ -96,7 +97,7 @@
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-				  ViewModel.RemoveCode(ViewModel.SelectedCode);
+                  ViewModel.RemoveCode(ViewModel.SelectedCode);
                 }
               ]]>
 					</ev.Executed-eval>

@@ -57,11 +57,20 @@
 					<Cell Site="row:2 column:0" InternalMargin="top:6">
 						<Label Text="Password:"/>
 					</Cell>
-					<Cell Site="row:2 column:1 columnSpan:3">
+					<Cell Site="row:2 column:1 columnSpan:2">
 						<SinglelineTextBox ref.Name="textBoxPassword">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 						</SinglelineTextBox>
 					</Cell>
+					<Cell Site="row:2 column:3">
+						<Button Text="generate">
+							<ev.Clicked-eval>
+							<![CDATA[
+							textBoxPassword.Text = "test";
+							]]>
+							</ev.Clicked-eval>
+						</Button>
+					</Cell> 
 
 					<Cell Site="row:5 column:2">
 						<Button Text="OK">
@@ -69,7 +78,7 @@
 							<ev.Clicked-eval>
 								<![CDATA[
                     {
-                      self.Code.Update(textBoxWebsite.Text, textBoxUsername.Text, textBoxPassword.Text);
+                      self.Code.Update(self.Code.Id, textBoxWebsite.Text, textBoxUsername.Text, textBoxPassword.Text);
                       self.Ready = true;
                       self.Close();
                     }
