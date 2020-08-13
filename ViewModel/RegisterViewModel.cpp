@@ -6,9 +6,9 @@ RegisterViewModel::RegisterViewModel()
 	, regexNumbers(L"[0-9]")
 {}
 
-void RegisterViewModel::Load(Ptr<decltype(DB())> _storage)
+void RegisterViewModel::Load(decltype(DB())& _storage)
 {
-	storage = _storage;
+	storage = &_storage;
 }
 
 WString RegisterViewModel::GetPassword()

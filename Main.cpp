@@ -24,10 +24,9 @@ public:
 		, codeBookViewModel(MakePtr<CodeBookViewModel>())
 	{
 		storage.sync_schema();
-		auto s = Ptr<decltype(DB())>(&storage);
-		dynamic_cast<RegisterViewModel *>(registerViewModel.Obj())->Load(s);
-		dynamic_cast<LoginViewModel *>(loginViewModel.Obj())->Load(s);
-		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load(s);
+		dynamic_cast<RegisterViewModel *>(registerViewModel.Obj())->Load(storage);
+		dynamic_cast<LoginViewModel *>(loginViewModel.Obj())->Load(storage);
+		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load(storage);
 	}
 
 	Ptr<gacpass::IRegisterViewModel> GetRegisterViewModel()override

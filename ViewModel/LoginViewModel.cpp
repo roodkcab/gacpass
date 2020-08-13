@@ -2,9 +2,9 @@
 
 LoginViewModel::LoginViewModel() {}
 
-void LoginViewModel::Load(Ptr<decltype(DB())> _storage)
+void LoginViewModel::Load(decltype(DB())& _storage)
 {
-	storage = _storage;
+	storage = &_storage;
 }
 
 WString LoginViewModel::GetPassword()

@@ -12,11 +12,11 @@ private:
 	Regex regexLcLetters;
 	Regex regexUcLetters;
 	Regex regexNumbers;
-	Ptr<decltype(DB())> storage;
+	decltype(DB())* storage;
 
 public:
 	RegisterViewModel();
-	void Load(Ptr<decltype(DB())> _storage);
+	void Load(decltype(DB())& _storage);
 	WString GetPassword()override;
 	void SetPassword(const WString& value)override;
 	WString GetPasswordError()override;

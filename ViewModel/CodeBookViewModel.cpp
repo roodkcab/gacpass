@@ -2,9 +2,9 @@
 
 CodeBookViewModel::CodeBookViewModel() {}
 
-void CodeBookViewModel::Load(Ptr<decltype(DB())> _storage)
+void CodeBookViewModel::Load(decltype(DB())& _storage)
 {
-	storage = _storage;
+	storage = &_storage;
 	auto codes = storage->get_all<Code>();
 	for (auto &code : codes)
 	{
