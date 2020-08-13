@@ -38,14 +38,8 @@ namespace sqlite_orm {
         }
     };
 
-    /**
-     *  This is where sqlite_orm lib understands that your type is nullable - by
-     *  specializing type_is_nullable<T> and deriving from std::true_type.
-     */
     template<>
     struct type_is_nullable<WString> : public std::true_type {
-
-        //  this function must return whether value null or not (false is null). Don't forget to implement it
         bool operator()(const WString &g) const {
             return g != L"";
         }
