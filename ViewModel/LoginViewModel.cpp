@@ -1,12 +1,5 @@
 #include "LoginViewModel.h"
 
-#include <string>
-#include "cereal/archives/binary.hpp"
-#include "cereal/types/string.hpp"
-#include "cereal/types/vector.hpp"
-#include "util.hpp"
-#include <fstream>
-
 LoginViewModel::LoginViewModel() {}
 
 void LoginViewModel::Load(Ptr<decltype(DB())> _storage)

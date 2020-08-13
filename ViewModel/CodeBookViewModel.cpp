@@ -1,9 +1,6 @@
 #include "CodeBookViewModel.h"
 
-CodeBookViewModel::CodeBookViewModel() 
-{
-	
-}
+CodeBookViewModel::CodeBookViewModel() {}
 
 void CodeBookViewModel::Load(Ptr<decltype(DB())> _storage)
 {

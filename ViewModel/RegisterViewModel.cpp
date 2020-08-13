@@ -1,12 +1,5 @@
 #include "RegisterViewModel.h"
 
-#include "cereal/archives/binary.hpp"
-#include "cereal/types/string.hpp"
-#include "util.hpp"
-#include <string>
-#include <fstream>
-#include <sys/stat.h>
-
 RegisterViewModel::RegisterViewModel()
 	:regexLcLetters(L"[a-z]")
 	, regexUcLetters(L"[A-Z]")

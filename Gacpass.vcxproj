@@ -180,91 +180,6 @@
     <ClCompile Include="ViewModel\RegisterViewModel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Lib\cereal\access.hpp" />
-    <ClInclude Include="Lib\cereal\archives\adapters.hpp" />
-    <ClInclude Include="Lib\cereal\archives\binary.hpp" />
-    <ClInclude Include="Lib\cereal\archives\json.hpp" />
-    <ClInclude Include="Lib\cereal\archives\portable_binary.hpp" />
-    <ClInclude Include="Lib\cereal\archives\xml.hpp" />
-    <ClInclude Include="Lib\cereal\cereal.hpp" />
-    <ClInclude Include="Lib\cereal\details\helpers.hpp" />
-    <ClInclude Include="Lib\cereal\details\polymorphic_impl.hpp" />
-    <ClInclude Include="Lib\cereal\details\polymorphic_impl_fwd.hpp" />
-    <ClInclude Include="Lib\cereal\details\static_object.hpp" />
-    <ClInclude Include="Lib\cereal\details\traits.hpp" />
-    <ClInclude Include="Lib\cereal\details\util.hpp" />
-    <ClInclude Include="Lib\cereal\external\base64.hpp" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\allocators.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\cursorstreamwrapper.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\document.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\encodedstream.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\encodings.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\error\en.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\error\error.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\filereadstream.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\filewritestream.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\fwd.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\biginteger.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\diyfp.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\dtoa.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\ieee754.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\itoa.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\meta.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\pow10.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\regex.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\stack.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\strfunc.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\strtod.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\internal\swap.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\istreamwrapper.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\memorybuffer.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\memorystream.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\msinttypes\inttypes.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\msinttypes\stdint.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\ostreamwrapper.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\pointer.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\prettywriter.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\rapidjson.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\reader.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\schema.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\stream.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\stringbuffer.h" />
-    <ClInclude Include="Lib\cereal\external\rapidjson\writer.h" />
-    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml.hpp" />
-    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_iterators.hpp" />
-    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_print.hpp" />
-    <ClInclude Include="Lib\cereal\external\rapidxml\rapidxml_utils.hpp" />
-    <ClInclude Include="Lib\cereal\macros.hpp" />
-    <ClInclude Include="Lib\cereal\specialize.hpp" />
-    <ClInclude Include="Lib\cereal\types\array.hpp" />
-    <ClInclude Include="Lib\cereal\types\atomic.hpp" />
-    <ClInclude Include="Lib\cereal\types\base_class.hpp" />
-    <ClInclude Include="Lib\cereal\types\bitset.hpp" />
-    <ClInclude Include="Lib\cereal\types\boost_variant.hpp" />
-    <ClInclude Include="Lib\cereal\types\chrono.hpp" />
-    <ClInclude Include="Lib\cereal\types\common.hpp" />
-    <ClInclude Include="Lib\cereal\types\complex.hpp" />
-    <ClInclude Include="Lib\cereal\types\concepts\pair_associative_container.hpp" />
-    <ClInclude Include="Lib\cereal\types\deque.hpp" />
-    <ClInclude Include="Lib\cereal\types\forward_list.hpp" />
-    <ClInclude Include="Lib\cereal\types\functional.hpp" />
-    <ClInclude Include="Lib\cereal\types\list.hpp" />
-    <ClInclude Include="Lib\cereal\types\map.hpp" />
-    <ClInclude Include="Lib\cereal\types\memory.hpp" />
-    <ClInclude Include="Lib\cereal\types\optional.hpp" />
-    <ClInclude Include="Lib\cereal\types\polymorphic.hpp" />
-    <ClInclude Include="Lib\cereal\types\queue.hpp" />
-    <ClInclude Include="Lib\cereal\types\set.hpp" />
-    <ClInclude Include="Lib\cereal\types\stack.hpp" />
-    <ClInclude Include="Lib\cereal\types\string.hpp" />
-    <ClInclude Include="Lib\cereal\types\tuple.hpp" />
-    <ClInclude Include="Lib\cereal\types\unordered_map.hpp" />
-    <ClInclude Include="Lib\cereal\types\unordered_set.hpp" />
-    <ClInclude Include="Lib\cereal\types\utility.hpp" />
-    <ClInclude Include="Lib\cereal\types\valarray.hpp" />
-    <ClInclude Include="Lib\cereal\types\variant.hpp" />
-    <ClInclude Include="Lib\cereal\types\vector.hpp" />
-    <ClInclude Include="Lib\cereal\version.hpp" />
     <ClInclude Include="Lib\GacUI\GacUI.h" />
     <ClInclude Include="Lib\GacUI\GacUIWindows.h" />
     <ClInclude Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.h" />
@@ -302,9 +217,6 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Gacpass.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Lib\cereal\external\rapidxml\manual.html" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="UI\Delete.png" />
