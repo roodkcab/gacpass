@@ -1,4 +1,5 @@
 #include "Code.h"
+#include <iostream>
 
 using namespace vl::collections;
 using namespace vl::stream;
@@ -26,14 +27,6 @@ Code::Code(const Code& code)
 	website = code.website;
 	username = code.username;
 	password = code.password;
-}
-
-Code::Code(Ptr<gacpass::ICode> code)
-{
-	id = code->GetId();
-	website = code->GetWebsite();
-	username = code->GetUsername();
-	password = code->GetPassword();
 }
 
 int Code::GetId()const

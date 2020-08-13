@@ -1,55 +1,14 @@
 #include "CodeBookViewModel.h"
 
-std::unique_ptr<std::string> WStringToString(const WString &string) {
-	auto s = std::wstring(string.Buffer());
-    return std::make_unique<std::string>(s.begin(), s.end());
-}
-
-WString WStringFromString(const std::string &s) {
-	return WString(std::wstring(s.begin(), s.end()).c_str());
-}
-
-namespace sqlite_orm {
-
-    template<>
-    struct type_printer<WString> : public text_printer {};
-
-    template<>
-    struct statement_binder<WString> {
-        int bind(sqlite3_stmt *stmt, int index, const WString &value) {
-            if(auto str = WStringToString(value)) {
-                return statement_binder<std::string>().bind(stmt, index, *str);
-            }
-			return statement_binder<std::nullptr_t>().bind(stmt, index, nullptr);
-        }
-    };
-
-    template<>
-    struct field_printer<WString> {
-        std::string operator()(const WString &t) const {
-			return *WStringToString(t);
-        }
-    };
-
-    template<>
-    struct row_extractor<WString> {
-        WString extract(sqlite3_stmt *stmt, int columnIndex) {
-            return WStringFromString((const char *)sqlite3_column_text(stmt, columnIndex));
-        }
-    };
-
-    template<>
-    struct type_is_nullable<WString> : public std::true_type {
-        bool operator()(const WString &g) const {
-            return g != L"";
-        }
-    };
-}
-
 CodeBookViewModel::CodeBookViewModel() 
 	:storage(DBCodes())
 {
-	this->Load();
+	storage.sync_schema();
+	auto codes = storage.get_all<Code>();
+	for (auto &code : codes)
+	{
+		this->codes.Add(MakePtr<Code>(code));
+	}
 }
 
 Ptr<IValueObservableList> CodeBookViewModel::GetCodes()
@@ -78,18 +37,15 @@ WString CodeBookViewModel::GetSearch()
 
 void CodeBookViewModel::SetSearch(const WString& value)
 {
-	if (value.Length() < search.Length())
-	{
-		this->Load();
-	}
 	search = value;
-	List<Ptr<gacpass::ICode>> filteredCodes;
-	CopyFrom(filteredCodes, codes);
-	auto l = From(filteredCodes).Where([=](Ptr<gacpass::ICode> x) { return std::wstring(x.Obj()->GetWebsite().Buffer()).find(search.Buffer()) != std::string::npos; });
-
-	codes.Clear();
-	FOREACH(Ptr<gacpass::ICode>, code, l) codes.Add(code);
 	this->SearchChanged();
+	codes.Clear();
+	storage.sync_schema();
+	auto codes = storage.get_all<Code>(where(like(&Code::GetWebsite, L"%" + value + L"%")));
+	for (auto &code : codes)
+	{
+		this->codes.Add(MakePtr<Code>(code));
+	}
 }
 
 Ptr<gacpass::ICode> CodeBookViewModel::CreateCode()
@@ -99,8 +55,10 @@ Ptr<gacpass::ICode> CodeBookViewModel::CreateCode()
 
 void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 {
-	codes.Add(code);
-	storage.insert(Code(code));
+	Code *c = dynamic_cast<Code *>(code.Obj());
+	int id = storage.insert<Code>(*c);
+	c->SetId(id);
+	codes.Add(Ptr<Code>(c));
 }
 
 void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
@@ -108,7 +66,8 @@ void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 	vint index = codes.IndexOf(code.Obj());
 	if (index != -1)
 	{
-		storage.update(Code(code));
+		Code *c = dynamic_cast<Code *>(code.Obj());
+		storage.update<Code>(*c);
 		codes.NotifyUpdate(index, 1);
 	}
 }
@@ -127,16 +86,5 @@ void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* argum
 		auto clipboard = GetCurrentController()->ClipboardService()->WriteClipboard();
 		clipboard->SetText(code->GetPassword());
 		clipboard->Submit();
-	}
-}
-
-void CodeBookViewModel::Load()
-{
-	codes.Clear();
-	storage.sync_schema();
-	auto codes = storage.get_all<Code>();
-	for (auto& code : codes)
-	{
-		this->codes.Add(MakePtr<Code>(code));
 	}
 }

@@ -25,6 +25,9 @@
     <Filter Include="Lib\cereal">
       <UniqueIdentifier>{0f4e579d-3498-40db-8335-26c4986cd8b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lib\sqlite_orm">
+      <UniqueIdentifier>{e4271d1a-a2e8-433e-bdd8-9172ab3fe095}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -80,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="Lib\util.cpp">
       <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\sqlite_orm\WString.cpp">
+      <Filter>Lib\sqlite_orm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -394,6 +400,9 @@
     </ClInclude>
     <ClInclude Include="Lib\util.hpp">
       <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\sqlite_orm\WString.h">
+      <Filter>Lib\sqlite_orm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

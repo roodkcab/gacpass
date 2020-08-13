@@ -2,18 +2,12 @@
 #include "GacPass.h"
 #include "Code.h"
 #include "util.hpp"
-#include <sqlite_orm/sqlite_orm.h>
-
-using namespace vl::collections;
-using namespace vl::stream;
-using namespace vl::regex;
-using namespace vl::reflection::description;
-using namespace sqlite_orm;
+#include "sqlite_orm/WString.h"
 
 template <typename... Args>
 auto DBCodes()
 {
-	return make_storage("gacpass.db", 
+	return make_storage(Appdata(L"\\gacpass.db"), 
 		make_table("codes",
 			make_column("id", &Code::GetId, &Code::SetId, autoincrement(), primary_key()),
 			make_column("website", &Code::GetWebsite, &Code::SetWebsite),
@@ -46,7 +40,4 @@ public:
 	void RemoveCode(Ptr<gacpass::ICode> code)override;
 
 	void OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* arguments)override;
-
-private:
-	void Load();
 };

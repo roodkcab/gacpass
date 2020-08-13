@@ -20,7 +20,6 @@ public:
 	Code();
 	Code(const int _id, const WString& _website, const WString& _username, const WString& _password);
 	Code(const Code& code);
-	Code(Ptr<gacpass::ICode> code);
 	int GetId()const override;
 	void SetId(const int _id)override;
 	WString GetWebsite()const override;

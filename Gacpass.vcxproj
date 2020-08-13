@@ -167,6 +167,7 @@
     <ClCompile Include="Lib\GacUI\VlppReflection.cpp" />
     <ClCompile Include="Lib\GacUI\VlppRegex.cpp" />
     <ClCompile Include="Lib\GacUI\VlppWorkflowLibrary.cpp" />
+    <ClCompile Include="Lib\sqlite_orm\WString.cpp" />
     <ClCompile Include="Lib\util.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="UI\Source\CodeBookWindow.cpp" />
@@ -272,6 +273,7 @@
     <ClInclude Include="Lib\GacUI\VlppReflection.h" />
     <ClInclude Include="Lib\GacUI\VlppRegex.h" />
     <ClInclude Include="Lib\GacUI\VlppWorkflowLibrary.h" />
+    <ClInclude Include="Lib\sqlite_orm\WString.h" />
     <ClInclude Include="Lib\util.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="UI\Source\CodeBookWindow.h" />
