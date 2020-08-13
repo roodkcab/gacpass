@@ -1,10 +1,12 @@
 #define GAC_HEADER_USE_NAMESPACE
 #include "GacPass.h"
 #include "util.hpp"
-#include "ViewModel/Code.h"
 #include "ViewModel/CodeBookViewModel.h"
 #include "ViewModel/RegisterVIewModel.h"
 #include "ViewModel/LoginViewModel.h"
+#include "ViewModel/DB.h"
+
+using namespace vl::stream;
 
 class ViewModel : public Object, public virtual gacpass::IViewModel
 {
@@ -12,14 +14,21 @@ private:
 	::vl::Ptr<gacpass::IRegisterViewModel> registerViewModel;
 	::vl::Ptr<gacpass::ILoginViewModel> loginViewModel;
 	::vl::Ptr<gacpass::ICodeBookViewModel> codeBookViewModel;
+	decltype(DB()) storage;
 
 public:
 	ViewModel() 
-		: registerViewModel(MakePtr<RegisterViewModel>())
+		: storage(DB())
+		, registerViewModel(MakePtr<RegisterViewModel>())
 		, loginViewModel(MakePtr<LoginViewModel>())
 		, codeBookViewModel(MakePtr<CodeBookViewModel>())
-	{}
-
+	{
+		storage.sync_schema();
+		auto s = Ptr<decltype(DB())>(&storage);
+		dynamic_cast<RegisterViewModel *>(registerViewModel.Obj())->Load(s);
+		dynamic_cast<LoginViewModel *>(loginViewModel.Obj())->Load(s);
+		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load(s);
+	}
 
 	Ptr<gacpass::IRegisterViewModel> GetRegisterViewModel()override
 	{

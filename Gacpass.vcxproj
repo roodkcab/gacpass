@@ -175,6 +175,7 @@
     <ClCompile Include="UI\Source\GacPassReflection.cpp" />
     <ClCompile Include="ViewModel\Code.cpp" />
     <ClCompile Include="ViewModel\CodeBookViewModel.cpp" />
+    <ClCompile Include="ViewModel\Key.cpp" />
     <ClCompile Include="ViewModel\LoginViewModel.cpp" />
     <ClCompile Include="ViewModel\RegisterViewModel.cpp" />
   </ItemGroup>
@@ -282,6 +283,8 @@
     <ClInclude Include="UI\Source\GacPassReflection.h" />
     <ClInclude Include="ViewModel\Code.h" />
     <ClInclude Include="ViewModel\CodeBookViewModel.h" />
+    <ClInclude Include="ViewModel\DB.h" />
+    <ClInclude Include="ViewModel\Key.h" />
     <ClInclude Include="ViewModel\LoginViewModel.h" />
     <ClInclude Include="ViewModel\RegisterViewModel.h" />
   </ItemGroup>

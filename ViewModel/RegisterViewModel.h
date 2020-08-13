@@ -1,10 +1,8 @@
 #define GAC_HEADER_USE_NAMESPACE
 #include "GacPass.h"
+#include "DB.h"
 
-using namespace vl::collections;
-using namespace vl::stream;
 using namespace vl::regex;
-using namespace vl::reflection::description;
 
 class RegisterViewModel : public Object, public virtual gacpass::IRegisterViewModel
 {
@@ -14,9 +12,11 @@ private:
 	Regex regexLcLetters;
 	Regex regexUcLetters;
 	Regex regexNumbers;
+	Ptr<decltype(DB())> storage;
 
 public:
 	RegisterViewModel();
+	void Load(Ptr<decltype(DB())> _storage);
 	WString GetPassword()override;
 	void SetPassword(const WString& value)override;
 	WString GetPasswordError()override;

@@ -9,6 +9,11 @@
 
 LoginViewModel::LoginViewModel() {}
 
+void LoginViewModel::Load(Ptr<decltype(DB())> _storage)
+{
+	storage = _storage;
+}
+
 WString LoginViewModel::GetPassword()
 {
 	return password;
@@ -22,19 +27,11 @@ void LoginViewModel::SetPassword(const WString& value)
 
 bool LoginViewModel::GetLoggedIn()
 {
-	std::ifstream os(Appdata(L"\\password.cereal"), std::ios::binary);
-	if (os.is_open())
+	int match = storage->count<Key>(where(c(&Key::GetKey) == this->GetPassword().Buffer()));
+	if (match > 0)
 	{
-		cereal::BinaryInputArchive archive(os);
-		std::wstring v;
-		archive(cereal::make_nvp("password", v));
-		os.close();
-		if (v.c_str() == this->GetPassword()) 
-		{
-			LoggedInChanged();
-			return true;
-		}
+		LoggedInChanged();
+		return true;
 	}
-	os.close();
 	return false;
 }

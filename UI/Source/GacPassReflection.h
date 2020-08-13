@@ -38,6 +38,7 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::CodeBookWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::ICode)
 			DECL_TYPE_INFO(::gacpass::ICodeBookViewModel)
+			DECL_TYPE_INFO(::gacpass::IKey)
 			DECL_TYPE_INFO(::gacpass::ILoginViewModel)
 			DECL_TYPE_INFO(::gacpass::IRegisterViewModel)
 			DECL_TYPE_INFO(::gacpass::IViewModel)
@@ -135,6 +136,29 @@ namespace vl
 					INVOKE_INTERFACE_PROXY(UpdateCode, code);
 				}
 			END_INTERFACE_PROXY(::gacpass::ICodeBookViewModel)
+
+			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::IKey)
+				::vl::vint GetId() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetId);
+				}
+				::vl::WString GetKey() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetKey);
+				}
+				void SetId(::vl::vint __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetId, __vwsn_value_);
+				}
+				void SetKey(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetKey, __vwsn_value_);
+				}
+				void Update(::vl::vint id, const ::vl::WString& key) override
+				{
+					INVOKE_INTERFACE_PROXY(Update, id, key);
+				}
+			END_INTERFACE_PROXY(::gacpass::IKey)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ILoginViewModel)
 				bool GetLoggedIn() override

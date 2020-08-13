@@ -85,6 +85,7 @@ namespace gacpass
 	class CodeBookWindow;
 	class ICode;
 	class ICodeBookViewModel;
+	class IKey;
 	class ILoginViewModel;
 	class IRegisterViewModel;
 	class IViewModel;
@@ -190,6 +191,19 @@ namespace gacpass
 		virtual void UpdateCode(::vl::Ptr<::gacpass::ICode> code) = 0;
 		virtual void RemoveCode(::vl::Ptr<::gacpass::ICode> code) = 0;
 		virtual void OnItemLeftButtonDoubleClick(::vl::presentation::compositions::GuiItemMouseEventArgs* arguments) = 0;
+	};
+
+	class IKey : public virtual ::vl::reflection::IDescriptable, public ::vl::reflection::Description<IKey>
+	{
+#ifndef VCZH_DEBUG_NO_REFLECTION
+		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<IKey>;
+#endif
+	public:
+		virtual ::vl::vint GetId()const = 0;
+		virtual void SetId(::vl::vint __vwsn_value_) = 0;
+		virtual ::vl::WString GetKey()const = 0;
+		virtual void SetKey(const ::vl::WString& __vwsn_value_) = 0;
+		virtual void Update(::vl::vint id, const ::vl::WString& key) = 0;
 	};
 
 	class ILoginViewModel : public virtual ::vl::reflection::IDescriptable, public ::vl::reflection::Description<ILoginViewModel>

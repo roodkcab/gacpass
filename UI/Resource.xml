@@ -21,6 +21,14 @@
 			
 			namespace gacpass
 			{
+        interface IKey
+				{
+				  prop Id : int {not observe}
+					prop Key : string {not observe}
+
+					func Update(id : int, key : string) : void;
+				}
+
 				interface IViewModel
 				{
 					func GetRegisterViewModel() : IRegisterViewModel^;

@@ -13,6 +13,11 @@ RegisterViewModel::RegisterViewModel()
 	, regexNumbers(L"[0-9]")
 {}
 
+void RegisterViewModel::Load(Ptr<decltype(DB())> _storage)
+{
+	storage = _storage;
+}
+
 WString RegisterViewModel::GetPassword()
 {
 	return password;
@@ -68,16 +73,11 @@ WString RegisterViewModel::GetConfirmPasswordError()
 
 void RegisterViewModel::Register()
 {
-	std::ofstream os(Appdata(L"\\password.cereal"), std::ios::binary);
-	cereal::BinaryOutputArchive archive(os);
-	std::wstring password = this->confirmPassword.Buffer();
-	archive(cereal::make_nvp("password", password));
-	os.close();
+	storage->insert<Key>(Key(-1, this->GetPassword()));
 	this->MainPasswordSetChanged();
 }
 
 bool RegisterViewModel::GetMainPasswordSet()
 {
-	return true;
-	//return vl::filesystem::File(vl::filesystem::FilePath(Appdata(L"\\password.cereal"))).Exists() || (this->GetPasswordError() == L"" && this->GetConfirmPasswordError() == L"");
+	return storage->count<Key>() > 0;
 }

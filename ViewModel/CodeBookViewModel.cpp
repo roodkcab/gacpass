@@ -1,10 +1,14 @@
 #include "CodeBookViewModel.h"
 
 CodeBookViewModel::CodeBookViewModel() 
-	:storage(DBCodes())
 {
-	storage.sync_schema();
-	auto codes = storage.get_all<Code>();
+	
+}
+
+void CodeBookViewModel::Load(Ptr<decltype(DB())> _storage)
+{
+	storage = _storage;
+	auto codes = storage->get_all<Code>();
 	for (auto &code : codes)
 	{
 		this->codes.Add(MakePtr<Code>(code));
@@ -40,8 +44,7 @@ void CodeBookViewModel::SetSearch(const WString& value)
 	search = value;
 	this->SearchChanged();
 	codes.Clear();
-	storage.sync_schema();
-	auto codes = storage.get_all<Code>(where(like(&Code::GetWebsite, L"%" + value + L"%")));
+	auto codes = storage->get_all<Code>(where(like(&Code::GetWebsite, L"%" + value + L"%")));
 	for (auto &code : codes)
 	{
 		this->codes.Add(MakePtr<Code>(code));
@@ -56,7 +59,7 @@ Ptr<gacpass::ICode> CodeBookViewModel::CreateCode()
 void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 {
 	Code *c = dynamic_cast<Code *>(code.Obj());
-	int id = storage.insert<Code>(*c);
+	int id = storage->insert<Code>(*c);
 	c->SetId(id);
 	codes.Add(Ptr<Code>(c));
 }
@@ -67,7 +70,7 @@ void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 	if (index != -1)
 	{
 		Code *c = dynamic_cast<Code *>(code.Obj());
-		storage.update<Code>(*c);
+		storage->update<Code>(*c);
 		codes.NotifyUpdate(index, 1);
 	}
 }
@@ -75,7 +78,7 @@ void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 void CodeBookViewModel::RemoveCode(Ptr<gacpass::ICode> code)
 {
 	codes.Remove(code.Obj());
-	storage.remove<Code>(code->GetId());
+	storage->remove<Code>(code->GetId());
 }
 
 void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* arguments)

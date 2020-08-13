@@ -1,12 +1,9 @@
 #pragma once
 #define GAC_HEADER_USE_NAMESPACE
-#include "GacPass.h"
+#include "Gacpass.h"
 #include <string>
 
-using namespace vl::collections;
-using namespace vl::stream;
-using namespace vl::regex;
-using namespace vl::reflection::description;
+using namespace vl;
 
 class Code : public Object, public virtual gacpass::ICode
 {
