@@ -1,5 +1,6 @@
 #define GAC_HEADER_USE_NAMESPACE
 #include "GacPass.h"
+#include "Code.h"
 #include "util.hpp"
 #include <sqlite_orm/sqlite_orm.h>
 
@@ -12,7 +13,7 @@ using namespace sqlite_orm;
 template <typename... Args>
 auto DBCodes()
 {
-	return make_storage(Appdata(L"gacpass.db"), 
+	return make_storage("gacpass.db", 
 		make_table("codes",
 			make_column("id", &Code::GetId, &Code::SetId, autoincrement(), primary_key()),
 			make_column("website", &Code::GetWebsite, &Code::SetWebsite),
@@ -48,5 +49,4 @@ public:
 
 private:
 	void Load();
-	void Store();
 };

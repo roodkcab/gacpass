@@ -78,5 +78,6 @@ void RegisterViewModel::Register()
 
 bool RegisterViewModel::GetMainPasswordSet()
 {
-	return vl::filesystem::File(vl::filesystem::FilePath(Appdata(L"\\password.cereal"))).Exists() || (this->GetPasswordError() == L"" && this->GetConfirmPasswordError() == L"");
+	return true;
+	//return vl::filesystem::File(vl::filesystem::FilePath(Appdata(L"\\password.cereal"))).Exists() || (this->GetPasswordError() == L"" && this->GetConfirmPasswordError() == L"");
 }

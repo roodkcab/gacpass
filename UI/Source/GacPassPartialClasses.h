@@ -160,15 +160,15 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<ICode>;
 #endif
 	public:
-		virtual ::vl::vint GetId() = 0;
+		virtual ::vl::vint GetId()const = 0;
 		virtual void SetId(::vl::vint __vwsn_value_) = 0;
-		virtual ::vl::WString GetWebsite() = 0;
+		virtual ::vl::WString GetWebsite()const = 0;
 		virtual void SetWebsite(const ::vl::WString& __vwsn_value_) = 0;
-		virtual ::vl::WString GetUsername() = 0;
+		virtual ::vl::WString GetUsername()const = 0;
 		virtual void SetUsername(const ::vl::WString& __vwsn_value_) = 0;
-		virtual ::vl::WString GetPassword() = 0;
+		virtual ::vl::WString GetPassword()const = 0;
 		virtual void SetPassword(const ::vl::WString& __vwsn_value_) = 0;
-		virtual ::vl::WString GetHidePassword() = 0;
+		virtual ::vl::WString GetHidePassword()const = 0;
 		virtual void Update(::vl::vint id, const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) = 0;
 	};
 
