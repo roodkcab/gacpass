@@ -6,6 +6,7 @@ GacPass是一个本地密码管理工具。
 
 GacPass is a local password management software for Windows.
 GacPass associates one website and one password as an entry, allowing to be added/removed/edited.
+Copying a password is as simple as double clicking an entry.
 
 ![gacpas](https://user-images.githubusercontent.com/1700820/89509953-89b38800-d802-11ea-9aec-39b655940736.gif)
 
