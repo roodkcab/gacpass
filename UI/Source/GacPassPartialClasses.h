@@ -358,7 +358,7 @@ namespace gacpass
 	protected:
 		::vl::Ptr<::gacpass::ICodeBookViewModel> ViewModel;
 		::gacpass::NewCodeWindow* self;
-		::vl::presentation::controls::GuiSinglelineTextBox* textBoxPassword;
+		::vl::presentation::controls::GuiDocumentLabel* textBoxPassword;
 		::vl::presentation::controls::GuiDocumentLabel* textBoxWebsite;
 		::vl::presentation::controls::GuiDocumentLabel* textBoxUsername;
 		::vl::presentation::compositions::GuiTableComposition* __vwsn_precompile_0;

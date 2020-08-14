@@ -5,7 +5,7 @@ CodeBookViewModel::CodeBookViewModel() {}
 void CodeBookViewModel::Load(decltype(DB())& _storage)
 {
 	storage = &_storage;
-	auto codes = storage->get_all<Code>();
+	auto codes = storage->get_all<Code>(order_by(&Code::GetWebsite));
 	for (auto &code : codes)
 	{
 		this->codes.Add(MakePtr<Code>(code));
@@ -41,7 +41,7 @@ void CodeBookViewModel::SetSearch(const WString& value)
 	search = value;
 	this->SearchChanged();
 	codes.Clear();
-	auto codes = storage->get_all<Code>(where(like(&Code::GetWebsite, L"%" + value + L"%")));
+	auto codes = storage->get_all<Code>(where(like(&Code::GetWebsite, L"%" + value + L"%")), order_by(&Code::GetWebsite));
 	for (auto &code : codes)
 	{
 		this->codes.Add(MakePtr<Code>(code));

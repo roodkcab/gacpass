@@ -2582,7 +2582,10 @@ Class (::gacpass::NewCodeWindowConstructor)
 			::vl::__vwsn::This(this->__vwsn_precompile_11)->SetSite(static_cast<::vl::vint>(2), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1), static_cast<::vl::vint>(2));
 		}
 		{
-			(this->textBoxPassword = new ::vl::presentation::controls::GuiSinglelineTextBox(::vl::presentation::theme::ThemeName::SinglelineTextBox));
+			(this->textBoxPassword = new ::vl::presentation::controls::GuiDocumentLabel(::vl::presentation::theme::ThemeName::DocumentTextBox));
+		}
+		{
+			::vl::__vwsn::This(this->textBoxPassword)->SetEditMode(::vl::presentation::controls::GuiDocumentCommonInterface::EditMode::Editable);
 		}
 		(this->__vwsn_precompile_12 = ::vl::__vwsn::This(this->textBoxPassword)->GetBoundsComposition());
 		{
@@ -2681,7 +2684,7 @@ Class (::gacpass::NewCodeWindowConstructor)
 	NewCodeWindowConstructor::NewCodeWindowConstructor()
 		: ViewModel(::vl::Ptr<::gacpass::ICodeBookViewModel>())
 		, self(static_cast<::gacpass::NewCodeWindow*>(nullptr))
-		, textBoxPassword(static_cast<::vl::presentation::controls::GuiSinglelineTextBox*>(nullptr))
+		, textBoxPassword(static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr))
 		, textBoxWebsite(static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr))
 		, textBoxUsername(static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr))
 		, __vwsn_precompile_0(static_cast<::vl::presentation::compositions::GuiTableComposition*>(nullptr))

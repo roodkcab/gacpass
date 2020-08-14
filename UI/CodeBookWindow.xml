@@ -19,8 +19,7 @@
 					prop Website	: string {not observe}
 					prop Username	: string {not observe}
 					prop Password	: string {not observe}
-					func GetHidePassword() : string;
-					prop HidePassword : string {GetHidePassword}
+					prop HidePassword : string {const, not observe}
 
 					func Update(id : int, website : string, username : string, password: string) : void;
 				}
