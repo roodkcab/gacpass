@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories("Lib")
 include_directories("Lib/GacUI")
 include_directories("Lib/iGac")
+include_directories("UI/Source")
+
 include_directories(${DEPENDENCIES_INCLUDE_DIRS})
 link_directories(${DEPENDENCIES_LIBRARY_DIRS})
 

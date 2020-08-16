@@ -18,12 +18,12 @@ Key::Key(const Key& key)
 	this->key = key.key;
 }
 
-int Key::GetId()const
+vint Key::GetId()const
 {
 	return id;
 }
 
-void Key::SetId(const int _id)
+void Key::SetId(const vint _id)
 {
 	id = _id;
 }
@@ -38,7 +38,7 @@ void Key::SetKey(const WString& _key)
 	key = _key;
 }
 
-void Key::Update(const int _id, const WString& _key)
+void Key::Update(const vint _id, const WString& _key)
 {
 	id = _id;
 	key = _key;

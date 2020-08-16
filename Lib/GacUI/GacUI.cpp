@@ -39824,7 +39824,7 @@ GuiImportResourcePathResResolver
 					d1 < d2 ? d1 : d2;
 
 				if (!d) return nullptr;
-				WString resourceName(buffer, d - buffer);
+				WString resourceName(buffer, (vint)(d - buffer));
 				WString resourcePath(path.Right(path.Length() - resourceName.Length() - 1));
 				if (auto resource = GetResourceManager()->GetResource(resourceName))
 				{

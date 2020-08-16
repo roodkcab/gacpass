@@ -65,10 +65,9 @@ namespace vl {
                 // just build the map...
                 // need some copy-pasta here
                 
-                static struct {
-                    vint       keyCode;
-                    WString    keyName;
-                    
+                /*static struct {
+                    VKEY    keyCode;
+                    WString keyName;
                 } KeyMappings[] = {
                     { 0, L"?" },
                     { 1, L"?" },
@@ -229,7 +228,7 @@ namespace vl {
                 memset(asciiUpperMap, 0, sizeof(wchar_t) * 256);
                 
                 asciiLowerMap[VKEY::_0] = L'0';
-                asciiLowerMap[VKEY::_0] = L'1';
+                asciiLowerMap[VKEY::_1] = L'1';
                 asciiLowerMap[VKEY::_2] = L'2';
                 asciiLowerMap[VKEY::_3] = L'3';
                 asciiLowerMap[VKEY::_4] = L'4';
@@ -253,9 +252,9 @@ namespace vl {
                 asciiLowerMap[VKEY::_RETURN] = VKEY_RETURN;
                 asciiLowerMap[VKEY::_ESCAPE] = VKEY_ESCAPE;
                 asciiLowerMap[VKEY::_BACK] = VKEY_BACK;
-                for(int i=VKEY::_A; i<=VKEY_Z; ++i)
+                for(int i=VKEY::_A; i<=VKEY::_Z; ++i)
                     asciiLowerMap[i] = L'a' + (i-VKEY::_A);
-                for(int i=VKEY::_NUMPAD0; i<VKEY_NUMPAD9; ++i)
+                for(int i=VKEY::_NUMPAD0; i<VKEY::_NUMPAD9; ++i)
                     asciiLowerMap[i] = L'0' + (i-VKEY::_NUMPAD0);
                 
                 asciiUpperMap[VKEY::_0] = L')';
@@ -283,10 +282,10 @@ namespace vl {
                 asciiUpperMap[VKEY::_RETURN] = VKEY_RETURN;
                 asciiUpperMap[VKEY::_ESCAPE] = VKEY_ESCAPE;
                 asciiUpperMap[VKEY::_BACK] = VKEY_BACK;
-                for(int i=VKEY::_A; i<=VKEY_Z; ++i)
+                for(VKEY i=VKEY::_A; i<=VKEY::_Z; ++i)
                     asciiUpperMap[i] = L'A' + (i-VKEY::_A);
-                for(int i=VKEY::_NUMPAD0; i<VKEY_NUMPAD9; ++i)
-                    asciiLowerMap[i] = L'0' + (i-VKEY::_NUMPAD0);
+                for(VKEY i=VKEY::_NUMPAD0; i<VKEY::_NUMPAD9; ++i)
+                    asciiLowerMap[i] = L'0' + (i-VKEY::_NUMPAD0);*/
             }
             
             void CocoaInputService::HookInput()
@@ -339,7 +338,7 @@ namespace vl {
                     wprintf(L"%s event\n", GetKeyName(NSEventKeyCodeToGacKeyCode(keyCode)).Buffer());
                     
                     if(keyCode < 256)
-                        globalKeyStates[keyCode] = keyCode;
+                        globalKeyStates[keyCode] = (VKEY)keyCode;
                 }
                 else
                 {
@@ -395,11 +394,11 @@ namespace vl {
             {
                  return isTimerEnabled;
             }
-            
+
             bool CocoaInputService::IsKeyPressing(VKEY code)
             {
-                if(code < 256)
-                    return globalKeyStates[code];
+                if((int)code < 256)
+                    return (bool)globalKeyStates[(int)code];
                 return false;
             }
             
@@ -437,7 +436,7 @@ namespace vl {
             
             WString CocoaInputService::GetKeyName(VKEY code)
             {
-                return keyNames[code];
+                return keyNames[(int)code];
             }
             
             VKEY CocoaInputService::GetKey(const WString& name)
@@ -456,7 +455,7 @@ namespace vl {
                 if(info.ctrl || info.alt)
                     return false;
                 
-                vint code = NSEventKeyCodeToGacKeyCode(event.keyCode);
+                int code = (int)NSEventKeyCodeToGacKeyCode(event.keyCode);
                 if(code >= 256)
                     return false;
                 

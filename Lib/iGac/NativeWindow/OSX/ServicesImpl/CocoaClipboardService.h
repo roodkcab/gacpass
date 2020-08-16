@@ -20,9 +20,8 @@ namespace vl {
             class CocoaClipboardService: public Object, public INativeClipboardService
             {
             public:
-                bool        ContainsText() override;
-                WString     GetText() override;
-                bool        SetText(const WString& value) override;
+                Ptr<INativeClipboardReader>		ReadClipboard();
+                Ptr<INativeClipboardWriter>		WriteClipboard();
             };
             
         }

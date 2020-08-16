@@ -23,16 +23,16 @@ namespace vl {
                 
             }
             
-            Rect CocoaScreen::GetBounds()
+            NativeRect CocoaScreen::GetBounds()
             {
                 NSRect r = [screen frame];
-                return Rect(r.origin.x,
+                return NativeRect(r.origin.x,
                             r.origin.y,
                             r.origin.x + r.size.width,
                             r.origin.y + r.size.height);
             }
             
-            Rect CocoaScreen::GetClientBounds()
+            NativeRect CocoaScreen::GetClientBounds()
             {
                 return GetBounds();
             }
@@ -45,6 +45,16 @@ namespace vl {
             bool CocoaScreen::IsPrimary()
             {
                 return screen == [NSScreen mainScreen];
+            }
+
+            double CocoaScreen::GetScalingX()
+            {
+                return 1.0;
+            }
+
+            double CocoaScreen::GetScalingY()
+            {
+                return 1.0;
             }
             
             CocoaScreenService::CocoaScreenService()
@@ -90,9 +100,7 @@ namespace vl {
                 }
                 return 0;
             }
-            
         }
-
     }
 
 }

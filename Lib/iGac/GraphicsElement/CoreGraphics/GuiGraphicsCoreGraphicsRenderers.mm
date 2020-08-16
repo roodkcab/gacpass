@@ -71,13 +71,13 @@ namespace vl {
                 
                 SetCGContextFillColor(context, element->GetColor());
             
-                switch(element->GetShape())
+                switch(element->GetShape().shapeType)
                 {
-                    case ElementShape::Rectangle:
+                    case ElementShapeType::Rectangle:
                         CGContextFillRect(context, ConvertToCGRect(bounds));
                         break;
                         
-                    case ElementShape::Ellipse:
+                    case ElementShapeType::Ellipse:
                         CGContextFillEllipseInRect(context, ConvertToCGRect(bounds));
                         break;
                 }
@@ -89,13 +89,13 @@ namespace vl {
                 
                 SetCGContextStrokeColor(context, element->GetColor());
                 
-                switch(element->GetShape())
+                switch(element->GetShape().shapeType)
                 {
-                    case ElementShape::Rectangle:
+                    case ElementShapeType::Rectangle:
                         CGContextStrokeRect(context, ConvertToCGRect(bounds, -0.5f));
                         break;
                         
-                    case ElementShape::Ellipse:
+                    case ElementShapeType::Ellipse:
                         CGContextStrokeEllipseInRect(context, ConvertToCGRect(bounds, -0.5f));
                         break;
                 }
@@ -198,9 +198,9 @@ namespace vl {
                 }
                 
                 CGContextRef context = GetCurrentCGContextFromRenderTarget();
-                switch(element->GetShape())
+                switch(element->GetShape().shapeType)
                 {
-                    case ElementShape::Rectangle:
+                    case ElementShapeType::Rectangle:
                         CGContextSaveGState(context);
                         
                         CGContextBeginPath(context);
@@ -212,7 +212,7 @@ namespace vl {
                         CGContextRestoreGState(context);
                         break;
                         
-                    case ElementShape::Ellipse:
+                    case ElementShapeType::Ellipse:
                     {
                         CGContextSaveGState(context);
                         
@@ -1004,7 +1004,7 @@ namespace vl {
             
             ///////
             
-            void GuiCoreGraphicsElementRenderer::InitializeInternal()
+            /*void GuiCoreGraphicsElementRenderer::InitializeInternal()
             {
                 
             }
@@ -1058,7 +1058,7 @@ namespace vl {
             void GuiCoreGraphicsElementRenderer::OnElementStateChanged()
             {
                 
-            }
+            }*/
         }
     }
     

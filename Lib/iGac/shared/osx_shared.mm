@@ -12,7 +12,7 @@
 #import <AppKit/AppKit.h>
 #import <CoreServices/CoreServices.h>
 
-#include "../Mac/NativeWindow/OSX/ServicesImpl/CocoaImageService.h"
+#include "../NativeWindow/OSX/ServicesImpl/CocoaImageService.h"
 
 namespace osx {
 

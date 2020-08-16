@@ -223,16 +223,16 @@ namespace vl {
                         coreTextFont->Release();
                     }
                     
-                    Size MeasureInternal(wchar_t character, IGuiGraphicsRenderTarget* renderTarget)
+                    Size MeasureInternal(elements::text::UnicodeCodePoint character, IGuiGraphicsRenderTarget* renderTarget)
                     {
-                        WString str(character);
+                        WString str(character.character);
                         NSString* nsStr = WStringToNSString(str);
                         
                         CGSize size = [nsStr sizeWithAttributes:coreTextFont->attributes];
                         return Size(size.width, size.height);
                     }
                     
-                    vint MeasureWidthInternal(wchar_t character, IGuiGraphicsRenderTarget* renderTarget)
+                    vint MeasureWidthInternal(elements::text::UnicodeCodePoint character, IGuiGraphicsRenderTarget* renderTarget)
                     {
                         return MeasureInternal(character, renderTarget).x;
                     }
@@ -242,7 +242,7 @@ namespace vl {
                         return MeasureInternal(L' ', renderTarget).y;
                     }
                 };
-                
+
                 Ptr<text::CharMeasurer> CreateInternal(const FontProperties& font)
                 {
                     return new CoreGraphicsCharMeasurer(CachedCoreTextFontPackageAllocator::CreateCoreTextFontPackage(font));
@@ -352,18 +352,18 @@ namespace vl {
                     // scaling for retina display
                     CGContextScaleCTM(context, nativeView.window.backingScaleFactor, nativeView.window.backingScaleFactor);
                 }
-                
-                bool StopRendering()
+
+                RenderTargetFailure StopRendering()
                 {
                     CGContextRef context = (CGContextRef)GetCGContext();
                     if(!context)
-                        return false;
+                        return RenderTargetFailure::LostDevice;
                     
                     CGContextRestoreGState(context);
                     [NSGraphicsContext restoreGraphicsState];
                     SetCurrentRenderTarget(0);
                     // todo succeed / not
-                    return true;
+                    return RenderTargetFailure::None;
                 }
                 
                 void PushClipper(Rect clipper)
@@ -417,7 +417,8 @@ namespace vl {
                 {
                     if(clippers.Count()==0)
                     {
-                        return Rect(Point(0, 0), window->GetClientSize());
+                        NativeSize size = window->GetClientSize();
+                        return Rect(0, 0, size.x.value, size.y.value);
                     }
                     else
                     {
@@ -467,6 +468,10 @@ namespace vl {
                     NativeWindowDestroying(window);
                     GetCoreGraphicsObjectProvider()->RecreateRenderTarget(window);
                     NativeWindowCreated(window);
+                }
+
+                void ResizeRenderTarget(INativeWindow* window)
+                {
                 }
                 
                 IGuiGraphicsLayoutProvider* GetLayoutProvider()
@@ -573,7 +578,8 @@ namespace vl {
                 
                 void Moved()
                 {
-                    RebuildLayer(window->GetClientSize());
+                    NativeSize size = window->GetClientSize();
+                    RebuildLayer(Size(size.x.value, size.y.value));
                 }
                 
                 void Paint()
@@ -588,7 +594,8 @@ namespace vl {
                 
                 void RecreateRenderTarget()
                 {
-                    RebuildLayer(window->GetClientSize());
+                    NativeSize size = window->GetClientSize();
+                    RebuildLayer(Size(size.x.value, size.y.value));
                 }
                 
             };
@@ -654,7 +661,7 @@ void CoreGraphicsMain()
     GetCurrentController()->CallbackService()->InstallListener(&resourceManager);
     
     elements_coregraphics::GuiSolidBorderElementRenderer::Register();
-    elements_coregraphics::GuiRoundBorderElementRenderer::Register();
+    //elements_coregraphics::GuiRoundBorderElementRenderer::Register();
     elements_coregraphics::Gui3DBorderElementRenderer::Register();
     elements_coregraphics::Gui3DSplitterElementRenderer::Register();
     elements_coregraphics::GuiSolidBackgroundElementRenderer::Register();
@@ -663,7 +670,7 @@ void CoreGraphicsMain()
     elements_coregraphics::GuiImageFrameElementRenderer::Register();
     elements_coregraphics::GuiPolygonElementRenderer::Register();
     elements_coregraphics::GuiColorizedTextElementRenderer::Register();
-    elements_coregraphics::GuiCoreGraphicsElementRenderer::Register();
+    //elements_coregraphics::GuiCoreGraphicsElementRenderer::Register();
 
     elements::GuiDocumentElement::GuiDocumentElementRenderer::Register();
     

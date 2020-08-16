@@ -1,6 +1,6 @@
 #pragma once
 #define GAC_HEADER_USE_NAMESPACE
-#include "Gacpass.h"
+#include "GacPass.h"
 #include <string>
 
 using namespace vl;
@@ -17,8 +17,8 @@ public:
 	Code();
 	Code(const int _id, const WString& _website, const WString& _username, const WString& _password);
 	Code(const Code& code);
-	int GetId()const override;
-	void SetId(const int _id)override;
+	vint GetId()const override;
+	void SetId(const vint _id)override;
 	WString GetWebsite()const override;
 	void SetWebsite(const WString& _website)override;
 	WString GetUsername()const override;
@@ -26,5 +26,5 @@ public:
 	WString GetPassword()const override;
 	void SetPassword(const WString& _password)override;
 	WString GetHidePassword()const override;
-	void Update(const int _id, const WString& _website, const WString& _username, const WString& _password)override;
+	void Update(const vint _id, const WString& _website, const WString& _username, const WString& _password)override;
   };

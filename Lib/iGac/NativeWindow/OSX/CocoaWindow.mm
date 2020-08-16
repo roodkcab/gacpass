@@ -72,6 +72,36 @@ namespace vl {
             {
                 [nsWindow close];
             }
+
+            Point CocoaWindow::Convert(NativePoint value)
+            {
+                return Point(value.x.value, value.y.value);
+            }
+
+            NativePoint CocoaWindow::Convert(Point value)
+            {
+                return NativePoint(value.x, value.y);
+            }
+
+            Size CocoaWindow::Convert(NativeSize value)
+            {
+                return Size(value.x.value, value.y.value);
+            }
+
+            NativeSize CocoaWindow::Convert(Size value)
+            {
+                return NativeSize(value.x, value.y);
+            }
+
+            Margin CocoaWindow::Convert(NativeMargin value)
+            {
+                return Margin(value.left.value, value.top.value, value.right.value, value.bottom.value);
+            }
+
+            NativeMargin CocoaWindow::Convert(Margin value)
+            {
+                return NativeMargin(value.left, value.top, value.right, value.bottom);
+            }
             
             void CocoaWindow::CreateWindow()
             {
@@ -121,10 +151,10 @@ namespace vl {
                 {
                     listeners[i]->Moving(newBounds, true);
                 }
-                NSRect nsbounds = NSMakeRect(newBounds.Left(),
-                                             FlipY(nsWindow, newBounds.Bottom()),
-                                             newBounds.Width(),
-                                             newBounds.Height());
+                NSRect nsbounds = NSMakeRect(newBounds.Left().value,
+                                             FlipY(nsWindow, newBounds.Bottom().value),
+                                             newBounds.Width().value,
+                                             newBounds.Height().value);
                 
                 [nsWindow setFrame:nsbounds display:YES];
                 
@@ -132,25 +162,38 @@ namespace vl {
                 Show();
             }
 
-            Size CocoaWindow::GetClientSize() 
+            NativeSize CocoaWindow::GetClientSize()
             {
                 return GetClientBoundsInScreen().GetSize();
             }
 
-            void CocoaWindow::SetClientSize(Size size) 
+            void CocoaWindow::SetClientSize(NativeSize size)
             {
-                Rect bounds = GetBounds();
-                Rect newBounds = Rect(bounds.Left(), bounds.Top(), size.x, size.y);
+                NativeRect bounds = GetBounds();
+                NativeRect newBounds = NativeRect(bounds.Left(), bounds.Top(), size.x, size.y);
 
                 for(vint i=0; i<listeners.Count(); ++i)
                 {
                     listeners[i]->Moving(newBounds, true);
                 }
                 
-                [nsWindow setContentSize:NSMakeSize(newBounds.Width(), newBounds.Height())];
+                [nsWindow setContentSize:NSMakeSize(newBounds.Width().value, newBounds.Height().value)];
             }
 
-            Rect CocoaWindow::GetClientBoundsInScreen() 
+            NativeMargin CocoaWindow::GetCustomFramePadding()
+            {
+            }
+
+            Ptr<GuiImageData> CocoaWindow::GetIcon()
+            {
+            }
+
+            void CocoaWindow::SetIcon(Ptr<GuiImageData> icon)
+            {
+            }
+
+
+            NativeRect CocoaWindow::GetClientBoundsInScreen()
             {
                 NSRect contentFrame = [nsWindow convertRectToScreen:[nsWindow.contentView frame]];
                 
@@ -164,7 +207,7 @@ namespace vl {
                                      contentFrame.size.height + contentFrame.origin.y));
             }
 
-            WString CocoaWindow::GetTitle() 
+            WString CocoaWindow::GetTitle()
             {
                 NSString* title = [nsWindow title];
                 return NSStringToWString(title);
@@ -189,12 +232,12 @@ namespace vl {
                 [nsWindow invalidateCursorRectsForView:nsWindow.contentView];
             }
 
-            Point CocoaWindow::GetCaretPoint()
+            NativePoint CocoaWindow::GetCaretPoint()
             {
                 return caretPoint;
             }
             
-            void CocoaWindow::SetCaretPoint(Point point)
+            void CocoaWindow::SetCaretPoint(NativePoint point)
             {
                 caretPoint = point;
                 
@@ -334,11 +377,14 @@ namespace vl {
                 [nsWindow miniaturize:nil];
             }
 
-            void CocoaWindow::Hide() 
+            void CocoaWindow::Hide(bool closeWindow)
             {
                 // actually close it as we need to trigger closing / closed events for GuiMenu to work
-                [nsWindow close];
-                opened = false;
+                if (closeWindow)
+                {
+                    [nsWindow close];
+                    opened = false;
+                }
             }
 
             bool CocoaWindow::IsVisible()
@@ -774,7 +820,7 @@ namespace vl {
             
             void CocoaWindow::HitTestMouseDown(vint x, vint y)
             {
-                Point p(x, y);
+                NativePoint p(x, y);
                 for(vint i=0; i<listeners.Count(); ++i)
                 {
                     INativeWindowListener::HitTestResult r = listeners[i]->HitTest(p);
@@ -806,7 +852,7 @@ namespace vl {
             
             void CocoaWindow::HitTestMouseMove(vint x, vint y)
             {
-                Point p(x, y);
+                NativePoint p(x, y);
                 for(vint i=0; i<listeners.Count(); ++i)
                 {
                     INativeWindowListener::HitTestResult r = listeners[i]->HitTest(p);
@@ -846,7 +892,7 @@ namespace vl {
                 }
                 else
                 {
-                    Point p(x, y);
+                    NativePoint p(x, y);
                     for(vint i=0;i<listeners.Count();i++)
                     {
                         switch(listeners[i]->HitTest(p))
@@ -867,7 +913,7 @@ namespace vl {
                                 return;
                                 
                             case INativeWindowListener::ButtonClose:
-                                Hide();
+                                Hide(true);
                                 return;
                                 
                             default:
@@ -881,8 +927,8 @@ namespace vl {
             {
                 vint diffX = [NSEvent mouseLocation].x - mouseDownX;
                 vint diffY = -([NSEvent mouseLocation].y - mouseDownY);
-                
-                Rect bounds = lastBorder;
+
+                NativeRect bounds = lastBorder;
                 
                 bounds.x1 += diffX;
                 bounds.y1 += diffY;
@@ -911,7 +957,7 @@ namespace vl {
                 vint diffX = [NSEvent mouseLocation].x - mouseDownX;
                 vint diffY = -([NSEvent mouseLocation].y - mouseDownY);
                 
-                Rect bounds = lastBorder;
+                NativeRect bounds = lastBorder;
                 NSScreen* screen = GetWindowScreen(nsWindow);
                 
 #define CHECK_X1 if(bounds.x1 > bounds.x2 - 1) bounds.x1 = bounds.x2 - 1;
@@ -992,12 +1038,13 @@ namespace vl {
                     bounds.y1 = visibleFrame.origin.y;
                 if(bounds.y2 > visibleFrame.size.height + visibleFrame.origin.y)
                     bounds.y2 = visibleFrame.size.height + visibleFrame.origin.y;
-                
-                bounds = FlipRect(nsWindow, bounds);
-                NSRect nsBounds = NSMakeRect((CGFloat)bounds.Left(),
-                                             (CGFloat)bounds.Top(),
-                                             (CGFloat)bounds.Width(),
-                                             (CGFloat)bounds.Height());
+
+                //TODO:GACUI1.0
+                //bounds = FlipRect(nsWindow, bounds);
+                NSRect nsBounds = NSMakeRect((CGFloat)bounds.Left().value,
+                                             (CGFloat)bounds.Top().value,
+                                             (CGFloat)bounds.Width().value,
+                                             (CGFloat)bounds.Height().value);
                 [nsWindow setFrame:nsBounds  display:YES];
             }
             
@@ -1005,11 +1052,11 @@ namespace vl {
             {
                 switch([event type])
                 {
-                    case NSCursorUpdate:
+                    case NSEventTypeCursorUpdate:
 //                        SetWindowCursor(currentCursor);
                         break;
                         
-                    case NSLeftMouseDown:
+                    case NSEventTypeLeftMouseDown:
                     {
                         NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         
@@ -1032,13 +1079,13 @@ namespace vl {
                             
                             if(customFrameMode)
                             {
-                                HitTestMouseDown(info.x, info.y);
+                                HitTestMouseDown(info.x.value, info.y.value);
                             }
                         }
                         break;
                     }
                         
-                    case NSLeftMouseUp:
+                    case NSEventTypeLeftMouseUp:
                     {
                         NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         
@@ -1049,12 +1096,12 @@ namespace vl {
                         
                         if(customFrameMode)
                         {
-                            HitTestMouseUp(info.x, info.y);
+                            HitTestMouseUp(info.x.value, info.y.value);
                         }
                         break;
                     }
                         
-                    case NSRightMouseDown:
+                    case NSEventTypeRightMouseDown:
                     {
                         NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         
@@ -1075,7 +1122,7 @@ namespace vl {
                         break;
                     }
                         
-                    case NSRightMouseUp:
+                    case NSEventTypeRightMouseUp:
                     {
                         NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         
@@ -1086,10 +1133,10 @@ namespace vl {
                         break;
                     }
                         
-                    case NSMouseMoved:
-                    case NSLeftMouseDragged:
-                    case NSRightMouseDragged:
-                    case NSOtherMouseDragged:
+                    case NSEventTypeMouseMoved:
+                    case NSEventTypeLeftMouseDragged:
+                    case NSEventTypeRightMouseDragged:
+                    case NSEventTypeOtherMouseDragged:
                     {
                         NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         info.nonClient = !mouseHoving;
@@ -1098,19 +1145,19 @@ namespace vl {
                         {
                             listeners[i]->MouseMoving(info);
                         }
-                        mouseLastX = info.x;
-                        mouseLastY = info.y;
+                        mouseLastX = info.x.value;
+                        mouseLastY = info.y.value;
                         
                         if(customFrameMode)
                         {
-                            if(event.type == NSMouseMoved)
+                            if(event.type == NSEventTypeMouseMoved)
                             {
                                 if(!resizing)
                                     HitTestMouseMove(mouseLastX, mouseLastY);
                             }
                             
-                            if(event.type == NSLeftMouseDragged ||
-                               event.type == NSMouseMoved)
+                            if(event.type == NSEventTypeLeftMouseDragged ||
+                               event.type == NSEventTypeMouseMoved)
                             {
                                 if(resizing)
                                     ResizingDragged();
@@ -1123,7 +1170,7 @@ namespace vl {
                         break;
                     }
                         
-                    case NSMouseEntered:
+                    case NSEventTypeMouseEntered:
                     {
                         for(vint i=0; i<listeners.Count(); ++i)
                         {
@@ -1133,7 +1180,7 @@ namespace vl {
                         break;
                     }
                         
-                    case NSMouseExited:
+                    case NSEventTypeMouseExited:
                     {
 //                        NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         
@@ -1145,7 +1192,7 @@ namespace vl {
                         break;
                     }
                         
-                    case NSOtherMouseDown:
+                    case NSEventTypeOtherMouseDown:
                     {
                         NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         
@@ -1166,7 +1213,7 @@ namespace vl {
                         break;
                     }
                         
-                    case NSOtherMouseUp:
+                    case NSEventTypeOtherMouseUp:
                     {
                         NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         
@@ -1177,7 +1224,7 @@ namespace vl {
                         break;
                     }
                         
-                    case NSScrollWheel:
+                    case NSEventTypeScrollWheel:
                     {
                         NativeWindowMouseInfo info = CreateMouseInfo(nsWindow, event);
                         
@@ -1242,7 +1289,7 @@ namespace vl {
 
                     }
                         
-                    case NSKeyDown:
+                    case NSEventTypeKeyDown:
                     {
                         NativeWindowKeyInfo info = CreateKeyInfo(nsWindow, event);
                         
@@ -1262,7 +1309,7 @@ namespace vl {
                         break;
                     }
                         
-                    case NSKeyUp:
+                    case NSEventTypeKeyUp:
                     {
                         NativeWindowKeyInfo info = CreateKeyInfo(nsWindow, event);
                         
@@ -1273,7 +1320,7 @@ namespace vl {
                         break;
                     }
                         
-                    case NSFlagsChanged: // modifier flags
+                    case NSEventTypeFlagsChanged: // modifier flags
                         break;
                         
                     default:

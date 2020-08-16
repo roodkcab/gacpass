@@ -214,7 +214,7 @@ namespace vl {
                 {
                     return mainWindow;
                 }
-                
+
                 void Run(INativeWindow* window)
                 {
                     mainWindow = window;
@@ -239,15 +239,15 @@ namespace vl {
 //                    }
                 }
                 
-                INativeWindow* GetWindow(Point location)
+                INativeWindow* GetWindow(NativePoint location)
                 {
                     CocoaWindow* result = 0;
-                    Rect minRect(0, 0, 99999, 99999);
+                    NativeRect minRect(0, 0, 99999, 99999);
                     for(vint i=0; i<windows.Count(); ++i)
                     {
                         CocoaWindow* window = (CocoaWindow*)windows[i];
-                        Rect r = window->GetClientBoundsInScreen();
-                        if(r.Contains(location))
+                        NativeRect r = window->GetClientBoundsInScreen();
+                        if(r.Contains(NativePoint(location.x, location.y)))
                         {
                             if(!result)
                             {

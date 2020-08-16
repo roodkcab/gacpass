@@ -16,8 +16,16 @@ namespace vl {
     namespace presentation {
         
         namespace osx {
-            
-            bool CocoaClipboardService::SetText(const WString& value)
+
+            Ptr<INativeClipboardReader>	CocoaClipboardService::ReadClipboard()
+            {
+            }
+
+            Ptr<INativeClipboardWriter>	CocoaClipboardService::WriteClipboard()
+            {
+            }
+
+            /*bool CocoaClipboardService::SetText(const WString& value)
             {
                 NSArray* types = [NSArray arrayWithObjects:NSStringPboardType, nil];
                 
@@ -49,7 +57,7 @@ namespace vl {
             {
                 NSPasteboard* pasteboard = [NSPasteboard generalPasteboard];
                 return [[pasteboard types] containsObject:NSStringPboardType];
-            }
+            }*/
 
         }
     }

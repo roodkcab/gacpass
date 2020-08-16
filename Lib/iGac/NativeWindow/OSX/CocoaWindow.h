@@ -27,7 +27,7 @@ namespace vl {
             class CocoaWindow : public Object, public INativeWindow
             {
             protected:
-                Point                                           caretPoint;
+                NativePoint                                     caretPoint;
                 CocoaWindow*                                    parentWindow;
                 bool                                            alwaysPassFocusToParent;
                 collections::List<INativeWindowListener*>       listeners;
@@ -46,9 +46,9 @@ namespace vl {
                 bool                                            opened;
                 INativeWindowListener::HitTestResult            resizingBorder;
                 
-                Rect                                            lastBorder;
+                NativeRect                                      lastBorder;
                 INativeCursor*                                  currentCursor;
-                Rect                                            previousBounds;
+                NativeRect                                      previousBounds;
                 
                 collections::List<IDraggingListener*>           draggingListeners;
                 
@@ -59,7 +59,16 @@ namespace vl {
             public:
                 CocoaWindow();
                 virtual ~CocoaWindow();
-                
+
+                Point				Convert(NativePoint value);
+                NativePoint			Convert(Point value);
+                Size				Convert(NativeSize value);
+                NativeSize			Convert(Size value);
+                Margin				Convert(NativeMargin value);
+                NativeMargin		Convert(Margin value);
+
+
+
                 NSWindow*           GetNativeWindow() const;
                 NSWindowController* GetNativeController() const;
                 
@@ -73,6 +82,9 @@ namespace vl {
                 NativeSize			GetClientSize() override;
                 void				SetClientSize(NativeSize size) override;
                 NativeRect			GetClientBoundsInScreen() override;
+                NativeMargin		GetCustomFramePadding()override;
+                Ptr<GuiImageData>	GetIcon()override;
+                void				SetIcon(Ptr<GuiImageData> icon)override;
                 WString				GetTitle() override;
                 void				SetTitle(WString title) override;
                 INativeCursor*		GetWindowCursor() override;

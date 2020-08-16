@@ -317,15 +317,13 @@
 
 - (NSRect)firstRectForCharacterRange:(NSRange)aRange actualRange:(NSRangePointer)actualRange
 {
-    vl::presentation::Point caretPoint = cocoaWindow->GetCaretPoint();
-    vl::presentation::Rect bounds = cocoaWindow->GetBounds();
+    vl::presentation::NativePoint caretPoint = cocoaWindow->GetCaretPoint();
+    vl::presentation::NativeRect bounds = cocoaWindow->GetBounds();
     
     NSWindow* wnd = cocoaWindow->GetNativeWindow();
     NSScreen* screen = vl::presentation::osx::GetWindowScreen(wnd);
     
-    return NSMakeRect(caretPoint.x + bounds.Left(),
-                      screen.frame.size.height - (caretPoint.y + bounds.Top() + 30),
-                      16, 16);
+    return NSMakeRect(caretPoint.x.value + bounds.Left().value, screen.frame.size.height - (caretPoint.y.value + bounds.Top().value + 30), 16, 16);
 }
 
 - (NSUInteger)characterIndexForPoint:(NSPoint)aPoint

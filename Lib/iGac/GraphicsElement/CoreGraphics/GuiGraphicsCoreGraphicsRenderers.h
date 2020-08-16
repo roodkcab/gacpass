@@ -238,7 +238,7 @@ namespace vl {
                 void OnElementStateChanged() override;
             };
             
-            class GuiCoreGraphicsElementRenderer : public Object, public IGuiGraphicsRenderer
+            /*class GuiCoreGraphicsElementRenderer : public Object, public IGuiGraphicsRenderer
             {
                 DEFINE_GUI_GRAPHICS_RENDERER(GuiCoreGraphicsElement, GuiCoreGraphicsElementRenderer, ICoreGraphicsRenderTarget)
                 
@@ -253,7 +253,7 @@ namespace vl {
                 
                 void Render(Rect bounds)override;
                 void OnElementStateChanged()override;
-            };
+            };*/
             
             class FontNotFoundException: public Exception
             {

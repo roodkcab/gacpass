@@ -29,10 +29,12 @@ namespace vl {
             public:
                 CocoaScreen(NSScreen* screen);
                 
-                Rect        GetBounds() override;
-                Rect        GetClientBounds() override;
+                NativeRect  GetBounds() override;
+                NativeRect  GetClientBounds() override;
                 WString     GetName() override;
                 bool        IsPrimary() override;
+                double		GetScalingX()override;
+                double		GetScalingY()override;
             };
             
             class CocoaScreenService : public Object, public INativeScreenService
