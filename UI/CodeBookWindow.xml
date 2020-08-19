@@ -30,7 +30,7 @@
 					prop Search : string {}
 					prop SelectedCode : ICode^ {}
 
-					func CreateCode() : ICode^;
+					func CreateEditCodeViewModel() : IEditCodeViewModel^;
 					func AddCode(code : ICode^) : void;
 					func UpdateCode(code : ICode^) : void;
 					func RemoveCode(code : ICode^) : void;
@@ -58,14 +58,13 @@
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-                  var code = ViewModel.CreateCode();
-                  var window = new gacpass::NewCodeWindow*(ViewModel);
+                  var editVM = ViewModel.CreateEditCodeViewModel();
+                  var window = new gacpass::EditCodeWindow*(editVM);
                   window.MoveToScreenCenter();
-                  window.SetCode(code);
                   $Await window.ShowModalAsync(self.MainWindow);
                   if (window.Ready)
                   {
-                    ViewModel.AddCode(code);
+                    ViewModel.AddCode(editVM.Code);
                   }
                   delete window;
                 }
@@ -77,14 +76,15 @@
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-                  var window = new gacpass::NewCodeWindow*(ViewModel);
+                  var editVM = ViewModel.CreateEditCodeViewModel();
+									editVM.SetCode(ViewModel.SelectedCode);
+                  var window = new gacpass::EditCodeWindow*(editVM);
                   window.ForEdit = true;
                   window.MoveToScreenCenter();
-                  window.SetCode(ViewModel.SelectedCode);
                   $Await window.ShowModalAsync(self.MainWindow);
                   if (window.Ready)
                   {
-                    ViewModel.UpdateCode(ViewModel.SelectedCode);
+                    ViewModel.UpdateCode(editVM.Code);
                   }
                   delete window;
                 }

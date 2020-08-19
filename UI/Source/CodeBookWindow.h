@@ -73,6 +73,3 @@ namespace gacpass
 #endif
 
 #endif
-// UNUSED_USER_CONTENT:
-//	/* USER_CONTENT_BEGIN(custom members of ::gacpass::CodeBookWindow) */
-//	/* USER_CONTENT_END() */
