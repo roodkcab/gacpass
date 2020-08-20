@@ -21,7 +21,7 @@ public:
 	void SetSelectedCode(Ptr<gacpass::ICode> value)override;
 	WString GetSearch()override;
 	void SetSearch(const WString& search)override;
-	Ptr<gacpass::ICode> CreateCode()override;
+	Ptr<gacpass::IEditCodeViewModel> CreateEditCodeViewModel()override;
 	void AddCode(Ptr<gacpass::ICode> code)override;
 	void UpdateCode(Ptr<gacpass::ICode> code)override;
 	void RemoveCode(Ptr<gacpass::ICode> code)override;

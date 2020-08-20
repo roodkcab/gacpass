@@ -1,0 +1,48 @@
+<Folder>
+  <Image content="File" name="Button">New.png</Image>
+
+  <Script>
+  </Script>
+
+  <Instance name="SeekBar">
+    <Instance ref.CodeBehind="false" ref.Class="gacpass::SeekBar">
+      <ref.Members>
+        <![CDATA[
+        @cpp:Private
+				func OutAnimation(container: GuiBoundsComposition*): IGuiAnimation^
+				{
+          return IGuiAnimation::CreateAnimation(
+            func (time: UInt64): void
+					  {
+					   var ratio = container.Bounds.x1 / 480.0;
+					   var deltaX = 100 * (1 - ratio + 0.01);
+				       var x1 = container.Bounds.x1 + cast int Math::Ceil(deltaX);
+				       container.AlignmentToParent = {left: x1 top: 0 right: 0 bottom: 0};
+					  }, cast UInt64 1000
+          );
+				}
+
+				@cpp:Private
+				func FlyoutAnimation(container: GuiBoundsComposition*): IGuiAnimation^
+				${
+				  $PlayAndWait OutAnimation(container);
+				  self.Visible = false;
+				}
+
+        @cpp:Private
+        func OnMouseMove(arguments: GuiItemMouseEventArgs*): void
+        {
+          Log(arguments.x);
+        }
+			]]>
+      </ref.Members>
+      <CustomControl ref.Name="self">
+				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+        <ResponsiveView ref.Name="Container" ev.MouseMove-eval="self.OnMouseMove(arguments);">
+          <Button Text="hello"></Button>
+        </ResponsiveView>
+      </CustomControl>
+    </Instance>
+  </Instance>
+
+</Folder>

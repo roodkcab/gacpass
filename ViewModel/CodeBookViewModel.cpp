@@ -1,4 +1,5 @@
 #include "CodeBookViewModel.h"
+#include "EditCodeViewModel.h"
 
 CodeBookViewModel::CodeBookViewModel() {}
 
@@ -48,9 +49,9 @@ void CodeBookViewModel::SetSearch(const WString& value)
 	}
 }
 
-Ptr<gacpass::ICode> CodeBookViewModel::CreateCode()
+Ptr<gacpass::IEditCodeViewModel> CodeBookViewModel::CreateEditCodeViewModel()
 {
-	return MakePtr<Code>();
+	return MakePtr<EditCodeViewModel>();
 }
 
 void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
@@ -63,7 +64,7 @@ void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 
 void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 {
-	vint index = codes.IndexOf(code.Obj());
+	vint index = codes.IndexOf(selectedCode.Obj());
 	if (index != -1)
 	{
 		Code *c = dynamic_cast<Code *>(code.Obj());

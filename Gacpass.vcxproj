@@ -187,6 +187,7 @@
     <ClCompile Include="UI\Source\GacPassReflection.cpp" />
     <ClCompile Include="ViewModel\Code.cpp" />
     <ClCompile Include="ViewModel\CodeBookViewModel.cpp" />
+    <ClCompile Include="ViewModel\EditCodeViewModel.cpp" />
     <ClCompile Include="ViewModel\Key.cpp" />
     <ClCompile Include="ViewModel\LoginViewModel.cpp" />
     <ClCompile Include="ViewModel\RegisterViewModel.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="ViewModel\Code.h" />
     <ClInclude Include="ViewModel\CodeBookViewModel.h" />
     <ClInclude Include="ViewModel\DB.h" />
+    <ClInclude Include="ViewModel\EditCodeViewModel.h" />
     <ClInclude Include="ViewModel\Key.h" />
     <ClInclude Include="ViewModel\LoginViewModel.h" />
     <ClInclude Include="ViewModel\RegisterViewModel.h" />
@@ -219,9 +221,10 @@
   <ItemGroup>
     <Xml Include="UI\CodeBookWindow.xml" />
     <Xml Include="UI\LoginWindow.xml" />
-    <Xml Include="UI\NewCodeWindow.xml" />
+    <Xml Include="UI\EditCodeWindow.xml" />
     <Xml Include="UI\RegisterWindow.xml" />
     <Xml Include="UI\Resource.xml" />
+    <Xml Include="UI\SeekBar.xml" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Gacpass.rc" />

@@ -36,8 +36,11 @@ namespace vl
 #ifndef VCZH_DEBUG_NO_REFLECTION
 			DECL_TYPE_INFO(::gacpass::CodeBookWindow)
 			DECL_TYPE_INFO(::gacpass::CodeBookWindowConstructor)
+			DECL_TYPE_INFO(::gacpass::EditCodeWindow)
+			DECL_TYPE_INFO(::gacpass::EditCodeWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::ICode)
 			DECL_TYPE_INFO(::gacpass::ICodeBookViewModel)
+			DECL_TYPE_INFO(::gacpass::IEditCodeViewModel)
 			DECL_TYPE_INFO(::gacpass::IKey)
 			DECL_TYPE_INFO(::gacpass::ILoginViewModel)
 			DECL_TYPE_INFO(::gacpass::IRegisterViewModel)
@@ -46,8 +49,6 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::LoginWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::MainWindow)
 			DECL_TYPE_INFO(::gacpass::MainWindowConstructor)
-			DECL_TYPE_INFO(::gacpass::NewCodeWindow)
-			DECL_TYPE_INFO(::gacpass::NewCodeWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::RegisterWindow)
 			DECL_TYPE_INFO(::gacpass::RegisterWindowConstructor)
 
@@ -88,9 +89,9 @@ namespace vl
 				{
 					INVOKE_INTERFACE_PROXY(SetWebsite, __vwsn_value_);
 				}
-				void Update(::vl::vint id, const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
+				void Update(::vl::Ptr<::gacpass::ICode> code) override
 				{
-					INVOKE_INTERFACE_PROXY(Update, id, website, username, password);
+					INVOKE_INTERFACE_PROXY(Update, code);
 				}
 			END_INTERFACE_PROXY(::gacpass::ICode)
 
@@ -99,9 +100,9 @@ namespace vl
 				{
 					INVOKE_INTERFACE_PROXY(AddCode, code);
 				}
-				::vl::Ptr<::gacpass::ICode> CreateCode() override
+				::vl::Ptr<::gacpass::IEditCodeViewModel> CreateEditCodeViewModel() override
 				{
-					INVOKEGET_INTERFACE_PROXY_NOPARAMS(CreateCode);
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(CreateEditCodeViewModel);
 				}
 				::vl::Ptr<::vl::reflection::description::IValueObservableList> GetCodes() override
 				{
@@ -137,6 +138,29 @@ namespace vl
 				}
 			END_INTERFACE_PROXY(::gacpass::ICodeBookViewModel)
 
+			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::IEditCodeViewModel)
+				::vl::Ptr<::gacpass::ICode> GetCode() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCode);
+				}
+				::vl::vint GetCodeLength() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodeLength);
+				}
+				::vl::vint GetSpecialCharLength() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSpecialCharLength);
+				}
+				void SetCodeLength(::vl::vint __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetCodeLength, __vwsn_value_);
+				}
+				void SetSpecialCharLength(::vl::vint __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetSpecialCharLength, __vwsn_value_);
+				}
+			END_INTERFACE_PROXY(::gacpass::IEditCodeViewModel)
+
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::IKey)
 				::vl::vint GetId() override
 				{
@@ -153,10 +177,6 @@ namespace vl
 				void SetKey(const ::vl::WString& __vwsn_value_) override
 				{
 					INVOKE_INTERFACE_PROXY(SetKey, __vwsn_value_);
-				}
-				void Update(::vl::vint id, const ::vl::WString& key) override
-				{
-					INVOKE_INTERFACE_PROXY(Update, id, key);
 				}
 			END_INTERFACE_PROXY(::gacpass::IKey)
 

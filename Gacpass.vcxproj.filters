@@ -90,6 +90,9 @@
     <ClCompile Include="WinMain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ViewModel\EditCodeViewModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI\Source\CodeBookWindow.h">
@@ -158,6 +161,9 @@
     <ClInclude Include="ViewModel\DB.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ViewModel\EditCodeViewModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UI\Resource.xml">
@@ -172,7 +178,10 @@
     <Xml Include="UI\LoginWindow.xml">
       <Filter>资源文件</Filter>
     </Xml>
-    <Xml Include="UI\NewCodeWindow.xml">
+    <Xml Include="UI\SeekBar.xml">
+      <Filter>资源文件</Filter>
+    </Xml>
+    <Xml Include="UI\EditCodeWindow.xml">
       <Filter>资源文件</Filter>
     </Xml>
   </ItemGroup>

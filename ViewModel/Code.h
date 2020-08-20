@@ -26,5 +26,5 @@ public:
 	WString GetPassword()const override;
 	void SetPassword(const WString& _password)override;
 	WString GetHidePassword()const override;
-	void Update(const int _id, const WString& _website, const WString& _username, const WString& _password)override;
+	void Update(Ptr<ICode> code)override;
   };

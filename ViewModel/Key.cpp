@@ -37,9 +37,3 @@ void Key::SetKey(const WString& _key)
 {
 	key = _key;
 }
-
-void Key::Update(const int _id, const WString& _key)
-{
-	id = _id;
-	key = _key;
-}

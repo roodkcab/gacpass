@@ -1,31 +1,49 @@
 <Folder>
-	<Instance name="NewCodeWindow">
-		<Instance ref.CodeBehind="false" ref.Class="gacpass::NewCodeWindow">
+
+  <Script>
+    <Workflow>
+      <![CDATA[
+			module viewmodel;
+			using system::*;
+
+			namespace gacpass
+			{
+        interface IEditCodeViewModel
+        {
+          prop Code : ICode^ {const}
+          prop CodeLength : int {}
+          prop SpecialCharLength : int {}
+        }
+      }
+    ]]>
+    </Workflow>
+  </Script>
+	<Instance name="EditCodeWindow">
+		<Instance ref.CodeBehind="false" ref.Class="gacpass::EditCodeWindow">
 			<ref.Members>
 				<![CDATA[
             prop ForEdit : bool = false {}
-
             var Ready : bool = false;
-            var Code : ICode^ = null;
-            
-            func SetCode(value : ICode^): void
-            {
-              Code = value;
-              textBoxWebsite.Text = Code.Website;
-              textBoxUsername.Text = Code.Username;
-              textBoxPassword.Text = Code.Password;
-            }
           ]]>
 			</ref.Members>
-			<ref.Parameter Name="ViewModel" Class="gacpass::ICodeBookViewModel"/>
+			<ref.Parameter Name="ViewModel" Class="gacpass::IEditCodeViewModel"/>
 			<Window ref.Name="self" Text-bind="self.ForEdit ? 'Edit Code' : 'New Code'" ClientSize="x:480 y:400" MaximizedBox="false" MinimizedBox="false" SizeBox="false">
 				<att.BoundsComposition-set PreferredMinSize="x:480 y:400"/>
+        <att.ViewModel-set>
+          <att.Code-set>
+            <att.Website-bind>textBoxWebsite.Text</att.Website-bind>
+            <att.Username-bind>textBoxUsername.Text</att.Username-bind>
+            <att.Password-bind>textBoxPassword.Text</att.Password-bind>
+          </att.Code-set>
+          <att.CodeLength-bind>hTrackerCodeLength.Position</att.CodeLength-bind>
+          <att.SpecialCharLength-bind>hTrackerSpecialCharLength.Position</att.SpecialCharLength-bind>
+        </att.ViewModel-set>
 				<Table CellPadding="5" AlignmentToParent="left:0 top:0 right:0 bottom:0">
 					<att.Rows>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:Percentage percentage:0.1</CellOption>
 						<CellOption>composeType:Percentage percentage:1.0</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 					</att.Rows>
@@ -40,7 +58,7 @@
 						<Label Text="Website:"/>
 					</Cell>
 					<Cell Site="row:0 column:1 columnSpan:3">
-						<DocumentTextBox ref.Name="textBoxWebsite" EditMode="Editable">
+						<DocumentTextBox ref.Name="textBoxWebsite" EditMode="Editable" Text-bind="ViewModel.Code.Website">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 						</DocumentTextBox>
 					</Cell>
@@ -49,7 +67,7 @@
 						<Label Text="Username:"/>
 					</Cell>
 					<Cell Site="row:1 column:1 columnSpan:3">
-						<DocumentTextBox ref.Name="textBoxUsername" EditMode="Editable">
+						<DocumentTextBox ref.Name="textBoxUsername" EditMode="Editable" Text-bind="ViewModel.Code.Username">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 						</DocumentTextBox>
 					</Cell>
@@ -57,20 +75,28 @@
 					<Cell Site="row:2 column:0" InternalMargin="top:6">
 						<Label Text="Password:"/>
 					</Cell>
-					<Cell Site="row:2 column:1 columnSpan:2">
-						<DocumentTextBox ref.Name="textBoxPassword" EditMode="Editable">
+					<Cell Site="row:2 column:1 columnSpan:3">
+						<DocumentTextBox ref.Name="textBoxPassword" EditMode="Editable" Text-bind="ViewModel.Code.Password">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 						</DocumentTextBox>
 					</Cell>
-					<Cell Site="row:2 column:3">
-						<Button Text="generate">
-							<ev.Clicked-eval>
-							<![CDATA[
-							textBoxPassword.Text = "test";
-							]]>
-							</ev.Clicked-eval>
-						</Button>
-					</Cell> 
+
+          <Cell Site="row:3 column:0">
+						<Label Text="Code Length:"/>
+          </Cell>
+          <Cell Site="row:3 column:1">
+            <HTracker ref.Name="hTrackerCodeLength" TotalSize="30" Position-bind="ViewModel.CodeLength">
+              <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+            </HTracker>
+          </Cell>
+					<Cell Site="row:3 column:2">
+						<Label Text="SpecialChar Length:"/>
+          </Cell>
+          <Cell Site="row:3 column:3">
+            <HTracker ref.Name="hTrackerSpecialCharLength" TotalSize="5" Position-bind="ViewModel.SpecialCharLength">
+              <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+            </HTracker>
+          </Cell>
 
 					<Cell Site="row:5 column:2">
 						<Button Text="OK">
@@ -78,7 +104,6 @@
 							<ev.Clicked-eval>
 								<![CDATA[
                     {
-                      self.Code.Update(self.Code.Id, textBoxWebsite.Text, textBoxUsername.Text, textBoxPassword.Text);
                       self.Ready = true;
                       self.Close();
                     }
