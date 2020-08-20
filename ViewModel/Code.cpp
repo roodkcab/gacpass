@@ -34,7 +34,7 @@ int Code::GetId()const
 	return id;
 }
 
-void Code::SetId(const int _id)
+void Code::SetId(int _id)
 {
 	id = _id;
 }
@@ -74,10 +74,10 @@ WString Code::GetHidePassword()const
 	return L"***";
 }
 
-void Code::Update(const int _id, const WString& _website, const WString& _username, const WString& _password)
+void Code::Update(Ptr<ICode> code)
 {
-	id = _id;
-	website = _website;
-	username = _username;
-	password = _password;
+	id = code->GetId();
+	website = code->GetWebsite();
+	username = code->GetUsername();
+	password = code->GetPassword();
 }

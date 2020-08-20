@@ -2,10 +2,15 @@
 #include "Code.h"
 #include <string>
 #include <algorithm> 
+#include <time.h> 
+#include <chrono>
 
 EditCodeViewModel::EditCodeViewModel()
-	: code(MakePtr<Code>())
-{}
+	: codeLength(10)
+	, code(MakePtr<Code>())
+{
+	code->SetPassword(this->genCode());
+}
 
 EditCodeViewModel::EditCodeViewModel(Ptr<gacpass::ICode> code)
 {
@@ -17,11 +22,6 @@ Ptr<::gacpass::ICode> EditCodeViewModel::GetCode()
 	return code;
 }
 
-void EditCodeViewModel::SetCode(Ptr<gacpass::ICode> code)
-{
-	this->code = code;
-}
-
 vint EditCodeViewModel::GetCodeLength()
 {
 	return codeLength;
@@ -30,7 +30,8 @@ vint EditCodeViewModel::GetCodeLength()
 void EditCodeViewModel::SetCodeLength(vint codeLength)
 {
 	this->codeLength = codeLength;
-	this->code->SetPassword(this->genCode(this->codeLength, this->specialCharLength));
+	CodeLengthChanged();
+	this->code->SetPassword(this->genCode());
 	CodeChanged();
 }
 
@@ -42,12 +43,17 @@ vint EditCodeViewModel::GetSpecialCharLength()
 void EditCodeViewModel::SetSpecialCharLength(vint specialCharLength)
 {
 	this->specialCharLength = specialCharLength;
-	this->code->SetPassword(this->genCode(this->codeLength, this->specialCharLength));
+	SpecialCharLengthChanged();
+	this->code->SetPassword(this->genCode());
 	CodeChanged();
 }
 
-WString EditCodeViewModel::genCode(const int length, const int spcialCharLength) {
-	if (length == 0) return L"";
+WString EditCodeViewModel::genCode() {
+	int codeLength = this->codeLength; 
+	int specialCharLength = this->specialCharLength;
+
+	if (codeLength == 0) return L"";
+	srand(long(std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count()) % 10000);
 	auto randchar = []() -> char
 	{
 		const char charset[] =
@@ -56,7 +62,17 @@ WString EditCodeViewModel::genCode(const int length, const int spcialCharLength)
 			"abcdefghijklmnopqrstuvwxyz";
 		return charset[rand() % (sizeof(charset) - 1)];
 	};
-	std::wstring str(length, 0);
-	std::generate_n(str.begin(), length, randchar);
-	return WString(str.c_str());
+
+	auto randSpecialChar = []() -> char
+	{
+		const char charset[] = "!@#$%^&*(){}_-:|~<>=";
+		return charset[rand() % (sizeof(charset) - 1)];
+	};
+
+	std::wstring code(codeLength, 0);
+	std::generate_n(code.begin(), codeLength - specialCharLength, randchar);
+	for (int i = 0; i < specialCharLength; i++) {
+		code.insert(rand() % code.length(), 1, randSpecialChar());
+	}
+	return WString(code.c_str());
 }

@@ -19,5 +19,4 @@ public:
 	void SetId(const int _id)override;
 	WString GetKey()const override;
 	void SetKey(const WString& _website)override;
-	void Update(const int _id, const WString& _key)override;
   };

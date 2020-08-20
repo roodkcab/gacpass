@@ -64,7 +64,7 @@ void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 
 void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 {
-	vint index = codes.IndexOf(code.Obj());
+	vint index = codes.IndexOf(selectedCode.Obj());
 	if (index != -1)
 	{
 		Code *c = dynamic_cast<Code *>(code.Obj());

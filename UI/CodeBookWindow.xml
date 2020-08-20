@@ -21,7 +21,7 @@
 					prop Password	: string {not observe}
 					prop HidePassword : string {const, not observe}
 
-					func Update(id : int, website : string, username : string, password: string) : void;
+					func Update(code : ICode^) : void;
 				}
 
 				interface ICodeBookViewModel
@@ -31,6 +31,7 @@
 					prop SelectedCode : ICode^ {}
 
 					func CreateEditCodeViewModel() : IEditCodeViewModel^;
+
 					func AddCode(code : ICode^) : void;
 					func UpdateCode(code : ICode^) : void;
 					func RemoveCode(code : ICode^) : void;
@@ -77,14 +78,15 @@
 						<![CDATA[
                 $Async{
                   var editVM = ViewModel.CreateEditCodeViewModel();
-									editVM.SetCode(ViewModel.SelectedCode);
+									editVM.Code.Update(ViewModel.SelectedCode);
                   var window = new gacpass::EditCodeWindow*(editVM);
                   window.ForEdit = true;
                   window.MoveToScreenCenter();
                   $Await window.ShowModalAsync(self.MainWindow);
                   if (window.Ready)
                   {
-                    ViewModel.UpdateCode(editVM.Code);
+										ViewModel.SelectedCode.Update(editVM.Code);
+                    ViewModel.UpdateCode(ViewModel.SelectedCode);
                   }
                   delete window;
                 }

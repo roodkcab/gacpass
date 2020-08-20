@@ -89,9 +89,9 @@ namespace vl
 				{
 					INVOKE_INTERFACE_PROXY(SetWebsite, __vwsn_value_);
 				}
-				void Update(::vl::vint id, const ::vl::WString& website, const ::vl::WString& username, const ::vl::WString& password) override
+				void Update(::vl::Ptr<::gacpass::ICode> code) override
 				{
-					INVOKE_INTERFACE_PROXY(Update, id, website, username, password);
+					INVOKE_INTERFACE_PROXY(Update, code);
 				}
 			END_INTERFACE_PROXY(::gacpass::ICode)
 
@@ -151,10 +151,6 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSpecialCharLength);
 				}
-				void SetCode(::vl::Ptr<::gacpass::ICode> __vwsn_value_) override
-				{
-					INVOKE_INTERFACE_PROXY(SetCode, __vwsn_value_);
-				}
 				void SetCodeLength(::vl::vint __vwsn_value_) override
 				{
 					INVOKE_INTERFACE_PROXY(SetCodeLength, __vwsn_value_);
@@ -181,10 +177,6 @@ namespace vl
 				void SetKey(const ::vl::WString& __vwsn_value_) override
 				{
 					INVOKE_INTERFACE_PROXY(SetKey, __vwsn_value_);
-				}
-				void Update(::vl::vint id, const ::vl::WString& key) override
-				{
-					INVOKE_INTERFACE_PROXY(Update, id, key);
 				}
 			END_INTERFACE_PROXY(::gacpass::IKey)
 
