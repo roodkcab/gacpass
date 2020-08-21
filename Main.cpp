@@ -6,6 +6,11 @@
 #include "ViewModel/LoginViewModel.h"
 #include "ViewModel/DB.h"
 
+#include <future>
+#include <thread>
+#include <chrono>
+#include <iostream>
+
 using namespace vl::stream;
 
 class ViewModel : public Object, public virtual gacpass::IViewModel
@@ -45,6 +50,34 @@ public:
 	}
 };
 
+void initStorage()
+{
+	auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(WAppdata(L"")));
+	if (!folder->Exists())
+	{
+		folder->Create(false);
+	}
+}
+
+void initChromePlugin()
+{
+	GetApplication()->InvokeAsync([=] {
+		while (true)
+		{
+			std::future<std::string> future = std::async([=] () -> std::string {
+				std::string answer;
+				std::cin >> answer;
+				return answer;
+			});
+
+			if (future.wait_for(std::chrono::seconds(5)) == std::future_status::ready)
+			{
+				std::cout << future.get();
+			}
+		}
+	});
+}
+
 void GuiMain()
 {
 	{
@@ -52,11 +85,8 @@ void GuiMain()
 		GetResourceManager()->LoadResourceOrPending(fileStream);
 	}
 
-	auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(WAppdata(L"")));
-	if (!folder->Exists()) 
-	{
-		folder->Create(false);
-	}
+	initStorage();
+	//initChromePlugin();
 
 	auto viewModel = MakePtr<ViewModel>();
 	auto window = new gacpass::MainWindow(viewModel);
