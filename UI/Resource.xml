@@ -18,6 +18,7 @@
 		<Workflow>
 			<![CDATA[
 			module viewmodel;
+			using system::*;
 			
 			namespace gacpass
 			{

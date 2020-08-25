@@ -93,6 +93,9 @@
     <ClCompile Include="ViewModel\EditCodeViewModel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Lib\AsyncIO.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI\Source\CodeBookWindow.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="ViewModel\EditCodeViewModel.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\AsyncIO.h">
+      <Filter>Lib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

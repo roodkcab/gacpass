@@ -1,15 +1,11 @@
 #define GAC_HEADER_USE_NAMESPACE
 #include "GacPass.h"
 #include "util.hpp"
+#include "AsyncIO.h"
 #include "ViewModel/CodeBookViewModel.h"
 #include "ViewModel/RegisterVIewModel.h"
 #include "ViewModel/LoginViewModel.h"
 #include "ViewModel/DB.h"
-
-#include <future>
-#include <thread>
-#include <chrono>
-#include <iostream>
 
 using namespace vl::stream;
 
@@ -61,19 +57,14 @@ void initStorage()
 
 void initChromePlugin()
 {
-	GetApplication()->InvokeAsync([=] {
-		while (true)
-		{
-			std::future<std::string> future = std::async([=] () -> std::string {
-				std::string answer;
-				std::cin >> answer;
-				return answer;
-			});
+	GetApplication()->InvokeAsync([] {
+		auto cmdCoroutine = EnumerableCoroutine::Create(LAMBDA([=](EnumerableCoroutine::IImpl* impl) -> Ptr<ICoroutine> {
+			return MakePtr<AsyncIO>(impl);
+		}))->CreateEnumerator();
 
-			if (future.wait_for(std::chrono::seconds(5)) == std::future_status::ready)
-			{
-				std::cout << future.get();
-			}
+		while (true) {
+			cmdCoroutine->Next();
+			auto x = UnboxValue<WString>(cmdCoroutine->GetCurrent()).Buffer();
 		}
 	});
 }
@@ -86,7 +77,7 @@ void GuiMain()
 	}
 
 	initStorage();
-	//initChromePlugin();
+	initChromePlugin();
 
 	auto viewModel = MakePtr<ViewModel>();
 	auto window = new gacpass::MainWindow(viewModel);
