@@ -171,6 +171,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Lib\AsyncIO.cpp" />
+    <ClCompile Include="Lib\ChromeHandler.cpp" />
     <ClCompile Include="Lib\GacUI\GacUI.cpp" />
     <ClCompile Include="Lib\GacUI\GacUIWindows.cpp" />
     <ClCompile Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.cpp" />
@@ -196,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\AsyncIO.h" />
+    <ClInclude Include="Lib\ChromeHandler.h" />
     <ClInclude Include="Lib\GacUI\GacUI.h" />
     <ClInclude Include="Lib\GacUI\GacUIWindows.h" />
     <ClInclude Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.h" />

@@ -6,7 +6,7 @@
 using namespace vl;
 using namespace vl::reflection::description;
 
-class AsyncIO : public ICoroutine
+class ChromeHandler : public ICoroutine
 {
 private:
 	WString input;
@@ -17,7 +17,7 @@ private:
 	::vl::reflection::description::CoroutineStatus status = static_cast<::vl::reflection::description::CoroutineStatus>(0);
 
 public:
-	AsyncIO(WString input);
+	ChromeHandler(WString input);
 	void Resume(bool raiseException, Ptr<CoroutineResult> output);
 	Ptr<IValueException> GetFailure();
 	void SetStatus(CoroutineStatus _status);

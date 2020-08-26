@@ -96,6 +96,9 @@
     <ClCompile Include="Lib\AsyncIO.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
+    <ClCompile Include="Lib\ChromeHandler.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI\Source\CodeBookWindow.h">
@@ -168,6 +171,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Lib\AsyncIO.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\ChromeHandler.h">
       <Filter>Lib</Filter>
     </ClInclude>
   </ItemGroup>

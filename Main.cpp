@@ -2,6 +2,7 @@
 #include "GacPass.h"
 #include "util.hpp"
 #include "AsyncIO.h"
+#include "ChromeHandler.h"
 #include "ViewModel/CodeBookViewModel.h"
 #include "ViewModel/RegisterVIewModel.h"
 #include "ViewModel/LoginViewModel.h"
@@ -58,19 +59,46 @@ void initStorage()
 void initChromePlugin()
 {
 	GetApplication()->InvokeAsync([] {
-		auto cmdCoroutine = EnumerableCoroutine::Create(LAMBDA([=](EnumerableCoroutine::IImpl* impl) -> Ptr<ICoroutine> {
-			return MakePtr<AsyncIO>(impl);
-		}))->CreateEnumerator();
+		WString input = L"";
+		WString output = L"";
+		auto producer = Ptr<ICoroutine>(new AsyncIO(input));
+		auto consumer = Ptr<ICoroutine>(new ChromeHandler(output));
+		auto cr = Ptr<CoroutineResult>(new CoroutineResult());
+		while (producer->GetStatus() != CoroutineStatus::Stopped && consumer->GetStatus() != CoroutineStatus::Stopped)
+		{
+			producer->Resume(false, cr);
+			WString x = L"{\"text\":\"test\"}";
+			cr->SetResult(::vl::__vwsn::Box(x));
+			consumer->Resume(false, cr);
+			cr->SetResult(::vl::__vwsn::Box(x));
+		}
 
-		while (true) {
-			cmdCoroutine->Next();
-			auto cmd = UnboxValue<std::string>(cmdCoroutine->GetCurrent());
+		if (producer->GetFailure())
+		{
+		}
+
+		if (consumer->GetFailure())
+		{
+		}
+		
+		/*auto consumer = EnumerableCoroutine::Create(LAMBDA([=](EnumerableCoroutine::IImpl* impl) -> Ptr<ICoroutine> {
+			return MakePtr<ChromeHandler>(impl);
+		}))->CreateEnumerator();*/
+
+		/*while (true) {
+			producer->Next();
+			auto cmd = UnboxValue<std::string>(producer->GetCurrent());
+			consumer->Send(cmd);
+			consumer->Next();
+			auto ret = UnboxValue<std::string>(consumer->GetCurrent());
+			producer->Send(ret);
+
 			auto len = cmd.length();
 			if (len > 0)
 			{
 				std::cout << char(len >> 0) << char(len >> 8) << char(len >> 16) << char(len >> 24) << cmd << std::flush;
 			}
-		}
+		}*/
 	});
 }
 

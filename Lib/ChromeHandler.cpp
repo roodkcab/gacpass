@@ -1,11 +1,11 @@
-#include "AsyncIO.h"
+#include "ChromeHandler.h"
 
-AsyncIO::AsyncIO(WString input)
+ChromeHandler::ChromeHandler(WString input)
 {
 	this->input = input;
 }
 
-void AsyncIO::Resume(bool raiseException, Ptr<CoroutineResult> output)
+void ChromeHandler::Resume(bool raiseException, Ptr<CoroutineResult> output)
 {
 	if ((this->GetStatus() != ::vl::reflection::description::CoroutineStatus::Waiting))
 	{
@@ -42,57 +42,15 @@ void AsyncIO::Resume(bool raiseException, Ptr<CoroutineResult> output)
 				}
 				if ((state == static_cast<::vl::vint>(2)))
 				{
-					input = L"";
-					unsigned int length = 0;
-
-					//Neat way!
-					for (int i = 0; i < 4; i++)
-					{
-						unsigned int read_char = getchar();
-						length = length | (read_char << i * 8);
-					}
-
-					if (length == UINT32_MAX)
-					{
-						(state = static_cast<::vl::vint>(3));
-						continue;
-					}
-
-					//read the json-message
-					for (unsigned int i = 0; i < length; i++)
-					{
-						input += getwchar();
-					}
-
+					//before yield
+					//input->Insert(input->Length(), vl::__vwsn::Unbox<WString>(output->GetResult()));
+					input = vl::__vwsn::Unbox<WString>(output->GetResult());
 					(state = static_cast<::vl::vint>(3));
 					continue;
-
-					/*std::string message = "{\"text\":\"This is a response message\"}";
-					// Collect the length of the message
-					unsigned int len = message.length();
-
-					// Now we can output our message
-					if (__vwsn_co2_i == "{\"text\":\"#STOP#\"}") {
-						message = "{\"text\":\"EXITING...\"}";
-						len = message.length();
-
-						std::cout << char(len >> 0)
-							<< char(len >> 8)
-							<< char(len >> 16)
-							<< char(len >> 24);
-
-						std::cout << message;
-						break;
-					}*/
 				}
 				if ((state == static_cast<::vl::vint>(3)))
 				{
-					WString res = UnboxValue<WString>(output->GetResult());
-					auto len = res.Length();
-					if (len > 0)
-					{
-						std::wcout << char(len >> 0) << char(len >> 8) << char(len >> 16) << char(len >> 24) << res.Buffer() << std::flush;
-					}
+					//yield & after yield
 					(state = static_cast<::vl::vint>(4));
 					continue;
 				}
@@ -120,17 +78,17 @@ void AsyncIO::Resume(bool raiseException, Ptr<CoroutineResult> output)
 	}
 }
 
-Ptr<IValueException> AsyncIO::GetFailure()
+Ptr<IValueException> ChromeHandler::GetFailure()
 {
 	return nullptr;
 }
 
-void AsyncIO::SetStatus(CoroutineStatus _status)
+void ChromeHandler::SetStatus(CoroutineStatus _status)
 {
 	status = _status;
 }
 
-CoroutineStatus	AsyncIO::GetStatus()
+CoroutineStatus	ChromeHandler::GetStatus()
 {
 	return status;
 }
