@@ -42,9 +42,48 @@ void AsyncIO::Resume(bool raiseException, Ptr<CoroutineResult> output)
 				}
 				if ((state == static_cast<::vl::vint>(2)))
 				{
-					__vwsn_co2_i = L"hello";
+					__vwsn_co2_i = "";
+					unsigned int length = 0;
+
+					//Neat way!
+					for (int i = 0; i < 4; i++)
+					{
+						unsigned int read_char = getchar();
+						length = length | (read_char << i * 8);
+					}
+
+					if (length == UINT32_MAX)
+					{
+						(state = static_cast<::vl::vint>(3));
+						continue;
+					}
+
+					//read the json-message
+					for (unsigned int i = 0; i < length; i++)
+					{
+						__vwsn_co2_i += getchar();
+					}
+
 					(state = static_cast<::vl::vint>(3));
 					continue;
+
+					/*std::string message = "{\"text\":\"This is a response message\"}";
+					// Collect the length of the message
+					unsigned int len = message.length();
+
+					// Now we can output our message
+					if (__vwsn_co2_i == "{\"text\":\"#STOP#\"}") {
+						message = "{\"text\":\"EXITING...\"}";
+						len = message.length();
+
+						std::cout << char(len >> 0)
+							<< char(len >> 8)
+							<< char(len >> 16)
+							<< char(len >> 24);
+
+						std::cout << message;
+						break;
+					}*/
 				}
 				if ((state == static_cast<::vl::vint>(3)))
 				{

@@ -1,5 +1,7 @@
 #pragma once
 #include "GacPass.h"
+#include <string>
+#include <iostream>
 
 using namespace vl;
 using namespace vl::reflection::description;
@@ -8,7 +10,7 @@ class AsyncIO : public ICoroutine
 {
 private:
 	EnumerableCoroutine::IImpl* impl;
-	WString __vwsn_co2_i = L"";
+	std::string __vwsn_co2_i = "";
 
 	::vl::vint state = 2;
 	::vl::vint state_before_pause = 0;

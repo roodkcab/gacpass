@@ -64,7 +64,12 @@ void initChromePlugin()
 
 		while (true) {
 			cmdCoroutine->Next();
-			auto x = UnboxValue<WString>(cmdCoroutine->GetCurrent()).Buffer();
+			auto cmd = UnboxValue<std::string>(cmdCoroutine->GetCurrent());
+			auto len = cmd.length();
+			if (len > 0)
+			{
+				std::cout << char(len >> 0) << char(len >> 8) << char(len >> 16) << char(len >> 24) << cmd << std::flush;
+			}
 		}
 	});
 }
