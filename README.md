@@ -1,5 +1,4 @@
 # GacPass
-![gacpas](https://user-images.githubusercontent.com/1700820/89509953-89b38800-d802-11ea-9aec-39b655940736.gif)
 
 GacPass是一个本地密码管理工具。
 使用简单方便，支持增/删/改，以及通过website搜索。
@@ -31,3 +30,5 @@ You are recommended to use Visual Studio 2019 to build Gacpass.sln.
 - [ ] iTerm/Windows Terminal plugin
 - [ ] OSX/Linux
 - [ ] iOS/Android
+
+![gacpas](https://user-images.githubusercontent.com/1700820/89509953-89b38800-d802-11ea-9aec-39b655940736.gif)
