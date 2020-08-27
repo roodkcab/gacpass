@@ -5,10 +5,21 @@ GacPass是一个本地密码管理工具。
 当新增密码时，您可以方便的通过密码生成器生成复杂密码。
 双击密码本列表中一行即可复制密码到剪贴板。
 
+# 路线图
+- [ ] 一个密码多个站点
+- [ ] chrome插件
+- [ ] iTerm/Windows Terminal插件
+- [ ] 手机端
+
 GacPass is a local password management software for Windows.
 GacPass associates one website and one password as an entry, allowing to be added/removed/edited and search by website.
 When adding password, one can easily generate complex code using code generator.
 Copying a password is as simple as double clicking an entry.
+
+- [ ] one password multiple site
+- [ ] chrome plugin
+- [ ] iTerm/Windows Terminal plugin
+- [ ] iOS/Android
 
 ![gacpas](https://user-images.githubusercontent.com/1700820/89509953-89b38800-d802-11ea-9aec-39b655940736.gif)
 
