@@ -13,6 +13,7 @@ GacPass是一个本地密码管理工具。
 - [ ] 一个密码多个站点
 - [ ] chrome插件
 - [ ] iTerm/Windows Terminal插件
+- [ ] OSX/Linux
 - [ ] 手机端
 
 # GacPass
@@ -28,4 +29,5 @@ You are recommended to use Visual Studio 2019 to build Gacpass.sln.
 - [ ] one password multiple site
 - [ ] chrome plugin
 - [ ] iTerm/Windows Terminal plugin
+- [ ] OSX/Linux
 - [ ] iOS/Android
