@@ -67,10 +67,12 @@ void initChromePlugin()
 		while (producer->GetStatus() != CoroutineStatus::Stopped && consumer->GetStatus() != CoroutineStatus::Stopped)
 		{
 			producer->Resume(false, cr);
-			WString x = L"{\"text\":\"test\"}";
-			cr->SetResult(::vl::__vwsn::Box(x));
-			consumer->Resume(false, cr);
-			cr->SetResult(::vl::__vwsn::Box(x));
+			if (input.Length() > 0)
+			{
+				cr->SetResult(::vl::__vwsn::Box(input));
+				consumer->Resume(false, cr);
+				cr->SetResult(::vl::__vwsn::Box(output));
+			}
 		}
 
 		if (producer->GetFailure())

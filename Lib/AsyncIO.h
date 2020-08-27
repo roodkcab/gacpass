@@ -9,7 +9,7 @@ using namespace vl::reflection::description;
 class AsyncIO : public ICoroutine
 {
 private:
-	WString input;
+	Ptr<WString> input;
 
 	::vl::vint state = 2;
 	::vl::vint state_before_pause = 0;
@@ -17,7 +17,7 @@ private:
 	::vl::reflection::description::CoroutineStatus status = static_cast<::vl::reflection::description::CoroutineStatus>(0);
 
 public:
-	AsyncIO(WString input);
+	AsyncIO(WString& input);
 	void Resume(bool raiseException, Ptr<CoroutineResult> output);
 	Ptr<IValueException> GetFailure();
 	void SetStatus(CoroutineStatus _status);

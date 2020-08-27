@@ -1,8 +1,8 @@
 #include "ChromeHandler.h"
 
-ChromeHandler::ChromeHandler(WString input)
+ChromeHandler::ChromeHandler(WString& input)
+	:input(&input)
 {
-	this->input = input;
 }
 
 void ChromeHandler::Resume(bool raiseException, Ptr<CoroutineResult> output)
@@ -44,7 +44,7 @@ void ChromeHandler::Resume(bool raiseException, Ptr<CoroutineResult> output)
 				{
 					//before yield
 					//input->Insert(input->Length(), vl::__vwsn::Unbox<WString>(output->GetResult()));
-					input = vl::__vwsn::Unbox<WString>(output->GetResult());
+					input->operator=(vl::__vwsn::Unbox<WString>(output->GetResult()));
 					(state = static_cast<::vl::vint>(3));
 					continue;
 				}
