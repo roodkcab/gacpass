@@ -1,7 +1,8 @@
 #include "ChromeHandler.h"
+#include "EventBus.h"
 
 ChromeHandler::ChromeHandler(WString& input)
-	:input(&input)
+	: input(&input)
 {
 }
 
@@ -43,8 +44,16 @@ void ChromeHandler::Resume(bool raiseException, Ptr<CoroutineResult> output)
 				if ((state == static_cast<::vl::vint>(2)))
 				{
 					//before yield
-					//input->Insert(input->Length(), vl::__vwsn::Unbox<WString>(output->GetResult()));
-					input->operator=(vl::__vwsn::Unbox<WString>(output->GetResult()));
+					auto websiteOpened = EventBus::Get(EventBus::EventName::WebsiteOpened);
+					websiteOpened->SetData(output->GetResult());
+					websiteOpened->Signal();
+
+					auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
+					while (!codeSelected->Wait()) { }
+					
+					auto code = vl::__vwsn::Unbox<Ptr<Code>>(codeSelected->GetData());
+					input->operator=(L"{\"text\":\"" + code->GetPassword() + L"\"}");
+
 					(state = static_cast<::vl::vint>(3));
 					continue;
 				}

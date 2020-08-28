@@ -1,5 +1,6 @@
 #pragma once
 #include "GacPass.h"
+#include "db/DB.h"
 #include <string>
 #include <iostream>
 

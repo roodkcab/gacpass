@@ -6,7 +6,7 @@
 #include "ViewModel/CodeBookViewModel.h"
 #include "ViewModel/RegisterVIewModel.h"
 #include "ViewModel/LoginViewModel.h"
-#include "ViewModel/DB.h"
+#include "db/DB.h"
 
 using namespace vl::stream;
 
@@ -25,10 +25,20 @@ public:
 		, loginViewModel(MakePtr<LoginViewModel>())
 		, codeBookViewModel(MakePtr<CodeBookViewModel>())
 	{
+		auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(WAppdata(L"")));
+		if (!folder->Exists())
+		{
+			folder->Create(false);
+		}
 		storage.sync_schema();
 		dynamic_cast<RegisterViewModel *>(registerViewModel.Obj())->Load(storage);
 		dynamic_cast<LoginViewModel *>(loginViewModel.Obj())->Load(storage);
 		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load(storage);
+	}
+
+	decltype(DB()) GetStorage()
+	{
+		return storage;
 	}
 
 	Ptr<gacpass::IRegisterViewModel> GetRegisterViewModel()override
@@ -47,18 +57,9 @@ public:
 	}
 };
 
-void initStorage()
-{
-	auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(WAppdata(L"")));
-	if (!folder->Exists())
-	{
-		folder->Create(false);
-	}
-}
-
 void initChromePlugin()
 {
-	GetApplication()->InvokeAsync([] {
+	GetApplication()->InvokeAsync([&] {
 		WString input = L"";
 		WString output = L"";
 		auto producer = Ptr<ICoroutine>(new AsyncIO(input));
@@ -82,25 +83,6 @@ void initChromePlugin()
 		if (consumer->GetFailure())
 		{
 		}
-		
-		/*auto consumer = EnumerableCoroutine::Create(LAMBDA([=](EnumerableCoroutine::IImpl* impl) -> Ptr<ICoroutine> {
-			return MakePtr<ChromeHandler>(impl);
-		}))->CreateEnumerator();*/
-
-		/*while (true) {
-			producer->Next();
-			auto cmd = UnboxValue<std::string>(producer->GetCurrent());
-			consumer->Send(cmd);
-			consumer->Next();
-			auto ret = UnboxValue<std::string>(consumer->GetCurrent());
-			producer->Send(ret);
-
-			auto len = cmd.length();
-			if (len > 0)
-			{
-				std::cout << char(len >> 0) << char(len >> 8) << char(len >> 16) << char(len >> 24) << cmd << std::flush;
-			}
-		}*/
 	});
 }
 
@@ -111,7 +93,6 @@ void GuiMain()
 		GetResourceManager()->LoadResourceOrPending(fileStream);
 	}
 
-	initStorage();
 	initChromePlugin();
 
 	auto viewModel = MakePtr<ViewModel>();

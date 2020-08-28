@@ -1,8 +1,8 @@
 #pragma once
 #include "GacPass.h"
 #include "util.hpp"
-#include "ViewModel/Code.h"
-#include "ViewModel/Key.h"
+#include "db/Code.h"
+#include "db/Key.h"
 #include "sqlite_orm/WString.h"
 
 using namespace vl;

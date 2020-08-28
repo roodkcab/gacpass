@@ -1,6 +1,6 @@
 #define GAC_HEADER_USE_NAMESPACE
 #include "GacPass.h"
-#include "DB.h"
+#include "db/DB.h"
 
 using namespace vl::collections;
 using namespace vl::reflection::description;

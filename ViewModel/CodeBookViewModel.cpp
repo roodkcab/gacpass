@@ -1,5 +1,7 @@
 #include "CodeBookViewModel.h"
 #include "EditCodeViewModel.h"
+#include "EventBus.h"
+#include "VlppRegex.h"
 
 CodeBookViewModel::CodeBookViewModel() {}
 
@@ -11,6 +13,18 @@ void CodeBookViewModel::Load(decltype(DB())& _storage)
 	{
 		this->codes.Add(MakePtr<Code>(code));
 	}
+
+	GetApplication()->InvokeAsync([&] {
+		while (true)
+		{
+			auto websiteOpened = EventBus::Get(EventBus::EventName::WebsiteOpened);
+			while (!websiteOpened->Wait()) {}
+
+			WString search = vl::__vwsn::Unbox<WString>(websiteOpened->GetData());
+			WString website = search.Sub(9, search.Length() - 11).Buffer();
+			this->SetSearch(website);
+		}
+	});
 }
 
 Ptr<IValueObservableList> CodeBookViewModel::GetCodes()
@@ -87,5 +101,9 @@ void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* argum
 		auto clipboard = GetCurrentController()->ClipboardService()->WriteClipboard();
 		clipboard->SetText(code->GetPassword());
 		clipboard->Submit();
+
+		auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
+		codeSelected->SetData(vl::__vwsn::Box(code));
+		codeSelected->Signal();
 	}
 }

@@ -25,6 +25,12 @@
     <Filter Include="Lib\sqlite_orm">
       <UniqueIdentifier>{e4271d1a-a2e8-433e-bdd8-9172ab3fe095}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lib\db">
+      <UniqueIdentifier>{bed4df33-074e-44df-aa6f-ffcd33606686}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ViewModel">
+      <UniqueIdentifier>{2d93b607-8785-44c4-a896-3c762690a995}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -38,18 +44,6 @@
     </ClCompile>
     <ClCompile Include="UI\Source\GacPassReflection.cpp">
       <Filter>UI</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewModel\Code.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewModel\CodeBookViewModel.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewModel\LoginViewModel.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewModel\RegisterViewModel.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\GacUI.cpp">
       <Filter>Lib\CacUI</Filter>
@@ -84,19 +78,37 @@
     <ClCompile Include="Lib\sqlite_orm\WString.cpp">
       <Filter>Lib\sqlite_orm</Filter>
     </ClCompile>
-    <ClCompile Include="ViewModel\Key.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="WinMain.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewModel\EditCodeViewModel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Lib\AsyncIO.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
     <ClCompile Include="Lib\ChromeHandler.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\db\Code.cpp">
+      <Filter>Lib\db</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\db\Key.cpp">
+      <Filter>Lib\db</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\EventBus.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\CodeBookViewModel.cpp">
+      <Filter>ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\EditCodeViewModel.cpp">
+      <Filter>ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\LoginViewModel.cpp">
+      <Filter>ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\RegisterViewModel.cpp">
+      <Filter>ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="GEvent.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
   </ItemGroup>
@@ -114,18 +126,6 @@
       <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewModel\Code.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewModel\CodeBookViewModel.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewModel\LoginViewModel.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewModel\RegisterViewModel.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\GacUI.h">
@@ -161,19 +161,37 @@
     <ClInclude Include="Lib\sqlite_orm\WString.h">
       <Filter>Lib\sqlite_orm</Filter>
     </ClInclude>
-    <ClInclude Include="ViewModel\Key.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewModel\DB.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewModel\EditCodeViewModel.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Lib\AsyncIO.h">
       <Filter>Lib</Filter>
     </ClInclude>
     <ClInclude Include="Lib\ChromeHandler.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\db\Code.h">
+      <Filter>Lib\db</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\db\Key.h">
+      <Filter>Lib\db</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\db\DB.h">
+      <Filter>Lib\db</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\EventBus.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModel\CodeBookViewModel.h">
+      <Filter>ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModel\EditCodeViewModel.h">
+      <Filter>ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModel\LoginViewModel.h">
+      <Filter>ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModel\RegisterViewModel.h">
+      <Filter>ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\GEvent.h">
       <Filter>Lib</Filter>
     </ClInclude>
   </ItemGroup>
