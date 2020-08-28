@@ -1,0 +1,9 @@
+{
+	"name": "com.unifs.gacpass",
+	"description": "GacPass",
+	"path": "C:\\Program Files (x86)\\Unifs\\GacPass\\Gacpass.exe",
+	"type": "stdio",
+	"allowed_origins": [
+		"chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/"
+	]
+}

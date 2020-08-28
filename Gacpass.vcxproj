@@ -170,6 +170,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GEvent.cpp" />
+    <ClCompile Include="Lib\AsyncIO.cpp" />
+    <ClCompile Include="Lib\ChromeHandler.cpp" />
+    <ClCompile Include="Lib\db\Code.cpp" />
+    <ClCompile Include="Lib\db\Key.cpp" />
+    <ClCompile Include="Lib\EventBus.cpp" />
     <ClCompile Include="Lib\GacUI\GacUI.cpp" />
     <ClCompile Include="Lib\GacUI\GacUIWindows.cpp" />
     <ClCompile Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.cpp" />
@@ -185,15 +191,20 @@
     <ClCompile Include="UI\Source\CodeBookWindow.cpp" />
     <ClCompile Include="UI\Source\GacPassPartialClasses.cpp" />
     <ClCompile Include="UI\Source\GacPassReflection.cpp" />
-    <ClCompile Include="ViewModel\Code.cpp" />
     <ClCompile Include="ViewModel\CodeBookViewModel.cpp" />
     <ClCompile Include="ViewModel\EditCodeViewModel.cpp" />
-    <ClCompile Include="ViewModel\Key.cpp" />
     <ClCompile Include="ViewModel\LoginViewModel.cpp" />
     <ClCompile Include="ViewModel\RegisterViewModel.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Lib\AsyncIO.h" />
+    <ClInclude Include="Lib\ChromeHandler.h" />
+    <ClInclude Include="Lib\db\Code.h" />
+    <ClInclude Include="Lib\db\DB.h" />
+    <ClInclude Include="Lib\db\Key.h" />
+    <ClInclude Include="Lib\GEvent.h" />
+    <ClInclude Include="Lib\EventBus.h" />
     <ClInclude Include="Lib\GacUI\GacUI.h" />
     <ClInclude Include="Lib\GacUI\GacUIWindows.h" />
     <ClInclude Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.h" />
@@ -210,11 +221,8 @@
     <ClInclude Include="UI\Source\GacPass.h" />
     <ClInclude Include="UI\Source\GacPassPartialClasses.h" />
     <ClInclude Include="UI\Source\GacPassReflection.h" />
-    <ClInclude Include="ViewModel\Code.h" />
     <ClInclude Include="ViewModel\CodeBookViewModel.h" />
-    <ClInclude Include="ViewModel\DB.h" />
     <ClInclude Include="ViewModel\EditCodeViewModel.h" />
-    <ClInclude Include="ViewModel\Key.h" />
     <ClInclude Include="ViewModel\LoginViewModel.h" />
     <ClInclude Include="ViewModel\RegisterViewModel.h" />
   </ItemGroup>
