@@ -7,6 +7,7 @@
 #include "ViewModel/RegisterVIewModel.h"
 #include "ViewModel/LoginViewModel.h"
 #include "db/DB.h"
+#include "EventBus.h"
 
 using namespace vl::stream;
 
@@ -59,21 +60,41 @@ public:
 
 void initChromePlugin()
 {
+	GetApplication()->InvokeAsync([] {
+		while (true)
+		{
+			WString input = L"";
+			unsigned int length = 0;
+
+			//Neat way!
+			for (int i = 0; i < 4; i++)
+			{
+				unsigned int read_char = getchar();
+				length = length | (read_char << i * 8);
+			}
+
+			//read the json-message
+			for (unsigned int i = 0; i < length; i++)
+			{
+				input += getwchar();
+			}
+
+			auto istream = EventBus::Get(EventBus::EventName::IStream);
+			istream->SetData(vl::__vwsn::Box(input));
+			istream->Signal();
+		}
+	});
+
 	GetApplication()->InvokeAsync([&] {
 		WString input = L"";
-		WString output = L"";
 		auto producer = Ptr<ICoroutine>(new AsyncIO(input));
-		auto consumer = Ptr<ICoroutine>(new ChromeHandler(output));
+		auto consumer = Ptr<ICoroutine>(new ChromeHandler());
 		auto cr = Ptr<CoroutineResult>(new CoroutineResult());
 		while (producer->GetStatus() != CoroutineStatus::Stopped && consumer->GetStatus() != CoroutineStatus::Stopped)
 		{
-			producer->Resume(false, cr);
-			if (input.Length() > 0)
-			{
-				cr->SetResult(::vl::__vwsn::Box(input));
-				consumer->Resume(false, cr);
-				cr->SetResult(::vl::__vwsn::Box(output));
-			}
+			producer->Resume(false, NULL);
+			cr->SetResult(::vl::__vwsn::Box(input));
+			consumer->Resume(false, cr);
 		}
 
 		if (producer->GetFailure())

@@ -10,15 +10,13 @@ using namespace vl::reflection::description;
 class ChromeHandler : public ICoroutine
 {
 private:
-	Ptr<WString> input;
-
 	::vl::vint state = 2;
 	::vl::vint state_before_pause = 0;
 	::vl::Ptr<::vl::reflection::description::IValueException> __vwsn_prop_Failure;
 	::vl::reflection::description::CoroutineStatus status = static_cast<::vl::reflection::description::CoroutineStatus>(0);
 
 public:
-	ChromeHandler(WString& input);
+	ChromeHandler();
 	void Resume(bool raiseException, Ptr<CoroutineResult> output);
 	Ptr<IValueException> GetFailure();
 	void SetStatus(CoroutineStatus _status);

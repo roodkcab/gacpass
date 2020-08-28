@@ -1,4 +1,5 @@
 #include "AsyncIO.h"
+#include "EventBus.h"
 
 AsyncIO::AsyncIO(WString& input)
 	:input(&input)
@@ -42,27 +43,12 @@ void AsyncIO::Resume(bool raiseException, Ptr<CoroutineResult> output)
 				}
 				if ((state == static_cast<::vl::vint>(2)))
 				{
-					auto result = output->GetResult();
-					if (!result.IsNull())
-					{
-						(state = static_cast<::vl::vint>(3));
-						continue;
-					}
-
 					input->operator=(L"");
-					unsigned int length = 0;
-
-					//Neat way!
-					for (int i = 0; i < 4; i++)
+					auto istream = EventBus::Get(EventBus::EventName::IStream);
+					if (istream->WaitForTime(100))
 					{
-						unsigned int read_char = getchar();
-						length = length | (read_char << i * 8);
-					}
-
-					//read the json-message
-					for (unsigned int i = 0; i < length; i++)
-					{
-						input->operator+=(getwchar());
+						WString i = vl::__vwsn::Unbox<WString>(istream->GetData());
+						input->operator=(i);
 					}
 
 					(state = static_cast<::vl::vint>(3));
@@ -70,17 +56,12 @@ void AsyncIO::Resume(bool raiseException, Ptr<CoroutineResult> output)
 				}
 				if ((state == static_cast<::vl::vint>(3)))
 				{
-					auto result = output->GetResult();
-					if (!result.IsNull())
+					auto ostream = EventBus::Get(EventBus::EventName::OStream);
+					if (ostream->WaitForTime(100))
 					{
-						WString res = UnboxValue<WString>(result);
+						WString res = (L"{\"text\":\"" + vl::__vwsn::Unbox<WString>(ostream->GetData()) + L"\"}");
 						auto len = res.Length();
-						if (len > 0)
-						{
-							std::wcout << char(len >> 0) << char(len >> 8) << char(len >> 16) << char(len >> 24) << res.Buffer() << std::flush;
-						}
-
-						output->SetResult(Value::From(NULL));
+						std::wcout << char(len >> 0) << char(len >> 8) << char(len >> 16) << char(len >> 24) << res.Buffer() << std::flush;
 						input->operator=(L"");
 					}
 					

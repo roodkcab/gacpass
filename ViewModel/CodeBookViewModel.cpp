@@ -18,11 +18,15 @@ void CodeBookViewModel::Load(decltype(DB())& _storage)
 		while (true)
 		{
 			auto websiteOpened = EventBus::Get(EventBus::EventName::WebsiteOpened);
-			while (!websiteOpened->Wait()) {}
-
-			WString search = vl::__vwsn::Unbox<WString>(websiteOpened->GetData());
-			WString website = search.Sub(9, search.Length() - 11).Buffer();
-			this->SetSearch(website);
+			if (websiteOpened->Wait()) 
+			{
+				WString search = vl::__vwsn::Unbox<WString>(websiteOpened->GetData());
+				if (search.Length() > 0) 
+				{
+					WString website = search.Sub(9, search.Length() - 11).Buffer();
+					this->SetSearch(website);
+				}
+			}
 		}
 	});
 }
@@ -102,8 +106,8 @@ void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* argum
 		clipboard->SetText(code->GetPassword());
 		clipboard->Submit();
 
-		auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
-		codeSelected->SetData(vl::__vwsn::Box(code));
+		auto codeSelected = EventBus::Get(EventBus::EventName::OStream);
+		codeSelected->SetData(vl::__vwsn::Box(code->GetPassword()));
 		codeSelected->Signal();
 	}
 }

@@ -11,8 +11,9 @@ class EventBus
 public:
 	enum class EventName
 	{
+		IStream,
+		OStream,
 		WebsiteOpened,
-		CodeSelected,
 	};
 
 	EventBus();
