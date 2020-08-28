@@ -28,7 +28,7 @@ Copying a password is as simple as double clicking an entry.
 You are recommended to use Visual Studio 2019 to build Gacpass.sln.
 
 ### Roadmap
-= [x] code generator
+- [x] code generator
 - [ ] one password multiple site
 - [ ] aes encrypt db file
 - [x] chrome plugin
