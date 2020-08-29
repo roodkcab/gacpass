@@ -109,14 +109,21 @@ void initChromePlugin()
 
 void GuiMain()
 {
+	auto m = MakePtr<Mutex>();
+	m->Create(true, L"GacPass");
+	if (!m->WaitForTime(0))
+	{
+		return;
+	}
+
 	{
 		FileStream fileStream(L"MVVM.bin", FileStream::ReadOnly);
 		GetResourceManager()->LoadResourceOrPending(fileStream);
 	}
 
+	auto viewModel = MakePtr<ViewModel>();
 	initChromePlugin();
 
-	auto viewModel = MakePtr<ViewModel>();
 	auto window = new gacpass::MainWindow(viewModel);
 	window->MoveToScreenCenter();
 	GetApplication()->Run(window);

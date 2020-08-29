@@ -22,7 +22,6 @@ public:
 
 private:
 	Ptr<Dictionary<EventName, Ptr<GEvent>>> events;
-	//static CriticalSection lock;
 
 	static Ptr<EventBus> Instance();
 };

@@ -108,7 +108,7 @@
     <ClCompile Include="ViewModel\RegisterViewModel.cpp">
       <Filter>ViewModel</Filter>
     </ClCompile>
-    <ClCompile Include="GEvent.cpp">
+    <ClCompile Include="Lib\GEvent.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
   </ItemGroup>

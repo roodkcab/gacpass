@@ -170,7 +170,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GEvent.cpp" />
     <ClCompile Include="Lib\AsyncIO.cpp" />
     <ClCompile Include="Lib\ChromeHandler.cpp" />
     <ClCompile Include="Lib\db\Code.cpp" />
@@ -185,6 +184,7 @@
     <ClCompile Include="Lib\GacUI\VlppReflection.cpp" />
     <ClCompile Include="Lib\GacUI\VlppRegex.cpp" />
     <ClCompile Include="Lib\GacUI\VlppWorkflowLibrary.cpp" />
+    <ClCompile Include="Lib\GEvent.cpp" />
     <ClCompile Include="Lib\sqlite_orm\WString.cpp" />
     <ClCompile Include="Lib\util.cpp" />
     <ClCompile Include="Main.cpp" />

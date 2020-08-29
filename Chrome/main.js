@@ -17,7 +17,7 @@ function appendMessage(text) {
   document.getElementById('response').innerHTML += "<p>" + text + "</p>";
 }
 
-function updateUiState() {
+/*function updateUiState() {
   if (port) {
     document.getElementById('connect-button').style.display = 'none';
     document.getElementById('input-text').style.display = 'block';
@@ -27,22 +27,15 @@ function updateUiState() {
     document.getElementById('input-text').style.display = 'none';
     document.getElementById('send-message-button').style.display = 'none';
   }
-}
-
-function sendNativeMessage() {
-  message = {"text": document.getElementById('input-text').value};
-  port.postMessage(message);
-  appendMessage("Sent message: <b>" + JSON.stringify(message) + "</b>");
-}
+}*/
 
 function onNativeMessage(message) {
   appendMessage("Received message: <b>" + JSON.stringify(message) + "</b>");
 }
 
-function onDisconnected() {
+function onDisconnect() {
   appendMessage("Failed to connect: " + chrome.runtime.lastError.message);
   port = null;
-  updateUiState();
 }
 
 function connect() {
@@ -50,14 +43,25 @@ function connect() {
   appendMessage("Connecting to native messaging host <b>" + hostName + "</b>")
   port = chrome.runtime.connectNative(hostName);
   port.onMessage.addListener(onNativeMessage);
-  port.onDisconnect.addListener(onDisconnected);
-  updateUiState();
+  port.onDisconnect.addListener(onDisconnect);
+
+  //check GacPass is ready
+  chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+    message = {"host": getHost(tabs[0].url)};
+    setTimeout(function(){  
+      port.postMessage(message);
+      appendMessage("Sent message: <b>" + JSON.stringify(message) + "</b>");
+    }, 1000);
+  });
+}
+
+
+function getHost(data) {
+  var    a      = document.createElement('a');
+         a.href = data;
+  return a.hostname;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('connect-button').addEventListener(
-      'click', connect);
-  document.getElementById('send-message-button').addEventListener(
-      'click', sendNativeMessage);
-  updateUiState();
+  connect();
 });
