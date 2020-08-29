@@ -14,8 +14,7 @@ GacPass是一个本地密码管理工具。
 - [ ] aes加密数据库文件
 - [x] chrome插件
 - [ ] iTerm/Windows Terminal插件
-- [ ] OSX/Linux
-- [ ] 手机端
+- [ ] OSX/Linux/iOS/Android
 - [ ] 多语言
 
 # GacPass
@@ -33,8 +32,7 @@ You are recommended to use Visual Studio 2019 to build Gacpass.sln.
 - [ ] aes encrypt db file
 - [x] chrome plugin
 - [ ] iTerm/Windows Terminal plugin
-- [ ] OSX/Linux
-- [ ] iOS/Android
+- [ ] OSX/Linux/iOS/Android
 - [ ] multi language
 
 ![gacpas](https://user-images.githubusercontent.com/1700820/89509953-89b38800-d802-11ea-9aec-39b655940736.gif)
