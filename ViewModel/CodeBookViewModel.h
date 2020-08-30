@@ -12,9 +12,10 @@ private:
 	Ptr<gacpass::ICode> selectedCode;
 	WString search;
 	decltype(DB())* storage;
+	Ptr<gacpass::ILoginViewModel> loginViewModel;
 
 public:
-	CodeBookViewModel();
+	CodeBookViewModel(Ptr<gacpass::ILoginViewModel> _loginViewModel);
 	void Load(decltype(DB())& _storage);
 	Ptr<IValueObservableList> GetCodes()override;
 	Ptr<gacpass::ICode> GetSelectedCode()override;
