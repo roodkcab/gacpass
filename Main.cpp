@@ -24,7 +24,7 @@ public:
 		: storage(DB())
 		, registerViewModel(MakePtr<RegisterViewModel>())
 		, loginViewModel(MakePtr<LoginViewModel>())
-		, codeBookViewModel(MakePtr<CodeBookViewModel>())
+		, codeBookViewModel(MakePtr<CodeBookViewModel>(loginViewModel))
 	{
 		auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(WAppdata(L"")));
 		if (!folder->Exists())
@@ -109,6 +109,7 @@ void initChromePlugin()
 
 void GuiMain()
 {
+	//one instance at most
 	auto m = MakePtr<Mutex>();
 	m->Create(true, L"GacPass");
 	if (!m->WaitForTime(0))
@@ -126,6 +127,7 @@ void GuiMain()
 
 	auto window = new gacpass::MainWindow(viewModel);
 	window->MoveToScreenCenter();
+	//window->SetShowInTaskBar(false);
 	GetApplication()->Run(window);
 	delete window;
 }

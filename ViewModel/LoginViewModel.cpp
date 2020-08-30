@@ -1,4 +1,5 @@
 #include "LoginViewModel.h"
+#include "EventBus.h"
 
 LoginViewModel::LoginViewModel() {}
 

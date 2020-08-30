@@ -14,6 +14,26 @@
     "default_title": "GacPass",
     "default_popup": "main.html"
   },
+  "commands": {
+    "open": {
+      "suggested_key": {
+        "default": "Ctrl+Y",
+        "mac": "Command+Y"
+       },
+      "description": "Toggle feature foo"
+    }
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "js" : [
+      "lib/jquery-3.5.1.min.js",
+      "filler.js"
+    ],
+    "matches" : [ "http://*/*", "https://*/*", "file:///*" ]
+  }],
   "icons": {
     "128": "icon-128.png"
   },

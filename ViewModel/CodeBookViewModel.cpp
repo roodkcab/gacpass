@@ -3,7 +3,10 @@
 #include "EventBus.h"
 #include "VlppRegex.h"
 
-CodeBookViewModel::CodeBookViewModel() {}
+CodeBookViewModel::CodeBookViewModel(Ptr<gacpass::ILoginViewModel> _loginViewModel) 
+	: loginViewModel(_loginViewModel)
+{
+}
 
 void CodeBookViewModel::Load(decltype(DB())& _storage)
 {
@@ -25,7 +28,7 @@ void CodeBookViewModel::Load(decltype(DB())& _storage)
 				{
 					WString website = search.Sub(9, search.Length() - 11).Buffer();
 					this->SetSearch(website);
-					if (this->GetCodes()->GetCount() == 1)
+					if (this->GetCodes()->GetCount() == 1 && loginViewModel->GetLoggedIn())
 					{
 						auto codeSelected = EventBus::Get(EventBus::EventName::OStream);
 						codeSelected->SetData(vl::__vwsn::Box(this->codes[0]->GetPassword()));
@@ -115,5 +118,6 @@ void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* argum
 		auto codeSelected = EventBus::Get(EventBus::EventName::OStream);
 		codeSelected->SetData(vl::__vwsn::Box(code->GetPassword()));
 		codeSelected->Signal();
+		//close window
 	}
 }
