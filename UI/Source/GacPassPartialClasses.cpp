@@ -196,13 +196,13 @@ Closures
 
 	void __vwsnf19_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
 	{
-		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->textBoxWebsite)->GetText();
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->textBoxTitle)->GetText();
 		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
 		if ((__vwsn_old_ == __vwsn_new_))
 		{
 			return;
 		}
-		::vl::__vwsn::This(__vwsnthis_0->textBoxWebsite)->SetText(__vwsn_new_);
+		::vl::__vwsn::This(__vwsnthis_0->textBoxTitle)->SetText(__vwsn_new_);
 	}
 
 	//-------------------------------------------------------------------
@@ -366,13 +366,13 @@ Closures
 
 	void __vwsnf28_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_value_) const
 	{
-		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_28.Obj())->GetWebsite();
+		auto __vwsn_old_ = ::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_28.Obj())->GetTitle();
 		auto __vwsn_new_ = ::vl::__vwsn::Unbox<::vl::WString>(__vwsn_value_);
 		if ((__vwsn_old_ == __vwsn_new_))
 		{
 			return;
 		}
-		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_28.Obj())->SetWebsite(__vwsn_new_);
+		::vl::__vwsn::This(__vwsnthis_0->__vwsn_precompile_28.Obj())->SetTitle(__vwsn_new_);
 	}
 
 	//-------------------------------------------------------------------
@@ -648,7 +648,7 @@ Closures
 	::vl::WString __vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_item_) const
 	{
 		auto item = ::vl::__vwsn::Unbox<::vl::Ptr<::gacpass::ICode>>(__vwsn_item_);
-		return ::vl::__vwsn::This(item.Obj())->GetWebsite();
+		return ::vl::__vwsn::This(item.Obj())->GetTitle();
 	}
 
 	//-------------------------------------------------------------------
@@ -854,7 +854,7 @@ Closures
 
 	void __vwsnc12_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_activator_()
 	{
-		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetCode().Obj())->GetWebsite();
+		auto __vwsn_bind_activator_result_ = ::vl::__vwsn::This(::vl::__vwsn::This(__vwsn_bind_cache_0.Obj())->GetCode().Obj())->GetTitle();
 		::vl::__vwsn::EventInvoke(this->ValueChanged)(::vl::__vwsn::Box(__vwsn_bind_activator_result_));
 	}
 
@@ -1295,7 +1295,7 @@ Closures
 		if ((! __vwsn_bind_opened_))
 		{
 			(__vwsn_bind_opened_ = true);
-			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->textBoxWebsite; } catch(...){ return static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr); } }());
+			(__vwsn_bind_cache_0 = [&](){ try{ return __vwsnthis_0->textBoxTitle; } catch(...){ return static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr); } }());
 			(__vwsn_bind_handler_0_0 = [&](){ try{ return ::vl::__vwsn::EventAttach(::vl::__vwsn::This(__vwsn_bind_cache_0)->TextChanged, ::vl::Func<void(::vl::presentation::compositions::GuiGraphicsComposition*, ::vl::presentation::compositions::GuiEventArgs*)>(this, &__vwsnc19_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription::__vwsn_bind_callback_0_0)); } catch(...){ return ::vl::Ptr<::vl::reflection::description::IEventHandler>(); } }());
 			return true;
 		}
@@ -2790,7 +2790,7 @@ namespace gacpass
 			::vl::__vwsn::This(this->__vwsn_precompile_9.Obj())->SetTextProperty(LAMBDA(::vl_workflow_global::__vwsnf4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_(this)));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_9.Obj())->SetText(::vl::WString(L"Website", false));
+			::vl::__vwsn::This(this->__vwsn_precompile_9.Obj())->SetText(::vl::WString(L"Title", false));
 		}
 		{
 			auto __vwsn_collection_ = ::vl::__vwsn::UnboxCollection<::vl::reflection::description::IValueList>(::vl::__vwsn::This(this->listViewCodes)->GetColumns());
@@ -2978,7 +2978,7 @@ Class (::gacpass::EditCodeWindowConstructor)
 			(this->__vwsn_precompile_2 = new ::vl::presentation::controls::GuiLabel(::vl::presentation::theme::ThemeName::Label));
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_2)->SetText(::vl::WString(L"Website:", false));
+			::vl::__vwsn::This(this->__vwsn_precompile_2)->SetText(::vl::WString(L"Title:", false));
 		}
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_1)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->__vwsn_precompile_2)->GetBoundsComposition()));
@@ -2991,17 +2991,17 @@ Class (::gacpass::EditCodeWindowConstructor)
 			::vl::__vwsn::This(this->__vwsn_precompile_3)->SetSite(static_cast<::vl::vint>(0), static_cast<::vl::vint>(1), static_cast<::vl::vint>(1), static_cast<::vl::vint>(3));
 		}
 		{
-			(this->textBoxWebsite = new ::vl::presentation::controls::GuiDocumentLabel(::vl::presentation::theme::ThemeName::DocumentTextBox));
+			(this->textBoxTitle = new ::vl::presentation::controls::GuiDocumentLabel(::vl::presentation::theme::ThemeName::DocumentTextBox));
 		}
 		{
-			::vl::__vwsn::This(this->textBoxWebsite)->SetEditMode(::vl::presentation::controls::GuiDocumentCommonInterface::EditMode::Editable);
+			::vl::__vwsn::This(this->textBoxTitle)->SetEditMode(::vl::presentation::controls::GuiDocumentCommonInterface::EditMode::Editable);
 		}
-		(this->__vwsn_precompile_4 = ::vl::__vwsn::This(this->textBoxWebsite)->GetBoundsComposition());
+		(this->__vwsn_precompile_4 = ::vl::__vwsn::This(this->textBoxTitle)->GetBoundsComposition());
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_4)->SetAlignmentToParent([&](){ ::vl::presentation::Margin __vwsn_temp__; __vwsn_temp__.left = static_cast<::vl::vint>(0); __vwsn_temp__.top = static_cast<::vl::vint>(0); __vwsn_temp__.right = static_cast<::vl::vint>(0); __vwsn_temp__.bottom = static_cast<::vl::vint>(0); return __vwsn_temp__; }());
 		}
 		{
-			::vl::__vwsn::This(this->__vwsn_precompile_3)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->textBoxWebsite)->GetBoundsComposition()));
+			::vl::__vwsn::This(this->__vwsn_precompile_3)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(::vl::__vwsn::This(this->textBoxTitle)->GetBoundsComposition()));
 		}
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_0)->AddChild(static_cast<::vl::presentation::compositions::GuiGraphicsComposition*>(this->__vwsn_precompile_3));
@@ -3276,7 +3276,7 @@ Class (::gacpass::EditCodeWindowConstructor)
 		: ViewModel(::vl::Ptr<::gacpass::IEditCodeViewModel>())
 		, self(static_cast<::gacpass::EditCodeWindow*>(nullptr))
 		, textBoxPassword(static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr))
-		, textBoxWebsite(static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr))
+		, textBoxTitle(static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr))
 		, textBoxUsername(static_cast<::vl::presentation::controls::GuiDocumentLabel*>(nullptr))
 		, hTrackerCodeLength(static_cast<::vl::presentation::controls::GuiScroll*>(nullptr))
 		, hTrackerSpecialCharLength(static_cast<::vl::presentation::controls::GuiScroll*>(nullptr))
@@ -3371,6 +3371,10 @@ Class (::gacpass::IKey)
 
 /***********************************************************************
 Class (::gacpass::ILoginViewModel)
+***********************************************************************/
+
+/***********************************************************************
+Class (::gacpass::IReference)
 ***********************************************************************/
 
 /***********************************************************************

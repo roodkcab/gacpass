@@ -111,6 +111,9 @@
     <ClCompile Include="Lib\GEvent.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
+    <ClCompile Include="Lib\db\Reference.cpp">
+      <Filter>Lib\db</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI\Source\CodeBookWindow.h">
@@ -193,6 +196,9 @@
     </ClInclude>
     <ClInclude Include="Lib\GEvent.h">
       <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\db\Reference.h">
+      <Filter>Lib\db</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

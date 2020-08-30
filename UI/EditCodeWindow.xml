@@ -31,7 +31,7 @@
 				<att.BoundsComposition-set PreferredMinSize="x:480 y:400"/>
         <att.ViewModel-set>
           <att.Code-set>
-            <att.Website-bind>textBoxWebsite.Text</att.Website-bind>
+            <att.Title-bind>textBoxTitle.Text</att.Title-bind>
             <att.Username-bind>textBoxUsername.Text</att.Username-bind>
             <att.Password-bind>textBoxPassword.Text</att.Password-bind>
           </att.Code-set>
@@ -55,10 +55,10 @@
 					</att.Columns>
 
 					<Cell Site="row:0 column:0" InternalMargin="top:6">
-						<Label Text="Website:"/>
+						<Label Text="Title:"/>
 					</Cell>
 					<Cell Site="row:0 column:1 columnSpan:3">
-						<DocumentTextBox ref.Name="textBoxWebsite" EditMode="Editable" Text-bind="ViewModel.Code.Website">
+						<DocumentTextBox ref.Name="textBoxTitle" EditMode="Editable" Text-bind="ViewModel.Code.Title">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
 						</DocumentTextBox>
 					</Cell>

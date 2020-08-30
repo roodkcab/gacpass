@@ -109,6 +109,7 @@ namespace gacpass
 	class IEditCodeViewModel;
 	class IKey;
 	class ILoginViewModel;
+	class IReference;
 	class IRegisterViewModel;
 	class IViewModel;
 	class LoginWindowConstructor;
@@ -208,7 +209,7 @@ namespace gacpass
 		::vl::Ptr<::gacpass::IEditCodeViewModel> ViewModel;
 		::gacpass::EditCodeWindow* self;
 		::vl::presentation::controls::GuiDocumentLabel* textBoxPassword;
-		::vl::presentation::controls::GuiDocumentLabel* textBoxWebsite;
+		::vl::presentation::controls::GuiDocumentLabel* textBoxTitle;
 		::vl::presentation::controls::GuiDocumentLabel* textBoxUsername;
 		::vl::presentation::controls::GuiScroll* hTrackerCodeLength;
 		::vl::presentation::controls::GuiScroll* hTrackerSpecialCharLength;
@@ -297,13 +298,14 @@ namespace gacpass
 	public:
 		virtual ::vl::vint GetId()const = 0;
 		virtual void SetId(::vl::vint __vwsn_value_) = 0;
-		virtual ::vl::WString GetWebsite()const = 0;
-		virtual void SetWebsite(const ::vl::WString& __vwsn_value_) = 0;
+		virtual ::vl::WString GetTitle()const = 0;
+		virtual void SetTitle(const ::vl::WString& __vwsn_value_) = 0;
 		virtual ::vl::WString GetUsername()const = 0;
 		virtual void SetUsername(const ::vl::WString& __vwsn_value_) = 0;
 		virtual ::vl::WString GetPassword()const = 0;
 		virtual void SetPassword(const ::vl::WString& __vwsn_value_) = 0;
-		virtual ::vl::WString GetHidePassword()const = 0;
+		virtual ::vl::WString GetHidePassword() = 0;
+		virtual ::vl::Ptr<::vl::reflection::description::IValueObservableList> GetReferences() = 0;
 		virtual void Update(::vl::Ptr<::gacpass::ICode> code) = 0;
 	};
 
@@ -366,6 +368,23 @@ namespace gacpass
 		virtual ::vl::WString GetPassword() = 0;
 		virtual void SetPassword(const ::vl::WString& __vwsn_value_) = 0;
 		::vl::Event<void()> PasswordChanged;
+	};
+
+	class IReference : public virtual ::vl::reflection::IDescriptable, public ::vl::reflection::Description<IReference>
+	{
+#ifndef VCZH_DEBUG_NO_REFLECTION
+		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<IReference>;
+#endif
+	public:
+		virtual ::vl::vint GetId()const = 0;
+		virtual void SetId(::vl::vint __vwsn_value_) = 0;
+		virtual ::vl::vint GetCodeId()const = 0;
+		virtual void SetCodeId(::vl::vint __vwsn_value_) = 0;
+		virtual ::vl::vint GetType()const = 0;
+		virtual void SetType(::vl::vint __vwsn_value_) = 0;
+		virtual ::vl::WString GetContent()const = 0;
+		virtual void SetContent(const ::vl::WString& __vwsn_value_) = 0;
+		virtual void Update(::vl::Ptr<::gacpass::IReference> reference) = 0;
 	};
 
 	class IRegisterViewModel : public virtual ::vl::reflection::IDescriptable, public ::vl::reflection::Description<IRegisterViewModel>

@@ -16,13 +16,24 @@
 				interface ICode
 				{
 				  prop Id : int {not observe}
-					prop Website	: string {not observe}
+					prop Title : string {not observe}
 					prop Username	: string {not observe}
 					prop Password	: string {not observe}
 					prop HidePassword : string {const, not observe}
+					prop References : observe IReference^[] {const, not observe}
 
 					func Update(code : ICode^) : void;
 				}
+
+				interface IReference
+				{
+          prop Id : int {not observe}
+					prop CodeId: int {not observe}
+					prop Type : int {not observe}
+					prop Content : string {not observe}
+
+					func Update(reference: IReference^) : void;
+        }
 
 				interface ICodeBookViewModel
 				{
@@ -135,7 +146,7 @@
 							</att.ItemSource-bind>
 
 							<att.Columns>
-								<ListViewColumn Text="Website" TextProperty="Website" Size="120"/>
+								<ListViewColumn Text="Title" TextProperty="Title" Size="120"/>
 								<ListViewColumn Text="Username" TextProperty="Username" Size="120"/>
 								<ListViewColumn Text="Passowrd" TextProperty="HidePassword" Size="120"/>
 							</att.Columns>
