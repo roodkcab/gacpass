@@ -18,8 +18,9 @@ Ptr<Dictionary<EventBus::EventName, Ptr<GEvent>>> EventBus::GetEvents()
 
 Ptr<GEvent> EventBus::Get(EventName name)
 {
-	/*CS_LOCK(lock)
-	{*/
+	static CriticalSection lock;
+	CS_LOCK(lock)
+	{
 		Ptr<EventBus> _bus = EventBus::Instance();
 		
 		if (!_bus->GetEvents()->Keys().Contains(name))
@@ -35,5 +36,5 @@ Ptr<GEvent> EventBus::Get(EventName name)
 			event->CreateAutoUnsignal(false);
 			return event;
 		}
-	//}
+	}
 }

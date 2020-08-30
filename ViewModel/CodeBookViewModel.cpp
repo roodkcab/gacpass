@@ -21,10 +21,16 @@ void CodeBookViewModel::Load(decltype(DB())& _storage)
 			if (websiteOpened->Wait()) 
 			{
 				WString search = vl::__vwsn::Unbox<WString>(websiteOpened->GetData());
-				if (search.Length() > 0) 
+				if (search.Length() > 0)
 				{
 					WString website = search.Sub(9, search.Length() - 11).Buffer();
 					this->SetSearch(website);
+					if (this->GetCodes()->GetCount() == 1)
+					{
+						auto codeSelected = EventBus::Get(EventBus::EventName::OStream);
+						codeSelected->SetData(vl::__vwsn::Box(this->codes[0]->GetPassword()));
+						codeSelected->Signal();
+					}
 				}
 			}
 		}
