@@ -6,11 +6,6 @@ RegisterViewModel::RegisterViewModel()
 	, regexNumbers(L"[0-9]")
 {}
 
-void RegisterViewModel::Load(decltype(DB())& _storage)
-{
-	storage = &_storage;
-}
-
 WString RegisterViewModel::GetPassword()
 {
 	return password;
@@ -66,11 +61,11 @@ WString RegisterViewModel::GetConfirmPasswordError()
 
 void RegisterViewModel::Register()
 {
-	storage->insert<Key>(Key(-1, this->GetPassword()));
+	DB.insert<Key>(Key(-1, this->GetPassword()));
 	this->MainPasswordSetChanged();
 }
 
 bool RegisterViewModel::GetMainPasswordSet()
 {
-	return storage->count<Key>() > 0;
+	return DB.count<Key>() > 0;
 }

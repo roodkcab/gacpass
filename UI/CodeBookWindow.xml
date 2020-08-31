@@ -25,6 +25,17 @@
 					func Update(code : ICode^) : void;
 				}
 
+        func ToString(value : int) : string
+        {
+          switch (value)
+          {
+            case 0: { return "Website"; }
+            case 1: { return "Server"; }
+            case 2: { return "Database"; }
+          }
+          return "";
+        }
+
 				interface IReference
 				{
           prop Id : int {not observe}

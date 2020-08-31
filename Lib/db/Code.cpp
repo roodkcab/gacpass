@@ -1,5 +1,5 @@
 #include "Code.h"
-#include <iostream>
+#include "DB.h"
 
 using namespace vl::collections;
 using namespace vl::stream;
@@ -78,10 +78,12 @@ WString Code::GetHidePassword()
 Ptr<vl::reflection::description::IValueObservableList> Code::GetReferences()
 {
 	if (references.Count() == 0)
-	{
-		references.Add(MakePtr<Reference>());
-		references.Add(MakePtr<Reference>());
-		references.Add(MakePtr<Reference>());
+	{ 
+		auto results = DB.get_all<Reference>(where(c(&Reference::GetCodeId) == this->GetId()));
+		for (auto& result : results)
+		{
+			references.Add(MakePtr<Reference>(result));
+		}
 	}
 	return references.GetWrapper();
 }

@@ -46,6 +46,26 @@ namespace vl_workflow_global
 Global Functions
 ***********************************************************************/
 
+	::vl::WString GacPass::ToString(::vl::vint value)
+	{
+		{
+			auto __vwsn_switch_0 = value;
+			if ((__vwsn_switch_0 == static_cast<::vl::vint>(0)))
+			{
+				return ::vl::WString(L"Website", false);
+			}
+			else if ((__vwsn_switch_0 == static_cast<::vl::vint>(1)))
+			{
+				return ::vl::WString(L"Server", false);
+			}
+			else if ((__vwsn_switch_0 == static_cast<::vl::vint>(2)))
+			{
+				return ::vl::WString(L"Database", false);
+			}
+		}
+		return ::vl::WString(L"", false);
+	}
+
 	GacPass& GacPass::Instance()
 	{
 		return Getvl_workflow_global_GacPass().instance;
@@ -236,7 +256,7 @@ Closures
 	::vl::WString __vwsnf20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_::operator()(const ::vl::reflection::description::Value& __vwsn_item_) const
 	{
 		auto item = ::vl::__vwsn::Unbox<::vl::Ptr<::gacpass::IReference>>(__vwsn_item_);
-		return ::vl::__vwsn::ToString(::vl::__vwsn::This(item.Obj())->GetType());
+		return GLOBAL_NAME ToString(::vl::__vwsn::This(item.Obj())->GetType());
 	}
 
 	//-------------------------------------------------------------------

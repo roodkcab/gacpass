@@ -9,7 +9,7 @@
 using namespace vl;
 
 template <typename... Args>
-auto DB()
+auto _DB()
 {
 	return make_storage(Appdata(L"\\gacpass.db"), 
 		make_table("account",
@@ -30,3 +30,11 @@ auto DB()
 		)
 	);
 }
+
+static decltype(_DB()) DB()
+{
+	static decltype(_DB()) db = _DB();
+	return db;
+}
+
+#define DB DB()

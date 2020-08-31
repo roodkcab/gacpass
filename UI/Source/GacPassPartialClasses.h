@@ -654,6 +654,8 @@ namespace vl_workflow_global
 	{
 	public:
 
+		::vl::WString ToString(::vl::vint value);
+
 		static GacPass& Instance();
 	};
 

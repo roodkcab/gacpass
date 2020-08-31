@@ -17,12 +17,10 @@ private:
 	::vl::Ptr<gacpass::IRegisterViewModel> registerViewModel;
 	::vl::Ptr<gacpass::ILoginViewModel> loginViewModel;
 	::vl::Ptr<gacpass::ICodeBookViewModel> codeBookViewModel;
-	decltype(DB()) storage;
 
 public:
 	ViewModel() 
-		: storage(DB())
-		, registerViewModel(MakePtr<RegisterViewModel>())
+		: registerViewModel(MakePtr<RegisterViewModel>())
 		, loginViewModel(MakePtr<LoginViewModel>())
 		, codeBookViewModel(MakePtr<CodeBookViewModel>(loginViewModel))
 	{
@@ -31,15 +29,8 @@ public:
 		{
 			folder->Create(false);
 		}
-		storage.sync_schema();
-		dynamic_cast<RegisterViewModel *>(registerViewModel.Obj())->Load(storage);
-		dynamic_cast<LoginViewModel *>(loginViewModel.Obj())->Load(storage);
-		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load(storage);
-	}
-
-	decltype(DB()) GetStorage()
-	{
-		return storage;
+		DB.sync_schema();
+		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load();
 	}
 
 	Ptr<gacpass::IRegisterViewModel> GetRegisterViewModel()override
