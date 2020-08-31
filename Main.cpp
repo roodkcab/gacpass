@@ -64,17 +64,20 @@ void initChromePlugin()
 		while (true)
 		{
 			WString input = L"";
-			unsigned int length = 0;
+			wint_t length = getwchar();
 
-			//Neat way!
-			for (int i = 0; i < 4; i++)
+			if (length == WEOF)
 			{
-				unsigned int read_char = getchar();
+				continue;
+			}
+
+			for (int i = 0; i < 3; i++)
+			{
+				wint_t read_char = getwchar();
 				length = length | (read_char << i * 8);
 			}
 
-			//read the json-message
-			for (unsigned int i = 0; i < length; i++)
+			for (int i = 0; i < length; i++)
 			{
 				input += getwchar();
 			}

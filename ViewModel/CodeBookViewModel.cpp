@@ -68,8 +68,21 @@ void CodeBookViewModel::SetSearch(const WString& value)
 {
 	search = value;
 	this->SearchChanged();
-	codes.Clear();
-	auto codes = storage->get_all<Code>(where(like(&Code::GetTitle, L"%" + value + L"%")), order_by(&Code::GetTitle));
+	this->codes.Clear();
+
+	std::vector<int> codeIds;
+	if (search.Length() > 0)
+	{
+		codeIds = storage->select(&Code::GetId,
+			inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
+			where(like(&Reference::GetContent, L"%" + search + L"%")
+		));
+	}
+
+	auto codes = codeIds.size() > 0 ? 
+		storage->get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle))
+		: storage->get_all<Code>(order_by(&Code::GetTitle));
+
 	for (auto &code : codes)
 	{
 		this->codes.Add(MakePtr<Code>(code));

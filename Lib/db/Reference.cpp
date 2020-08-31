@@ -44,6 +44,16 @@ void Reference::SetCodeId(const int _codeId)
 	codeId = _codeId;
 }
 
+int Reference::GetType()const
+{
+	return type;
+}
+
+void Reference::SetType(const int _type)
+{
+	type = _type;
+}
+
 WString Reference::GetContent()const
 {
 	return content;

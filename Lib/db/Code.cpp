@@ -77,6 +77,12 @@ WString Code::GetHidePassword()
 
 Ptr<vl::reflection::description::IValueObservableList> Code::GetReferences()
 {
+	if (references.Count() == 0)
+	{
+		references.Add(MakePtr<Reference>());
+		references.Add(MakePtr<Reference>());
+		references.Add(MakePtr<Reference>());
+	}
 	return references.GetWrapper();
 }
 

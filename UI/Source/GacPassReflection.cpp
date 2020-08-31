@@ -49,6 +49,8 @@ namespace vl
 			IMPL_CPP_TYPE_INFO(gacpass::MainWindowConstructor)
 			IMPL_CPP_TYPE_INFO(gacpass::RegisterWindow)
 			IMPL_CPP_TYPE_INFO(gacpass::RegisterWindowConstructor)
+			IMPL_CPP_TYPE_INFO(gacpass::TextEditor)
+			IMPL_CPP_TYPE_INFO(gacpass::TextEditorConstructor)
 
 #define _ ,
 			BEGIN_CLASS_MEMBER(::gacpass::CodeBookWindow)
@@ -135,6 +137,10 @@ namespace vl
 				CLASS_MEMBER_FIELD(__vwsn_precompile_28)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_29)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_3)
+				CLASS_MEMBER_FIELD(__vwsn_precompile_30)
+				CLASS_MEMBER_FIELD(__vwsn_precompile_31)
+				CLASS_MEMBER_FIELD(__vwsn_precompile_32)
+				CLASS_MEMBER_FIELD(__vwsn_precompile_33)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_4)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_5)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_6)
@@ -144,6 +150,7 @@ namespace vl
 				CLASS_MEMBER_FIELD(ViewModel)
 				CLASS_MEMBER_FIELD(hTrackerCodeLength)
 				CLASS_MEMBER_FIELD(hTrackerSpecialCharLength)
+				CLASS_MEMBER_FIELD(references)
 				CLASS_MEMBER_FIELD(self)
 				CLASS_MEMBER_FIELD(textBoxPassword)
 				CLASS_MEMBER_FIELD(textBoxTitle)
@@ -364,6 +371,21 @@ namespace vl
 				CLASS_MEMBER_FIELD(textBoxPassword)
 			END_CLASS_MEMBER(::gacpass::RegisterWindowConstructor)
 
+			BEGIN_CLASS_MEMBER(::gacpass::TextEditor)
+				CLASS_MEMBER_BASE(::vl::presentation::templates::GuiGridEditorTemplate)
+				CLASS_MEMBER_BASE(::gacpass::TextEditorConstructor)
+				CLASS_MEMBER_CONSTRUCTOR(::gacpass::TextEditor*(), NO_PARAMETER)
+			END_CLASS_MEMBER(::gacpass::TextEditor)
+
+			BEGIN_CLASS_MEMBER(::gacpass::TextEditorConstructor)
+				CLASS_MEMBER_BASE(::vl::reflection::DescriptableObject)
+				CLASS_MEMBER_CONSTRUCTOR(::vl::Ptr<::gacpass::TextEditorConstructor>(), NO_PARAMETER)
+				CLASS_MEMBER_METHOD(__vwsn_gacpass_TextEditor_Initialize, { L"__vwsn_this_" })
+				CLASS_MEMBER_FIELD(__vwsn_precompile_0)
+				CLASS_MEMBER_FIELD(self)
+				CLASS_MEMBER_FIELD(textBox)
+			END_CLASS_MEMBER(::gacpass::TextEditorConstructor)
+
 #undef _
 			class GacPassTypeLoader : public Object, public ITypeLoader
 			{
@@ -388,6 +410,8 @@ namespace vl
 					ADD_TYPE_INFO(::gacpass::MainWindowConstructor)
 					ADD_TYPE_INFO(::gacpass::RegisterWindow)
 					ADD_TYPE_INFO(::gacpass::RegisterWindowConstructor)
+					ADD_TYPE_INFO(::gacpass::TextEditor)
+					ADD_TYPE_INFO(::gacpass::TextEditorConstructor)
 				}
 
 				void Unload(ITypeManager* manager)

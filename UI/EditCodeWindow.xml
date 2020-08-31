@@ -18,7 +18,18 @@
     ]]>
     </Workflow>
   </Script>
-	<Instance name="EditCodeWindow">
+
+  <Instance name="TextEditorResource">
+    <Instance ref.CodeBehind="false" ref.Class="gacpass::TextEditor">
+      <GridEditorTemplate ref.Name="self" CellValue-bind="textBox.Text" FocusControl-ref="textBox">
+        <SinglelineTextBox ref.Name="textBox" Text-bind="(cast string self.CellValue) ?? ''">
+          <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+        </SinglelineTextBox>
+      </GridEditorTemplate>
+    </Instance>
+  </Instance>
+
+  <Instance name="EditCodeWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::EditCodeWindow">
 			<ref.Members>
 				<![CDATA[
@@ -97,6 +108,33 @@
               <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
             </HTracker>
           </Cell>
+
+          <Cell Site="row:4 column:1 columnSpan:3">
+            <BindableDataGrid ref.Name="references" env.ItemType="gacpass::IReference^" env.ItemName="item" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false">
+              <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+              <att.ItemSource-bind>
+								<![CDATA[
+									ViewModel.Code.References ?? null
+								]]>
+							</att.ItemSource-bind>
+
+              <att.Columns>
+                <DataColumn Text="Type" Size="120">
+                  <att.TextProperty>Type</att.TextProperty>
+                  <att.ValueProperty>Type</att.ValueProperty>
+                </DataColumn>
+
+                <DataColumn Text="Content" Size="80">
+                  <att.TextProperty>Content</att.TextProperty>
+                  <att.ValueProperty>Content</att.ValueProperty>
+                </DataColumn>
+              </att.Columns>
+
+              <att.DataColumns>
+                <_>0</_>
+              </att.DataColumns>
+            </BindableDataGrid>
+					</Cell>
 
 					<Cell Site="row:5 column:2">
 						<Button Text="OK">

@@ -52,6 +52,8 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::MainWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::RegisterWindow)
 			DECL_TYPE_INFO(::gacpass::RegisterWindowConstructor)
+			DECL_TYPE_INFO(::gacpass::TextEditor)
+			DECL_TYPE_INFO(::gacpass::TextEditorConstructor)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ICode)
 				::vl::WString GetHidePassword() override
