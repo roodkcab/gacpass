@@ -38,6 +38,15 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::CodeBookWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::EditCodeWindow)
 			DECL_TYPE_INFO(::gacpass::EditCodeWindowConstructor)
+			DECL_TYPE_INFO(::gacpass::HostType)
+			DECL_TYPE_INFO(::gacpass::HostTypeDisplayer)
+			DECL_TYPE_INFO(::gacpass::HostTypeDisplayerConstructor)
+			DECL_TYPE_INFO(::gacpass::HostTypeEditor)
+			DECL_TYPE_INFO(::gacpass::HostTypeEditorConstructor)
+			DECL_TYPE_INFO(::gacpass::HostTypeItemTemplate)
+			DECL_TYPE_INFO(::gacpass::HostTypeItemTemplateConstructor)
+			DECL_TYPE_INFO(::gacpass::HostTypeVisualizer)
+			DECL_TYPE_INFO(::gacpass::HostTypeVisualizerConstructor)
 			DECL_TYPE_INFO(::gacpass::ICode)
 			DECL_TYPE_INFO(::gacpass::ICodeBookViewModel)
 			DECL_TYPE_INFO(::gacpass::IEditCodeViewModel)
@@ -215,7 +224,7 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetId);
 				}
-				::vl::vint GetType() override
+				::gacpass::HostType GetType() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetType);
 				}
@@ -231,7 +240,7 @@ namespace vl
 				{
 					INVOKE_INTERFACE_PROXY(SetId, __vwsn_value_);
 				}
-				void SetType(::vl::vint __vwsn_value_) override
+				void SetType(::gacpass::HostType __vwsn_value_) override
 				{
 					INVOKE_INTERFACE_PROXY(SetType, __vwsn_value_);
 				}

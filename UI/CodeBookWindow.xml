@@ -13,6 +13,24 @@
 
 			namespace gacpass
 			{
+        enum HostType
+        {
+          Website = 0,
+          Server = 1,
+          Database = 2,
+        }
+
+        func ToString(value : HostType) : string
+        {
+          switch (value)
+          {
+            case Website: { return "Website"; }
+            case Server: { return "Server"; }
+            case Database: { return "Database"; }
+          }
+          return "";
+        }
+
 				interface ICode
 				{
 				  prop Id : int {not observe}
@@ -25,22 +43,11 @@
 					func Update(code : ICode^) : void;
 				}
 
-        func ToString(value : int) : string
-        {
-          switch (value)
-          {
-            case 0: { return "Website"; }
-            case 1: { return "Server"; }
-            case 2: { return "Database"; }
-          }
-          return "";
-        }
-
 				interface IReference
 				{
           prop Id : int {not observe}
 					prop CodeId: int {not observe}
-					prop Type : int {not observe}
+					prop Type : HostType {not observe}
 					prop Content : string {not observe}
 
 					func Update(reference: IReference^) : void;

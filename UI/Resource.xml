@@ -13,8 +13,10 @@
 	<Folder name="LoginWindowResource" content="Link">LoginWindow.xml</Folder>
 	<Folder name="CodeBookWindowResource" content="Link">CodeBookWindow.xml</Folder>
 	<Folder name="EditCodeWindowResource" content="Link">EditCodeWindow.xml</Folder>
+  <Folder name="DataGridComponents" content="Link">DataGridComponents.xml</Folder>
 
-	<Script>
+
+  <Script>
 		<Workflow>
 			<![CDATA[
 			module viewmodel;

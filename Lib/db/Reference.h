@@ -10,7 +10,7 @@ class Reference : public Object, public virtual gacpass::IReference
 private:
 	int id;
 	int codeId;
-	int type;
+	gacpass::HostType type;
 	WString	content;
 
 public:
@@ -21,8 +21,8 @@ public:
 	void SetId(const int _id)override;
 	int GetCodeId()const override;
 	void SetCodeId(const int _codeId)override;
-	int GetType()const override;
-	void SetType(const int _type)override;
+	gacpass::HostType GetType()const override;
+	void SetType(const gacpass::HostType _type)override;
 	WString GetContent()const override;
 	void SetContent(const WString& _content)override;
 	void Update(Ptr<IReference> reference)override;

@@ -186,6 +186,7 @@
     <ClCompile Include="Lib\GacUI\VlppRegex.cpp" />
     <ClCompile Include="Lib\GacUI\VlppWorkflowLibrary.cpp" />
     <ClCompile Include="Lib\GEvent.cpp" />
+    <ClCompile Include="Lib\sqlite_orm\HostType.cpp" />
     <ClCompile Include="Lib\sqlite_orm\WString.cpp" />
     <ClCompile Include="Lib\util.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -216,6 +217,7 @@
     <ClInclude Include="Lib\GacUI\VlppReflection.h" />
     <ClInclude Include="Lib\GacUI\VlppRegex.h" />
     <ClInclude Include="Lib\GacUI\VlppWorkflowLibrary.h" />
+    <ClInclude Include="Lib\sqlite_orm\HostType.h" />
     <ClInclude Include="Lib\sqlite_orm\WString.h" />
     <ClInclude Include="Lib\util.hpp" />
     <ClInclude Include="resource.h" />
@@ -230,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UI\CodeBookWindow.xml" />
+    <Xml Include="UI\DataGridComponents.xml" />
     <Xml Include="UI\LoginWindow.xml" />
     <Xml Include="UI\EditCodeWindow.xml" />
     <Xml Include="UI\RegisterWindow.xml" />

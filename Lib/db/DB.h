@@ -5,6 +5,7 @@
 #include "db/Key.h"
 #include "db/Reference.h"
 #include "sqlite_orm/WString.h"
+#include "sqlite_orm/HostType.h"
 
 using namespace vl;
 

@@ -3,7 +3,7 @@
 Reference::Reference()
 	: id(-1)
 	, codeId(-1)
-	, type(1)
+	, type(gacpass::HostType::Website)
 	, content(L"")
 {
 }
@@ -44,12 +44,12 @@ void Reference::SetCodeId(const int _codeId)
 	codeId = _codeId;
 }
 
-int Reference::GetType()const
+gacpass::HostType Reference::GetType()const
 {
 	return type;
 }
 
-void Reference::SetType(const int _type)
+void Reference::SetType(const gacpass::HostType _type)
 {
 	type = _type;
 }
@@ -66,4 +66,8 @@ void Reference::SetContent(const WString& _content)
 
 void Reference::Update(Ptr<IReference> reference)
 {
+	id = reference->GetId();
+	codeId = reference->GetCodeId();
+	type = reference->GetType();
+	content = reference->GetContent();
 }

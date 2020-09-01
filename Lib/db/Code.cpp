@@ -94,4 +94,12 @@ void Code::Update(Ptr<ICode> code)
 	title = code->GetTitle();
 	username = code->GetUsername();
 	password = code->GetPassword();
+	references.Clear();
+	auto r = code->GetReferences()->CreateEnumerator();
+	while (r->Next())
+	{
+		auto cr = MakePtr<Reference>();
+		cr->Update(vl::__vwsn::Unbox<Ptr<Reference>>(r->GetCurrent()));
+		references.Add(cr);
+	}
 }

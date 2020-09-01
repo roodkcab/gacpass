@@ -19,18 +19,8 @@
     </Workflow>
   </Script>
 
-  <Instance name="TextEditorResource">
-    <Instance ref.CodeBehind="false" ref.Class="gacpass::TextEditor">
-      <GridEditorTemplate ref.Name="self" CellValue-bind="textBox.Text" FocusControl-ref="textBox">
-        <SinglelineTextBox ref.Name="textBox" Text-bind="(cast string self.CellValue) ?? ''">
-          <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-        </SinglelineTextBox>
-      </GridEditorTemplate>
-    </Instance>
-  </Instance>
-
   <Instance name="EditCodeWindow">
-		<Instance ref.CodeBehind="false" ref.Class="gacpass::EditCodeWindow">
+    <Instance ref.CodeBehind="false" ref.Class="gacpass::EditCodeWindow"  xmlns:gacpass="gacpass::*">
 			<ref.Members>
 				<![CDATA[
             prop ForEdit : bool = false {}
@@ -122,11 +112,14 @@
                 <DataColumn Text="Type" Size="120">
 									<att.TextProperty>gacpass::ToString(item.Type)</att.TextProperty>
                   <att.ValueProperty>Type</att.ValueProperty>
+                  <att.VisualizerFactory>gacpass:HostTypeVisualizer;CellBorderVisualizerTemplate</att.VisualizerFactory>
+                  <att.EditorFactory>gacpass:HostTypeEditor</att.EditorFactory>
                 </DataColumn>
 
                 <DataColumn Text="Content" Size="80">
                   <att.TextProperty>Content</att.TextProperty>
                   <att.ValueProperty>Content</att.ValueProperty>
+                  <att.EditorFactory>gacpass:TextEditor</att.EditorFactory>
                 </DataColumn>
               </att.Columns>
 

@@ -1,0 +1,87 @@
+<Folder>
+  <Folder name="HostTypeResource">
+    <Instance name="HostTypeDisplayerResource">
+      <Instance ref.CodeBehind="false" ref.Class="gacpass::HostTypeDisplayer">
+        <ref.Members>
+          <![CDATA[
+            prop Type : HostType = Website {}
+          ]]>
+        </ref.Members>
+        <CustomControl ref.Name="self">
+          <Table AlignmentToParent="left:2 top:2 right:2 bottom:2" MinSizeLimitation="LimitToElementAndChildren">
+            <att.Rows>
+              <_>composeType:Percentage percentage:0.5</_>
+              <_>composeType:Absolute absolute:16</_>
+              <_>composeType:Percentage percentage:0.5</_>
+            </att.Rows>
+            <att.Columns>
+              <_>composeType:Absolute absolute:2</_>
+              <_>composeType:Absolute absolute:16</_>
+              <_>composeType:Absolute absolute:2</_>
+              <_>composeType:Percentage percentage:1.0</_>
+            </att.Columns>
+
+            <Cell Site="row:0 column:3 rowSpan:3">
+              <SolidLabel Color="#FFFFFF" Text-bind="ToString(self.Type)" HorizontalAlignment="Left" VerticalAlignment="Center" Ellipse="true"/>
+            </Cell>
+          </Table>
+        </CustomControl>
+      </Instance>
+    </Instance>
+
+    <Instance name="HostTypeVisualizerResource">
+      <Instance ref.CodeBehind="false" ref.Class="gacpass::HostTypeVisualizer" xmlns:gacpass="gacpass::*">
+        <GridVisualizerTemplate ref.Name="self">
+          <gacpass:HostTypeDisplayer Type-bind="(cast HostType self.CellValue) ?? HostType::Website">
+            <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+          </gacpass:HostTypeDisplayer>
+        </GridVisualizerTemplate>
+      </Instance>
+    </Instance>
+
+    <Instance name="HostTypeItemTemplateResource">
+      <Instance ref.CodeBehind="false" ref.Class="gacpass::HostTypeItemTemplate" xmlns:gacpass="gacpass::*">
+        <ref.Parameter Name="SelectedType" Class="gacpass::HostType"/>
+        <TextListItemTemplate ref.Name="self" MinSizeLimitation="LimitToElementAndChildren">
+          <gacpass:HostTypeDisplayer Type-eval="SelectedType">
+            <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+          </gacpass:HostTypeDisplayer>
+        </TextListItemTemplate>
+      </Instance>
+    </Instance>
+
+    <Instance name="HostTypeEditorResource">
+      <Instance ref.CodeBehind="false" ref.Class="gacpass::HostTypeEditor" xmlns:gacpass="gacpass::*">
+        <ref.Members>
+          <![CDATA[
+            var items : HostType[] = 
+            {
+              Website of HostType
+              Server of HostType
+              Database of HostType
+            };
+          ]]>
+        </ref.Members>
+        <GridEditorTemplate ref.Name="self" CellValue-bind="comboBox.SelectedItem">
+          <ComboBox ref.Name="comboBox" ItemTemplate="gacpass:HostTypeItemTemplate" SelectedIndex-bind="self.items.IndexOf(self.CellValue)">
+            <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+            <att.ListControl>
+              <BindableTextList ItemSource-eval="self.items" ItemTemplate="gacpass:HostTypeItemTemplate" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false"/>
+            </att.ListControl>
+          </ComboBox>
+        </GridEditorTemplate>
+      </Instance>
+    </Instance>
+
+    <Instance name="TextEditorResource">
+      <Instance ref.CodeBehind="false" ref.Class="gacpass::TextEditor">
+        <GridEditorTemplate ref.Name="self" CellValue-bind="textBox.Text" FocusControl-ref="textBox">
+          <SinglelineTextBox ref.Name="textBox" Text-bind="(cast string self.CellValue) ?? ''">
+            <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+          </SinglelineTextBox>
+        </GridEditorTemplate>
+      </Instance>
+    </Instance>
+
+  </Folder>
+</Folder>

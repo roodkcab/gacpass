@@ -108,6 +108,19 @@ void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 	{
 		Code *c = dynamic_cast<Code *>(code.Obj());
 		DB.update<Code>(*c);
+		Ptr<IValueEnumerator> references = c->GetReferences()->CreateEnumerator();
+		while (references->Next())
+		{
+			Reference* r = dynamic_cast<Reference*>(vl::__vwsn::Unbox<Ptr<Reference>>(references->GetCurrent()).Obj());
+			if (r->GetId() == -1)
+			{
+				DB.insert<Reference>(*r);
+			}
+			else
+			{
+				DB.update<Reference>(*r);
+			}
+		}
 		codes.NotifyUpdate(index, 1);
 	}
 }
