@@ -103,3 +103,10 @@ void Code::Update(Ptr<ICode> code)
 		references.Add(cr);
 	}
 }
+
+void Code::AddReference()
+{
+	auto r = MakePtr<Reference>();
+	r->SetCodeId(this->GetId());
+	references.Add(r);
+}

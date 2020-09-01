@@ -65,6 +65,10 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::TextEditorConstructor)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ICode)
+				void AddReference() override
+				{
+					INVOKE_INTERFACE_PROXY_NOPARAMS(AddReference);
+				}
 				::vl::WString GetHidePassword() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetHidePassword);
@@ -163,6 +167,10 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodeLength);
 				}
+				::vl::Ptr<::gacpass::IReference> GetSelectedReference() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSelectedReference);
+				}
 				::vl::vint GetSpecialCharLength() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSpecialCharLength);
@@ -170,6 +178,10 @@ namespace vl
 				void SetCodeLength(::vl::vint __vwsn_value_) override
 				{
 					INVOKE_INTERFACE_PROXY(SetCodeLength, __vwsn_value_);
+				}
+				void SetSelectedReference(::vl::Ptr<::gacpass::IReference> __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetSelectedReference, __vwsn_value_);
 				}
 				void SetSpecialCharLength(::vl::vint __vwsn_value_) override
 				{

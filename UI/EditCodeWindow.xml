@@ -1,4 +1,8 @@
 <Folder>
+  <Image content="File" name="Folder">Folder.png</Image>
+  <Image content="File" name="New">New.png</Image>
+  <Image content="File" name="Edit">Edit.png</Image>
+  <Image content="File" name="Delete">Delete.png</Image>
 
   <Script>
     <Workflow>
@@ -10,6 +14,7 @@
 			{
         interface IEditCodeViewModel
         {
+				  prop SelectedReference : IReference^ {}
           prop Code : ICode^ {const}
           prop CodeLength : int {}
           prop SpecialCharLength : int {}
@@ -36,15 +41,37 @@
             <att.Username-bind>textBoxUsername.Text</att.Username-bind>
             <att.Password-bind>textBoxPassword.Text</att.Password-bind>
           </att.Code-set>
+					<att.SelectedReference-bind>gridViewReferences.SelectedRowValue as (gacpass::IReference^)</att.SelectedReference-bind>
           <att.CodeLength-bind>hTrackerCodeLength.Position</att.CodeLength-bind>
           <att.SpecialCharLength-bind>hTrackerSpecialCharLength.Position</att.SpecialCharLength-bind>
         </att.ViewModel-set>
+
+				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://EditCodeWindowResource/New">
+					<ev.Executed-eval>
+						<![CDATA[
+                $Async{
+									ViewModel.Code.AddReference();
+                }
+              ]]>
+					</ev.Executed-eval>
+				</ToolstripCommand>
+				<ToolstripCommand ref.Name="commandRemoveCode" Image-uri="res://EditCodeWindowResource/Delete">
+					<ev.Executed-eval>
+						<![CDATA[
+                $Async{
+									ViewModel.SelectedReference.SetCodeId(0);
+                }
+              ]]>
+					</ev.Executed-eval>
+				</ToolstripCommand>
+
 				<Table CellPadding="5" AlignmentToParent="left:0 top:0 right:0 bottom:0">
 					<att.Rows>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:Percentage percentage:0.1</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:Percentage percentage:1.0</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 					</att.Rows>
@@ -100,7 +127,16 @@
           </Cell>
 
           <Cell Site="row:4 column:1 columnSpan:3">
-            <BindableDataGrid ref.Name="references" env.ItemType="gacpass::IReference^" env.ItemName="item" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false">
+            <ToolstripToolBar>
+              <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+              <ToolstripButton Command-ref="commandNewCode"/>
+              <ToolstripButton Command-ref="commandRemoveCode"/>
+            </ToolstripToolBar>
+          </Cell>
+
+          <Cell Site="row:5 column:1 columnSpan:3">
+            <BindableDataGrid ref.Name="gridViewReferences" env.ItemType="gacpass::IReference^" env.ItemName="item" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false">
+              
               <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
               <att.ItemSource-bind>
 								<![CDATA[
@@ -129,7 +165,7 @@
             </BindableDataGrid>
 					</Cell>
 
-					<Cell Site="row:5 column:2">
+					<Cell Site="row:6 column:2">
 						<Button Text="OK">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:60"/>
 							<ev.Clicked-eval>
@@ -142,7 +178,7 @@
 							</ev.Clicked-eval>
 						</Button>
 					</Cell>
-					<Cell Site="row:5 column:3">
+					<Cell Site="row:6 column:3">
 						<Button Text="Cancel">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:60"/>
 							<ev.Clicked-eval>

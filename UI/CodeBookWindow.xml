@@ -41,6 +41,7 @@
 					prop References : observe IReference^[] {const, not observe}
 
 					func Update(code : ICode^) : void;
+					func AddReference() : void;
 				}
 
 				interface IReference

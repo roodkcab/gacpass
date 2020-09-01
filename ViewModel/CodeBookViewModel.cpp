@@ -116,6 +116,10 @@ void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 			{
 				DB.insert<Reference>(*r);
 			}
+			else if (r->GetCodeId() == 0)
+			{
+				DB.remove<Reference>(r->GetId());
+			}
 			else
 			{
 				DB.update<Reference>(*r);

@@ -33,4 +33,5 @@ public:
 	Ptr<IValueObservableList> GetReferences()override;
 
 	void Update(Ptr<ICode> code)override;
+	void AddReference()override;
   };
