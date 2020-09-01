@@ -12,7 +12,7 @@ GacPass是一个本地密码管理工具。
 - [x] 设置主密码/登录验证
 - [x] 密码的增删改查
 - [x] 密码生成器
-- [ ] 一个密码多个站点
+- [x] 一个密码多个站点
 - [ ] aes加密数据库文件
 - [x] chrome插件
 - [ ] iTerm/Windows Terminal插件
@@ -32,7 +32,7 @@ You are recommended to use Visual Studio 2019 to build Gacpass.sln.
 - [x] register/login
 - [x] add/delete/edit/search code
 - [x] code generator
-- [ ] one password multiple site
+- [x] one password multiple site
 - [ ] aes encrypt db file
 - [x] chrome plugin
 - [ ] iTerm/Windows Terminal plugin
