@@ -1,5 +1,5 @@
 #include "Code.h"
-#include <iostream>
+#include "DB.h"
 
 using namespace vl::collections;
 using namespace vl::stream;
@@ -8,23 +8,24 @@ using namespace vl::reflection::description;
 
 Code::Code()
 	: id(-1)
-	, website(L"https://")
+	, title(L"")
 	, username(L"")
 	, password(L"")
-{}
+{
+}
 
-Code::Code(const int _id, const WString& _website, const WString& _username, const WString& _password)
+/*Code::Code(const int _id, const WString& _title, const WString& _username, const WString& _password)
 {
 	id = _id;
-	website = _website;
+	title = _title;
 	username = _username;
 	password = _password;
-}
+}*/
 
 Code::Code(const Code& code)
 {
 	id = code.id;
-	website = code.website;
+	title = code.title;
 	username = code.username;
 	password = code.password;
 }
@@ -39,14 +40,14 @@ void Code::SetId(int _id)
 	id = _id;
 }
 
-WString Code::GetWebsite()const
+WString Code::GetTitle()const
 {
-	return website;
+	return title;
 }
 
-void Code::SetWebsite(const WString& _website)
+void Code::SetTitle(const WString& _title)
 {
-	website = _website;
+	title = _title;
 }
 
 WString Code::GetUsername()const
@@ -69,15 +70,43 @@ void Code::SetPassword(const WString& _password)
 	password = _password;
 }
 
-WString Code::GetHidePassword()const
+WString Code::GetHidePassword()
 {
 	return L"***";
+}
+
+Ptr<vl::reflection::description::IValueObservableList> Code::GetReferences()
+{
+	if (references.Count() == 0)
+	{ 
+		auto results = DB.get_all<Reference>(where(c(&Reference::GetCodeId) == this->GetId()));
+		for (auto& result : results)
+		{
+			references.Add(MakePtr<Reference>(result));
+		}
+	}
+	return references.GetWrapper();
 }
 
 void Code::Update(Ptr<ICode> code)
 {
 	id = code->GetId();
-	website = code->GetWebsite();
+	title = code->GetTitle();
 	username = code->GetUsername();
 	password = code->GetPassword();
+	references.Clear();
+	auto r = code->GetReferences()->CreateEnumerator();
+	while (r->Next())
+	{
+		auto cr = MakePtr<Reference>();
+		cr->Update(vl::__vwsn::Unbox<Ptr<Reference>>(r->GetCurrent()));
+		references.Add(cr);
+	}
+}
+
+void Code::AddReference()
+{
+	auto r = MakePtr<Reference>();
+	r->SetCodeId(this->GetId());
+	references.Add(r);
 }

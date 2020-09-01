@@ -17,12 +17,10 @@ private:
 	::vl::Ptr<gacpass::IRegisterViewModel> registerViewModel;
 	::vl::Ptr<gacpass::ILoginViewModel> loginViewModel;
 	::vl::Ptr<gacpass::ICodeBookViewModel> codeBookViewModel;
-	decltype(DB()) storage;
 
 public:
 	ViewModel() 
-		: storage(DB())
-		, registerViewModel(MakePtr<RegisterViewModel>())
+		: registerViewModel(MakePtr<RegisterViewModel>())
 		, loginViewModel(MakePtr<LoginViewModel>())
 		, codeBookViewModel(MakePtr<CodeBookViewModel>(loginViewModel))
 	{
@@ -31,15 +29,8 @@ public:
 		{
 			folder->Create(false);
 		}
-		storage.sync_schema();
-		dynamic_cast<RegisterViewModel *>(registerViewModel.Obj())->Load(storage);
-		dynamic_cast<LoginViewModel *>(loginViewModel.Obj())->Load(storage);
-		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load(storage);
-	}
-
-	decltype(DB()) GetStorage()
-	{
-		return storage;
+		DB.sync_schema();
+		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load();
 	}
 
 	Ptr<gacpass::IRegisterViewModel> GetRegisterViewModel()override
@@ -64,17 +55,20 @@ void initChromePlugin()
 		while (true)
 		{
 			WString input = L"";
-			unsigned int length = 0;
+			wint_t length = getwchar();
 
-			//Neat way!
-			for (int i = 0; i < 4; i++)
+			if (length == WEOF)
 			{
-				unsigned int read_char = getchar();
+				continue;
+			}
+
+			for (int i = 0; i < 3; i++)
+			{
+				wint_t read_char = getwchar();
 				length = length | (read_char << i * 8);
 			}
 
-			//read the json-message
-			for (unsigned int i = 0; i < length; i++)
+			for (int i = 0; i < length; i++)
 			{
 				input += getwchar();
 			}

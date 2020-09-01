@@ -39,9 +39,6 @@
     <ClCompile Include="UI\Source\CodeBookWindow.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="UI\Source\GacPassPartialClasses.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
     <ClCompile Include="UI\Source\GacPassReflection.cpp">
       <Filter>UI</Filter>
     </ClCompile>
@@ -111,15 +108,21 @@
     <ClCompile Include="Lib\GEvent.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
+    <ClCompile Include="Lib\db\Reference.cpp">
+      <Filter>Lib\db</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Source\GacPassPartialClasses.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\sqlite_orm\HostType.cpp">
+      <Filter>Lib\sqlite_orm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI\Source\CodeBookWindow.h">
       <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="UI\Source\GacPass.h">
-      <Filter>UI</Filter>
-    </ClInclude>
-    <ClInclude Include="UI\Source\GacPassPartialClasses.h">
       <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="UI\Source\GacPassReflection.h">
@@ -194,6 +197,15 @@
     <ClInclude Include="Lib\GEvent.h">
       <Filter>Lib</Filter>
     </ClInclude>
+    <ClInclude Include="Lib\db\Reference.h">
+      <Filter>Lib\db</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Source\GacPassPartialClasses.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\sqlite_orm\HostType.h">
+      <Filter>Lib\sqlite_orm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UI\Resource.xml">
@@ -212,6 +224,9 @@
       <Filter>资源文件</Filter>
     </Xml>
     <Xml Include="UI\EditCodeWindow.xml">
+      <Filter>资源文件</Filter>
+    </Xml>
+    <Xml Include="UI\DataGridComponents.xml">
       <Filter>资源文件</Filter>
     </Xml>
   </ItemGroup>

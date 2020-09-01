@@ -28,7 +28,7 @@ namespace sqlite_orm {
 
     template<>
     struct field_printer<WString> {
-        std::string operator()(const WString &t) const {
+        std::string operator()(const WString& t) const {
 			return *WStringToString(t);
         }
     };
@@ -42,7 +42,7 @@ namespace sqlite_orm {
 
     template<>
     struct type_is_nullable<WString> : public std::true_type {
-        bool operator()(const WString &g) const {
+        bool operator()(const WString& g) const {
             return g != L"";
         }
     };

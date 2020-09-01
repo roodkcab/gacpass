@@ -17,6 +17,20 @@ EditCodeViewModel::EditCodeViewModel(Ptr<gacpass::ICode> code)
 	this->code = code;
 }
 
+Ptr<gacpass::IReference> EditCodeViewModel::GetSelectedReference()
+{
+	return selectedReference;
+}
+
+void EditCodeViewModel::SetSelectedReference(Ptr<gacpass::IReference> value)
+{
+	if (selectedReference != value)
+	{
+		selectedReference = value;
+		SelectedReferenceChanged();
+	}
+}
+
 Ptr<::gacpass::ICode> EditCodeViewModel::GetCode()
 {
 	return code;

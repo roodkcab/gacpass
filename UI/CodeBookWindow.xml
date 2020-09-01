@@ -13,16 +13,46 @@
 
 			namespace gacpass
 			{
+        enum HostType
+        {
+          Website = 0,
+          Server = 1,
+          Database = 2,
+        }
+
+        func ToString(value : HostType) : string
+        {
+          switch (value)
+          {
+            case Website: { return "Website"; }
+            case Server: { return "Server"; }
+            case Database: { return "Database"; }
+          }
+          return "";
+        }
+
 				interface ICode
 				{
 				  prop Id : int {not observe}
-					prop Website	: string {not observe}
+					prop Title : string {not observe}
 					prop Username	: string {not observe}
 					prop Password	: string {not observe}
 					prop HidePassword : string {const, not observe}
+					prop References : observe IReference^[] {const, not observe}
 
 					func Update(code : ICode^) : void;
+					func AddReference() : void;
 				}
+
+				interface IReference
+				{
+          prop Id : int {not observe}
+					prop CodeId: int {not observe}
+					prop Type : HostType {not observe}
+					prop Content : string {not observe}
+
+					func Update(reference: IReference^) : void;
+        }
 
 				interface ICodeBookViewModel
 				{
@@ -135,7 +165,7 @@
 							</att.ItemSource-bind>
 
 							<att.Columns>
-								<ListViewColumn Text="Website" TextProperty="Website" Size="120"/>
+								<ListViewColumn Text="Title" TextProperty="Title" Size="120"/>
 								<ListViewColumn Text="Username" TextProperty="Username" Size="120"/>
 								<ListViewColumn Text="Passowrd" TextProperty="HidePassword" Size="120"/>
 							</att.Columns>

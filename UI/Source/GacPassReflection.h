@@ -38,11 +38,21 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::CodeBookWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::EditCodeWindow)
 			DECL_TYPE_INFO(::gacpass::EditCodeWindowConstructor)
+			DECL_TYPE_INFO(::gacpass::HostType)
+			DECL_TYPE_INFO(::gacpass::HostTypeDisplayer)
+			DECL_TYPE_INFO(::gacpass::HostTypeDisplayerConstructor)
+			DECL_TYPE_INFO(::gacpass::HostTypeEditor)
+			DECL_TYPE_INFO(::gacpass::HostTypeEditorConstructor)
+			DECL_TYPE_INFO(::gacpass::HostTypeItemTemplate)
+			DECL_TYPE_INFO(::gacpass::HostTypeItemTemplateConstructor)
+			DECL_TYPE_INFO(::gacpass::HostTypeVisualizer)
+			DECL_TYPE_INFO(::gacpass::HostTypeVisualizerConstructor)
 			DECL_TYPE_INFO(::gacpass::ICode)
 			DECL_TYPE_INFO(::gacpass::ICodeBookViewModel)
 			DECL_TYPE_INFO(::gacpass::IEditCodeViewModel)
 			DECL_TYPE_INFO(::gacpass::IKey)
 			DECL_TYPE_INFO(::gacpass::ILoginViewModel)
+			DECL_TYPE_INFO(::gacpass::IReference)
 			DECL_TYPE_INFO(::gacpass::IRegisterViewModel)
 			DECL_TYPE_INFO(::gacpass::IViewModel)
 			DECL_TYPE_INFO(::gacpass::LoginWindow)
@@ -51,8 +61,14 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::MainWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::RegisterWindow)
 			DECL_TYPE_INFO(::gacpass::RegisterWindowConstructor)
+			DECL_TYPE_INFO(::gacpass::TextEditor)
+			DECL_TYPE_INFO(::gacpass::TextEditorConstructor)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ICode)
+				void AddReference() override
+				{
+					INVOKE_INTERFACE_PROXY_NOPARAMS(AddReference);
+				}
 				::vl::WString GetHidePassword() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetHidePassword);
@@ -65,13 +81,17 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetPassword);
 				}
+				::vl::Ptr<::vl::reflection::description::IValueObservableList> GetReferences() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetReferences);
+				}
+				::vl::WString GetTitle() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetTitle);
+				}
 				::vl::WString GetUsername() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetUsername);
-				}
-				::vl::WString GetWebsite() override
-				{
-					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetWebsite);
 				}
 				void SetId(::vl::vint __vwsn_value_) override
 				{
@@ -81,13 +101,13 @@ namespace vl
 				{
 					INVOKE_INTERFACE_PROXY(SetPassword, __vwsn_value_);
 				}
+				void SetTitle(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetTitle, __vwsn_value_);
+				}
 				void SetUsername(const ::vl::WString& __vwsn_value_) override
 				{
 					INVOKE_INTERFACE_PROXY(SetUsername, __vwsn_value_);
-				}
-				void SetWebsite(const ::vl::WString& __vwsn_value_) override
-				{
-					INVOKE_INTERFACE_PROXY(SetWebsite, __vwsn_value_);
 				}
 				void Update(::vl::Ptr<::gacpass::ICode> code) override
 				{
@@ -147,6 +167,10 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodeLength);
 				}
+				::vl::Ptr<::gacpass::IReference> GetSelectedReference() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSelectedReference);
+				}
 				::vl::vint GetSpecialCharLength() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSpecialCharLength);
@@ -154,6 +178,10 @@ namespace vl
 				void SetCodeLength(::vl::vint __vwsn_value_) override
 				{
 					INVOKE_INTERFACE_PROXY(SetCodeLength, __vwsn_value_);
+				}
+				void SetSelectedReference(::vl::Ptr<::gacpass::IReference> __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetSelectedReference, __vwsn_value_);
 				}
 				void SetSpecialCharLength(::vl::vint __vwsn_value_) override
 				{
@@ -194,6 +222,45 @@ namespace vl
 					INVOKE_INTERFACE_PROXY(SetPassword, __vwsn_value_);
 				}
 			END_INTERFACE_PROXY(::gacpass::ILoginViewModel)
+
+			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::IReference)
+				::vl::vint GetCodeId() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodeId);
+				}
+				::vl::WString GetContent() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetContent);
+				}
+				::vl::vint GetId() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetId);
+				}
+				::gacpass::HostType GetType() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetType);
+				}
+				void SetCodeId(::vl::vint __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetCodeId, __vwsn_value_);
+				}
+				void SetContent(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetContent, __vwsn_value_);
+				}
+				void SetId(::vl::vint __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetId, __vwsn_value_);
+				}
+				void SetType(::gacpass::HostType __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetType, __vwsn_value_);
+				}
+				void Update(::vl::Ptr<::gacpass::IReference> reference) override
+				{
+					INVOKE_INTERFACE_PROXY(Update, reference);
+				}
+			END_INTERFACE_PROXY(::gacpass::IReference)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::IRegisterViewModel)
 				::vl::WString GetConfirmPassword() override

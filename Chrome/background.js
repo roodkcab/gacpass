@@ -28,23 +28,33 @@ function getHost(data) {
   return a.hostname;
 }  
 
-function connect() {
+function postMessage(message) {
   var hostName = "com.unifs.gacpass"
+  while (true) {
+    try {
+      if (!nativePort) {
+        nativePort = chrome.runtime.connectNative(hostName);
+        nativePort.onMessage.addListener(onNativeMessage);
+        nativePort.onDisconnect.addListener(onDisconnect);
+        setTimeout(function(){  
+          nativePort.postMessage(message);
+        }, 1000);
+      } else {
+        nativePort.postMessage(message);
+      }
+      break;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+}
 
+function connect() {
   chrome.commands.onCommand.addListener(function(command) {
     if (command == "open") {
       chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-	message = {"host": getHost(tabs[0].url)};
-	if (!nativePort) {
-	  nativePort = chrome.runtime.connectNative(hostName);
-	  nativePort.onMessage.addListener(onNativeMessage);
-	  nativePort.onDisconnect.addListener(onDisconnect);
-	  setTimeout(function(){  
-	    nativePort.postMessage(message);
-	  }, 1000);
-	} else {
-	  nativePort.postMessage(message);
-	}
+        message = {"host": getHost(tabs[0].url)};
+        postMessage(message);
       });
     }
   });
