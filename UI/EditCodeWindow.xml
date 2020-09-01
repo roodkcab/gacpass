@@ -25,10 +25,11 @@
   </Script>
 
   <Instance name="EditCodeWindow">
-    <Instance ref.CodeBehind="false" ref.Class="gacpass::EditCodeWindow"  xmlns:gacpass="gacpass::*">
+    <Instance ref.CodeBehind="false" ref.Class="gacpass::EditCodeWindow" xmlns:gacpass="gacpass::*">
 			<ref.Members>
 				<![CDATA[
             prop ForEdit : bool = false {}
+						prop Filter : ReferenceFilter^ = null {} 
             var Ready : bool = false;
           ]]>
 			</ref.Members>
@@ -60,6 +61,7 @@
 						<![CDATA[
                 $Async{
 									ViewModel.SelectedReference.SetCodeId(0);
+									self.Filter.UpdateFilter();
                 }
               ]]>
 					</ev.Executed-eval>
@@ -143,6 +145,11 @@
 									ViewModel.Code.References ?? null
 								]]>
 							</att.ItemSource-bind>
+              <att.AdditionalFilter-bind>
+                <![CDATA[
+									self.Filter ?? null
+								]]>
+              </att.AdditionalFilter-bind>
 
               <att.Columns>
                 <DataColumn Text="Type" Size="120">
