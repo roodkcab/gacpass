@@ -99,7 +99,7 @@ void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 	int id = DB.insert<Code>(*c);
 	c->SetId(id);
 	this->UpdateReference(code);
-	codes.Add(Ptr<Code>(c));
+	codes.Add(MakePtr<Code>(*c));
 }
 
 void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
@@ -123,6 +123,7 @@ void CodeBookViewModel::UpdateReference(Ptr<gacpass::ICode> code)
 		if (r->GetCodeId() == 0)
 		{
 			DB.remove<Reference>(r->GetId());
+			//code->GetReferences()->Remove(references->GetCurrent());
 		}
 		else
 		{

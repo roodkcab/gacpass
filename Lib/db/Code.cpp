@@ -77,6 +77,7 @@ WString Code::GetHidePassword()
 
 Ptr<vl::reflection::description::IValueObservableList> Code::GetReferences()
 {
+	auto list = references.GetWrapper();
 	if (references.Count() == 0)
 	{ 
 		auto results = DB.get_all<Reference>(where(c(&Reference::GetCodeId) == this->GetId()));
@@ -85,7 +86,7 @@ Ptr<vl::reflection::description::IValueObservableList> Code::GetReferences()
 			references.Add(MakePtr<Reference>(result));
 		}
 	}
-	return references.GetWrapper();
+	return list;
 }
 
 void Code::Update(Ptr<ICode> code)
@@ -101,13 +102,6 @@ void Code::Update(Ptr<ICode> code)
 	{
 		references.Add(MakePtr<Reference>(*(l->Current().Obj())));
 	}
-	
-	/*auto r = code->GetReferences()->CreateEnumerator();
-	while (r->Next())
-	{
-		auto cr = MakePtr<Reference>(vl::__vwsn::Unbox<Ptr<Reference>>(r->GetCurrent()));
-		references.Add(cr);
-	}*/
 }
 
 void Code::AddReference()
