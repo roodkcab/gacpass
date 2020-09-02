@@ -73,18 +73,19 @@ namespace vl_workflow_global
 	struct __vwsnf51_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 	struct __vwsnf52_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 	struct __vwsnf53_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
-	struct __vwsnf54_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
+	struct __vwsnf54_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 	struct __vwsnf55_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
 	struct __vwsnf56_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
-	struct __vwsnf57_GacPass_gacpass_LoginWindow_OutAnimation_;
-	struct __vwsnf58_GacPass_gacpass_LoginWindow_FlyoutAnimation_;
-	struct __vwsnf59_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
+	struct __vwsnf57_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
+	struct __vwsnf58_GacPass_gacpass_LoginWindow_OutAnimation_;
+	struct __vwsnf59_GacPass_gacpass_LoginWindow_FlyoutAnimation_;
 	struct __vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 	struct __vwsnf60_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 	struct __vwsnf61_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 	struct __vwsnf62_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 	struct __vwsnf63_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 	struct __vwsnf64_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
+	struct __vwsnf65_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 	struct __vwsnf6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 	struct __vwsnf7_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_;
 	struct __vwsnf8_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__;
@@ -95,12 +96,12 @@ namespace vl_workflow_global
 	class __vwsnc13_GacPass_gacpass_HostTypeEditorConstructor___vwsn_gacpass_HostTypeEditor_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc14_GacPass_gacpass_HostTypeEditorConstructor___vwsn_gacpass_HostTypeEditor_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc15_GacPass_gacpass_HostTypeVisualizerConstructor___vwsn_gacpass_HostTypeVisualizer_Initialize__vl_reflection_description_IValueSubscription;
-	class __vwsnc16_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
+	class __vwsnc16_GacPass_gacpass_ReferenceFilter___vwsn_instance_ctor___vl_presentation_controls_list_IDataFilter;
 	class __vwsnc17_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
-	class __vwsnc18_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
+	class __vwsnc18_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc19_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
 	class __vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription;
-	class __vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+	class __vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
 	class __vwsnc21_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc22_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc23_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
@@ -114,14 +115,16 @@ namespace vl_workflow_global
 	class __vwsnc30_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc31_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc32_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
-	class __vwsnc33_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription;
-	class __vwsnc34_GacPass_gacpass_LoginWindow_FlyoutAnimation___vl_reflection_description_ICoroutine;
-	class __vwsnc35_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
-	class __vwsnc36_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
+	class __vwsnc33_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+	class __vwsnc34_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+	class __vwsnc35_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription;
+	class __vwsnc36_GacPass_gacpass_LoginWindow_FlyoutAnimation___vl_reflection_description_ICoroutine;
 	class __vwsnc37_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc38_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc39_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription;
+	class __vwsnc40_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
+	class __vwsnc41_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc4_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize____vl_reflection_description_ICoroutine;
 	class __vwsnc5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription;
 	class __vwsnc6_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize____vl_reflection_description_ICoroutine;
@@ -170,6 +173,8 @@ namespace gacpass
 	class LoginWindow;
 	class MainWindowConstructor;
 	class MainWindow;
+	class ReferenceFilterConstructor;
+	class ReferenceFilter;
 	class RegisterWindowConstructor;
 	class RegisterWindow;
 	class TextEditorConstructor;
@@ -234,9 +239,8 @@ namespace gacpass
 
 	class EditCodeWindowConstructor : public ::vl::Object, public ::vl::reflection::Description<EditCodeWindowConstructor>
 	{
-		friend class ::vl_workflow_global::__vwsnc18_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
 		friend class ::vl_workflow_global::__vwsnc19_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
-		friend class ::vl_workflow_global::__vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
 		friend class ::vl_workflow_global::__vwsnc21_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc22_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc23_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
@@ -249,6 +253,8 @@ namespace gacpass
 		friend class ::vl_workflow_global::__vwsnc30_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc31_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc32_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc33_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc34_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend struct ::vl_workflow_global::__vwsnf27_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf28_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf29_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
@@ -276,6 +282,7 @@ namespace gacpass
 		friend struct ::vl_workflow_global::__vwsnf51_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf52_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf53_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf54_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<EditCodeWindowConstructor>;
 #endif
@@ -285,6 +292,7 @@ namespace gacpass
 		::vl::presentation::controls::GuiDocumentLabel* textBoxPassword;
 		::vl::presentation::controls::GuiToolstripCommand* commandNewCode;
 		::vl::presentation::controls::GuiToolstripCommand* commandRemoveCode;
+		::gacpass::ReferenceFilter* Filter;
 		::vl::presentation::controls::GuiDocumentLabel* textBoxTitle;
 		::vl::presentation::controls::GuiDocumentLabel* textBoxUsername;
 		::vl::presentation::controls::GuiScroll* hTrackerCodeLength;
@@ -337,9 +345,8 @@ namespace gacpass
 	class EditCodeWindow : public ::vl::presentation::controls::GuiWindow, public ::gacpass::EditCodeWindowConstructor, public ::vl::reflection::Description<EditCodeWindow>
 	{
 		friend class ::gacpass::EditCodeWindowConstructor;
-		friend class ::vl_workflow_global::__vwsnc18_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
 		friend class ::vl_workflow_global::__vwsnc19_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
-		friend class ::vl_workflow_global::__vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine;
 		friend class ::vl_workflow_global::__vwsnc21_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc22_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc23_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
@@ -352,6 +359,8 @@ namespace gacpass
 		friend class ::vl_workflow_global::__vwsnc30_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc31_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc32_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc33_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc34_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend struct ::vl_workflow_global::__vwsnf27_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf28_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf29_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
@@ -379,6 +388,7 @@ namespace gacpass
 		friend struct ::vl_workflow_global::__vwsnf51_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf52_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf53_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf54_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<EditCodeWindow>;
 #endif
@@ -659,10 +669,10 @@ namespace gacpass
 
 	class LoginWindowConstructor : public ::vl::Object, public ::vl::reflection::Description<LoginWindowConstructor>
 	{
-		friend class ::vl_workflow_global::__vwsnc33_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription;
-		friend struct ::vl_workflow_global::__vwsnf54_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
+		friend class ::vl_workflow_global::__vwsnc35_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend struct ::vl_workflow_global::__vwsnf55_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf56_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf57_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<LoginWindowConstructor>;
 #endif
@@ -689,14 +699,14 @@ namespace gacpass
 
 	class LoginWindow : public ::vl::presentation::controls::GuiCustomControl, public ::gacpass::LoginWindowConstructor, public ::vl::reflection::Description<LoginWindow>
 	{
-		friend class ::vl_workflow_global::__vwsnc34_GacPass_gacpass_LoginWindow_FlyoutAnimation___vl_reflection_description_ICoroutine;
-		friend struct ::vl_workflow_global::__vwsnf57_GacPass_gacpass_LoginWindow_OutAnimation_;
-		friend struct ::vl_workflow_global::__vwsnf58_GacPass_gacpass_LoginWindow_FlyoutAnimation_;
+		friend class ::vl_workflow_global::__vwsnc36_GacPass_gacpass_LoginWindow_FlyoutAnimation___vl_reflection_description_ICoroutine;
+		friend struct ::vl_workflow_global::__vwsnf58_GacPass_gacpass_LoginWindow_OutAnimation_;
+		friend struct ::vl_workflow_global::__vwsnf59_GacPass_gacpass_LoginWindow_FlyoutAnimation_;
 		friend class ::gacpass::LoginWindowConstructor;
-		friend class ::vl_workflow_global::__vwsnc33_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription;
-		friend struct ::vl_workflow_global::__vwsnf54_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
+		friend class ::vl_workflow_global::__vwsnc35_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend struct ::vl_workflow_global::__vwsnf55_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf56_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf57_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<LoginWindow>;
 #endif
@@ -751,19 +761,50 @@ namespace gacpass
 		~MainWindow();
 	};
 
+	class ReferenceFilterConstructor : public ::vl::Object, public ::vl::reflection::Description<ReferenceFilterConstructor>
+	{
+#ifndef VCZH_DEBUG_NO_REFLECTION
+		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<ReferenceFilterConstructor>;
+#endif
+	protected:
+		::gacpass::ReferenceFilter* self;
+		void __vwsn_gacpass_ReferenceFilter_Initialize(::gacpass::ReferenceFilter* __vwsn_this_);
+	public:
+		ReferenceFilterConstructor();
+	};
+
+	class ReferenceFilter : public ::vl::presentation::controls::GuiCustomControl, public ::gacpass::ReferenceFilterConstructor, public ::vl::reflection::Description<ReferenceFilter>
+	{
+		friend class ::vl_workflow_global::__vwsnc16_GacPass_gacpass_ReferenceFilter___vwsn_instance_ctor___vl_presentation_controls_list_IDataFilter;
+		friend class ::gacpass::ReferenceFilterConstructor;
+#ifndef VCZH_DEBUG_NO_REFLECTION
+		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<ReferenceFilter>;
+#endif
+	private:
+		::vl::presentation::controls::list::IDataProcessorCallback* callback;
+	public:
+		void UpdateFilter();
+		::vl::Ptr<::vl::presentation::controls::list::IDataFilter> __vwsn_prop_Filter;
+		::vl::Ptr<::vl::presentation::controls::list::IDataFilter> GetFilter();
+		void SetFilter(::vl::Ptr<::vl::presentation::controls::list::IDataFilter> __vwsn_value_);
+		ReferenceFilter();
+		void __vwsn_instance_ctor_();
+		~ReferenceFilter();
+	};
+
 	class RegisterWindowConstructor : public ::vl::Object, public ::vl::reflection::Description<RegisterWindowConstructor>
 	{
-		friend class ::vl_workflow_global::__vwsnc35_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
-		friend class ::vl_workflow_global::__vwsnc36_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc37_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc38_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc39_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
-		friend struct ::vl_workflow_global::__vwsnf59_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
+		friend class ::vl_workflow_global::__vwsnc40_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc41_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend struct ::vl_workflow_global::__vwsnf60_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf61_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf62_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf63_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf64_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf65_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<RegisterWindowConstructor>;
 #endif
@@ -798,17 +839,17 @@ namespace gacpass
 	class RegisterWindow : public ::vl::presentation::controls::GuiCustomControl, public ::gacpass::RegisterWindowConstructor, public ::vl::reflection::Description<RegisterWindow>
 	{
 		friend class ::gacpass::RegisterWindowConstructor;
-		friend class ::vl_workflow_global::__vwsnc35_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
-		friend class ::vl_workflow_global::__vwsnc36_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc37_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc38_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc39_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
-		friend struct ::vl_workflow_global::__vwsnf59_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
+		friend class ::vl_workflow_global::__vwsnc40_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc41_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription;
 		friend struct ::vl_workflow_global::__vwsnf60_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf61_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf62_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf63_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf64_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
+		friend struct ::vl_workflow_global::__vwsnf65_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<RegisterWindow>;
 #endif
@@ -821,8 +862,8 @@ namespace gacpass
 
 	class TextEditorConstructor : public ::vl::Object, public ::vl::reflection::Description<TextEditorConstructor>
 	{
-		friend class ::vl_workflow_global::__vwsnc16_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc17_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc18_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
 		friend struct ::vl_workflow_global::__vwsnf25_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf26_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
@@ -840,8 +881,8 @@ namespace gacpass
 	class TextEditor : public ::vl::presentation::templates::GuiGridEditorTemplate, public ::gacpass::TextEditorConstructor, public ::vl::reflection::Description<TextEditor>
 	{
 		friend class ::gacpass::TextEditorConstructor;
-		friend class ::vl_workflow_global::__vwsnc16_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
 		friend class ::vl_workflow_global::__vwsnc17_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
+		friend class ::vl_workflow_global::__vwsnc18_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription;
 		friend struct ::vl_workflow_global::__vwsnf25_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize_;
 		friend struct ::vl_workflow_global::__vwsnf26_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize_;
 #ifndef VCZH_DEBUG_NO_REFLECTION
@@ -1220,7 +1261,7 @@ Closures
 
 		__vwsnf45_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		void operator()(::vl::presentation::compositions::GuiGraphicsComposition* sender, ::vl::presentation::compositions::GuiEventArgs* arguments) const;
+		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
 	};
 
 	struct __vwsnf46_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_
@@ -1238,7 +1279,7 @@ Closures
 
 		__vwsnf47_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
+		void operator()(::vl::presentation::compositions::GuiGraphicsComposition* sender, ::vl::presentation::compositions::GuiEventArgs* arguments) const;
 	};
 
 	struct __vwsnf48_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_
@@ -1304,13 +1345,13 @@ Closures
 		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
 	};
 
-	struct __vwsnf54_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_
+	struct __vwsnf54_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_
 	{
-		::gacpass::LoginWindowConstructor* __vwsnthis_0;
+		::gacpass::EditCodeWindowConstructor* __vwsnthis_0;
 
-		__vwsnf54_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_(::gacpass::LoginWindowConstructor* __vwsnctorthis_0);
+		__vwsnf54_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize_(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		void operator()(::vl::presentation::compositions::GuiGraphicsComposition* sender, ::vl::presentation::compositions::GuiEventArgs* arguments) const;
+		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
 	};
 
 	struct __vwsnf55_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_
@@ -1319,7 +1360,7 @@ Closures
 
 		__vwsnf55_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_(::gacpass::LoginWindowConstructor* __vwsnctorthis_0);
 
-		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
+		void operator()(::vl::presentation::compositions::GuiGraphicsComposition* sender, ::vl::presentation::compositions::GuiEventArgs* arguments) const;
 	};
 
 	struct __vwsnf56_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_
@@ -1328,36 +1369,36 @@ Closures
 
 		__vwsnf56_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_(::gacpass::LoginWindowConstructor* __vwsnctorthis_0);
 
+		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
+	};
+
+	struct __vwsnf57_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_
+	{
+		::gacpass::LoginWindowConstructor* __vwsnthis_0;
+
+		__vwsnf57_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize_(::gacpass::LoginWindowConstructor* __vwsnctorthis_0);
+
 		void operator()() const;
 	};
 
-	struct __vwsnf57_GacPass_gacpass_LoginWindow_OutAnimation_
+	struct __vwsnf58_GacPass_gacpass_LoginWindow_OutAnimation_
 	{
 		::vl::presentation::compositions::GuiBoundsComposition* container;
 		::gacpass::LoginWindow* __vwsnthis_0;
 
-		__vwsnf57_GacPass_gacpass_LoginWindow_OutAnimation_(::vl::presentation::compositions::GuiBoundsComposition* __vwsnctor_container, ::gacpass::LoginWindow* __vwsnctorthis_0);
+		__vwsnf58_GacPass_gacpass_LoginWindow_OutAnimation_(::vl::presentation::compositions::GuiBoundsComposition* __vwsnctor_container, ::gacpass::LoginWindow* __vwsnctorthis_0);
 
 		void operator()(::vl::vuint64_t time) const;
 	};
 
-	struct __vwsnf58_GacPass_gacpass_LoginWindow_FlyoutAnimation_
+	struct __vwsnf59_GacPass_gacpass_LoginWindow_FlyoutAnimation_
 	{
 		::vl::presentation::compositions::GuiBoundsComposition* container;
 		::gacpass::LoginWindow* __vwsnthis_0;
 
-		__vwsnf58_GacPass_gacpass_LoginWindow_FlyoutAnimation_(::vl::presentation::compositions::GuiBoundsComposition* __vwsnctor_container, ::gacpass::LoginWindow* __vwsnctorthis_0);
+		__vwsnf59_GacPass_gacpass_LoginWindow_FlyoutAnimation_(::vl::presentation::compositions::GuiBoundsComposition* __vwsnctor_container, ::gacpass::LoginWindow* __vwsnctorthis_0);
 
 		::vl::Ptr<::vl::reflection::description::ICoroutine> operator()(::vl::presentation::controls::IGuiAnimationCoroutine::IImpl* __vwsn_co_impl_) const;
-	};
-
-	struct __vwsnf59_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_
-	{
-		::gacpass::RegisterWindowConstructor* __vwsnthis_0;
-
-		__vwsnf59_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
-
-		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
 	};
 
 	struct __vwsnf5_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize_
@@ -1393,7 +1434,7 @@ Closures
 
 		__vwsnf62_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
 
-		void operator()(::vl::presentation::compositions::GuiGraphicsComposition* sender, ::vl::presentation::compositions::GuiEventArgs* arguments) const;
+		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
 	};
 
 	struct __vwsnf63_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_
@@ -1402,7 +1443,7 @@ Closures
 
 		__vwsnf63_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
 
-		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
+		void operator()(::vl::presentation::compositions::GuiGraphicsComposition* sender, ::vl::presentation::compositions::GuiEventArgs* arguments) const;
 	};
 
 	struct __vwsnf64_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_
@@ -1410,6 +1451,15 @@ Closures
 		::gacpass::RegisterWindowConstructor* __vwsnthis_0;
 
 		__vwsnf64_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
+
+		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
+	};
+
+	struct __vwsnf65_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_
+	{
+		::gacpass::RegisterWindowConstructor* __vwsnthis_0;
+
+		__vwsnf65_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize_(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
 
 		void operator()(const ::vl::reflection::description::Value& __vwsn_value_) const;
 	};
@@ -1558,12 +1608,23 @@ Closures
 		bool Close() override;
 	};
 
-	class __vwsnc16_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
+	class __vwsnc16_GacPass_gacpass_ReferenceFilter___vwsn_instance_ctor___vl_presentation_controls_list_IDataFilter : public ::vl::Object, public virtual ::vl::presentation::controls::list::IDataFilter
+	{
+	public:
+		::gacpass::ReferenceFilter* __vwsnthis_0;
+
+		__vwsnc16_GacPass_gacpass_ReferenceFilter___vwsn_instance_ctor___vl_presentation_controls_list_IDataFilter(::gacpass::ReferenceFilter* __vwsnctorthis_0);
+
+		void SetCallback(::vl::presentation::controls::list::IDataProcessorCallback* value) override;
+		bool Filter(const ::vl::reflection::description::Value& row) override;
+	};
+
+	class __vwsnc17_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
 	{
 	public:
 		::gacpass::TextEditorConstructor* __vwsnthis_0;
 
-		__vwsnc16_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription(::gacpass::TextEditorConstructor* __vwsnctorthis_0);
+		__vwsnc17_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription(::gacpass::TextEditorConstructor* __vwsnctorthis_0);
 
 		::gacpass::TextEditor* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
@@ -1576,12 +1637,12 @@ Closures
 		bool Close() override;
 	};
 
-	class __vwsnc17_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
+	class __vwsnc18_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
 	{
 	public:
 		::gacpass::TextEditorConstructor* __vwsnthis_0;
 
-		__vwsnc17_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription(::gacpass::TextEditorConstructor* __vwsnctorthis_0);
+		__vwsnc18_GacPass_gacpass_TextEditorConstructor___vwsn_gacpass_TextEditor_Initialize__vl_reflection_description_IValueSubscription(::gacpass::TextEditorConstructor* __vwsnctorthis_0);
 
 		::vl::presentation::controls::GuiSinglelineTextBox* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
@@ -1592,24 +1653,6 @@ Closures
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
-	};
-
-	class __vwsnc18_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine : public ::vl::Object, public virtual ::vl::reflection::description::ICoroutine
-	{
-	public:
-		::gacpass::EditCodeWindowConstructor* __vwsnthis_0;
-
-		__vwsnc18_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
-
-		::vl::vint __vwsn_co_state_ = 0;
-		::vl::vint __vwsn_co_state_before_pause_ = 0;
-		::vl::Ptr<::vl::reflection::description::IValueException> __vwsn_prop_Failure;
-		::vl::Ptr<::vl::reflection::description::IValueException> GetFailure() override;
-		void SetFailure(::vl::Ptr<::vl::reflection::description::IValueException> __vwsn_value_);
-		::vl::reflection::description::CoroutineStatus __vwsn_prop_Status = static_cast<::vl::reflection::description::CoroutineStatus>(0);
-		::vl::reflection::description::CoroutineStatus GetStatus() override;
-		void SetStatus(::vl::reflection::description::CoroutineStatus __vwsn_value_);
-		void Resume(bool __vwsn_raise_exception_, ::vl::Ptr<::vl::reflection::description::CoroutineResult> __vwsn_co_result_) override;
 	};
 
 	class __vwsnc19_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine : public ::vl::Object, public virtual ::vl::reflection::description::ICoroutine
@@ -1648,22 +1691,22 @@ Closures
 		bool Close() override;
 	};
 
-	class __vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
+	class __vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine : public ::vl::Object, public virtual ::vl::reflection::description::ICoroutine
 	{
 	public:
 		::gacpass::EditCodeWindowConstructor* __vwsnthis_0;
 
-		__vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
+		__vwsnc20_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize____vl_reflection_description_ICoroutine(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
-		bool __vwsn_bind_opened_ = false;
-		bool __vwsn_bind_closed_ = false;
-		void __vwsn_bind_activator_();
-		void __vwsn_bind_callback_0_0();
-		bool Open() override;
-		bool Update() override;
-		bool Close() override;
+		::vl::vint __vwsn_co_state_ = 0;
+		::vl::vint __vwsn_co_state_before_pause_ = 0;
+		::vl::Ptr<::vl::reflection::description::IValueException> __vwsn_prop_Failure;
+		::vl::Ptr<::vl::reflection::description::IValueException> GetFailure() override;
+		void SetFailure(::vl::Ptr<::vl::reflection::description::IValueException> __vwsn_value_);
+		::vl::reflection::description::CoroutineStatus __vwsn_prop_Status = static_cast<::vl::reflection::description::CoroutineStatus>(0);
+		::vl::reflection::description::CoroutineStatus GetStatus() override;
+		void SetStatus(::vl::reflection::description::CoroutineStatus __vwsn_value_);
+		void Resume(bool __vwsn_raise_exception_, ::vl::Ptr<::vl::reflection::description::CoroutineResult> __vwsn_co_result_) override;
 	};
 
 	class __vwsnc21_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
@@ -1763,7 +1806,7 @@ Closures
 
 		__vwsnc26_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		::gacpass::EditCodeWindow* __vwsn_bind_cache_0 = nullptr;
+		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
@@ -1781,12 +1824,9 @@ Closures
 
 		__vwsnc27_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiDocumentLabel* __vwsn_bind_cache_0 = nullptr;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
-		void __vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1);
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1799,12 +1839,12 @@ Closures
 
 		__vwsnc28_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiDocumentLabel* __vwsn_bind_cache_0 = nullptr;
+		::gacpass::EditCodeWindow* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
-		void __vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1);
+		void __vwsn_bind_callback_0_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1853,7 +1893,7 @@ Closures
 
 		__vwsnc30_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiBindableDataGrid* __vwsn_bind_cache_0 = nullptr;
+		::vl::presentation::controls::GuiDocumentLabel* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
@@ -1871,7 +1911,7 @@ Closures
 
 		__vwsnc31_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiScroll* __vwsn_bind_cache_0 = nullptr;
+		::vl::presentation::controls::GuiDocumentLabel* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
@@ -1889,6 +1929,24 @@ Closures
 
 		__vwsnc32_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
 
+		::vl::presentation::controls::GuiBindableDataGrid* __vwsn_bind_cache_0 = nullptr;
+		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
+		bool __vwsn_bind_opened_ = false;
+		bool __vwsn_bind_closed_ = false;
+		void __vwsn_bind_activator_();
+		void __vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1);
+		bool Open() override;
+		bool Update() override;
+		bool Close() override;
+	};
+
+	class __vwsnc33_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
+	{
+	public:
+		::gacpass::EditCodeWindowConstructor* __vwsnthis_0;
+
+		__vwsnc33_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
+
 		::vl::presentation::controls::GuiScroll* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
@@ -1900,12 +1958,30 @@ Closures
 		bool Close() override;
 	};
 
-	class __vwsnc33_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
+	class __vwsnc34_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
+	{
+	public:
+		::gacpass::EditCodeWindowConstructor* __vwsnthis_0;
+
+		__vwsnc34_GacPass_gacpass_EditCodeWindowConstructor___vwsn_gacpass_EditCodeWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::EditCodeWindowConstructor* __vwsnctorthis_0);
+
+		::vl::presentation::controls::GuiScroll* __vwsn_bind_cache_0 = nullptr;
+		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
+		bool __vwsn_bind_opened_ = false;
+		bool __vwsn_bind_closed_ = false;
+		void __vwsn_bind_activator_();
+		void __vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1);
+		bool Open() override;
+		bool Update() override;
+		bool Close() override;
+	};
+
+	class __vwsnc35_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
 	{
 	public:
 		::gacpass::LoginWindowConstructor* __vwsnthis_0;
 
-		__vwsnc33_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::LoginWindowConstructor* __vwsnctorthis_0);
+		__vwsnc35_GacPass_gacpass_LoginWindowConstructor___vwsn_gacpass_LoginWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::LoginWindowConstructor* __vwsnctorthis_0);
 
 		::vl::presentation::controls::GuiSinglelineTextBox* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
@@ -1918,14 +1994,14 @@ Closures
 		bool Close() override;
 	};
 
-	class __vwsnc34_GacPass_gacpass_LoginWindow_FlyoutAnimation___vl_reflection_description_ICoroutine : public ::vl::Object, public virtual ::vl::reflection::description::ICoroutine
+	class __vwsnc36_GacPass_gacpass_LoginWindow_FlyoutAnimation___vl_reflection_description_ICoroutine : public ::vl::Object, public virtual ::vl::reflection::description::ICoroutine
 	{
 	public:
 		::vl::presentation::controls::IGuiAnimationCoroutine::IImpl* __vwsn_co_impl_;
 		::vl::presentation::compositions::GuiBoundsComposition* container;
 		::gacpass::LoginWindow* __vwsnthis_0;
 
-		__vwsnc34_GacPass_gacpass_LoginWindow_FlyoutAnimation___vl_reflection_description_ICoroutine(::vl::presentation::controls::IGuiAnimationCoroutine::IImpl* __vwsnctor___vwsn_co_impl_, ::vl::presentation::compositions::GuiBoundsComposition* __vwsnctor_container, ::gacpass::LoginWindow* __vwsnctorthis_0);
+		__vwsnc36_GacPass_gacpass_LoginWindow_FlyoutAnimation___vl_reflection_description_ICoroutine(::vl::presentation::controls::IGuiAnimationCoroutine::IImpl* __vwsnctor___vwsn_co_impl_, ::vl::presentation::compositions::GuiBoundsComposition* __vwsnctor_container, ::gacpass::LoginWindow* __vwsnctorthis_0);
 
 		::vl::vint __vwsn_co_state_ = 0;
 		::vl::vint __vwsn_co_state_before_pause_ = 0;
@@ -1938,42 +2014,6 @@ Closures
 		void Resume(bool __vwsn_raise_exception_, ::vl::Ptr<::vl::reflection::description::CoroutineResult> __vwsn_co_result_) override;
 	};
 
-	class __vwsnc35_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
-	{
-	public:
-		::gacpass::RegisterWindowConstructor* __vwsnthis_0;
-
-		__vwsnc35_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
-
-		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
-		bool __vwsn_bind_opened_ = false;
-		bool __vwsn_bind_closed_ = false;
-		void __vwsn_bind_activator_();
-		void __vwsn_bind_callback_0_0();
-		bool Open() override;
-		bool Update() override;
-		bool Close() override;
-	};
-
-	class __vwsnc36_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
-	{
-	public:
-		::gacpass::RegisterWindowConstructor* __vwsnthis_0;
-
-		__vwsnc36_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
-
-		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
-		bool __vwsn_bind_opened_ = false;
-		bool __vwsn_bind_closed_ = false;
-		void __vwsn_bind_activator_();
-		void __vwsn_bind_callback_0_0();
-		bool Open() override;
-		bool Update() override;
-		bool Close() override;
-	};
-
 	class __vwsnc37_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
 	{
 	public:
@@ -1982,14 +2022,11 @@ Closures
 		__vwsnc37_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
 
 		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
-		void __vwsn_bind_callback_1_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -2002,12 +2039,12 @@ Closures
 
 		__vwsnc38_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiSinglelineTextBox* __vwsn_bind_cache_0 = nullptr;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
-		void __vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1);
+		void __vwsn_bind_callback_0_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -2020,12 +2057,15 @@ Closures
 
 		__vwsnc39_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiSinglelineTextBox* __vwsn_bind_cache_0 = nullptr;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
+		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
-		void __vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1);
+		void __vwsn_bind_callback_0_0();
+		void __vwsn_bind_callback_1_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -2044,6 +2084,42 @@ Closures
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
+		bool Open() override;
+		bool Update() override;
+		bool Close() override;
+	};
+
+	class __vwsnc40_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
+	{
+	public:
+		::gacpass::RegisterWindowConstructor* __vwsnthis_0;
+
+		__vwsnc40_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
+
+		::vl::presentation::controls::GuiSinglelineTextBox* __vwsn_bind_cache_0 = nullptr;
+		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
+		bool __vwsn_bind_opened_ = false;
+		bool __vwsn_bind_closed_ = false;
+		void __vwsn_bind_activator_();
+		void __vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1);
+		bool Open() override;
+		bool Update() override;
+		bool Close() override;
+	};
+
+	class __vwsnc41_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription : public ::vl::Object, public virtual ::vl::reflection::description::IValueSubscription
+	{
+	public:
+		::gacpass::RegisterWindowConstructor* __vwsnthis_0;
+
+		__vwsnc41_GacPass_gacpass_RegisterWindowConstructor___vwsn_gacpass_RegisterWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::RegisterWindowConstructor* __vwsnctorthis_0);
+
+		::vl::presentation::controls::GuiSinglelineTextBox* __vwsn_bind_cache_0 = nullptr;
+		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
+		bool __vwsn_bind_opened_ = false;
+		bool __vwsn_bind_closed_ = false;
+		void __vwsn_bind_activator_();
+		void __vwsn_bind_callback_0_0(::vl::presentation::compositions::GuiGraphicsComposition* __vwsn_bind_callback_argument_0, ::vl::presentation::compositions::GuiEventArgs* __vwsn_bind_callback_argument_1);
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;

@@ -25,7 +25,7 @@
   </Script>
 
   <Instance name="EditCodeWindow">
-    <Instance ref.CodeBehind="false" ref.Class="gacpass::EditCodeWindow"  xmlns:gacpass="gacpass::*">
+    <Instance ref.CodeBehind="false" ref.Class="gacpass::EditCodeWindow" xmlns:gacpass="gacpass::*">
 			<ref.Members>
 				<![CDATA[
             prop ForEdit : bool = false {}
@@ -46,7 +46,9 @@
           <att.SpecialCharLength-bind>hTrackerSpecialCharLength.Position</att.SpecialCharLength-bind>
         </att.ViewModel-set>
 
-				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://EditCodeWindowResource/New">
+        <gacpass:ReferenceFilter ref.Name="Filter"></gacpass:ReferenceFilter>
+
+        <ToolstripCommand ref.Name="commandNewCode" Image-uri="res://EditCodeWindowResource/New">
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
@@ -60,6 +62,7 @@
 						<![CDATA[
                 $Async{
 									ViewModel.SelectedReference.SetCodeId(0);
+									Filter.UpdateFilter();
                 }
               ]]>
 					</ev.Executed-eval>
@@ -143,6 +146,11 @@
 									ViewModel.Code.References ?? null
 								]]>
 							</att.ItemSource-bind>
+              <att.AdditionalFilter-bind>
+                <![CDATA[
+									Filter.Filter ?? null
+								]]>
+              </att.AdditionalFilter-bind>
 
               <att.Columns>
                 <DataColumn Text="Type" Size="120">
