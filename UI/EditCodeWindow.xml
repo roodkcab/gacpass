@@ -29,7 +29,6 @@
 			<ref.Members>
 				<![CDATA[
             prop ForEdit : bool = false {}
-						prop Filter : ReferenceFilter^ = null {} 
             var Ready : bool = false;
           ]]>
 			</ref.Members>
@@ -47,7 +46,9 @@
           <att.SpecialCharLength-bind>hTrackerSpecialCharLength.Position</att.SpecialCharLength-bind>
         </att.ViewModel-set>
 
-				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://EditCodeWindowResource/New">
+        <gacpass:ReferenceFilter ref.Name="Filter"></gacpass:ReferenceFilter>
+
+        <ToolstripCommand ref.Name="commandNewCode" Image-uri="res://EditCodeWindowResource/New">
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
@@ -61,7 +62,7 @@
 						<![CDATA[
                 $Async{
 									ViewModel.SelectedReference.SetCodeId(0);
-									self.Filter.UpdateFilter();
+									Filter.UpdateFilter();
                 }
               ]]>
 					</ev.Executed-eval>
@@ -147,7 +148,7 @@
 							</att.ItemSource-bind>
               <att.AdditionalFilter-bind>
                 <![CDATA[
-									self.Filter ?? null
+									Filter.Filter ?? null
 								]]>
               </att.AdditionalFilter-bind>
 

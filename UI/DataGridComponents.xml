@@ -84,13 +84,12 @@
     </Instance>
 
     <Instance name="ReferenceFilterResource">
-      <Instance ref.CodeBehind="false" ref.Class="gacpass::ReferenceFilter" xmlns:gacpass="gacpass::*">
+      <Instance ref.CodeBehind="false" ref.Class="gacpass::ReferenceFilter">
         <ref.Members>
           <![CDATA[
           @cpp:Private
           var callback : IDataProcessorCallback* = null;
           
-          @cpp:Public
           func UpdateFilter() : void
           {
             if (callback is not null)
@@ -121,6 +120,7 @@
           );
         ]]>
         </ref.Ctor>
+        <CustomControl ref.Name="self"></CustomControl>
       </Instance>
     </Instance>
 
