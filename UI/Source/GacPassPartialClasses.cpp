@@ -1490,7 +1490,7 @@ Closures
 	bool __vwsnc16_GacPass_gacpass_ReferenceFilter___vwsn_instance_ctor___vl_presentation_controls_list_IDataFilter::Filter(const ::vl::reflection::description::Value& row)
 	{
 		auto codeId = ::vl::__vwsn::This(::vl::__vwsn::Unbox<::vl::Ptr<::gacpass::IReference>>(row).Obj())->GetCodeId();
-		return (codeId > static_cast<::vl::vint>(0));
+		return (codeId != static_cast<::vl::vint>(0));
 	}
 
 	//-------------------------------------------------------------------

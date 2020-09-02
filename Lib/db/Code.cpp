@@ -94,19 +94,23 @@ void Code::Update(Ptr<ICode> code)
 	title = code->GetTitle();
 	username = code->GetUsername();
 	password = code->GetPassword();
+
 	references.Clear();
-	auto r = code->GetReferences()->CreateEnumerator();
+	auto l = GetLazyList<Ptr<Reference>>(code->GetReferences()).CreateEnumerator();
+	while (l->Next())
+	{
+		references.Add(MakePtr<Reference>(*(l->Current().Obj())));
+	}
+	
+	/*auto r = code->GetReferences()->CreateEnumerator();
 	while (r->Next())
 	{
-		auto cr = MakePtr<Reference>();
-		cr->Update(vl::__vwsn::Unbox<Ptr<Reference>>(r->GetCurrent()));
+		auto cr = MakePtr<Reference>(vl::__vwsn::Unbox<Ptr<Reference>>(r->GetCurrent()));
 		references.Add(cr);
-	}
+	}*/
 }
 
 void Code::AddReference()
 {
-	auto r = MakePtr<Reference>();
-	r->SetCodeId(this->GetId());
-	references.Add(r);
+	references.Add(MakePtr<Reference>());
 }

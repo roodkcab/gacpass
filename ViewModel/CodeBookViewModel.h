@@ -27,4 +27,7 @@ public:
 	void RemoveCode(Ptr<gacpass::ICode> code)override;
 	void OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* arguments)override;
 
+private:
+	void UpdateReference(Ptr<gacpass::ICode> code);
+
 };

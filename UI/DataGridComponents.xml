@@ -114,7 +114,7 @@
               override func Filter(row : object) : bool
               {
                 var codeId = (cast (IReference^) row).CodeId;
-                return codeId > 0;
+                return codeId != 0;
               }
             }
           );

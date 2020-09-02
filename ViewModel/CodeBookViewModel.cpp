@@ -98,6 +98,7 @@ void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 	Code *c = dynamic_cast<Code *>(code.Obj());
 	int id = DB.insert<Code>(*c);
 	c->SetId(id);
+	this->UpdateReference(code);
 	codes.Add(Ptr<Code>(c));
 }
 
@@ -108,31 +109,42 @@ void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 	{
 		Code *c = dynamic_cast<Code *>(code.Obj());
 		DB.update<Code>(*c);
-		Ptr<IValueEnumerator> references = c->GetReferences()->CreateEnumerator();
-		while (references->Next())
+		this->UpdateReference(code);
+		codes.NotifyUpdate(index, 1);
+	}
+}
+
+void CodeBookViewModel::UpdateReference(Ptr<gacpass::ICode> code)
+{
+	Ptr<IValueEnumerator> references = code->GetReferences()->CreateEnumerator();
+	while (references->Next())
+	{
+		Ptr<Reference> r = (vl::__vwsn::Unbox<Ptr<Reference>>(references->GetCurrent()).Obj());
+		if (r->GetCodeId() == 0)
 		{
-			Reference* r = dynamic_cast<Reference*>(vl::__vwsn::Unbox<Ptr<Reference>>(references->GetCurrent()).Obj());
+			DB.remove<Reference>(r->GetId());
+		}
+		else
+		{
+			r->SetCodeId(code->GetId());
 			if (r->GetId() == -1)
 			{
-				DB.insert<Reference>(*r);
-			}
-			else if (r->GetCodeId() == 0)
-			{
-				DB.remove<Reference>(r->GetId());
+				DB.insert<Reference>(*(r.Obj()));
 			}
 			else
 			{
-				DB.update<Reference>(*r);
+				DB.update<Reference>(*(r.Obj()));
 			}
 		}
-		codes.NotifyUpdate(index, 1);
 	}
+	code->GetReferences()->Clear();
 }
 
 void CodeBookViewModel::RemoveCode(Ptr<gacpass::ICode> code)
 {
 	codes.Remove(code.Obj());
 	DB.remove<Code>(code->GetId());
+	DB.remove_all<Reference>(where(c(&Reference::GetCodeId) == code->GetId()));
 }
 
 void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* arguments)
