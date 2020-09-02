@@ -31,6 +31,9 @@
     <Filter Include="ViewModel">
       <UniqueIdentifier>{2d93b607-8785-44c4-a896-3c762690a995}</UniqueIdentifier>
     </Filter>
+    <Filter Include="资源文件\images">
+      <UniqueIdentifier>{ae011661-8344-4b86-b12f-068a864cb97e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -236,17 +239,17 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="UI\Delete.png">
-      <Filter>资源文件</Filter>
-    </Image>
     <Image Include="UI\Edit.png">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\images</Filter>
+    </Image>
+    <Image Include="UI\Delete.png">
+      <Filter>资源文件\images</Filter>
     </Image>
     <Image Include="UI\Folder.png">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\images</Filter>
     </Image>
     <Image Include="UI\New.png">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\images</Filter>
     </Image>
   </ItemGroup>
 </Project>

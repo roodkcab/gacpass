@@ -59,6 +59,8 @@ namespace vl
 			DECL_TYPE_INFO(::gacpass::LoginWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::MainWindow)
 			DECL_TYPE_INFO(::gacpass::MainWindowConstructor)
+			DECL_TYPE_INFO(::gacpass::ReferenceFilter)
+			DECL_TYPE_INFO(::gacpass::ReferenceFilterConstructor)
 			DECL_TYPE_INFO(::gacpass::RegisterWindow)
 			DECL_TYPE_INFO(::gacpass::RegisterWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::TextEditor)

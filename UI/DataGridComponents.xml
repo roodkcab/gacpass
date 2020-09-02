@@ -83,5 +83,46 @@
       </Instance>
     </Instance>
 
+    <Instance name="ReferenceFilterResource">
+      <Instance ref.CodeBehind="false" ref.Class="gacpass::ReferenceFilter">
+        <ref.Members>
+          <![CDATA[
+          @cpp:Private
+          var callback : IDataProcessorCallback* = null;
+          
+          func UpdateFilter() : void
+          {
+            if (callback is not null)
+            {
+              callback.OnProcessorChanged();
+            }
+          }
+
+          prop Filter : IDataFilter^ = null {const, not observe}
+        ]]>
+        </ref.Members>
+        <ref.Ctor>
+          <![CDATA[
+          SetFilter(
+            new IDataFilter^
+            {
+              override func SetCallback(value : IDataProcessorCallback*) : void
+              {
+                callback = value;
+              }
+            
+              override func Filter(row : object) : bool
+              {
+                var codeId = (cast (IReference^) row).CodeId;
+                return codeId > 0;
+              }
+            }
+          );
+        ]]>
+        </ref.Ctor>
+        <CustomControl ref.Name="self"></CustomControl>
+      </Instance>
+    </Instance>
+
   </Folder>
 </Folder>
