@@ -246,6 +246,7 @@
     <Image Include="UI\Delete.png" />
     <Image Include="UI\Edit.png" />
     <Image Include="UI\Folder.png" />
+    <Image Include="UI\logo.png" />
     <Image Include="UI\New.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -69,19 +69,19 @@ void CodeBookViewModel::SetSearch(const WString& value)
 	this->SearchChanged();
 	this->codes.Clear();
 
-	std::vector<int> codeIds;
+	std::vector<Code> codes;
 	if (search.Length() > 0)
 	{
-		codeIds = DB.select(&Code::GetId,
+		auto codeIds = DB.select(&Code::GetId,
 			inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
 			where(like(&Reference::GetContent, L"%" + search + L"%")
 		));
+		codes = DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle));
 	}
-
-	auto codes = codeIds.size() > 0 ? 
-		DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle))
-		: DB.get_all<Code>(order_by(&Code::GetTitle));
-
+	else
+	{
+		codes = DB.get_all<Code>(order_by(&Code::GetTitle));
+	}
 	for (auto &code : codes)
 	{
 		this->codes.Add(MakePtr<Code>(code));

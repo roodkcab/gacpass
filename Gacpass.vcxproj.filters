@@ -251,5 +251,8 @@
     <Image Include="UI\New.png">
       <Filter>资源文件\images</Filter>
     </Image>
+    <Image Include="UI\logo.png">
+      <Filter>资源文件\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

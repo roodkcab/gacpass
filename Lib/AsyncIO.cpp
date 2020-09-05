@@ -61,7 +61,7 @@ void AsyncIO::Resume(bool raiseException, Ptr<CoroutineResult> output)
 					{
 						WString res = (L"{\"text\":\"" + vl::__vwsn::Unbox<WString>(ostream->GetData()) + L"\"}");
 						auto len = res.Length();
-						std::wcout << char(len >> 0) << char(len >> 8) << char(len >> 16) << char(len >> 24) << res.Buffer() << std::flush;
+						std::wcout << char((len >> 0) & 0xFF) << char((len >> 8) & 0xFF) << char((len >> 16) & 0xFF) << char((len >> 24) & 0xFF) << res.Buffer() << std::flush;
 						input->operator=(L"");
 					}
 					

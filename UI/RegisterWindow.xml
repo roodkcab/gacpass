@@ -1,4 +1,6 @@
 <Folder>
+	<Image content="File" name="Logo">Logo.png</Image>
+
 	<Script>
 		<Workflow>
 			<![CDATA[
@@ -28,70 +30,106 @@
 			]]>
 		</Workflow>
 	</Script>
+
 	<Instance name="RegisterWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::RegisterWindow">
 			<ref.Parameter Name="ViewModel" Class="gacpass::IRegisterViewModel"/>
 			<CustomControl ref.Name="self">
 				<att.ViewModel-set Password-bind="textBoxPassword.Text" ConfirmPassword-bind="textBoxConfirmPassword.Text"/>
-				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-				<Table CellPadding ="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0">
+				<att.BoundsComposition-set PreferredMinSize="x:700 y:478"/>
+				<Table CellPadding ="0" BorderVisible="false" AlignmentToParent="left:230 top:57 right:230 bottom:-1">
 					<att.Rows>
-						<CellOption>composeType:Absolute absolute:10</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:Percentage percentage:1.0</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
+						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 					</att.Rows>
 					<att.Columns>
-						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:Percentage percentage:1.0</CellOption>
 					</att.Columns>
+          <Cell Site="row:0 column:0">
+            <Bounds PreferredMinSize="x:240 y:97">
+              <ImageFrame HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="true" Image-uri="res://RegisterWindowResource/Logo"></ImageFrame>
+            </Bounds>
+          </Cell>
 					<Cell Site="row:1 column:0">
-						<SolidLabel Color="#FFFFFF" Text="Password: " VerticalAlignment="Center">
-							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
-						</SolidLabel>
-					</Cell>
-					<Cell Site="row:1 column:1">
-						<SinglelineTextBox ref.Name="textBoxPassword" PasswordChar="*">
-							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:0 y:24"/>
-						</SinglelineTextBox>
-					</Cell>
-					<Cell Site="row:2 column:1">
-						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.PasswordError">
-							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
-						</SolidLabel>
-					</Cell>
+            <Bounds PreferredMinSize="x:240 y:50">
+              <SolidLabel Color="#FFFFFF" Text="Set a password for your account" VerticalAlignment="Bottom">
+                <att.Font>fontFamily:"Segoe UI" size:16 antialias:true</att.Font>
+              </SolidLabel>
+            </Bounds>
+          </Cell>
+					<Cell Site="row:2 column:0">
+            <Bounds PreferredMinSize="x:240 y:29">
+              <SolidLabel Color="#FFFFFF" Text="What's your common password?" VerticalAlignment="Bottom">
+                <att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
+              </SolidLabel>
+            </Bounds>
+          </Cell>
 					<Cell Site="row:3 column:0">
-						<SolidLabel Color="#FFFFFF" Text="Confirm Password: " VerticalAlignment="Center">
-							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
-						</SolidLabel>
+            <Bounds PreferredMinSize="x:240 y:48">
+              <SinglelineTextBox ref.Name="textBoxPassword" PasswordChar="*">
+                <att.BoundsComposition-set AlignmentToParent="left:0 top:22 right:0 bottom:0" PreferredMinSize="x:0 y:26"/>
+              </SinglelineTextBox>
+            </Bounds>
 					</Cell>
-					<Cell Site="row:3 column:1">
-						<SinglelineTextBox ref.Name="textBoxConfirmPassword" PasswordChar="*">
-							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:0 y:24"/>
-						</SinglelineTextBox>
+					<Cell Site="row:4 column:0">
+            <Bounds PreferredMinSize="x:240 y:29">
+              <SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.PasswordError">
+                <att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
+              </SolidLabel>
+            </Bounds>
 					</Cell>
-					<Cell Site="row:4 column:1">
-						<SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.ConfirmPasswordError">
-							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
-						</SolidLabel>
+					<Cell Site="row:5 column:0">
+            <Bounds PreferredMinSize="x:240 y:40">
+              <SolidLabel Color="#FFFFFF" Text="Comfirmation Password" VerticalAlignment="Bottom">
+                <att.Font>fontFamily:"Segoe UI" size:16 antialias:true</att.Font>
+              </SolidLabel>
+            </Bounds>
 					</Cell>
-					<Cell Site="row:6 column:0 columnSpan:2">
-						<Button ref.Name="buttonSignUp" Text="Sign Up!">
-							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:-1 bottom:0" PreferredMinSize="x:100 y:24"/>
-							<att.Enabled-bind>
-								self.ViewModel.PasswordError == "" and self.ViewModel.ConfirmPasswordError == ""
-							</att.Enabled-bind>
-							<ev.Clicked-eval>
-								<![CDATA[
+					<Cell Site="row:6 column:0">
+            <Bounds PreferredMinSize="x:240 y:29">
+              <SolidLabel Color="#FFFFFF" Text="Enter the password you just set" VerticalAlignment="Bottom">
+                <att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
+              </SolidLabel>
+            </Bounds>
+					</Cell>
+          <Cell Site="row:7 column:0">
+            <Bounds PreferredMinSize="x:240 y:48">
+              <SinglelineTextBox ref.Name="textBoxConfirmPassword" PasswordChar="*">
+                <att.BoundsComposition-set AlignmentToParent="left:0 top:22 right:0 bottom:0" PreferredMinSize="x:0 y:26"/>
+              </SinglelineTextBox>
+            </Bounds>
+          </Cell>
+					<Cell Site="row:8 column:0">
+            <Bounds PreferredMinSize="x:240 y:29">
+              <SolidLabel Color="#FF0000" WrapLine="true" WrapLineHeightCalculation="true" Text-bind="self.ViewModel.ConfirmPasswordError">
+                <att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
+              </SolidLabel>
+            </Bounds>
+					</Cell>
+					<Cell Site="row:9 column:0">
+            <Bounds PreferredMinSize="x:240 y:29">
+              <Button ref.Name="buttonSignUp" Text="Sign Up!">
+                <att.BoundsComposition-set AlignmentToParent="left:70 top:5 right:-1 bottom:0" PreferredMinSize="x:100 y:24"/>
+                <att.Enabled-bind>
+                  self.ViewModel.PasswordError == "" and self.ViewModel.ConfirmPasswordError == ""
+                </att.Enabled-bind>
+                <ev.Clicked-eval>
+                  <![CDATA[
 								{
 									self.ViewModel.Register();
 								}
 								]]>
-							</ev.Clicked-eval>
-						</Button>
+                </ev.Clicked-eval>
+              </Button>
+            </Bounds>
 					</Cell>
 				</Table>
 			</CustomControl>

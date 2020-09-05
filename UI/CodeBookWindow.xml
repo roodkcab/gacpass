@@ -78,13 +78,11 @@
 			<ref.Parameter Name="ViewModel" Class="gacpass::ICodeBookViewModel" />
 			<ref.Parameter Name="MainWindow" Class="presentation::controls::GuiWindow"/>
 			<CustomControl ref.Name="self">
-				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-
+				<att.BoundsComposition-set PreferredMinSize="x:700 y:478"/>
 				<att.ViewModel-set>
 					<att.SelectedCode-bind>listViewCodes.SelectedItem as (gacpass::ICode^)</att.SelectedCode-bind>
 					<att.Search-bind>textBoxSearch.Text</att.Search-bind>
 				</att.ViewModel-set>
-
 				<ToolstripCommand ref.Name="commandNewCode" Image-uri="res://CodeBookWindowResource/New">
 					<ev.Executed-eval>
 						<![CDATA[
@@ -135,7 +133,6 @@
 				</ToolstripCommand>
 
 				<Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:28 right:0 bottom:0">
-					
 					<att.Rows>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:Percentage percentage:1.0</CellOption>
@@ -143,7 +140,6 @@
 					<att.Columns>
 						<CellOption>composeType:Percentage percentage:1.0</CellOption>
 					</att.Columns>
-
 					<Cell Site="row:0 column:0">
 						<ToolstripToolBar>
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>

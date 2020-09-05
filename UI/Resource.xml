@@ -49,7 +49,7 @@
 	<Instance name="MainWindow" >
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::MainWindow" xmlns:gacpass="gacpass::*">
 			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel"/>
-			<Window ref.Name="self" Text="GacPass" ClientSize="x:480 y:320">
+			<Window ref.Name="self" Text="GacPass">
 				<gacpass:CodeBookWindow ViewModel-eval="ViewModel.CodeBookViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet" MainWindow-eval="self"></gacpass:CodeBookWindow>
 				<gacpass:LoginWindow ViewModel-eval="ViewModel.LoginViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet"></gacpass:LoginWindow>
 				<gacpass:RegisterWindow Visible-bind="not ViewModel.RegisterViewModel.MainPasswordSet" ViewModel-eval="ViewModel.RegisterViewModel"></gacpass:RegisterWindow>

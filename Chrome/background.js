@@ -4,16 +4,17 @@
 
 var nativePort = null;
 
-var getKeys = function(obj){
+var getKeys = function (obj) {
    var keys = [];
-   for(var key in obj){
+   for (var key in obj) {
       keys.push(key);
    }
    return keys;
 }
 
 function onNativeMessage(message) {
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+  console.log(message);
+  chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
     chrome.tabs.sendMessage(tabs[0].id, message, function(response) {});
   });
 }
@@ -36,10 +37,12 @@ function postMessage(message) {
         nativePort = chrome.runtime.connectNative(hostName);
         nativePort.onMessage.addListener(onNativeMessage);
         nativePort.onDisconnect.addListener(onDisconnect);
-        setTimeout(function(){  
+        setTimeout(function () {  
+          console.log(message);
           nativePort.postMessage(message);
         }, 1000);
       } else {
+        console.log(message);
         nativePort.postMessage(message);
       }
       break;

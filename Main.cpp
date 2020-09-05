@@ -9,6 +9,11 @@
 #include "db/DB.h"
 #include "EventBus.h"
 
+#ifdef _WIN32
+#include <io.h>
+#include <fcntl.h>
+#endif
+
 using namespace vl::stream;
 
 class ViewModel : public Object, public virtual gacpass::IViewModel
@@ -51,31 +56,26 @@ public:
 
 void initChromePlugin()
 {
+#ifdef _WIN32
+		//_setmode(_fileno(stdout), _O_BINARY);
+		_setmode(_fileno(stdin), _O_BINARY);
+#endif
 	GetApplication()->InvokeAsync([] {
+		char cBuffer[1024] = { 0 };
 		while (true)
 		{
-			WString input = L"";
-			wint_t length = getwchar();
-
-			if (length == WEOF)
+			unsigned int uiSize = 0;
+			std::cin.read((char*)&uiSize, sizeof(unsigned int));
+			if (uiSize != 0 && uiSize < 1024)
 			{
-				continue;
-			}
+				memset(cBuffer, 0, 1024);
+				std::cin.read(cBuffer, uiSize);
+				WString input(std::wstring(&cBuffer[0], &cBuffer[uiSize]).c_str());
 
-			for (int i = 0; i < 3; i++)
-			{
-				wint_t read_char = getwchar();
-				length = length | (read_char << i * 8);
+				auto istream = EventBus::Get(EventBus::EventName::IStream);
+				istream->SetData(vl::__vwsn::Box(input));
+				istream->Signal();
 			}
-
-			for (int i = 0; i < length; i++)
-			{
-				input += getwchar();
-			}
-
-			auto istream = EventBus::Get(EventBus::EventName::IStream);
-			istream->SetData(vl::__vwsn::Box(input));
-			istream->Signal();
 		}
 	});
 

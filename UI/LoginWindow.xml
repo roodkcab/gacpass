@@ -1,4 +1,6 @@
 <Folder>
+	<Image content="File" name="Logo">Logo.png</Image>
+
 	<Script>
 		<Workflow>
 			<![CDATA[
@@ -17,6 +19,7 @@
 			]]>
 		</Workflow>
 	</Script>
+
 	<Instance name="LoginWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::LoginWindow">
 			<ref.Parameter Name="ViewModel" Class="gacpass::ILoginViewModel"/>
@@ -25,14 +28,14 @@
 			    @cpp:Private
 				func OutAnimation(container: GuiBoundsComposition*): IGuiAnimation^
 				{
-                  return IGuiAnimation::CreateAnimation(
-                    func (time: UInt64): void
-					{
-					   var ratio = container.Bounds.x1 / 480.0;
-					   var deltaX = 100 * (1 - ratio + 0.01);
-				       var x1 = container.Bounds.x1 + cast int Math::Ceil(deltaX);
-				       container.AlignmentToParent = {left: x1 top: 0 right: 0 bottom: 0};
-					}, cast UInt64 1000);
+          return IGuiAnimation::CreateAnimation(
+            func (time: UInt64): void
+					  {
+					    var ratio = container.Bounds.x1 / 700.0;
+					    var deltaX = 100 * (1 - ratio + 0.01);
+				      var x1 = container.Bounds.x1 + cast int Math::Ceil(deltaX);
+				      container.AlignmentToParent = {left: x1 top: 0 right: 0 bottom: 0};
+					  }, cast UInt64 1000);
 				}
 
 				@cpp:Private
@@ -45,46 +48,58 @@
 			</ref.Members>
 			<CustomControl ref.Name="self">
 				<att.ViewModel-set Password-bind="textBoxPassword.Text" ev.LoggedInChanged-eval="self.AddAnimation(self.FlyoutAnimation(self.Container));"/>
-				<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-				<Table ref.Name="Container" CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:0 bottom:0" SizeAffectParent="false">
-					<SolidBackground Color="#434346"/>
-					<att.Rows>
-						<CellOption>composeType:Absolute absolute:90</CellOption>
-						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:Percentage percentage:1.0</CellOption>
-						<CellOption>composeType:MinSize</CellOption>
-					</att.Rows>
-					<att.Columns>
-						<CellOption>composeType:MinSize</CellOption>
-						<CellOption>composeType:Percentage percentage:1.0</CellOption>
-					</att.Columns>
-					<Cell Site="row:0 column:0"></Cell>
-					<Cell Site="row:1 column:0">
-						<SolidLabel Color="#FFFFFF" Text="Password: " VerticalAlignment="Center">
-							<att.Font>fontFamily:"Segoe UI" size:12 antialias:true</att.Font>
-						</SolidLabel>
-					</Cell>
-					<Cell Site="row:1 column:1">
-						<SinglelineTextBox ref.Name="textBoxPassword" PasswordChar="*">
-							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:0 y:24"/>
-						</SinglelineTextBox>
-					</Cell>
-					<Cell Site="row:6 column:0 columnSpan:2">
-						<Button ref.Name="buttonLogin" Text="Login">
-							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:-1 bottom:0" PreferredMinSize="x:100 y:24"/>
-							<ev.Clicked-eval>
-							<![CDATA[
+				<att.BoundsComposition-set PreferredMinSize="x:700 y:478"/>
+        <Bounds ref.Name="Container" AlignmentToParent="left:0 top:0 right:0 bottom:0">
+          <SolidBackground Color="#2D2D30"/>
+          <Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:230 top:57 right:0 bottom:0" SizeAffectParent="false">
+            <att.Rows>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+              <CellOption>composeType:MinSize</CellOption>
+            </att.Rows>
+            <att.Columns>
+              <CellOption>composeType:Percentage percentage:1.0</CellOption>
+            </att.Columns>
+            <Cell Site="row:0 column:0">
+              <Bounds PreferredMinSize="x:240 y:97">
+                <ImageFrame HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="true" Image-uri="res://RegisterWindowResource/Logo"></ImageFrame>
+              </Bounds>
+            </Cell>
+            <Cell Site="row:1 column:0">
+              <Bounds PreferredMinSize="x:240 y:50">
+                <SolidLabel Color="#FFFFFF" Text="Enter your password" VerticalAlignment="Bottom">
+                  <att.Font>fontFamily:"Segoe UI" size:16 antialias:true</att.Font>
+                </SolidLabel>
+              </Bounds>
+            </Cell>
+            <Cell Site="row:2 column:0">
+              <Bounds PreferredMinSize="x:240 y:48">
+                <SinglelineTextBox ref.Name="textBoxPassword" PasswordChar="*">
+                  <att.BoundsComposition-set AlignmentToParent="left:0 top:22 right:0 bottom:0" PreferredMinSize="x:0 y:26"/>
+                </SinglelineTextBox>
+              </Bounds>
+            </Cell>
+            <Cell Site="row:3 column:0">
+              <Button ref.Name="buttonLogin" Text="Login">
+                <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:-1 bottom:0" PreferredMinSize="x:100 y:24"/>
+                <ev.Clicked-eval>
+                  <![CDATA[
 							{
 								self.ViewModel.GetLoggedIn();
 							}	
 							]]>
-							</ev.Clicked-eval>
-						</Button>
-					</Cell>
-				</Table>
+                </ev.Clicked-eval>
+              </Button>
+            </Cell>
+          </Table>
+        </Bounds>
 			</CustomControl>
 		</Instance>
 	</Instance>
