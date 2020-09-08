@@ -14,6 +14,7 @@ public:
 		IStream,
 		OStream,
 		WebsiteOpened,
+		CodeSelected,
 	};
 
 	EventBus();

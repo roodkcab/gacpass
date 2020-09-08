@@ -53,6 +53,15 @@ void ChromeHandler::Resume(bool raiseException, Ptr<CoroutineResult> output)
 				if ((state == static_cast<::vl::vint>(3)))
 				{
 					//yield & after yield
+					auto code = EventBus::Get(EventBus::EventName::CodeSelected);
+					if (code->WaitForTime(100))
+					{
+						Ptr<Code> res = vl::__vwsn::Unbox<Ptr<Code>>(code->GetData());
+						auto ostream = EventBus::Get(EventBus::EventName::OStream);
+						ostream->SetData(vl::__vwsn::Box(L"{\"username\":\"" + res->GetUsername() + L"\", \"password\":\"" + res->GetPassword() + L"\"}"));
+						ostream->Signal();
+					}
+
 					(state = static_cast<::vl::vint>(4));
 					continue;
 				}

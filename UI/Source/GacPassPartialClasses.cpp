@@ -5046,6 +5046,9 @@ Class (::gacpass::LoginWindowConstructor)
 		{
 			(this->textBoxPassword = new ::vl::presentation::controls::GuiSinglelineTextBox(::vl::presentation::theme::ThemeName::SinglelineTextBox));
 		}
+		{
+			::vl::__vwsn::This(this->textBoxPassword)->SetAcceptTabInput(false);
+		}
 		(this->__vwsn_precompile_10 = ::vl::__vwsn::This(this->textBoxPassword)->GetBoundsComposition());
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_10)->SetPreferredMinSize([&](){ ::vl::presentation::Size __vwsn_temp__; __vwsn_temp__.x = static_cast<::vl::vint>(0); __vwsn_temp__.y = static_cast<::vl::vint>(26); return __vwsn_temp__; }());
@@ -5437,6 +5440,9 @@ Class (::gacpass::RegisterWindowConstructor)
 		{
 			(this->textBoxPassword = new ::vl::presentation::controls::GuiSinglelineTextBox(::vl::presentation::theme::ThemeName::SinglelineTextBox));
 		}
+		{
+			::vl::__vwsn::This(this->textBoxPassword)->SetAcceptTabInput(false);
+		}
 		(this->__vwsn_precompile_12 = ::vl::__vwsn::This(this->textBoxPassword)->GetBoundsComposition());
 		{
 			::vl::__vwsn::This(this->__vwsn_precompile_12)->SetPreferredMinSize([&](){ ::vl::presentation::Size __vwsn_temp__; __vwsn_temp__.x = static_cast<::vl::vint>(0); __vwsn_temp__.y = static_cast<::vl::vint>(26); return __vwsn_temp__; }());
@@ -5556,6 +5562,9 @@ Class (::gacpass::RegisterWindowConstructor)
 		}
 		{
 			(this->textBoxConfirmPassword = new ::vl::presentation::controls::GuiSinglelineTextBox(::vl::presentation::theme::ThemeName::SinglelineTextBox));
+		}
+		{
+			::vl::__vwsn::This(this->textBoxConfirmPassword)->SetAcceptTabInput(false);
 		}
 		(this->__vwsn_precompile_24 = ::vl::__vwsn::This(this->textBoxConfirmPassword)->GetBoundsComposition());
 		{

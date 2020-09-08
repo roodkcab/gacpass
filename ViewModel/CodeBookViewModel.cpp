@@ -29,8 +29,8 @@ void CodeBookViewModel::Load()
 					this->SetSearch(website);
 					if (this->GetCodes()->GetCount() == 1 && loginViewModel->GetLoggedIn())
 					{
-						auto codeSelected = EventBus::Get(EventBus::EventName::OStream);
-						codeSelected->SetData(vl::__vwsn::Box(this->codes[0]->GetPassword()));
+						auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
+						codeSelected->SetData(vl::__vwsn::Box(this->codes[0]));
 						codeSelected->Signal();
 					}
 				}
@@ -65,26 +65,30 @@ WString CodeBookViewModel::GetSearch()
 
 void CodeBookViewModel::SetSearch(const WString& value)
 {
-	search = value;
-	this->SearchChanged();
-	this->codes.Clear();
+	static CriticalSection lock;
+	CS_LOCK(lock)
+	{
+		search = value;
+		this->SearchChanged();
+		this->codes.Clear();
 
-	std::vector<Code> codes;
-	if (search.Length() > 0)
-	{
-		auto codeIds = DB.select(&Code::GetId,
-			inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
-			where(like(&Reference::GetContent, L"%" + search + L"%")
-		));
-		codes = DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle));
-	}
-	else
-	{
-		codes = DB.get_all<Code>(order_by(&Code::GetTitle));
-	}
-	for (auto &code : codes)
-	{
-		this->codes.Add(MakePtr<Code>(code));
+		std::vector<Code> codes;
+		if (search.Length() > 0)
+		{
+			auto codeIds = DB.select(&Code::GetId,
+				inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
+				where(like(&Reference::GetContent, L"%" + search + L"%")
+					));
+			codes = DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle));
+		}
+		else
+		{
+			codes = DB.get_all<Code>(order_by(&Code::GetTitle));
+		}
+		for (auto& code : codes)
+		{
+			this->codes.Add(MakePtr<Code>(code));
+		}
 	}
 }
 
@@ -157,9 +161,8 @@ void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* argum
 		clipboard->SetText(code->GetPassword());
 		clipboard->Submit();
 
-		auto codeSelected = EventBus::Get(EventBus::EventName::OStream);
-		codeSelected->SetData(vl::__vwsn::Box(code->GetPassword()));
+		auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
+		codeSelected->SetData(vl::__vwsn::Box(code));
 		codeSelected->Signal();
-		//close window
 	}
 }

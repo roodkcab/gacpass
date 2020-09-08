@@ -76,6 +76,7 @@
             <Bounds PreferredMinSize="x:240 y:48">
               <SinglelineTextBox ref.Name="textBoxPassword" PasswordChar="*">
                 <att.BoundsComposition-set AlignmentToParent="left:0 top:22 right:0 bottom:0" PreferredMinSize="x:0 y:26"/>
+                <att.AcceptTabInput>false</att.AcceptTabInput>
               </SinglelineTextBox>
             </Bounds>
 					</Cell>
@@ -104,6 +105,7 @@
             <Bounds PreferredMinSize="x:240 y:48">
               <SinglelineTextBox ref.Name="textBoxConfirmPassword" PasswordChar="*">
                 <att.BoundsComposition-set AlignmentToParent="left:0 top:22 right:0 bottom:0" PreferredMinSize="x:0 y:26"/>
+                <att.AcceptTabInput>false</att.AcceptTabInput>
               </SinglelineTextBox>
             </Bounds>
           </Cell>

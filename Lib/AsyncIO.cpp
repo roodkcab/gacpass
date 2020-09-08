@@ -59,7 +59,7 @@ void AsyncIO::Resume(bool raiseException, Ptr<CoroutineResult> output)
 					auto ostream = EventBus::Get(EventBus::EventName::OStream);
 					if (ostream->WaitForTime(100))
 					{
-						WString res = (L"{\"text\":\"" + vl::__vwsn::Unbox<WString>(ostream->GetData()) + L"\"}");
+						WString res = vl::__vwsn::Unbox<WString>(ostream->GetData());
 						auto len = res.Length();
 						std::wcout << char((len >> 0) & 0xFF) << char((len >> 8) & 0xFF) << char((len >> 16) & 0xFF) << char((len >> 24) & 0xFF) << res.Buffer() << std::flush;
 						input->operator=(L"");
