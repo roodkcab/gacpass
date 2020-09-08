@@ -20,6 +20,7 @@ GacPass是一个本地密码管理工具。
 - [ ] iTerm/Windows Terminal插件
 - [ ] OSX/Linux/iOS/Android
 - [ ] 多语言
+- [ ] ui
 
 # GacPass
 GacPass is a local password management software for Windows.
@@ -42,5 +43,6 @@ You are recommended to use Visual Studio 2019 to build Gacpass.sln.
 - [ ] iTerm/Windows Terminal plugin
 - [ ] OSX/Linux/iOS/Android
 - [ ] multi language
+- [ ] ui
 
 ![gacpas](https://user-images.githubusercontent.com/1700820/89509953-89b38800-d802-11ea-9aec-39b655940736.gif)
