@@ -28,16 +28,19 @@ void CodeBookViewModel::Load()
 				if (search.Length() > 0)
 				{
 					GetApplication()->InvokeInMainThread(GetApplication()->GetMainWindow(), [search, this] {
-						Regex regex(L"\\{\"host\":\"(<host>.*?)\",\"username\":\"(<username>.*?)\"\\}");
+						Regex regex(L"^\\{\"host\":\"(<host>\\.*?)\",\"username\":\"(<username>\\.*?)\"\\}");
 						Ptr<RegexMatch> match = regex.Match(search);
-						this->host = match->Groups()[L"host"][0].Value();
-						this->username = match->Groups()[L"username"][0].Value();
-						this->search();
-						if (this->GetCodes()->GetCount() == 1 && this->loginViewModel->GetLoggedIn())
+						if (match)
 						{
-							auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
-							codeSelected->SetData(vl::__vwsn::Box(this->codes[0]));
-							codeSelected->Signal();
+							this->host = match->Groups()[L"host"][0].Value().Buffer();
+							this->username = match->Groups()[L"username"][0].Value().Buffer();
+							this->search();
+							if (this->GetCodes()->GetCount() == 1 && this->loginViewModel->GetLoggedIn())
+							{
+								auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
+								codeSelected->SetData(vl::__vwsn::Box(this->codes[0]));
+								codeSelected->Signal();
+							}
 						}
 					});
 				}
@@ -161,7 +164,7 @@ void CodeBookViewModel::search()
 	{
 		auto codeIds = DB.select(&Code::GetId,
 			inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
-			where(like(&Reference::GetContent, L"%" + this->host + L"%") and like(&Code::GetUsername, L"%" + this->username + L"%"))
+			where(like(&Reference::GetContent, L"%" + this->host + L"%") and like(&Code::GetUsername, this->username + L"%"))
 		);
 		codes = DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle));
 	}

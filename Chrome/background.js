@@ -23,6 +23,12 @@ function onDisconnect() {
   nativePort = null;
 }
 
+function getHost(data) {
+  var a = document.createElement('a');
+  a.href = data;
+  return a.hostname;
+}
+
 function postMessage(message) {
   var hostName = "com.unifs.gacpass"
   while (true) {
@@ -50,8 +56,8 @@ function connect() {
   chrome.commands.onCommand.addListener(function(command) {
     if (command == "open") {
       chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {cmd: 'getUsername'}, function (search) {
-          postMessage(search);
+        chrome.tabs.sendMessage(tabs[0].id, {cmd: 'getUsername'}, function (username) {
+          postMessage({"host": getHost(tabs[0].url), "username": username || ""});
         });
       });
     }
