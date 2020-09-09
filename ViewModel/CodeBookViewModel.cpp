@@ -16,7 +16,7 @@ void CodeBookViewModel::Load()
 		this->codes.Add(MakePtr<Code>(code));
 	}
 
-	GetApplication()->InvokeAsync([&] {
+	GetApplication()->InvokeAsync([this] {
 		while (true)
 		{
 			auto websiteOpened = EventBus::Get(EventBus::EventName::WebsiteOpened);
@@ -26,13 +26,15 @@ void CodeBookViewModel::Load()
 				if (search.Length() > 0)
 				{
 					WString website = search.Sub(9, search.Length() - 11).Buffer();
-					this->SetSearch(website);
-					if (this->GetCodes()->GetCount() == 1 && loginViewModel->GetLoggedIn())
-					{
-						auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
-						codeSelected->SetData(vl::__vwsn::Box(this->codes[0]));
-						codeSelected->Signal();
-					}
+					GetApplication()->InvokeInMainThread(GetApplication()->GetMainWindow(), [website, this] {
+						this->SetSearch(website);
+						if (this->GetCodes()->GetCount() == 1 && this->loginViewModel->GetLoggedIn())
+						{
+							auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
+							codeSelected->SetData(vl::__vwsn::Box(this->codes[0]));
+							codeSelected->Signal();
+						}
+					});
 				}
 			}
 		}
@@ -65,30 +67,26 @@ WString CodeBookViewModel::GetSearch()
 
 void CodeBookViewModel::SetSearch(const WString& value)
 {
-	static CriticalSection lock;
-	CS_LOCK(lock)
-	{
-		search = value;
-		this->SearchChanged();
-		this->codes.Clear();
+	this->search = value;
+	this->SearchChanged();
+	this->codes.Clear();
 
-		std::vector<Code> codes;
-		if (search.Length() > 0)
-		{
-			auto codeIds = DB.select(&Code::GetId,
-				inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
-				where(like(&Reference::GetContent, L"%" + search + L"%")
-					));
-			codes = DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle));
-		}
-		else
-		{
-			codes = DB.get_all<Code>(order_by(&Code::GetTitle));
-		}
-		for (auto& code : codes)
-		{
-			this->codes.Add(MakePtr<Code>(code));
-		}
+	std::vector<Code> codes;
+	if (this->search.Length() > 0)
+	{
+		auto codeIds = DB.select(&Code::GetId,
+			inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
+			where(like(&Reference::GetContent, L"%" + this->search + L"%")
+				));
+		codes = DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle));
+	}
+	else
+	{
+		codes = DB.get_all<Code>(order_by(&Code::GetTitle));
+	}
+	for (auto& code : codes)
+	{
+		this->codes.Add(MakePtr<Code>(code));
 	}
 }
 

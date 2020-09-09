@@ -79,7 +79,7 @@ void initChromePlugin()
 		}
 	});
 
-	GetApplication()->InvokeAsync([&] {
+	GetApplication()->InvokeAsync([] {
 		WString input = L"";
 		auto producer = Ptr<ICoroutine>(new AsyncIO(input));
 		auto consumer = Ptr<ICoroutine>(new ChromeHandler());
