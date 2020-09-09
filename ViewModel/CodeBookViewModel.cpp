@@ -3,6 +3,8 @@
 #include "EventBus.h"
 #include "VlppRegex.h"
 
+using namespace vl::regex;
+
 CodeBookViewModel::CodeBookViewModel(Ptr<gacpass::ILoginViewModel> _loginViewModel) 
 	: loginViewModel(_loginViewModel)
 {
@@ -25,9 +27,12 @@ void CodeBookViewModel::Load()
 				WString search = vl::__vwsn::Unbox<WString>(websiteOpened->GetData());
 				if (search.Length() > 0)
 				{
-					WString website = search.Sub(9, search.Length() - 11).Buffer();
-					GetApplication()->InvokeInMainThread(GetApplication()->GetMainWindow(), [website, this] {
-						this->SetSearch(website);
+					GetApplication()->InvokeInMainThread(GetApplication()->GetMainWindow(), [search, this] {
+						Regex regex(L"\\{\"host\":\"(<host>.*?)\",\"username\":\"(<username>.*?)\"\\}");
+						Ptr<RegexMatch> match = regex.Match(search);
+						this->host = match->Groups()[L"host"][0].Value();
+						this->username = match->Groups()[L"username"][0].Value();
+						this->search();
 						if (this->GetCodes()->GetCount() == 1 && this->loginViewModel->GetLoggedIn())
 						{
 							auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
@@ -62,32 +67,15 @@ void CodeBookViewModel::SetSelectedCode(Ptr<gacpass::ICode> value)
 
 WString CodeBookViewModel::GetSearch()
 {
-	return search;
+	return host;
 }
 
 void CodeBookViewModel::SetSearch(const WString& value)
 {
-	this->search = value;
+	this->host = value;
+	this->username = L"";
 	this->SearchChanged();
-	this->codes.Clear();
-
-	std::vector<Code> codes;
-	if (this->search.Length() > 0)
-	{
-		auto codeIds = DB.select(&Code::GetId,
-			inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
-			where(like(&Reference::GetContent, L"%" + this->search + L"%")
-				));
-		codes = DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle));
-	}
-	else
-	{
-		codes = DB.get_all<Code>(order_by(&Code::GetTitle));
-	}
-	for (auto& code : codes)
-	{
-		this->codes.Add(MakePtr<Code>(code));
-	}
+	this->search();
 }
 
 Ptr<gacpass::IEditCodeViewModel> CodeBookViewModel::CreateEditCodeViewModel()
@@ -100,7 +88,7 @@ void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
 	Code *c = dynamic_cast<Code *>(code.Obj());
 	int id = DB.insert<Code>(*c);
 	c->SetId(id);
-	this->UpdateReference(code);
+	this->updateReference(code);
 	codes.Add(MakePtr<Code>(*c));
 }
 
@@ -111,12 +99,12 @@ void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 	{
 		Code *c = dynamic_cast<Code *>(code.Obj());
 		DB.update<Code>(*c);
-		this->UpdateReference(code);
+		this->updateReference(code);
 		codes.NotifyUpdate(index, 1);
 	}
 }
 
-void CodeBookViewModel::UpdateReference(Ptr<gacpass::ICode> code)
+void CodeBookViewModel::updateReference(Ptr<gacpass::ICode> code)
 {
 	Ptr<IValueEnumerator> references = code->GetReferences()->CreateEnumerator();
 	while (references->Next())
@@ -162,5 +150,27 @@ void CodeBookViewModel::OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* argum
 		auto codeSelected = EventBus::Get(EventBus::EventName::CodeSelected);
 		codeSelected->SetData(vl::__vwsn::Box(code));
 		codeSelected->Signal();
+	}
+}
+
+void CodeBookViewModel::search()
+{
+	this->codes.Clear();
+	std::vector<Code> codes;
+	if (this->host.Length() > 0)
+	{
+		auto codeIds = DB.select(&Code::GetId,
+			inner_join<Reference>(on(c(&Reference::GetCodeId) == &Code::GetId)),
+			where(like(&Reference::GetContent, L"%" + this->host + L"%") and like(&Code::GetUsername, L"%" + this->username + L"%"))
+		);
+		codes = DB.get_all<Code>(where(in(&Code::GetId, codeIds)), order_by(&Code::GetTitle));
+	}
+	else
+	{
+		codes = DB.get_all<Code>(order_by(&Code::GetTitle));
+	}
+	for (auto& code : codes)
+	{
+		this->codes.Add(MakePtr<Code>(code));
 	}
 }

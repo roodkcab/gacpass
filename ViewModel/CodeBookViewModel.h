@@ -10,7 +10,8 @@ class CodeBookViewModel : public Object, public virtual gacpass::ICodeBookViewMo
 private:
 	ObservableList<Ptr<gacpass::ICode>> codes;
 	Ptr<gacpass::ICode> selectedCode;
-	WString search;
+	WString host;
+	WString username;
 	Ptr<gacpass::ILoginViewModel> loginViewModel;
 
 public:
@@ -28,6 +29,7 @@ public:
 	void OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* arguments)override;
 
 private:
-	void UpdateReference(Ptr<gacpass::ICode> code);
+	void updateReference(Ptr<gacpass::ICode> code);
+	void search();
 
 };

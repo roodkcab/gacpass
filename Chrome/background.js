@@ -15,19 +15,13 @@ var getKeys = function (obj) {
 function onNativeMessage(message) {
   console.log(message);
   chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, message, function(response) {});
+    chrome.tabs.sendMessage(tabs[0].id, {cmd: 'fill', data: message}, function(response) {});
   });
 }
 
 function onDisconnect() {
   nativePort = null;
 }
-
-function getHost(data) {
-  var a = document.createElement('a');
-  a.href = data;
-  return a.hostname;
-}  
 
 function postMessage(message) {
   var hostName = "com.unifs.gacpass"
@@ -56,8 +50,9 @@ function connect() {
   chrome.commands.onCommand.addListener(function(command) {
     if (command == "open") {
       chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-        message = {"host": getHost(tabs[0].url)};
-        postMessage(message);
+        chrome.tabs.sendMessage(tabs[0].id, {cmd: 'getUsername'}, function (search) {
+          postMessage(search);
+        });
       });
     }
   });
