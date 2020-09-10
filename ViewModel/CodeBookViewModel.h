@@ -13,16 +13,17 @@ private:
 	WString host;
 	WString username;
 	Ptr<gacpass::ILoginViewModel> loginViewModel;
+	Ptr<gacpass::IEditCodeViewModel> editCodeViewModel;
 
 public:
 	CodeBookViewModel(Ptr<gacpass::ILoginViewModel> _loginViewModel);
 	void Load();
+	Ptr<gacpass::IEditCodeViewModel> GetEditCodeViewModel()override;
 	Ptr<IValueObservableList> GetCodes()override;
 	Ptr<gacpass::ICode> GetSelectedCode()override;
 	void SetSelectedCode(Ptr<gacpass::ICode> value)override;
 	WString GetSearch()override;
 	void SetSearch(const WString& search)override;
-	Ptr<gacpass::IEditCodeViewModel> CreateEditCodeViewModel()override;
 	void AddCode(Ptr<gacpass::ICode> code)override;
 	void UpdateCode(Ptr<gacpass::ICode> code)override;
 	void RemoveCode(Ptr<gacpass::ICode> code)override;

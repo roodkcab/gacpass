@@ -190,7 +190,6 @@
     <ClCompile Include="Lib\sqlite_orm\WString.cpp" />
     <ClCompile Include="Lib\util.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="UI\Source\CodeBookWindow.cpp" />
     <ClCompile Include="UI\Source\GacPassPartialClasses.cpp" />
     <ClCompile Include="UI\Source\GacPassReflection.cpp" />
     <ClCompile Include="ViewModel\CodeBookViewModel.cpp" />
@@ -221,7 +220,6 @@
     <ClInclude Include="Lib\sqlite_orm\WString.h" />
     <ClInclude Include="Lib\util.hpp" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="UI\Source\CodeBookWindow.h" />
     <ClInclude Include="UI\Source\GacPass.h" />
     <ClInclude Include="UI\Source\GacPassPartialClasses.h" />
     <ClInclude Include="UI\Source\GacPassReflection.h" />
@@ -234,7 +232,6 @@
     <Xml Include="UI\CodeBookWindow.xml" />
     <Xml Include="UI\DataGridComponents.xml" />
     <Xml Include="UI\LoginWindow.xml" />
-    <Xml Include="UI\EditCodeWindow.xml" />
     <Xml Include="UI\RegisterWindow.xml" />
     <Xml Include="UI\Resource.xml" />
     <Xml Include="UI\SeekBar.xml" />

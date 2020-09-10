@@ -36,8 +36,6 @@ namespace vl
 #ifndef VCZH_DEBUG_NO_REFLECTION
 			DECL_TYPE_INFO(::gacpass::CodeBookWindow)
 			DECL_TYPE_INFO(::gacpass::CodeBookWindowConstructor)
-			DECL_TYPE_INFO(::gacpass::EditCodeWindow)
-			DECL_TYPE_INFO(::gacpass::EditCodeWindowConstructor)
 			DECL_TYPE_INFO(::gacpass::HostType)
 			DECL_TYPE_INFO(::gacpass::HostTypeDisplayer)
 			DECL_TYPE_INFO(::gacpass::HostTypeDisplayerConstructor)
@@ -122,13 +120,13 @@ namespace vl
 				{
 					INVOKE_INTERFACE_PROXY(AddCode, code);
 				}
-				::vl::Ptr<::gacpass::IEditCodeViewModel> CreateEditCodeViewModel() override
-				{
-					INVOKEGET_INTERFACE_PROXY_NOPARAMS(CreateEditCodeViewModel);
-				}
 				::vl::Ptr<::vl::reflection::description::IValueObservableList> GetCodes() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodes);
+				}
+				::vl::Ptr<::gacpass::IEditCodeViewModel> GetEditCodeViewModel() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetEditCodeViewModel);
 				}
 				::vl::WString GetSearch() override
 				{
@@ -161,6 +159,10 @@ namespace vl
 			END_INTERFACE_PROXY(::gacpass::ICodeBookViewModel)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::IEditCodeViewModel)
+				void Clear() override
+				{
+					INVOKE_INTERFACE_PROXY_NOPARAMS(Clear);
+				}
 				::vl::Ptr<::gacpass::ICode> GetCode() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCode);

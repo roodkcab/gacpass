@@ -7,6 +7,7 @@ using namespace vl::regex;
 
 CodeBookViewModel::CodeBookViewModel(Ptr<gacpass::ILoginViewModel> _loginViewModel) 
 	: loginViewModel(_loginViewModel)
+	, editCodeViewModel(MakePtr<EditCodeViewModel>())
 {
 }
 
@@ -49,6 +50,11 @@ void CodeBookViewModel::Load()
 	});
 }
 
+Ptr<::gacpass::IEditCodeViewModel> CodeBookViewModel::GetEditCodeViewModel()
+{
+	return this->editCodeViewModel;
+}
+
 Ptr<IValueObservableList> CodeBookViewModel::GetCodes()
 {
 	return codes.GetWrapper();
@@ -79,11 +85,6 @@ void CodeBookViewModel::SetSearch(const WString& value)
 	this->username = L"";
 	this->SearchChanged();
 	this->search();
-}
-
-Ptr<gacpass::IEditCodeViewModel> CodeBookViewModel::CreateEditCodeViewModel()
-{
-	return MakePtr<EditCodeViewModel>();
 }
 
 void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)

@@ -90,3 +90,8 @@ WString EditCodeViewModel::genCode() {
 	}
 	return WString(code.c_str());
 }
+
+void EditCodeViewModel::Clear()
+{
+
+}

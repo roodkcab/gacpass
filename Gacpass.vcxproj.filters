@@ -39,9 +39,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="UI\Source\CodeBookWindow.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
     <ClCompile Include="UI\Source\GacPassReflection.cpp">
       <Filter>UI</Filter>
     </ClCompile>
@@ -122,9 +119,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UI\Source\CodeBookWindow.h">
-      <Filter>UI</Filter>
-    </ClInclude>
     <ClInclude Include="UI\Source\GacPass.h">
       <Filter>UI</Filter>
     </ClInclude>
@@ -224,9 +218,6 @@
       <Filter>资源文件</Filter>
     </Xml>
     <Xml Include="UI\SeekBar.xml">
-      <Filter>资源文件</Filter>
-    </Xml>
-    <Xml Include="UI\EditCodeWindow.xml">
       <Filter>资源文件</Filter>
     </Xml>
     <Xml Include="UI\DataGridComponents.xml">

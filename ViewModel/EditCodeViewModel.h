@@ -21,6 +21,7 @@ public:
 	void SetCodeLength(vint codeLength)override;
 	vint GetSpecialCharLength()override;
 	void SetSpecialCharLength(vint specialCharLength)override;
+	void Clear()override;
 
 private:
 	WString genCode();
