@@ -46,7 +46,6 @@ void EditCodeViewModel::SetCodeLength(vint codeLength)
 	this->codeLength = codeLength;
 	CodeLengthChanged();
 	this->code->SetPassword(this->genCode());
-	CodeChanged();
 }
 
 vint EditCodeViewModel::GetSpecialCharLength()
@@ -59,7 +58,6 @@ void EditCodeViewModel::SetSpecialCharLength(vint specialCharLength)
 	this->specialCharLength = specialCharLength;
 	SpecialCharLengthChanged();
 	this->code->SetPassword(this->genCode());
-	CodeChanged();
 }
 
 WString EditCodeViewModel::genCode() {

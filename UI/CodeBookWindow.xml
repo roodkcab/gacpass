@@ -16,7 +16,7 @@
 				interface IEditCodeViewModel
         {
 				  prop SelectedReference : IReference^ {}
-          prop Code : ICode^ {const}
+          prop Code : ICode^ {const, not observe}
           prop CodeLength : int {}
           prop SpecialCharLength : int {}
 
@@ -51,11 +51,11 @@
           <att.SelectedCode-bind>listViewCodes.SelectedItem as (gacpass::ICode^)</att.SelectedCode-bind>
         </att.CodeBookViewModel-set>
         <att.EditCodeViewModel-set>
-          <att.Code-set>
+          <att.Code-bind>
             <att.Title-bind>textBoxTitle.Text</att.Title-bind>
             <att.Username-bind>textBoxUsername.Text</att.Username-bind>
             <att.Password-bind>textBoxPassword.Text</att.Password-bind>
-          </att.Code-set>
+          </att.Code-bind>
           <att.CodeLength-bind>hTrackerCodeLength.Position</att.CodeLength-bind>
           <att.SpecialCharLength-bind>hTrackerSpecialCharLength.Position</att.SpecialCharLength-bind>
           <att.SelectedReference-bind>gridViewReferences.SelectedRowValue as (gacpass::IReference^)</att.SelectedReference-bind>
