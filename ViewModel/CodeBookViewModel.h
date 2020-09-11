@@ -22,7 +22,7 @@ public:
 	void SetSelectedCode(Ptr<gacpass::ICode> value)override;
 	WString GetSearch()override;
 	void SetSearch(const WString& search)override;
-	void AddCode(Ptr<gacpass::ICode> code)override;
+	Ptr<gacpass::ICode> AddCode()override;
 	void UpdateCode(Ptr<gacpass::ICode> code)override;
 	void RemoveCode(Ptr<gacpass::ICode> code)override;
 	void OnItemLeftButtonDoubleClick(GuiItemMouseEventArgs* arguments)override;

@@ -95,16 +95,19 @@ Ptr<vl::reflection::description::IValueObservableList> Code::GetReferences()
 
 void Code::Update(Ptr<ICode> code)
 {
-	this->SetId(code->GetId());
-	this->SetTitle(code->GetTitle());
-	this->SetUsername(code->GetUsername());
-	this->SetPassword(code->GetPassword());
-
-	references.Clear();
-	auto l = GetLazyList<Ptr<Reference>>(code->GetReferences()).CreateEnumerator();
-	while (l->Next())
+	if (code)
 	{
-		references.Add(MakePtr<Reference>(*(l->Current().Obj())));
+		this->SetId(code->GetId());
+		this->SetTitle(code->GetTitle());
+		this->SetUsername(code->GetUsername());
+		this->SetPassword(code->GetPassword());
+
+		references.Clear();
+		auto l = GetLazyList<Ptr<Reference>>(code->GetReferences()).CreateEnumerator();
+		while (l->Next())
+		{
+			references.Add(MakePtr<Reference>(*(l->Current().Obj())));
+		}
 	}
 }
 

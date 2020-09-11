@@ -116,9 +116,9 @@ namespace vl
 			END_INTERFACE_PROXY(::gacpass::ICode)
 
 			BEGIN_INTERFACE_PROXY_NOPARENT_SHAREDPTR(::gacpass::ICodeBookViewModel)
-				void AddCode(::vl::Ptr<::gacpass::ICode> code) override
+				::vl::Ptr<::gacpass::ICode> AddCode() override
 				{
-					INVOKE_INTERFACE_PROXY(AddCode, code);
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(AddCode);
 				}
 				::vl::Ptr<::vl::reflection::description::IValueObservableList> GetCodes() override
 				{

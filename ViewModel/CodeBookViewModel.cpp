@@ -81,24 +81,32 @@ void CodeBookViewModel::SetSearch(const WString& value)
 	this->search();
 }
 
-void CodeBookViewModel::AddCode(Ptr<gacpass::ICode> code)
+Ptr<gacpass::ICode> CodeBookViewModel::AddCode()
 {
-	Code *c = dynamic_cast<Code *>(code.Obj());
-	int id = DB.insert<Code>(*c);
-	c->SetId(id);
-	this->updateReference(code);
-	codes.Add(MakePtr<Code>(*c));
+	return MakePtr<Code>();
 }
 
 void CodeBookViewModel::UpdateCode(Ptr<gacpass::ICode> code)
 {
-	vint index = codes.IndexOf(selectedCode.Obj());
-	if (index != -1)
+	if (code->GetId() == -1)
 	{
-		Code *c = dynamic_cast<Code *>(code.Obj());
-		DB.update<Code>(*c);
+		Code* c = dynamic_cast<Code*>(code.Obj());
+		int id = DB.insert<Code>(*c);
+		c->SetId(id);
 		this->updateReference(code);
-		codes.NotifyUpdate(index, 1);
+		codes.Add(MakePtr<Code>(*c));
+	}
+	else
+	{
+		vint index = codes.IndexOf(selectedCode.Obj());
+		if (index != -1)
+		{
+			selectedCode->Update(code);
+			Code* c = dynamic_cast<Code*>(code.Obj());
+			DB.update<Code>(*c);
+			this->updateReference(code);
+			codes.NotifyUpdate(index, 1);
+		}
 	}
 }
 
@@ -126,7 +134,6 @@ void CodeBookViewModel::updateReference(Ptr<gacpass::ICode> code)
 			}
 		}
 	}
-	code->GetReferences()->Clear();
 }
 
 void CodeBookViewModel::RemoveCode(Ptr<gacpass::ICode> code)

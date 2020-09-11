@@ -133,6 +133,7 @@ namespace vl
 				CLASS_MEMBER_FIELD(__vwsn_precompile_53)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_54)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_55)
+				CLASS_MEMBER_FIELD(__vwsn_precompile_56)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_6)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_7)
 				CLASS_MEMBER_FIELD(__vwsn_precompile_8)
@@ -263,7 +264,7 @@ namespace vl
 
 			BEGIN_INTERFACE_MEMBER(::gacpass::ICodeBookViewModel)
 				CLASS_MEMBER_BASE(::vl::reflection::IDescriptable)
-				CLASS_MEMBER_METHOD(AddCode, { L"code" })
+				CLASS_MEMBER_METHOD(AddCode, NO_PARAMETER)
 				CLASS_MEMBER_METHOD(GetCodes, NO_PARAMETER)
 				CLASS_MEMBER_METHOD(GetSearch, NO_PARAMETER)
 				CLASS_MEMBER_METHOD(GetSelectedCode, NO_PARAMETER)
