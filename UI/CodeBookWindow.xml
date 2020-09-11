@@ -13,45 +13,14 @@
 
 			namespace gacpass
 			{
-        enum HostType
+				interface IEditCodeViewModel
         {
-          Website = 0,
-          Server = 1,
-          Database = 2,
-        }
+				  prop SelectedReference : IReference^ {}
+          prop Code : ICode^ {const}
+          prop CodeLength : int {}
+          prop SpecialCharLength : int {}
 
-        func ToString(value : HostType) : string
-        {
-          switch (value)
-          {
-            case Website: { return "Website"; }
-            case Server: { return "Server"; }
-            case Database: { return "Database"; }
-          }
-          return "";
-        }
-
-				interface ICode
-				{
-				  prop Id : int {not observe}
-					prop Title : string {not observe}
-					prop Username	: string {not observe}
-					prop Password	: string {not observe}
-					prop HidePassword : string {const, not observe}
-					prop References : observe IReference^[] {const, not observe}
-
-					func Update(code : ICode^) : void;
-					func AddReference() : void;
-				}
-
-				interface IReference
-				{
-          prop Id : int {not observe}
-					prop CodeId: int {not observe}
-					prop Type : HostType {not observe}
-					prop Content : string {not observe}
-
-					func Update(reference: IReference^) : void;
+          func Clear() : void;
         }
 
 				interface ICodeBookViewModel
@@ -67,16 +36,6 @@
 
 					func OnItemLeftButtonDoubleClick(arguments : presentation::compositions::GuiItemMouseEventArgs*) : void;
 				}
-
-				interface IEditCodeViewModel
-        {
-				  prop SelectedReference : IReference^ {}
-          prop Code : ICode^ {const}
-          prop CodeLength : int {}
-          prop SpecialCharLength : int {}
-
-          func Clear() : void;
-        }
 			}
 			]]>
 		</Workflow>

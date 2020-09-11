@@ -9,11 +9,10 @@
 		</Folder>
 	</Folder>
 
+  <Folder name="DataGridComponents" content="Link">DataGridComponents.xml</Folder>
 	<Folder name="RegisterWindowResource" content="Link">RegisterWindow.xml</Folder>
 	<Folder name="LoginWindowResource" content="Link">LoginWindow.xml</Folder>
 	<Folder name="CodeBookWindowResource" content="Link">CodeBookWindow.xml</Folder>
-  <Folder name="DataGridComponents" content="Link">DataGridComponents.xml</Folder>
-
 
   <Script>
 		<Workflow>
@@ -29,16 +28,52 @@
 					prop Key : string {not observe}
 				}
 
+				enum HostType
+        {
+          Website = 0,
+          Server = 1,
+          Database = 2,
+        }
+
+        func ToString(value : HostType) : string
+        {
+          switch (value)
+          {
+            case Website: { return "Website"; }
+            case Server: { return "Server"; }
+            case Database: { return "Database"; }
+          }
+          return "";
+        }
+
+        interface ICode
+				{
+				  prop Id : int {not observe}
+					prop Title : string {not observe}
+					prop Username	: string {not observe}
+					prop Password	: string {not observe}
+					prop HidePassword : string {const, not observe}
+					prop References : observe IReference^[] {const, not observe}
+
+					func Update(code : ICode^) : void;
+					func AddReference() : void;
+				}
+
+				interface IReference
+				{
+          prop Id : int {not observe}
+					prop CodeId: int {not observe}
+					prop Type : HostType {not observe}
+					prop Content : string {not observe}
+
+					func Update(reference: IReference^) : void;
+        }			
+
 				interface IViewModel
 				{
-					func GetRegisterViewModel() : IRegisterViewModel^;
-					prop RegisterViewModel : IRegisterViewModel^ {GetRegisterViewModel}
-
-					func GetLoginViewModel() : ILoginViewModel^;
-					prop LoginViewModel : ILoginViewModel^ {GetLoginViewModel}
-
-					func GetCodeBookViewModel() : ICodeBookViewModel^;
-					prop CodeBookViewModel : ICodeBookViewModel^ {GetCodeBookViewModel}
+					prop RegisterViewModel : IRegisterViewModel^ {const}
+					prop LoginViewModel : ILoginViewModel^ {const}
+					prop CodeBookViewModel : ICodeBookViewModel^ {const}
 				}
 			}
 			]]>
@@ -49,9 +84,9 @@
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::MainWindow" xmlns:gacpass="gacpass::*">
 			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel"/>
 			<Window ref.Name="self" Text="GacPass">
-				<gacpass:CodeBookWindow ListViewModel-eval="ViewModel.CodeBookViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet" MainWindow-eval="self"></gacpass:CodeBookWindow>
-				<gacpass:LoginWindow ViewModel-eval="ViewModel.LoginViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet"></gacpass:LoginWindow>
 				<gacpass:RegisterWindow Visible-bind="not ViewModel.RegisterViewModel.MainPasswordSet" ViewModel-eval="ViewModel.RegisterViewModel"></gacpass:RegisterWindow>
+				<gacpass:LoginWindow ViewModel-eval="ViewModel.LoginViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet"></gacpass:LoginWindow>
+				<gacpass:CodeBookWindow ListViewModel-eval="ViewModel.CodeBookViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet" MainWindow-eval="self"></gacpass:CodeBookWindow>
 			</Window>
 		</Instance>
 	</Instance>

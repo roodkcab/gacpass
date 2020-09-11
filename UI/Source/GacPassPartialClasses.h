@@ -541,13 +541,13 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<ICode>;
 #endif
 	public:
-		virtual ::vl::vint GetId()const = 0;
+		virtual ::vl::vint GetId() = 0;
 		virtual void SetId(::vl::vint __vwsn_value_) = 0;
-		virtual ::vl::WString GetTitle()const = 0;
+		virtual ::vl::WString GetTitle() = 0;
 		virtual void SetTitle(const ::vl::WString& __vwsn_value_) = 0;
-		virtual ::vl::WString GetUsername()const = 0;
+		virtual ::vl::WString GetUsername() = 0;
 		virtual void SetUsername(const ::vl::WString& __vwsn_value_) = 0;
-		virtual ::vl::WString GetPassword()const = 0;
+		virtual ::vl::WString GetPassword() = 0;
 		virtual void SetPassword(const ::vl::WString& __vwsn_value_) = 0;
 		virtual ::vl::WString GetHidePassword() = 0;
 		virtual ::vl::Ptr<::vl::reflection::description::IValueObservableList> GetReferences() = 0;
@@ -602,9 +602,9 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<IKey>;
 #endif
 	public:
-		virtual ::vl::vint GetId()const = 0;
+		virtual ::vl::vint GetId() = 0;
 		virtual void SetId(::vl::vint __vwsn_value_) = 0;
-		virtual ::vl::WString GetKey()const = 0;
+		virtual ::vl::WString GetKey() = 0;
 		virtual void SetKey(const ::vl::WString& __vwsn_value_) = 0;
 	};
 
@@ -627,13 +627,13 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<IReference>;
 #endif
 	public:
-		virtual ::vl::vint GetId()const = 0;
+		virtual ::vl::vint GetId() = 0;
 		virtual void SetId(::vl::vint __vwsn_value_) = 0;
-		virtual ::vl::vint GetCodeId()const = 0;
+		virtual ::vl::vint GetCodeId() = 0;
 		virtual void SetCodeId(::vl::vint __vwsn_value_) = 0;
-		virtual ::gacpass::HostType GetType()const = 0;
+		virtual ::gacpass::HostType GetType() = 0;
 		virtual void SetType(::gacpass::HostType __vwsn_value_) = 0;
-		virtual ::vl::WString GetContent()const = 0;
+		virtual ::vl::WString GetContent() = 0;
 		virtual void SetContent(const ::vl::WString& __vwsn_value_) = 0;
 		virtual void Update(::vl::Ptr<::gacpass::IReference> reference) = 0;
 	};
@@ -666,8 +666,11 @@ namespace gacpass
 #endif
 	public:
 		virtual ::vl::Ptr<::gacpass::IRegisterViewModel> GetRegisterViewModel() = 0;
+		::vl::Event<void()> RegisterViewModelChanged;
 		virtual ::vl::Ptr<::gacpass::ILoginViewModel> GetLoginViewModel() = 0;
+		::vl::Event<void()> LoginViewModelChanged;
 		virtual ::vl::Ptr<::gacpass::ICodeBookViewModel> GetCodeBookViewModel() = 0;
+		::vl::Event<void()> CodeBookViewModelChanged;
 	};
 
 	class LoginWindowConstructor : public ::vl::Object, public ::vl::reflection::Description<LoginWindowConstructor>
@@ -680,8 +683,8 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<LoginWindowConstructor>;
 #endif
 	protected:
-		::vl::Ptr<::gacpass::ILoginViewModel> ViewModel;
 		::gacpass::LoginWindow* self;
+		::vl::Ptr<::gacpass::ILoginViewModel> ViewModel;
 		::vl::presentation::controls::GuiSinglelineTextBox* textBoxPassword;
 		::vl::presentation::compositions::GuiBoundsComposition* Container;
 		::vl::presentation::controls::GuiButton* buttonLogin;
@@ -698,8 +701,8 @@ namespace gacpass
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_10;
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_11;
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_12;
-		::vl::Ptr<::gacpass::ILoginViewModel> __vwsn_precompile_13;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_14;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_13;
+		::vl::Ptr<::gacpass::ILoginViewModel> __vwsn_precompile_14;
 		void __vwsn_gacpass_LoginWindow_Initialize(::gacpass::LoginWindow* __vwsn_this_);
 	public:
 		LoginWindowConstructor();
@@ -740,11 +743,11 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<MainWindowConstructor>;
 #endif
 	protected:
-		::vl::Ptr<::gacpass::IViewModel> ViewModel;
 		::gacpass::MainWindow* self;
-		::gacpass::CodeBookWindow* __vwsn_precompile_0;
+		::vl::Ptr<::gacpass::IViewModel> ViewModel;
+		::gacpass::RegisterWindow* __vwsn_precompile_0;
 		::gacpass::LoginWindow* __vwsn_precompile_1;
-		::gacpass::RegisterWindow* __vwsn_precompile_2;
+		::gacpass::CodeBookWindow* __vwsn_precompile_2;
 		void __vwsn_gacpass_MainWindow_Initialize(::gacpass::MainWindow* __vwsn_this_);
 	public:
 		MainWindowConstructor();
@@ -817,8 +820,8 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<RegisterWindowConstructor>;
 #endif
 	protected:
-		::vl::Ptr<::gacpass::IRegisterViewModel> ViewModel;
 		::gacpass::RegisterWindow* self;
+		::vl::Ptr<::gacpass::IRegisterViewModel> ViewModel;
 		::vl::presentation::controls::GuiSinglelineTextBox* textBoxPassword;
 		::vl::presentation::controls::GuiSinglelineTextBox* textBoxConfirmPassword;
 		::vl::presentation::controls::GuiButton* buttonSignUp;
@@ -853,8 +856,8 @@ namespace gacpass
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_28;
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_29;
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_30;
-		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_precompile_31;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_32;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_31;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_precompile_32;
 		void __vwsn_gacpass_RegisterWindow_Initialize(::gacpass::RegisterWindow* __vwsn_this_);
 	public:
 		RegisterWindowConstructor();
@@ -1714,12 +1717,15 @@ Closures
 
 		__vwsnc1_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::IViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
+		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
+		void __vwsn_bind_callback_1_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1912,12 +1918,15 @@ Closures
 
 		__vwsnc2_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::IViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
+		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
+		void __vwsn_bind_callback_1_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -2108,12 +2117,15 @@ Closures
 
 		__vwsnc3_GacPass_gacpass_MainWindowConstructor___vwsn_gacpass_MainWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::MainWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::IViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::IRegisterViewModel> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
+		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
+		void __vwsn_bind_callback_1_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
