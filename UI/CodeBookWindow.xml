@@ -184,27 +184,21 @@
                 <Label Text="Title:"/>
               </Cell>
               <Cell Site="row:0 column:1 columnSpan:3">
-                <DocumentTextBox ref.Name="textBoxTitle" EditMode="Editable" Text-bind="ListViewModel.EditCodeViewModel.Code.Title">
-                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-                </DocumentTextBox>
+                <SinglelineTextBox ref.Name="textBoxTitle" Text-bind="ListViewModel.EditCodeViewModel.Code.Title"/>
               </Cell>
 
               <Cell Site="row:1 column:0" InternalMargin="top:6">
                 <Label Text="Username:"/>
               </Cell>
               <Cell Site="row:1 column:1 columnSpan:3">
-                <DocumentTextBox ref.Name="textBoxUsername" EditMode="Editable" Text-bind="ListViewModel.EditCodeViewModel.Code.Username">
-                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-                </DocumentTextBox>
+                <SinglelineTextBox ref.Name="textBoxUsername" Text-bind="ListViewModel.EditCodeViewModel.Code.Username"/>
               </Cell>
 
               <Cell Site="row:2 column:0" InternalMargin="top:6">
                 <Label Text="Password:"/>
               </Cell>
               <Cell Site="row:2 column:1 columnSpan:3">
-                <DocumentTextBox ref.Name="textBoxPassword" EditMode="Editable" Text-bind="ListViewModel.EditCodeViewModel.Code.Password">
-                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-                </DocumentTextBox>
+                <SinglelineTextBox ref.Name="textBoxPassword" Text-bind="ListViewModel.EditCodeViewModel.Code.Password"/>
               </Cell>
 
               <Cell Site="row:3 column:0">
