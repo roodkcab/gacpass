@@ -38,6 +38,7 @@ int Code::GetId()const
 void Code::SetId(int _id)
 {
 	id = _id;
+	this->IdChanged();
 }
 
 WString Code::GetTitle()const
@@ -48,6 +49,7 @@ WString Code::GetTitle()const
 void Code::SetTitle(const WString& _title)
 {
 	title = _title;
+	this->TitleChanged();
 }
 
 WString Code::GetUsername()const
@@ -58,6 +60,7 @@ WString Code::GetUsername()const
 void Code::SetUsername(const WString& _username)
 {
 	username = _username;
+	this->UsernameChanged();
 }
 
 WString Code::GetPassword()const
@@ -68,6 +71,7 @@ WString Code::GetPassword()const
 void Code::SetPassword(const WString& _password)
 {
 	password = _password;
+	this->PasswordChanged();
 }
 
 WString Code::GetHidePassword()
@@ -91,10 +95,10 @@ Ptr<vl::reflection::description::IValueObservableList> Code::GetReferences()
 
 void Code::Update(Ptr<ICode> code)
 {
-	id = code->GetId();
-	title = code->GetTitle();
-	username = code->GetUsername();
-	password = code->GetPassword();
+	this->SetId(code->GetId());
+	this->SetTitle(code->GetTitle());
+	this->SetUsername(code->GetUsername());
+	this->SetPassword(code->GetPassword());
 
 	references.Clear();
 	auto l = GetLazyList<Ptr<Reference>>(code->GetReferences()).CreateEnumerator();

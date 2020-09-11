@@ -43,23 +43,24 @@
 	<Instance name="CodeBookWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::CodeBookWindow" xmlns:gacpass="gacpass::*">
 			<ref.Parameter Name="ListViewModel" Class="gacpass::ICodeBookViewModel" />
-			<ref.Parameter Name="MainWindow" Class="presentation::controls::GuiWindow"/>
-			<CustomControl ref.Name="self">
-				<att.BoundsComposition-set PreferredMinSize="x:700 y:478"/>
-				<att.ListViewModel-set>
-					<att.SelectedCode-bind>listViewCodes.SelectedItem as (gacpass::ICode^)</att.SelectedCode-bind>
-					<att.Search-bind>textBoxSearch.Text</att.Search-bind>
-          <att.EditCodeViewModel-set>
-            <att.Code-set>
-              <att.Title-bind>textBoxTitle.Text</att.Title-bind>
-              <att.Username-bind>textBoxUsername.Text</att.Username-bind>
-              <att.Password-bind>textBoxPassword.Text</att.Password-bind>
-            </att.Code-set>
-            <att.SelectedReference-bind>gridViewReferences.SelectedRowValue as (gacpass::IReference^)</att.SelectedReference-bind>
-            <att.CodeLength-bind>hTrackerCodeLength.Position</att.CodeLength-bind>
-            <att.SpecialCharLength-bind>hTrackerSpecialCharLength.Position</att.SpecialCharLength-bind>
-          </att.EditCodeViewModel-set>
+			<ref.Parameter Name="EditCodeViewModel" Class="gacpass::IEditCodeViewModel" />
+      <ref.Parameter Name="MainWindow" Class="presentation::controls::GuiWindow"/>
+      <CustomControl ref.Name="self">
+        <att.BoundsComposition-set PreferredMinSize="x:700 y:478"/>
+        <att.ListViewModel-set>
+          <att.SelectedCode-bind>listViewCodes.SelectedItem as (gacpass::ICode^)</att.SelectedCode-bind>
+          <att.Search-bind>textBoxSearch.Text</att.Search-bind>
         </att.ListViewModel-set>
+        <att.EditCodeViewModel-set>
+          <att.Code-set>
+            <att.Title-bind>textBoxTitle.Text</att.Title-bind>
+            <att.Username-bind>textBoxUsername.Text</att.Username-bind>
+            <att.Password-bind>textBoxPassword.Text</att.Password-bind>
+          </att.Code-set>
+          <att.SelectedReference-bind>gridViewReferences.SelectedRowValue as (gacpass::IReference^)</att.SelectedReference-bind>
+          <att.CodeLength-bind>hTrackerCodeLength.Position</att.CodeLength-bind>
+          <att.SpecialCharLength-bind>hTrackerSpecialCharLength.Position</att.SpecialCharLength-bind>
+        </att.EditCodeViewModel-set>
         <ToolstripCommand ref.Name="commandNewCode" Image-uri="res://CodeBookWindowResource/New">
 					<ev.Executed-eval>
 						<![CDATA[
@@ -111,7 +112,7 @@
 
         <gacpass:ReferenceFilter ref.Name="Filter"></gacpass:ReferenceFilter>
 
-        <Table CellPadding="5" AlignmentToParent="left:0 top:28 right:0 bottom:0">
+        <Table CellPadding="5" AlignmentToParent="left:0 top:28 right:0 bottom:0" MinSizeLimitation="LimitToElementAndChildren">
           <att.Rows>
             <CellOption>composeType:Percentage percentage:1.0</CellOption>
           </att.Rows>
@@ -119,8 +120,11 @@
             <CellOption>composeType:MinSize</CellOption>
             <CellOption>composeType:Percentage percentage:1.0</CellOption>
           </att.Columns>
+
+          <ColumnSplitter ColumnsToTheLeft="1"/>
+
           <Cell Site="row:0 column:0">
-            <Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:-1 bottom:-1" PreferredMinSize="x:230 y:450">
+            <Table CellPadding="5" AlignmentToParent="left:0 top:0 right:-1 bottom:-1" PreferredMinSize="x:230 y:450">
               <att.Rows>
                 <CellOption>composeType:MinSize</CellOption>
                 <CellOption>composeType:Percentage percentage:1.0</CellOption>
@@ -140,13 +144,9 @@
                 </SinglelineTextBox>
               </Cell>
               <Cell Site="row:1 column:0">
-                <BindableListView ref.Name="listViewCodes" View="Detail" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false" env.ItemType="gacpass::ICode^" ev.ItemLeftButtonDoubleClick-eval="ListViewModel.OnItemLeftButtonDoubleClick(arguments);">
+                <BindableListView ref.Name="listViewCodes" View="Detail" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false" ev.ItemLeftButtonDoubleClick-eval="ListViewModel.OnItemLeftButtonDoubleClick(arguments);" env.ItemType="gacpass::ICode^">
                   <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-                  <att.ItemSource-bind>
-                    <![CDATA[
-									ListViewModel.Codes ?? null
-								]]>
-                  </att.ItemSource-bind>
+                  <att.ItemSource-bind>ListViewModel.Codes ?? null</att.ItemSource-bind>
 
                   <att.Columns>
                     <ListViewColumn Text="Title" TextProperty="Title" Size="120"/>
@@ -236,16 +236,8 @@
                 <BindableDataGrid ref.Name="gridViewReferences" env.ItemType="gacpass::IReference^" env.ItemName="item" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false">
 
                   <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-                  <att.ItemSource-bind>
-                    <![CDATA[
-									ListViewModel.EditCodeViewModel.Code.References ?? null
-								]]>
-                  </att.ItemSource-bind>
-                  <att.AdditionalFilter-bind>
-                    <![CDATA[
-									Filter.Filter ?? null
-								]]>
-                  </att.AdditionalFilter-bind>
+                  <att.ItemSource-bind>ListViewModel.EditCodeViewModel.Code.References ?? null</att.ItemSource-bind>
+                  <att.AdditionalFilter-bind>Filter.Filter ?? null</att.AdditionalFilter-bind>
 
                   <att.Columns>
                     <DataColumn Text="Type" Size="120">
@@ -271,23 +263,11 @@
               <Cell Site="row:6 column:2">
                 <Button Text="OK">
                   <att.BoundsComposition-set PreferredMinSize="x:60"/>
-                  <ev.Clicked-eval>
-                    <![CDATA[
-                    {
-                    }
-                  ]]>
-                  </ev.Clicked-eval>
                 </Button>
               </Cell>
               <Cell Site="row:6 column:3">
                 <Button Text="Cancel">
                   <att.BoundsComposition-set PreferredMinSize="x:60"/>
-                  <ev.Clicked-eval>
-                    <![CDATA[
-                    {
-                    }
-                  ]]>
-                  </ev.Clicked-eval>
                 </Button>
               </Cell>
             </Table>

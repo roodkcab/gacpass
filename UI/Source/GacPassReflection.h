@@ -306,6 +306,10 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodeBookViewModel);
 				}
+				::vl::Ptr<::gacpass::IEditCodeViewModel> GetEditCodeViewModel() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetEditCodeViewModel);
+				}
 				::vl::Ptr<::gacpass::ILoginViewModel> GetLoginViewModel() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetLoginViewModel);

@@ -46,19 +46,6 @@
           return "";
         }
 
-        interface ICode
-				{
-				  prop Id : int {not observe}
-					prop Title : string {not observe}
-					prop Username	: string {not observe}
-					prop Password	: string {not observe}
-					prop HidePassword : string {const, not observe}
-					prop References : observe IReference^[] {const, not observe}
-
-					func Update(code : ICode^) : void;
-					func AddReference() : void;
-				}
-
 				interface IReference
 				{
           prop Id : int {not observe}
@@ -67,13 +54,27 @@
 					prop Content : string {not observe}
 
 					func Update(reference: IReference^) : void;
-        }			
+        }
+
+        interface ICode
+				{
+				  prop Id : int {}
+					prop Title : string {}
+					prop Username	: string {}
+					prop Password	: string {}
+					prop HidePassword : string {const, not observe}
+					prop References : observe IReference^[] {const, not observe}
+
+					func Update(code : ICode^) : void;
+					func AddReference() : void;
+				}			
 
 				interface IViewModel
 				{
 					prop RegisterViewModel : IRegisterViewModel^ {const}
 					prop LoginViewModel : ILoginViewModel^ {const}
 					prop CodeBookViewModel : ICodeBookViewModel^ {const}
+					prop EditCodeViewModel : IEditCodeViewModel^ {const}
 				}
 			}
 			]]>
@@ -84,9 +85,9 @@
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::MainWindow" xmlns:gacpass="gacpass::*">
 			<ref.Parameter Name="ViewModel" Class="gacpass::IViewModel"/>
 			<Window ref.Name="self" Text="GacPass">
-				<gacpass:RegisterWindow Visible-bind="not ViewModel.RegisterViewModel.MainPasswordSet" ViewModel-eval="ViewModel.RegisterViewModel"></gacpass:RegisterWindow>
+				<gacpass:CodeBookWindow ListViewModel-eval="ViewModel.CodeBookViewModel" EditCodeViewModel-eval="ViewModel.EditCodeViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet" MainWindow-eval="self"></gacpass:CodeBookWindow>
 				<gacpass:LoginWindow ViewModel-eval="ViewModel.LoginViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet"></gacpass:LoginWindow>
-				<gacpass:CodeBookWindow ListViewModel-eval="ViewModel.CodeBookViewModel" Visible-bind="ViewModel.RegisterViewModel.MainPasswordSet" MainWindow-eval="self"></gacpass:CodeBookWindow>
+				<gacpass:RegisterWindow Visible-bind="not ViewModel.RegisterViewModel.MainPasswordSet" ViewModel-eval="ViewModel.RegisterViewModel"></gacpass:RegisterWindow>
 			</Window>
 		</Instance>
 	</Instance>
