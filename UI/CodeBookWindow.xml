@@ -151,16 +151,17 @@
 				</ToolstripCommand>
 
         <gacpass:ReferenceFilter ref.Name="Filter"></gacpass:ReferenceFilter>
+
         <Table CellPadding="5" AlignmentToParent="left:0 top:28 right:0 bottom:0">
           <att.Rows>
-            <CellOption>composeType:MinSize</CellOption>
+            <CellOption>composeType:Percentage percentage:1.0</CellOption>
           </att.Rows>
           <att.Columns>
             <CellOption>composeType:MinSize</CellOption>
             <CellOption>composeType:Percentage percentage:1.0</CellOption>
           </att.Columns>
           <Cell Site="row:0 column:0">
-            <Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:28 right:-1 bottom:-1" PreferredMinSize="x:230 y:450">
+            <Table CellPadding="5" BorderVisible="false" AlignmentToParent="left:0 top:0 right:-1 bottom:-1" PreferredMinSize="x:230 y:450">
               <att.Rows>
                 <CellOption>composeType:MinSize</CellOption>
                 <CellOption>composeType:Percentage percentage:1.0</CellOption>
