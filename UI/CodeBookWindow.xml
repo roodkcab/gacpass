@@ -28,7 +28,6 @@
 					prop Codes : observe ICode^[] {const, not observe}
 					prop Search : string {}
 					prop SelectedCode : ICode^ {}
-          prop EditCodeViewModel : IEditCodeViewModel^ {const}
 
 					func AddCode(code : ICode^) : void;
 					func UpdateCode(code : ICode^) : void;
@@ -42,50 +41,50 @@
 	</Script>
 	<Instance name="CodeBookWindow">
 		<Instance ref.CodeBehind="false" ref.Class="gacpass::CodeBookWindow" xmlns:gacpass="gacpass::*">
-			<ref.Parameter Name="ListViewModel" Class="gacpass::ICodeBookViewModel" />
+			<ref.Parameter Name="CodeBookViewModel" Class="gacpass::ICodeBookViewModel" />
 			<ref.Parameter Name="EditCodeViewModel" Class="gacpass::IEditCodeViewModel" />
       <ref.Parameter Name="MainWindow" Class="presentation::controls::GuiWindow"/>
       <CustomControl ref.Name="self">
         <att.BoundsComposition-set PreferredMinSize="x:700 y:478"/>
-        <att.ListViewModel-set>
-          <att.SelectedCode-bind>listViewCodes.SelectedItem as (gacpass::ICode^)</att.SelectedCode-bind>
+        <att.CodeBookViewModel-set>
           <att.Search-bind>textBoxSearch.Text</att.Search-bind>
-        </att.ListViewModel-set>
+          <att.SelectedCode-bind>listViewCodes.SelectedItem as (gacpass::ICode^)</att.SelectedCode-bind>
+        </att.CodeBookViewModel-set>
         <att.EditCodeViewModel-set>
           <att.Code-set>
             <att.Title-bind>textBoxTitle.Text</att.Title-bind>
             <att.Username-bind>textBoxUsername.Text</att.Username-bind>
             <att.Password-bind>textBoxPassword.Text</att.Password-bind>
           </att.Code-set>
-          <att.SelectedReference-bind>gridViewReferences.SelectedRowValue as (gacpass::IReference^)</att.SelectedReference-bind>
           <att.CodeLength-bind>hTrackerCodeLength.Position</att.CodeLength-bind>
           <att.SpecialCharLength-bind>hTrackerSpecialCharLength.Position</att.SpecialCharLength-bind>
+          <att.SelectedReference-bind>gridViewReferences.SelectedRowValue as (gacpass::IReference^)</att.SelectedReference-bind>
         </att.EditCodeViewModel-set>
         <ToolstripCommand ref.Name="commandNewCode" Image-uri="res://CodeBookWindowResource/New">
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-                  ListViewModel.EditCodeViewModel.Clear();
+                  EditCodeViewModel.Clear();
                 }
               ]]>
 					</ev.Executed-eval>
 				</ToolstripCommand>
 				<ToolstripCommand ref.Name="commandEditCode" Image-uri="res://CodeBookWindowResource/Edit">
-					<att.Enabled-bind>ListViewModel.SelectedCode is not null</att.Enabled-bind>
+					<att.Enabled-bind>CodeBookViewModel.SelectedCode is not null</att.Enabled-bind>
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-                  ListViewModel.EditCodeViewModel.Code.Update(ListViewModel.SelectedCode);
+                  EditCodeViewModel.Code.Update(CodeBookViewModel.SelectedCode);
                 }
               ]]>
 					</ev.Executed-eval>
 				</ToolstripCommand>
 				<ToolstripCommand ref.Name="commandRemoveCode" Image-uri="res://CodeBookWindowResource/Delete">
-					<att.Enabled-bind>ListViewModel.SelectedCode is not null</att.Enabled-bind>
+					<att.Enabled-bind>CodeBookViewModel.SelectedCode is not null</att.Enabled-bind>
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-                  ListViewModel.RemoveCode(ListViewModel.SelectedCode);
+                  CodeBookViewModel.RemoveCode(CodeBookViewModel.SelectedCode);
                 }
               ]]>
 					</ev.Executed-eval>
@@ -94,7 +93,7 @@
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-									ListViewModel.EditCodeViewModel.Code.AddReference();
+									EditCodeViewModel.Code.AddReference();
                 }
               ]]>
 					</ev.Executed-eval>
@@ -103,7 +102,7 @@
 					<ev.Executed-eval>
 						<![CDATA[
                 $Async{
-									ListViewModel.EditCodeViewModel.SelectedReference.SetCodeId(0);
+									EditCodeViewModel.SelectedReference.SetCodeId(0);
 									Filter.UpdateFilter();
                 }
               ]]>
@@ -139,14 +138,14 @@
                   <ToolstripButton Command-ref="commandEditCode"/>
                   <ToolstripButton Command-ref="commandRemoveCode"/>
                 </ToolstripToolBar>
-                <SinglelineTextBox ref.Name="textBoxSearch">
+                <SinglelineTextBox ref.Name="textBoxSearch" AcceptTabInput="false">
                   <att.BoundsComposition-set AlignmentToParent="left:100 top:0 right:0 bottom:0" PreferredMinSize="x:100 y:24"/>
                 </SinglelineTextBox>
               </Cell>
               <Cell Site="row:1 column:0">
-                <BindableListView ref.Name="listViewCodes" View="Detail" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false" ev.ItemLeftButtonDoubleClick-eval="ListViewModel.OnItemLeftButtonDoubleClick(arguments);" env.ItemType="gacpass::ICode^">
+                <BindableListView ref.Name="listViewCodes" View="Detail" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false" ev.ItemLeftButtonDoubleClick-eval="CodeBookViewModel.OnItemLeftButtonDoubleClick(arguments);" env.ItemType="gacpass::ICode^">
                   <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-                  <att.ItemSource-bind>ListViewModel.Codes ?? null</att.ItemSource-bind>
+                  <att.ItemSource-bind>CodeBookViewModel.Codes ?? null</att.ItemSource-bind>
 
                   <att.Columns>
                     <ListViewColumn Text="Title" TextProperty="Title" Size="120"/>
@@ -175,7 +174,8 @@
               </att.Rows>
               <att.Columns>
                 <CellOption>composeType:MinSize</CellOption>
-                <CellOption>composeType:Percentage percentage:1.0</CellOption>
+                <CellOption>composeType:MinSize</CellOption>
+                <CellOption>composeType:MinSize</CellOption>
                 <CellOption>composeType:MinSize</CellOption>
                 <CellOption>composeType:MinSize</CellOption>
               </att.Columns>
@@ -183,42 +183,48 @@
               <Cell Site="row:0 column:0" InternalMargin="top:6">
                 <Label Text="Title:"/>
               </Cell>
-              <Cell Site="row:0 column:1 columnSpan:3">
-                <SinglelineTextBox ref.Name="textBoxTitle" Text-bind="ListViewModel.EditCodeViewModel.Code.Title"/>
+              <Cell Site="row:0 column:1 columnSpan:4">
+                <SinglelineTextBox ref.Name="textBoxTitle" Text-bind="EditCodeViewModel.Code.Title" AcceptTabInput="false">
+                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+                </SinglelineTextBox>
               </Cell>
 
               <Cell Site="row:1 column:0" InternalMargin="top:6">
                 <Label Text="Username:"/>
               </Cell>
-              <Cell Site="row:1 column:1 columnSpan:3">
-                <SinglelineTextBox ref.Name="textBoxUsername" Text-bind="ListViewModel.EditCodeViewModel.Code.Username"/>
+              <Cell Site="row:1 column:1 columnSpan:4">
+                <SinglelineTextBox ref.Name="textBoxUsername" Text-bind="EditCodeViewModel.Code.Username" AcceptTabInput="false">
+                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+                </SinglelineTextBox>
               </Cell>
 
               <Cell Site="row:2 column:0" InternalMargin="top:6">
                 <Label Text="Password:"/>
               </Cell>
-              <Cell Site="row:2 column:1 columnSpan:3">
-                <SinglelineTextBox ref.Name="textBoxPassword" Text-bind="ListViewModel.EditCodeViewModel.Code.Password"/>
+              <Cell Site="row:2 column:1 columnSpan:4">
+                <SinglelineTextBox ref.Name="textBoxPassword" Text-bind="EditCodeViewModel.Code.Password" AcceptTabInput="false">
+                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+                </SinglelineTextBox>
               </Cell>
 
-              <Cell Site="row:3 column:0">
+              <Cell Site="row:3 column:1">
                 <Label Text="Code Length:"/>
               </Cell>
-              <Cell Site="row:3 column:1">
-                <HTracker ref.Name="hTrackerCodeLength" TotalSize="30" Position-bind="ListViewModel.EditCodeViewModel.CodeLength">
-                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+              <Cell Site="row:3 column:2">
+                <HTracker ref.Name="hTrackerCodeLength" TotalSize="30" Position-bind="EditCodeViewModel.CodeLength">
+                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:240"/>
                 </HTracker>
               </Cell>
-              <Cell Site="row:3 column:2">
+              <Cell Site="row:3 column:3">
                 <Label Text="SpecialChar Length:"/>
               </Cell>
-              <Cell Site="row:3 column:3">
-                <HTracker ref.Name="hTrackerSpecialCharLength" TotalSize="5" Position-bind="ListViewModel.EditCodeViewModel.SpecialCharLength">
-                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+              <Cell Site="row:3 column:4">
+                <HTracker ref.Name="hTrackerSpecialCharLength" TotalSize="5" Position-bind="EditCodeViewModel.SpecialCharLength">
+                  <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:80"/>
                 </HTracker>
               </Cell>
 
-              <Cell Site="row:4 column:1 columnSpan:3">
+              <Cell Site="row:4 column:1 columnSpan:4">
                 <ToolstripToolBar>
                   <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
                   <ToolstripButton Command-ref="commandNewCode"/>
@@ -226,11 +232,11 @@
                 </ToolstripToolBar>
               </Cell>
 
-              <Cell Site="row:5 column:1 columnSpan:3">
+              <Cell Site="row:5 column:1 columnSpan:4">
                 <BindableDataGrid ref.Name="gridViewReferences" env.ItemType="gacpass::IReference^" env.ItemName="item" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false">
 
                   <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
-                  <att.ItemSource-bind>ListViewModel.EditCodeViewModel.Code.References ?? null</att.ItemSource-bind>
+                  <att.ItemSource-bind>EditCodeViewModel.Code.References ?? null</att.ItemSource-bind>
                   <att.AdditionalFilter-bind>Filter.Filter ?? null</att.AdditionalFilter-bind>
 
                   <att.Columns>
@@ -254,12 +260,12 @@
                 </BindableDataGrid>
               </Cell>
 
-              <Cell Site="row:6 column:2">
+              <Cell Site="row:6 column:3">
                 <Button Text="OK">
                   <att.BoundsComposition-set PreferredMinSize="x:60"/>
                 </Button>
               </Cell>
-              <Cell Site="row:6 column:3">
+              <Cell Site="row:6 column:4">
                 <Button Text="Cancel">
                   <att.BoundsComposition-set PreferredMinSize="x:60"/>
                 </Button>

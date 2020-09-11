@@ -7,7 +7,6 @@ using namespace vl::regex;
 
 CodeBookViewModel::CodeBookViewModel(Ptr<gacpass::ILoginViewModel> _loginViewModel) 
 	: loginViewModel(_loginViewModel)
-	, editCodeViewModel(MakePtr<EditCodeViewModel>())
 {
 }
 
@@ -48,11 +47,6 @@ void CodeBookViewModel::Load()
 			}
 		}
 	});
-}
-
-Ptr<::gacpass::IEditCodeViewModel> CodeBookViewModel::GetEditCodeViewModel()
-{
-	return this->editCodeViewModel;
 }
 
 Ptr<IValueObservableList> CodeBookViewModel::GetCodes()

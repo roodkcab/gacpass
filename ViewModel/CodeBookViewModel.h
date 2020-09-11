@@ -13,12 +13,10 @@ private:
 	WString host;
 	WString username;
 	Ptr<gacpass::ILoginViewModel> loginViewModel;
-	Ptr<gacpass::IEditCodeViewModel> editCodeViewModel;
 
 public:
 	CodeBookViewModel(Ptr<gacpass::ILoginViewModel> _loginViewModel);
 	void Load();
-	Ptr<gacpass::IEditCodeViewModel> GetEditCodeViewModel()override;
 	Ptr<IValueObservableList> GetCodes()override;
 	Ptr<gacpass::ICode> GetSelectedCode()override;
 	void SetSelectedCode(Ptr<gacpass::ICode> value)override;

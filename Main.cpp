@@ -6,6 +6,7 @@
 #include "ViewModel/CodeBookViewModel.h"
 #include "ViewModel/RegisterVIewModel.h"
 #include "ViewModel/LoginViewModel.h"
+#include "ViewModel/EditCodeViewModel.h"
 #include "db/DB.h"
 #include "EventBus.h"
 
@@ -22,12 +23,14 @@ private:
 	::vl::Ptr<gacpass::IRegisterViewModel> registerViewModel;
 	::vl::Ptr<gacpass::ILoginViewModel> loginViewModel;
 	::vl::Ptr<gacpass::ICodeBookViewModel> codeBookViewModel;
+	::vl::Ptr<gacpass::IEditCodeViewModel> editCodeViewModel;
 
 public:
-	ViewModel() 
+	ViewModel()
 		: registerViewModel(MakePtr<RegisterViewModel>())
 		, loginViewModel(MakePtr<LoginViewModel>())
 		, codeBookViewModel(MakePtr<CodeBookViewModel>(loginViewModel))
+		, editCodeViewModel(MakePtr<EditCodeViewModel>())
 	{
 		auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(WAppdata(L"")));
 		if (!folder->Exists())
@@ -51,6 +54,11 @@ public:
 	Ptr<gacpass::ICodeBookViewModel> GetCodeBookViewModel()override
 	{
 		return this->codeBookViewModel;
+	}
+
+	Ptr<gacpass::IEditCodeViewModel> GetEditCodeViewModel()override
+	{
+		return this->editCodeViewModel;
 	}
 };
 

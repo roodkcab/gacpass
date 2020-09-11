@@ -245,7 +245,7 @@ namespace gacpass
 	protected:
 		::gacpass::CodeBookWindow* self;
 		::vl::presentation::controls::GuiSinglelineTextBox* textBoxPassword;
-		::vl::Ptr<::gacpass::ICodeBookViewModel> ListViewModel;
+		::vl::Ptr<::gacpass::ICodeBookViewModel> CodeBookViewModel;
 		::vl::Ptr<::gacpass::IEditCodeViewModel> EditCodeViewModel;
 		::vl::presentation::controls::GuiWindow* MainWindow;
 		::vl::presentation::controls::GuiToolstripCommand* commandNewCode;
@@ -282,39 +282,42 @@ namespace gacpass
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_18;
 		::vl::presentation::controls::GuiLabel* __vwsn_precompile_19;
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_20;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_21;
-		::vl::presentation::controls::GuiLabel* __vwsn_precompile_22;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_23;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_21;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_22;
+		::vl::presentation::controls::GuiLabel* __vwsn_precompile_23;
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_24;
-		::vl::presentation::controls::GuiLabel* __vwsn_precompile_25;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_25;
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_26;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_27;
-		::vl::presentation::controls::GuiLabel* __vwsn_precompile_28;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_29;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_30;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_31;
-		::vl::presentation::controls::GuiLabel* __vwsn_precompile_32;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_33;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_34;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_35;
-		::vl::presentation::controls::GuiToolstripToolBar* __vwsn_precompile_36;
-		::vl::presentation::controls::GuiToolstripButton* __vwsn_precompile_37;
-		::vl::presentation::controls::GuiToolstripButton* __vwsn_precompile_38;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_39;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_40;
-		::vl::Ptr<::vl::presentation::controls::list::DataColumn> __vwsn_precompile_41;
-		::vl::Ptr<::vl::presentation::controls::list::DataColumn> __vwsn_precompile_42;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_43;
-		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_44;
-		::vl::presentation::controls::GuiButton* __vwsn_precompile_45;
+		::vl::presentation::controls::GuiLabel* __vwsn_precompile_27;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_28;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_29;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_30;
+		::vl::presentation::controls::GuiLabel* __vwsn_precompile_31;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_32;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_33;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_34;
+		::vl::presentation::controls::GuiLabel* __vwsn_precompile_35;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_36;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_37;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_38;
+		::vl::presentation::controls::GuiToolstripToolBar* __vwsn_precompile_39;
+		::vl::presentation::controls::GuiToolstripButton* __vwsn_precompile_40;
+		::vl::presentation::controls::GuiToolstripButton* __vwsn_precompile_41;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_42;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_43;
+		::vl::Ptr<::vl::presentation::controls::list::DataColumn> __vwsn_precompile_44;
+		::vl::Ptr<::vl::presentation::controls::list::DataColumn> __vwsn_precompile_45;
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_46;
 		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_47;
 		::vl::presentation::controls::GuiButton* __vwsn_precompile_48;
 		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_49;
-		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_50;
-		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_precompile_51;
-		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_precompile_52;
-		::vl::Ptr<::gacpass::ICode> __vwsn_precompile_53;
+		::vl::presentation::compositions::GuiCellComposition* __vwsn_precompile_50;
+		::vl::presentation::controls::GuiButton* __vwsn_precompile_51;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_52;
+		::vl::presentation::compositions::GuiBoundsComposition* __vwsn_precompile_53;
+		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_precompile_54;
+		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_precompile_55;
+		::vl::Ptr<::gacpass::ICode> __vwsn_precompile_56;
 		void __vwsn_gacpass_CodeBookWindow_Initialize(::gacpass::CodeBookWindow* __vwsn_this_);
 	public:
 		CodeBookWindowConstructor();
@@ -390,13 +393,13 @@ namespace gacpass
 		friend struct ::vl::reflection::description::CustomTypeDescriptorSelector<CodeBookWindow>;
 #endif
 	public:
-		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_parameter_ListViewModel;
-		::vl::Ptr<::gacpass::ICodeBookViewModel> GetListViewModel();
+		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_parameter_CodeBookViewModel;
+		::vl::Ptr<::gacpass::ICodeBookViewModel> GetCodeBookViewModel();
 		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_parameter_EditCodeViewModel;
 		::vl::Ptr<::gacpass::IEditCodeViewModel> GetEditCodeViewModel();
 		::vl::presentation::controls::GuiWindow* __vwsn_parameter_MainWindow;
 		::vl::presentation::controls::GuiWindow* GetMainWindow();
-		CodeBookWindow(::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_ctor_parameter_ListViewModel, ::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_ctor_parameter_EditCodeViewModel, ::vl::presentation::controls::GuiWindow* __vwsn_ctor_parameter_MainWindow);
+		CodeBookWindow(::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_ctor_parameter_CodeBookViewModel, ::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_ctor_parameter_EditCodeViewModel, ::vl::presentation::controls::GuiWindow* __vwsn_ctor_parameter_MainWindow);
 		~CodeBookWindow();
 	};
 
@@ -567,8 +570,6 @@ namespace gacpass
 		virtual ::vl::Ptr<::gacpass::ICode> GetSelectedCode() = 0;
 		virtual void SetSelectedCode(::vl::Ptr<::gacpass::ICode> __vwsn_value_) = 0;
 		::vl::Event<void()> SelectedCodeChanged;
-		virtual ::vl::Ptr<::gacpass::IEditCodeViewModel> GetEditCodeViewModel() = 0;
-		::vl::Event<void()> EditCodeViewModelChanged;
 		virtual void AddCode(::vl::Ptr<::gacpass::ICode> code) = 0;
 		virtual void UpdateCode(::vl::Ptr<::gacpass::ICode> code) = 0;
 		virtual void RemoveCode(::vl::Ptr<::gacpass::ICode> code) = 0;
@@ -1541,18 +1542,15 @@ Closures
 
 		__vwsnc12_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_1;
-		::vl::Ptr<::gacpass::ICode> __vwsn_bind_cache_2;
+		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::ICode> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_2_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
 		void __vwsn_bind_callback_1_0();
-		void __vwsn_bind_callback_2_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1565,18 +1563,15 @@ Closures
 
 		__vwsnc13_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_1;
-		::vl::Ptr<::gacpass::ICode> __vwsn_bind_cache_2;
+		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::ICode> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_2_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
 		void __vwsn_bind_callback_1_0();
-		void __vwsn_bind_callback_2_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1589,18 +1584,15 @@ Closures
 
 		__vwsnc14_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_1;
-		::vl::Ptr<::gacpass::ICode> __vwsn_bind_cache_2;
+		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_0;
+		::vl::Ptr<::gacpass::ICode> __vwsn_bind_cache_1;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_2_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
 		void __vwsn_bind_callback_1_0();
-		void __vwsn_bind_callback_2_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1613,15 +1605,12 @@ Closures
 
 		__vwsnc15_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_1;
+		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
-		void __vwsn_bind_callback_1_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1634,15 +1623,12 @@ Closures
 
 		__vwsnc16_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_1;
+		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
-		void __vwsn_bind_callback_1_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1655,15 +1641,12 @@ Closures
 
 		__vwsnc17_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::Ptr<::gacpass::ICodeBookViewModel> __vwsn_bind_cache_0;
-		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_1;
+		::vl::Ptr<::gacpass::IEditCodeViewModel> __vwsn_bind_cache_0;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
-		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_1_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
 		void __vwsn_bind_activator_();
 		void __vwsn_bind_callback_0_0();
-		void __vwsn_bind_callback_1_0();
 		bool Open() override;
 		bool Update() override;
 		bool Close() override;
@@ -1691,7 +1674,7 @@ Closures
 
 		__vwsnc19_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiBindableListView* __vwsn_bind_cache_0 = nullptr;
+		::vl::presentation::controls::GuiSinglelineTextBox* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
@@ -1730,7 +1713,7 @@ Closures
 
 		__vwsnc20_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiSinglelineTextBox* __vwsn_bind_cache_0 = nullptr;
+		::vl::presentation::controls::GuiBindableListView* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
@@ -1802,7 +1785,7 @@ Closures
 
 		__vwsnc24_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiBindableDataGrid* __vwsn_bind_cache_0 = nullptr;
+		::vl::presentation::controls::GuiScroll* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;
@@ -1838,7 +1821,7 @@ Closures
 
 		__vwsnc26_GacPass_gacpass_CodeBookWindowConstructor___vwsn_gacpass_CodeBookWindow_Initialize__vl_reflection_description_IValueSubscription(::gacpass::CodeBookWindowConstructor* __vwsnctorthis_0);
 
-		::vl::presentation::controls::GuiScroll* __vwsn_bind_cache_0 = nullptr;
+		::vl::presentation::controls::GuiBindableDataGrid* __vwsn_bind_cache_0 = nullptr;
 		::vl::Ptr<::vl::reflection::description::IEventHandler> __vwsn_bind_handler_0_0;
 		bool __vwsn_bind_opened_ = false;
 		bool __vwsn_bind_closed_ = false;

@@ -124,10 +124,6 @@ namespace vl
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetCodes);
 				}
-				::vl::Ptr<::gacpass::IEditCodeViewModel> GetEditCodeViewModel() override
-				{
-					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetEditCodeViewModel);
-				}
 				::vl::WString GetSearch() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetSearch);
