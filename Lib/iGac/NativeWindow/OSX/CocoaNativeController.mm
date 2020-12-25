@@ -214,7 +214,7 @@ namespace vl {
                 {
                     return mainWindow;
                 }
-
+                
                 void Run(INativeWindow* window)
                 {
                     mainWindow = window;
@@ -247,7 +247,7 @@ namespace vl {
                     {
                         CocoaWindow* window = (CocoaWindow*)windows[i];
                         NativeRect r = window->GetClientBoundsInScreen();
-                        if(r.Contains(NativePoint(location.x, location.y)))
+                        if(r.Contains(location))
                         {
                             if(!result)
                             {
@@ -339,7 +339,6 @@ namespace vl {
                     asyncService.ExecuteAsyncTasks();
                     callbackService.InvokeGlobalTimer();
                 }
-                
             };
             
             INativeController* CreateOSXNativeController()

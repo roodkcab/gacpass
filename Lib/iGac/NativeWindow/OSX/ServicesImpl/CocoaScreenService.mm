@@ -31,7 +31,7 @@ namespace vl {
                             r.origin.x + r.size.width,
                             r.origin.y + r.size.height);
             }
-            
+
             NativeRect CocoaScreen::GetClientBounds()
             {
                 return GetBounds();
@@ -49,14 +49,14 @@ namespace vl {
 
             double CocoaScreen::GetScalingX()
             {
-                return 1.0;
+                return 2.0;
             }
 
             double CocoaScreen::GetScalingY()
             {
-                return 1.0;
+                return 2.0;
             }
-            
+
             CocoaScreenService::CocoaScreenService()
             {
                 RefreshScreenInformation();
@@ -100,7 +100,9 @@ namespace vl {
                 }
                 return 0;
             }
+            
         }
+
     }
 
 }

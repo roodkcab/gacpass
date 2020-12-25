@@ -51,7 +51,7 @@ namespace vl {
                 CFMachPortRef                           inputTapPort;
                 CFRunLoopSourceRef                      inputTapRunLoopSource;
                 
-                VKEY                                    globalKeyStates[256];
+                vint8_t                                 globalKeyStates[256];
                 
                 wchar_t                                 asciiLowerMap[256];
                 wchar_t                                 asciiUpperMap[256];
@@ -78,7 +78,7 @@ namespace vl {
                 bool    IsKeyToggled(VKEY code) override;
                 
                 WString GetKeyName(VKEY code) override;
-                VKEY    GetKey(const WString& name) override;
+                VKEY GetKey(const WString& name) override;
                 
                 ///
                 

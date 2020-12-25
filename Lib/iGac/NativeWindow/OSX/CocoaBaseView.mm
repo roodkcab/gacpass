@@ -323,7 +323,9 @@
     NSWindow* wnd = cocoaWindow->GetNativeWindow();
     NSScreen* screen = vl::presentation::osx::GetWindowScreen(wnd);
     
-    return NSMakeRect(caretPoint.x.value + bounds.Left().value, screen.frame.size.height - (caretPoint.y.value + bounds.Top().value + 30), 16, 16);
+    return NSMakeRect(caretPoint.x.value + bounds.Left().value,
+                      screen.frame.size.height - (caretPoint.y.value + bounds.Top().value + 30),
+                      16, 16);
 }
 
 - (NSUInteger)characterIndexForPoint:(NSPoint)aPoint

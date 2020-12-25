@@ -6,6 +6,8 @@
 #include "ViewModel/LoginViewModel.h"
 #include "ViewModel/DB.h"
 
+#include "shared/osx_shared.h"
+
 using namespace vl::stream;
 
 class ViewModel : public Object, public virtual gacpass::IViewModel
@@ -48,12 +50,16 @@ public:
 void GuiMain()
 {
 	{
+#if defined(__WINDOWS__)
 		FileStream fileStream(L"MVVM.bin", FileStream::ReadOnly);
-		GetResourceManager()->LoadResourceOrPending(fileStream);
+#else
+        FileStream fileStream(osx::GetResourceFolder() + L"MVVM.bin", FileStream::ReadOnly);
+#endif
+        GetResourceManager()->LoadResourceOrPending(fileStream);
 	}
 
 	auto folder = vl::MakePtr<vl::filesystem::Folder>(vl::filesystem::FilePath(WAppdata(L"")));
-	if (!folder->Exists()) 
+	if (!folder->Exists())
 	{
 		folder->Create(false);
 	}

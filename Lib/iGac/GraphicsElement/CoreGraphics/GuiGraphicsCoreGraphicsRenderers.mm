@@ -73,6 +73,7 @@ namespace vl {
             
                 switch(element->GetShape().shapeType)
                 {
+                    case ElementShapeType::RoundRect:
                     case ElementShapeType::Rectangle:
                         CGContextFillRect(context, ConvertToCGRect(bounds));
                         break;
@@ -91,6 +92,7 @@ namespace vl {
                 
                 switch(element->GetShape().shapeType)
                 {
+                    case ElementShapeType::RoundRect:
                     case ElementShapeType::Rectangle:
                         CGContextStrokeRect(context, ConvertToCGRect(bounds, -0.5f));
                         break;
@@ -100,27 +102,6 @@ namespace vl {
                         break;
                 }
             }
-            
-            /*IMPLEMENT_ELEMENT_RENDERER(GuiRoundBorderElementRenderer)
-            {
-                CGContextRef context = GetCurrentCGContextFromRenderTarget();
-                
-                SetCGContextStrokeColor(context, element->GetColor());
-
-                CGRect rect = ConvertToCGRect(bounds, -0.5f);
-                CGFloat radius = (CGFloat)element->GetRadius();
-                
-                CGFloat minx = CGRectGetMinX(rect), midx = CGRectGetMidX(rect), maxx = CGRectGetMaxX(rect);
-                CGFloat miny = CGRectGetMinY(rect), midy = CGRectGetMidY(rect), maxy = CGRectGetMaxY(rect);
-                
-                CGContextMoveToPoint(context, minx, midy);
-                CGContextAddArcToPoint(context, minx, miny, midx, miny, radius);
-                CGContextAddArcToPoint(context, maxx, miny, maxx, midy, radius);
-                CGContextAddArcToPoint(context, maxx, maxy, midx, maxy, radius);
-                CGContextAddArcToPoint(context, minx, maxy, minx, midy, radius);
-                CGContextClosePath(context);
-                CGContextDrawPath(context, kCGPathFillStroke);
-            }*/
             
             ////
             
@@ -1004,7 +985,7 @@ namespace vl {
             
             ///////
             
-            /*void GuiCoreGraphicsElementRenderer::InitializeInternal()
+            void GuiCoreGraphicsElementRenderer::InitializeInternal()
             {
                 
             }
@@ -1058,7 +1039,77 @@ namespace vl {
             void GuiCoreGraphicsElementRenderer::OnElementStateChanged()
             {
                 
-            }*/
+            }
+
+            ///////
+
+            void GuiInnerShadowElementRenderer::InitializeInternal()
+            {
+
+            }
+
+            void GuiInnerShadowElementRenderer::FinalizeInternal()
+            {
+
+            }
+
+            void GuiInnerShadowElementRenderer::RenderTargetChangedInternal(ICoreGraphicsRenderTarget* oldRenderTarget, ICoreGraphicsRenderTarget* newRenderTarget)
+            {
+            }
+
+            GuiInnerShadowElementRenderer::GuiInnerShadowElementRenderer()
+            {
+
+            }
+
+            GuiInnerShadowElementRenderer::~GuiInnerShadowElementRenderer()
+            {
+
+            }
+
+            void GuiInnerShadowElementRenderer::Render(Rect bounds)
+            {
+            }
+
+            void GuiInnerShadowElementRenderer::OnElementStateChanged()
+            {
+
+            }
+
+            ///////
+
+            void GuiFocusRectangleElementRenderer::InitializeInternal()
+            {
+
+            }
+
+            void GuiFocusRectangleElementRenderer::FinalizeInternal()
+            {
+
+            }
+
+            void GuiFocusRectangleElementRenderer::RenderTargetChangedInternal(ICoreGraphicsRenderTarget* oldRenderTarget, ICoreGraphicsRenderTarget* newRenderTarget)
+            {
+            }
+
+            GuiFocusRectangleElementRenderer::GuiFocusRectangleElementRenderer()
+            {
+
+            }
+
+            GuiFocusRectangleElementRenderer::~GuiFocusRectangleElementRenderer()
+            {
+
+            }
+
+            void GuiFocusRectangleElementRenderer::Render(Rect bounds)
+            {
+            }
+
+            void GuiFocusRectangleElementRenderer::OnElementStateChanged()
+            {
+
+            }
         }
     }
     

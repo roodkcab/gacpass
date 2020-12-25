@@ -18,18 +18,31 @@ find_library(COREGRAPHICS_LIBRARIES CoreGraphics)
 find_library(COCOA_LIBRARIES Cocoa)
 set(OS_LIBRARIES ${COREFOUNDATION_LIBRARIES} ${QUARTZ_LIBRARIES} ${COREGRAPHICS_LIBRARIES} ${COCOA_LIBRARIES} ${OS_LIBRARIES})
 
+include(FetchContent)
+FetchContent_Declare(SqliteOrm
+		GIT_REPOSITORY https://github.com/fnc12/sqlite_orm
+		GIT_TAG        origin/dev
+		)
+FetchContent_MakeAvailable(SqliteOrm)
+find_package(sqlite3 CONFIG REQUIRED)
+set(THIRD_LIBRARIES sqlite_orm::sqlite_orm sqlite3)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-missing-declarations")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 
+add_compile_definitions(VCZH_DEBUG_NO_REFLECTION)
+
 set(GACUI_COMMON_FILES
-	"Lib/GacUI/Vlpp.cpp"
-	"Lib/GacUI/VlppWorkflowLibrary.cpp"
 	"Lib/GacUI/GacUI.cpp"
-	"Lib/GacUI/GacUIReflection.cpp"
+	"Lib/GacUI/Vlpp.cpp"
+	"Lib/GacUI/VlppOS.cpp"
+	"Lib/GacUI/VlppRegex.cpp"
+	"Lib/GacUI/VlppParser.cpp"
 	"Lib/GacUI/VlppReflection.cpp"
-	"Lib/GacUI/VlppWorkflowCompiler.cpp"
-	"Lib/GacUI/VlppWorkflowRuntime.cpp" )
+	"Lib/GacUI/VlppWorkflowLibrary.cpp"
+	"Lib/GacUI/Skins/DarkSkin/DarkSkin.cpp"
+)
 
 set(GACOSX_FILES
 	"Lib/iGac/GraphicsElement/CoreGraphics/GuiGraphicsCoreGraphics.mm"
@@ -54,7 +67,7 @@ set(GACOSX_FILES
 add_library(GacUI STATIC ${GACUI_COMMON_FILES})
 add_library(GacOSX STATIC ${GACOSX_FILES})
 
-set(DEPENDENCIES_LIBRARIES ${DEPENDENCIES_LIBRARIES} ${OS_LIBRARIES})
+set(DEPENDENCIES_LIBRARIES ${DEPENDENCIES_LIBRARIES} ${OS_LIBRARIES} ${THIRD_LIBRARIES})
 set(GACUI_LIBRARIES "GacUI" "GacOSX")
 
 set(GACOSX_SHARED_FILES
@@ -85,6 +98,10 @@ set(SOURCE_FILES
 	"ViewModel/RegisterViewModel.cpp"
 	"ViewModel/LoginViewModel.cpp"
 	"ViewModel/CodeBookViewModel.cpp"
+	"Lib/sqlite_orm/WString.cpp"
+	"Lib/util.cpp"
+	"UI/Source/GacPassPartialClasses.cpp"
+	"UI/Source/CodeBookWindow.cpp"
 )
 set(MACOSX_BUNDLE_GUI_IDENTIFIER "com.darkfall.iGac.${APP_NAME}")
 add_executable(${APP_NAME} MACOSX_BUNDLE ${SOURCE_FILES} ${GACOSX_SHARED_FILES} ${SHARED_RESOURCES})

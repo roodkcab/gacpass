@@ -7,9 +7,6 @@
 //
 
 #include "CocoaClipboardService.h"
-#include "../CocoaHelper.h"
-
-#import <Cocoa/Cocoa.h>
 
 namespace vl {
     
@@ -17,48 +14,66 @@ namespace vl {
         
         namespace osx {
 
-            Ptr<INativeClipboardReader>	CocoaClipboardService::ReadClipboard()
-            {
+            ////
+            CocoaClipboardWriter::CocoaClipboardWriter(CocoaClipboardService *_service) {}
+
+            void CocoaClipboardWriter::SetText(const WString &value) {
+
             }
 
-            Ptr<INativeClipboardWriter>	CocoaClipboardService::WriteClipboard()
-            {
+            void CocoaClipboardWriter::SetDocument(Ptr<DocumentModel> value) {
+
             }
 
-            /*bool CocoaClipboardService::SetText(const WString& value)
-            {
-                NSArray* types = [NSArray arrayWithObjects:NSStringPboardType, nil];
-                
-                NSPasteboard* pasteboard = [NSPasteboard generalPasteboard];
-                [pasteboard declareTypes:types owner:nil];
-                return [pasteboard setString:WStringToNSString(value)
-                                     forType:NSStringPboardType];
+            void CocoaClipboardWriter::SetImage(Ptr<INativeImage> value) {
+
             }
-            
-            WString CocoaClipboardService::GetText()
+
+            bool CocoaClipboardWriter::Submit() {
+                return false;
+            }
+
+            ////
+            CocoaClipboardReader::CocoaClipboardReader(CocoaClipboardService *_service) {}
+
+            bool CocoaClipboardReader::ContainsText() {
+                return false;
+            }
+
+            WString CocoaClipboardReader::GetText() {
+                return vl::WString();
+            }
+
+            bool CocoaClipboardReader::ContainsDocument() {
+                return false;
+            }
+
+            Ptr<DocumentModel> CocoaClipboardReader::GetDocument() {
+                return Ptr<DocumentModel>();
+            }
+
+            bool CocoaClipboardReader::ContainsImage() {
+                return false;
+            }
+
+            Ptr<INativeImage> CocoaClipboardReader::GetImage() {
+                return Ptr<INativeImage>();
+            }
+
+            ////
+            Ptr<INativeClipboardReader>		CocoaClipboardService::ReadClipboard()
             {
-                NSPasteboard* pasteboard = [NSPasteboard generalPasteboard];
-                
-                if (![[pasteboard types] containsObject:NSStringPboardType])
+                if (!reader)
                 {
-                    return L"";
+                    reader = new CocoaClipboardReader(this);
                 }
-                
-                NSString* str = [pasteboard stringForType:NSStringPboardType];
-                if (!str)
-                {
-                    return L"";
-                }
-                
-                return NSStringToWString(str);
+                return reader;
             }
-            
-            bool CocoaClipboardService::ContainsText()
-            {
-                NSPasteboard* pasteboard = [NSPasteboard generalPasteboard];
-                return [[pasteboard types] containsObject:NSStringPboardType];
-            }*/
 
+            Ptr<INativeClipboardWriter>		CocoaClipboardService::WriteClipboard()
+            {
+                return new CocoaClipboardWriter(this);
+            }
         }
     }
 }

@@ -49,7 +49,8 @@ namespace vl {
                 NativeRect                                      lastBorder;
                 INativeCursor*                                  currentCursor;
                 NativeRect                                      previousBounds;
-                
+                NativeMargin						            customFramePadding;
+
                 collections::List<IDraggingListener*>           draggingListeners;
                 
                 NSWindow*                                       nsWindow;
@@ -59,16 +60,7 @@ namespace vl {
             public:
                 CocoaWindow();
                 virtual ~CocoaWindow();
-
-                Point				Convert(NativePoint value);
-                NativePoint			Convert(Point value);
-                Size				Convert(NativeSize value);
-                NativeSize			Convert(Size value);
-                Margin				Convert(NativeMargin value);
-                NativeMargin		Convert(Margin value);
-
-
-
+                
                 NSWindow*           GetNativeWindow() const;
                 NSWindowController* GetNativeController() const;
                 
@@ -77,14 +69,11 @@ namespace vl {
                 
                 // INativeWindow
                 
-                NativeRect          GetBounds() override;
+                NativeRect			GetBounds() override;
                 void				SetBounds(const NativeRect& bounds) override;
                 NativeSize			GetClientSize() override;
                 void				SetClientSize(NativeSize size) override;
                 NativeRect			GetClientBoundsInScreen() override;
-                NativeMargin		GetCustomFramePadding()override;
-                Ptr<GuiImageData>	GetIcon()override;
-                void				SetIcon(Ptr<GuiImageData> icon)override;
                 WString				GetTitle() override;
                 void				SetTitle(WString title) override;
                 INativeCursor*		GetWindowCursor() override;
@@ -143,8 +132,16 @@ namespace vl {
                 bool				InstallListener(INativeWindowListener* listener) override;
                 bool				UninstallListener(INativeWindowListener* listener) override;
                 void				RedrawContent() override;
-                
-            
+                NativeMargin        GetCustomFramePadding() override;
+                Ptr<GuiImageData>   GetIcon() override;
+                void                SetIcon(Ptr<GuiImageData> icon) override;
+                Point               Convert(NativePoint value) override;
+                NativePoint         Convert(Point value) override;
+                Size                Convert(NativeSize value) override;
+                NativeSize          Convert(Size value) override;
+                Margin              Convert(NativeMargin value) override;
+                NativeMargin        Convert(Margin value) override;
+
                 ///
                 void                HandleEventInternal(NSEvent* event);
                 void                InvokeClosed();
@@ -159,9 +156,9 @@ namespace vl {
                 void                SetResizingBorder(INativeWindowListener::HitTestResult border);
                 void                ResizingDragged();
                 void                MovingDragged();
-                void                HitTestMouseDown(vint x, vint y);
-                void                HitTestMouseMove(vint x, vint y);
-                void                HitTestMouseUp(vint x, vint y);
+                void                HitTestMouseDown(NativeCoordinate x, NativeCoordinate y);
+                void                HitTestMouseMove(NativeCoordinate x, NativeCoordinate y);
+                void                HitTestMouseUp(NativeCoordinate x, NativeCoordinate y);
                 void                DragEntered();
                 void                PrepareDrag();
                 void                PerformFileDrag(const vl::collections::List<WString>& files);
@@ -169,7 +166,7 @@ namespace vl {
                 
                 void                InstallDraggingListener(IDraggingListener* listener);
                 void                UninstallDraggingListener(IDraggingListener* listener);
-                
+
             protected:
                 void                CreateWindow();
     

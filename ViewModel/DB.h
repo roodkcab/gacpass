@@ -10,7 +10,7 @@ using namespace vl;
 template <typename... Args>
 auto DB()
 {
-	return make_storage(Appdata(L"\\gacpass.db"), 
+	return make_storage(Appdata(L"/gacpass.db"),
 		make_table("account",
 			make_column("id", &Key::GetId, &Key::SetId, autoincrement(), primary_key()),
 			make_column("key", &Key::GetKey, &Key::SetKey)
