@@ -21,6 +21,18 @@ void CodeBookViewModel::Load()
 	GetApplication()->InvokeAsync([this] {
 		while (true)
 		{
+			//filter all codes with googlekey
+			//update googlekey
+			GetApplication()->InvokeInMainThread(GetApplication()->GetMainWindow(), [this] {
+				this->codes.NotifyUpdate(0, 1);
+			});
+			Thread::Sleep(5000);
+		}
+	});
+
+	GetApplication()->InvokeAsync([this] {
+		while (true)
+		{
 			auto websiteOpened = EventBus::Get(EventBus::EventName::WebsiteOpened);
 			if (websiteOpened->Wait()) 
 			{

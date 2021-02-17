@@ -71,6 +71,14 @@ namespace vl
 				{
 					INVOKE_INTERFACE_PROXY_NOPARAMS(AddReference);
 				}
+				::vl::WString GetGoogleCode() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetGoogleCode);
+				}
+				::vl::WString GetGoogleKey() override
+				{
+					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetGoogleKey);
+				}
 				::vl::WString GetHidePassword() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetHidePassword);
@@ -94,6 +102,10 @@ namespace vl
 				::vl::WString GetUsername() override
 				{
 					INVOKEGET_INTERFACE_PROXY_NOPARAMS(GetUsername);
+				}
+				void SetGoogleKey(const ::vl::WString& __vwsn_value_) override
+				{
+					INVOKE_INTERFACE_PROXY(SetGoogleKey, __vwsn_value_);
 				}
 				void SetId(::vl::vint __vwsn_value_) override
 				{

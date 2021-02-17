@@ -58,7 +58,7 @@ void ChromeHandler::Resume(bool raiseException, Ptr<CoroutineResult> output)
 					{
 						Ptr<Code> res = vl::__vwsn::Unbox<Ptr<Code>>(code->GetData());
 						auto ostream = EventBus::Get(EventBus::EventName::OStream);
-						ostream->SetData(vl::__vwsn::Box(L"{\"username\":\"" + res->GetUsername() + L"\", \"password\":\"" + res->GetPassword() + L"\"}"));
+						ostream->SetData(vl::__vwsn::Box(L"{\"username\":\"" + res->GetUsername() + L"\",\"password\":\"" + res->GetPassword() + L"\",\"code\":\"" + res->GetGoogleCode() + L"\"}"));
 						ostream->Signal();
 					}
 

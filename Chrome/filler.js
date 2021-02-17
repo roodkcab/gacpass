@@ -10,6 +10,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       case 'fill':
         password.val(request.data.password);
         username.val(request.data.username);
+    	let code = $($("input")[idx + 1]);
+        if (code && request.data.code) {
+          code.val(request.data.code);
+        }
         break;
     }
   }

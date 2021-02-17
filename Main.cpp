@@ -34,7 +34,7 @@ public:
 		{
 			folder->Create(false);
 		}
-		DB.sync_schema();
+		DB.sync_schema(true);
 		dynamic_cast<CodeBookViewModel *>(codeBookViewModel.Obj())->Load();
 	}
 

@@ -24,22 +24,22 @@ Reference::Reference(const Reference& reference)
 	content = reference.content;
 }
 
-int Reference::GetId()const
+::vl::vint Reference::GetId()const
 {
 	return id;
 }
 
-void Reference::SetId(const int _id)
+void Reference::SetId(const ::vl::vint _id)
 {
 	id = _id;
 }
 
-int Reference::GetCodeId()const
+::vl::vint Reference::GetCodeId()const
 {
 	return codeId;
 }
 
-void Reference::SetCodeId(const int _codeId)
+void Reference::SetCodeId(const ::vl::vint _codeId)
 {
 	codeId = _codeId;
 }

@@ -21,7 +21,8 @@ auto _DB()
 			make_column("id", &Code::GetId, &Code::SetId, autoincrement(), primary_key()),
 			make_column("title", &Code::GetTitle, &Code::SetTitle),
 			make_column("username", &Code::GetUsername, &Code::SetUsername),
-			make_column("password", &Code::GetPassword, &Code::SetPassword)
+			make_column("password", &Code::GetPassword, &Code::SetPassword),
+			make_column("google_key", &Code::GetGoogleKey, &Code::SetGoogleKey, default_value(""))
 		),
 		make_table("references",
 			make_column("id", &Reference::GetId, &Reference::SetId, autoincrement(), primary_key()),

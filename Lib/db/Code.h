@@ -15,6 +15,7 @@ private:
 	WString	title;
 	WString	username;
 	WString	password;
+	WString	googleKey;
 	ObservableList<Ptr<gacpass::IReference>> references;
 
 public:
@@ -30,6 +31,9 @@ public:
 	WString GetPassword()const override;
 	void SetPassword(const WString& _password)override;
 	WString GetHidePassword()override;
+	WString GetGoogleKey()const override;
+	void SetGoogleKey(const ::vl::WString& _googleKey) override;
+	WString GetGoogleCode()override;
 	Ptr<IValueObservableList> GetReferences()override;
 
 	void Update(Ptr<ICode> code)override;

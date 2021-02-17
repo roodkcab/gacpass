@@ -1,5 +1,7 @@
 #include "Code.h"
 #include "DB.h"
+#include "Google2FA.h"
+#include <string>
 
 using namespace vl::collections;
 using namespace vl::stream;
@@ -11,6 +13,7 @@ Code::Code()
 	, title(L"")
 	, username(L"")
 	, password(L"")
+	, googleKey(L"")
 {
 }
 
@@ -28,6 +31,7 @@ Code::Code(const Code& code)
 	title = code.title;
 	username = code.username;
 	password = code.password;
+	googleKey = code.googleKey;
 }
 
 int Code::GetId()const
@@ -75,6 +79,27 @@ WString Code::GetHidePassword()
 	return L"***";
 }
 
+WString Code::GetGoogleKey()const
+{
+	return googleKey;
+}
+
+void Code::SetGoogleKey(const ::vl::WString& _googleKey)
+{
+	googleKey = _googleKey;
+}
+
+WString Code::GetGoogleCode()
+{
+	if (googleKey.Length() > 0)
+	{
+		std::wstring code = std::to_wstring(Google2FA::getKey(googleKey));
+		code.insert(code.begin(),  6 - code.size(), '0');
+		return code.c_str();
+	}
+	return L"";
+}
+
 Ptr<vl::reflection::description::IValueObservableList> Code::GetReferences()
 {
 	auto list = references.GetWrapper();
@@ -95,6 +120,7 @@ void Code::Update(Ptr<ICode> code)
 	title = code->GetTitle();
 	username = code->GetUsername();
 	password = code->GetPassword();
+	googleKey = code->GetGoogleKey();
 
 	references.Clear();
 	auto l = GetLazyList<Ptr<Reference>>(code->GetReferences()).CreateEnumerator();

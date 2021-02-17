@@ -19,9 +19,6 @@
     <Filter Include="Lib">
       <UniqueIdentifier>{b5e4d7b7-8c15-4d3d-b7ae-4d831bbae839}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lib\CacUI">
-      <UniqueIdentifier>{958454d2-c623-4812-9bdc-135564306588}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Lib\sqlite_orm">
       <UniqueIdentifier>{e4271d1a-a2e8-433e-bdd8-9172ab3fe095}</UniqueIdentifier>
     </Filter>
@@ -33,6 +30,18 @@
     </Filter>
     <Filter Include="资源文件\images">
       <UniqueIdentifier>{ae011661-8344-4b86-b12f-068a864cb97e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\GacUI">
+      <UniqueIdentifier>{958454d2-c623-4812-9bdc-135564306588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\chrome_extension">
+      <UniqueIdentifier>{dbaa3e82-c4e2-4940-994e-b2573ee260ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\os">
+      <UniqueIdentifier>{d8106d73-c6a7-46b2-8239-9032396a628a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\tiny2fa">
+      <UniqueIdentifier>{bbd57048-1885-4279-87d6-20ea5ada716b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,34 +55,31 @@
       <Filter>UI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\GacUI.cpp">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\GacUIWindows.cpp">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\Vlpp.cpp">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\VlppOS.cpp">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\VlppParser.cpp">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\VlppReflection.cpp">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\VlppRegex.cpp">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\VlppWorkflowLibrary.cpp">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.cpp">
-      <Filter>Lib\CacUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\util.cpp">
-      <Filter>Lib</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClCompile>
     <ClCompile Include="Lib\sqlite_orm\WString.cpp">
       <Filter>Lib\sqlite_orm</Filter>
@@ -82,9 +88,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Lib\AsyncIO.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\ChromeHandler.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
     <ClCompile Include="Lib\db\Code.cpp">
@@ -120,6 +123,27 @@
     <ClCompile Include="Lib\sqlite_orm\HostType.cpp">
       <Filter>Lib\sqlite_orm</Filter>
     </ClCompile>
+    <ClCompile Include="Lib\ChromeHandler.cpp">
+      <Filter>Lib\chrome_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\util.cpp">
+      <Filter>Lib\os</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Google2FA.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\tiny2fa\base32.c">
+      <Filter>Lib\tiny2fa</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\tiny2fa\tiny2fa.c">
+      <Filter>Lib\tiny2fa</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\tiny2fa\hmac.c">
+      <Filter>Lib\tiny2fa</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\tiny2fa\sha1.c">
+      <Filter>Lib\tiny2fa</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI\Source\CodeBookWindow.h">
@@ -135,42 +159,36 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\GacUI.h">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\GacUIWindows.h">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\Vlpp.h">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\VlppOS.h">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\VlppParser.h">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\VlppReflection.h">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\VlppRegex.h">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\VlppWorkflowLibrary.h">
-      <Filter>Lib\CacUI</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\GacUI\Skins\DarkSkin\DarkSkin.h">
-      <Filter>Lib\CacUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\util.hpp">
-      <Filter>Lib</Filter>
+      <Filter>Lib\GacUI</Filter>
     </ClInclude>
     <ClInclude Include="Lib\sqlite_orm\WString.h">
       <Filter>Lib\sqlite_orm</Filter>
     </ClInclude>
     <ClInclude Include="Lib\AsyncIO.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\ChromeHandler.h">
       <Filter>Lib</Filter>
     </ClInclude>
     <ClInclude Include="Lib\db\Code.h">
@@ -208,6 +226,27 @@
     </ClInclude>
     <ClInclude Include="Lib\sqlite_orm\HostType.h">
       <Filter>Lib\sqlite_orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\ChromeHandler.h">
+      <Filter>Lib\chrome_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\util.hpp">
+      <Filter>Lib\os</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Google2FA.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\tiny2fa\base32.h">
+      <Filter>Lib\tiny2fa</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\tiny2fa\tiny2fa.h">
+      <Filter>Lib\tiny2fa</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\tiny2fa\hmac.h">
+      <Filter>Lib\tiny2fa</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\tiny2fa\sha1.h">
+      <Filter>Lib\tiny2fa</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

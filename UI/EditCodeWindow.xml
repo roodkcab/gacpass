@@ -40,6 +40,7 @@
             <att.Title-bind>textBoxTitle.Text</att.Title-bind>
             <att.Username-bind>textBoxUsername.Text</att.Username-bind>
             <att.Password-bind>textBoxPassword.Text</att.Password-bind>
+            <att.GoogleKey-bind>textBoxGoogleKey.Text</att.GoogleKey-bind>
           </att.Code-set>
 					<att.SelectedReference-bind>gridViewReferences.SelectedRowValue as (gacpass::IReference^)</att.SelectedReference-bind>
           <att.CodeLength-bind>hTrackerCodeLength.Position</att.CodeLength-bind>
@@ -70,6 +71,7 @@
 
 				<Table CellPadding="5" AlignmentToParent="left:0 top:0 right:0 bottom:0">
 					<att.Rows>
+						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
 						<CellOption>composeType:MinSize</CellOption>
@@ -129,7 +131,16 @@
             </HTracker>
           </Cell>
 
-          <Cell Site="row:4 column:1 columnSpan:3">
+          <Cell Site="row:4 column:0" InternalMargin="top:6">
+						<Label Text="GoogleKey:"/>
+					</Cell>
+					<Cell Site="row:4 column:1 columnSpan:3">
+						<DocumentTextBox ref.Name="textBoxGoogleKey" EditMode="Editable" Text-bind="ViewModel.Code.GoogleKey">
+							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
+						</DocumentTextBox>
+					</Cell>
+
+          <Cell Site="row:5 column:1 columnSpan:3">
             <ToolstripToolBar>
               <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
               <ToolstripButton Command-ref="commandNewCode"/>
@@ -137,7 +148,7 @@
             </ToolstripToolBar>
           </Cell>
 
-          <Cell Site="row:5 column:1 columnSpan:3">
+          <Cell Site="row:6 column:1 columnSpan:3">
             <BindableDataGrid ref.Name="gridViewReferences" env.ItemType="gacpass::IReference^" env.ItemName="item" HorizontalAlwaysVisible="false" VerticalAlwaysVisible="false">
               
               <att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0"/>
@@ -173,7 +184,7 @@
             </BindableDataGrid>
 					</Cell>
 
-					<Cell Site="row:6 column:2">
+					<Cell Site="row:7 column:2">
 						<Button Text="OK">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:60"/>
 							<ev.Clicked-eval>
@@ -186,7 +197,7 @@
 							</ev.Clicked-eval>
 						</Button>
 					</Cell>
-					<Cell Site="row:6 column:3">
+					<Cell Site="row:7 column:3">
 						<Button Text="Cancel">
 							<att.BoundsComposition-set AlignmentToParent="left:0 top:0 right:0 bottom:0" PreferredMinSize="x:60"/>
 							<ev.Clicked-eval>

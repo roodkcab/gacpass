@@ -38,6 +38,8 @@
 					prop Username	: string {not observe}
 					prop Password	: string {not observe}
 					prop HidePassword : string {const, not observe}
+					prop GoogleKey : string {not observe}
+					prop GoogleCode : string {const, not observe}
 					prop References : observe IReference^[] {const, not observe}
 
 					func Update(code : ICode^) : void;
@@ -164,6 +166,7 @@
 								<ListViewColumn Text="Title" TextProperty="Title" Size="120"/>
 								<ListViewColumn Text="Username" TextProperty="Username" Size="120"/>
 								<ListViewColumn Text="Passowrd" TextProperty="HidePassword" Size="120"/>
+								<ListViewColumn Text="GoogleCode" TextProperty="GoogleCode" Size="120"/>
 							</att.Columns>
 
 							<att.DataColumns>
