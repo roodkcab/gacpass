@@ -40,12 +40,15 @@ You are recommended to use Visual Studio 2019 to build Gacpass.sln.
 - [x] add/delete/edit/search code
 - [x] code generator
 - [x] one password multiple site
+- [x] google authenticator 
 - [ ] aes encrypt db file
 - [x] chrome/edge plugin
   - [x] input password automatically
   - [x] input username automatically
 - [ ] iTerm/Windows Terminal plugin
-- [ ] OSX/Linux/iOS/Android
+- [x] OSX
+- [ ] Linux
+- [ ] iOS/Android
 - [ ] multi language
 - [ ] ui
 - [ ] sync on multiple device
