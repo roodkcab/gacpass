@@ -13,12 +13,15 @@ GacPass是一个本地密码管理工具。
 - [x] 密码的增删改查
 - [x] 密码生成器
 - [x] 一个密码多个站点
+- [x] google authenticator 
 - [ ] aes加密数据库文件
 - [x] chrome/edge插件
   - [x] 自动填写密码
   - [x] 自动填写用户名
 - [ ] iTerm/Windows Terminal插件
-- [ ] OSX/Linux/iOS/Android
+- [x] OSX
+- [ ] Linux
+- [ ] iOS/Android
 - [ ] 多语言
 - [ ] ui
 - [ ] 多设备同步
