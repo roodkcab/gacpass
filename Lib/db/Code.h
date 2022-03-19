@@ -22,8 +22,8 @@ public:
 	Code();
 	//Code(const int _id, const WString& _title, const WString& _username, const WString& _password);
 	Code(const Code& code);
-	int GetId()const override;
-	void SetId(const int _id)override;
+	::vl::vint GetId()const override;
+	void SetId(const ::vl::vint _id)override;
 	WString GetTitle()const override;
 	void SetTitle(const WString& _website)override;
 	WString GetUsername()const override;

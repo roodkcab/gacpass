@@ -1,6 +1,6 @@
 #include "Code.h"
 #include "DB.h"
-#include "Google2FA.h"
+#include "GoogleAuth.h"
 #include <string>
 
 using namespace vl::collections;
@@ -34,12 +34,12 @@ Code::Code(const Code& code)
 	googleKey = code.googleKey;
 }
 
-int Code::GetId()const
+::vl::vint Code::GetId()const
 {
 	return id;
 }
 
-void Code::SetId(int _id)
+void Code::SetId(::vl::vint _id)
 {
 	id = _id;
 }
@@ -93,9 +93,8 @@ WString Code::GetGoogleCode()
 {
 	if (googleKey.Length() > 0)
 	{
-		std::wstring code = std::to_wstring(Google2FA::getKey(googleKey));
-		code.insert(code.begin(),  6 - code.size(), '0');
-		return code.c_str();
+		GoogleAuth auth(googleKey);
+		return auth.getCode();
 	}
 	return L"";
 }

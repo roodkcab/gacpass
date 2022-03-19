@@ -18,12 +18,12 @@ Key::Key(const Key& key)
 	this->key = key.key;
 }
 
-int Key::GetId()const
+::vl::vint Key::GetId()const
 {
 	return id;
 }
 
-void Key::SetId(const int _id)
+void Key::SetId(const ::vl::vint _id)
 {
 	id = _id;
 }

@@ -15,8 +15,8 @@ public:
 	Key();
 	Key(const int _id, const WString& _key);
 	Key(const Key& key);
-	int GetId()const override;
-	void SetId(const int _id)override;
+	::vl::vint GetId()const override;
+	void SetId(const ::vl::vint _id)override;
 	WString GetKey()const override;
 	void SetKey(const WString& _website)override;
   };

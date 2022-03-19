@@ -40,8 +40,8 @@
     <Filter Include="Lib\os">
       <UniqueIdentifier>{d8106d73-c6a7-46b2-8239-9032396a628a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lib\tiny2fa">
-      <UniqueIdentifier>{bbd57048-1885-4279-87d6-20ea5ada716b}</UniqueIdentifier>
+    <Filter Include="Lib\2FA">
+      <UniqueIdentifier>{be1a8050-a531-497a-89a8-36c637215802}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -129,20 +129,8 @@
     <ClCompile Include="Lib\util.cpp">
       <Filter>Lib\os</Filter>
     </ClCompile>
-    <ClCompile Include="Lib\Google2FA.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\tiny2fa\base32.c">
-      <Filter>Lib\tiny2fa</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\tiny2fa\tiny2fa.c">
-      <Filter>Lib\tiny2fa</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\tiny2fa\hmac.c">
-      <Filter>Lib\tiny2fa</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\tiny2fa\sha1.c">
-      <Filter>Lib\tiny2fa</Filter>
+    <ClCompile Include="Lib\GoogleAuth.cpp">
+      <Filter>Lib\2FA</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -233,20 +221,8 @@
     <ClInclude Include="Lib\util.hpp">
       <Filter>Lib\os</Filter>
     </ClInclude>
-    <ClInclude Include="Lib\Google2FA.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\tiny2fa\base32.h">
-      <Filter>Lib\tiny2fa</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\tiny2fa\tiny2fa.h">
-      <Filter>Lib\tiny2fa</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\tiny2fa\hmac.h">
-      <Filter>Lib\tiny2fa</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\tiny2fa\sha1.h">
-      <Filter>Lib\tiny2fa</Filter>
+    <ClInclude Include="Lib\GoogleAuth.h">
+      <Filter>Lib\2FA</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

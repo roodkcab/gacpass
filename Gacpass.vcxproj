@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -32,7 +32,7 @@
     <CharacterSet>Unicode</CharacterSet>
     <VCToolsVersion>
     </VCToolsVersion>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -40,12 +40,12 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -141,7 +141,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)Lib;$(ProjectDir)UI\Source;$(ProjectDir)Lib\GacUI;$(ProjectDir)Lib\Skins;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>Default</LanguageStandard>
       <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
@@ -186,13 +186,9 @@
     <ClCompile Include="Lib\GacUI\VlppRegex.cpp" />
     <ClCompile Include="Lib\GacUI\VlppWorkflowLibrary.cpp" />
     <ClCompile Include="Lib\GEvent.cpp" />
-    <ClCompile Include="Lib\Google2FA.cpp" />
+    <ClCompile Include="Lib\GoogleAuth.cpp" />
     <ClCompile Include="Lib\sqlite_orm\HostType.cpp" />
     <ClCompile Include="Lib\sqlite_orm\WString.cpp" />
-    <ClCompile Include="Lib\tiny2fa\base32.c" />
-    <ClCompile Include="Lib\tiny2fa\hmac.c" />
-    <ClCompile Include="Lib\tiny2fa\sha1.c" />
-    <ClCompile Include="Lib\tiny2fa\tiny2fa.c" />
     <ClCompile Include="Lib\util.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="UI\Source\CodeBookWindow.cpp" />
@@ -222,13 +218,9 @@
     <ClInclude Include="Lib\GacUI\VlppReflection.h" />
     <ClInclude Include="Lib\GacUI\VlppRegex.h" />
     <ClInclude Include="Lib\GacUI\VlppWorkflowLibrary.h" />
-    <ClInclude Include="Lib\Google2FA.h" />
+    <ClInclude Include="Lib\GoogleAuth.h" />
     <ClInclude Include="Lib\sqlite_orm\HostType.h" />
     <ClInclude Include="Lib\sqlite_orm\WString.h" />
-    <ClInclude Include="Lib\tiny2fa\base32.h" />
-    <ClInclude Include="Lib\tiny2fa\hmac.h" />
-    <ClInclude Include="Lib\tiny2fa\sha1.h" />
-    <ClInclude Include="Lib\tiny2fa\tiny2fa.h" />
     <ClInclude Include="Lib\util.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="UI\Source\CodeBookWindow.h" />
